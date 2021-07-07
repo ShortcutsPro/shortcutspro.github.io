@@ -12,9 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // render recipe data
 const renderRecipe = (data, id) => {
 
+  let shortcut = encodeURI(`${data.name}`);
+  
+  console.log(shortcut)
+  
   const html = `
     <div class="card-panel recipe white row" data-id="${id}">
-    <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${data.name}">
+    <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text={\"name\":\"${shortcut}\",\"input\":\"${data.ingredients}\”}">
       <img src="images/dish.png" alt="recipe thumb">
       <div class="recipe-details">
         <div class="recipe-title">${data.name}</div>
