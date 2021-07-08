@@ -1,40 +1,42 @@
-const recipes = document.querySelector('.recipes');
+const shortcuts = document.querySelector('.shortcuts ');
 
 document.addEventListener('DOMContentLoaded', function() {
   // nav menu
   const menus = document.querySelectorAll('.side-menu');
   M.Sidenav.init(menus, {edge: 'right'});
-  // add recipe form
+  // add shortcut form
   const forms = document.querySelectorAll('.side-form');
   M.Sidenav.init(forms, {edge: 'left'});
 });
 
-// render recipe data
-const renderRecipe = (data, id) => {
+// render shortcut data
+const renderShortcut = (data, id) => {
 
-  let shortcut = encodeURI(`${data.name}`);
+  let shortcut = encodeURIComponent(`${data.name}`);
+  let input = encodeURIComponent(`${data.input}`);
   
   console.log(shortcut)
+  console.log(input)
   
   const html = `
-    <div class="card-panel recipe white row" data-id="${id}">
-    <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text={\"name\":\"${shortcut}\",\"input\":\"${data.ingredients}\”}">
-      <img src="images/dish.png" alt="recipe thumb">
-      <div class="recipe-details">
-        <div class="recipe-title">${data.name}</div>
-        <div class="recipe-ingredients">${data.ingredients}</div></a>
+    <div class="card-panel shortcut white row" data-id="${id}">
+    <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text={\"name\":\"${shortcut}\",\"input\":\"${input}\"}">
+      <img src="images/${data.name}.png" alt="shortcut icon">
+      <div class="shortcut-details">
+        <div class="shortcut-title">${data.name}</div>
+        <div class="shortcut-input">${data.input}</div></a>
       </div>
-      <div class="recipe-delete">
+      <div class="shortcut-delete">
         <i class="material-icons" data-id="${id}">delete_outline</i>
       </div>
     </div>
   `;
-  recipes.innerHTML += html;
+  shortcuts.innerHTML += html;
 
 };
 
 // remove recipe
-const removeRecipe = (id) => {
-  const recipe = document.querySelector(`.recipe[data-id=${id}]`);
-  recipe.remove();
+const removeShortcut = (id) => {
+  const shortcut = document.querySelector(`.shortcut[data-id=${id}]`);
+  shortcut.remove();
 };
