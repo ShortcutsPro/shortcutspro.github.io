@@ -11,40 +11,40 @@ db.enablePersistence()
   });
 
 // real-time listener
-db.collection('recipes').onSnapshot(snapshot => {
+db.collection('shortcuts').onSnapshot(snapshot => {
   snapshot.docChanges().forEach(change => {
     if(change.type === 'added'){
-      renderRecipe(change.doc.data(), change.doc.id);
+      renderShortcut(change.doc.data(), change.doc.id);
     }
     if(change.type === 'removed'){
-      removeRecipe(change.doc.id);
+      removeShortcut(change.doc.id);
     }
   });
 });
 
-// add new recipe
+// add new shortcut
 const form = document.querySelector('form');
 form.addEventListener('submit', evt => {
   evt.preventDefault();
   
-  const recipe = {
+  const shortcut = {
     name: form.title.value,
-    ingredients: form.ingredients.value
+    input: form.input.value
   };
 
-  db.collection('recipes').add(recipe)
+  db.collection('shortcuts').add(shortcut)
     .catch(err => console.log(err));
 
   form.title.value = '';
-  form.ingredients.value = '';
+  form.input.value = '';
 });
 
-// remove a recipe
-const recipeContainer = document.querySelector('.recipes');
-recipeContainer.addEventListener('click', evt => {
+// remove a shortcut
+const shortcutContainer = document.querySelector('.shortcuts');
+shortcutContainer.addEventListener('click', evt => {
   if(evt.target.tagName === 'I'){
     const id = evt.target.getAttribute('data-id');
     //console.log(id);
-    db.collection('recipes').doc(id).delete();
+    db.collection('shortcuts').doc(id).delete();
   }
 })
