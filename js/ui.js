@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // render shortcut data
 const renderShortcut = (data, id) => {
 
-  let shortcut = encodeURIComponent(`${data.name}`);
-  let input = encodeURIComponent(`${data.input}`);
+  let shortcut = encodeURI(`${data.name}`);
+  let input = encodeURI(`${data.input}`);
   
   console.log(shortcut)
   console.log(input)
   
   const html = `
     <div class="card-panel shortcut white row" data-id="${id}">
-    <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text={'name':'${shortcut}','input':'${input}'}">
+    <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text={'name':`encodeURI(`${data.name}`);`','input':'`encodeURI(`${data.input}`);`'">
       <img src="images/shortcut.png" alt="shortcut icon">
       <div class="shortcut-details">
         <div class="shortcut-title">${data.name}</div>
