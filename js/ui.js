@@ -20,7 +20,7 @@ const renderShortcut = (data, id) => {
   console.log(dict)
   
   const html = `
-    <div class="card-panel shortcut white row" data-id="${id}">
+    <div class="card-panel.shortcut white row" data-id="${id}">
       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${dict}">
         <img src="/images/shortcut.png" alt="shortcut icon">
         <div class="shortcut-details">

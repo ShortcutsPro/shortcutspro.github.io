@@ -24,11 +24,11 @@ nav .sidenav-trigger{
   margin: 0;
 }
 
-/* recipe styles */
-.recipes{
+/* shortcut styles */
+.shortcuts{
   margin-top: 20px;
 }
-.card-panel.recipe{
+.card-panel.shortcut{
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
@@ -37,27 +37,27 @@ nav .sidenav-trigger{
   grid-template-areas: "image details delete";
   position: relative;
 }
-.recipe img{
+.shortcut img{
   grid-area: image;
   max-width: 60px;
 }
-.recipe-details{
+.shortcut-details{
   grid-area: details;
   margin-top: 6px;
 }
-.recipe-delete{
+.shortcut-delete{
   grid-area: delete;
   position: absolute;
   bottom: 0px;
   right: 0px;
 }
-.recipe-delete i{
+.shortcut-delete i{
   font-size: 18px;
 }
-.recipe-title{
+.shortcut-title{
   font-weight: bold;
 }
-.recipe-ingredients{
+.shortcut-input{
   font-size: 0.8em;
 }
 
