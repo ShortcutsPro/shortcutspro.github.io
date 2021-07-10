@@ -57,9 +57,11 @@ nav .sidenav-trigger{
 }
 .shortcut-title{
   font-weight: bold;
+  color: black;
 }
 .shortcut-input{
   font-size: 1rem;
+  color: #828B94;
 }
 
 /* form-styles */
