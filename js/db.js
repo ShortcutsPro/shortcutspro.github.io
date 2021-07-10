@@ -29,7 +29,8 @@ form.addEventListener('submit', evt => {
   
   const shortcut = {
     name: form.title.value,
-    input: form.input.value
+    input: form.input.value,
+    icon: form.icon.value
   };
 
   db.collection('shortcuts').add(shortcut)
@@ -37,6 +38,7 @@ form.addEventListener('submit', evt => {
 
   form.title.value = '';
   form.input.value = '';
+  form.icon.value = '';
 });
 
 // remove a shortcut
