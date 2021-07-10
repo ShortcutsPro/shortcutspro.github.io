@@ -17,8 +17,9 @@ const renderShortcut = (data, id) => {
   
   const html = `
     <div class="card-panel shortcut white row" data-id="${id}">
+            <img class="img" src="images/shortcut.png" alt="shortcut icon" />
       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${dict}">
-        <img class="img" src="images/shortcut.png" alt="shortcut icon" />
+
         <div class="shortcut-details">
           <div class="shortcut-title">${data.name}</div>
           <div class="shortcut-input">${data.input}</div>
