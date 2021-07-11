@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 const renderShortcut = (data, id) => {
   let dict = encodeURIComponent(`{\"name\":\"${data.name}\",\"input\":\"${data.input}\"}`);
   console.log(`${data.name}`)
-  console.log(dict)
   
   const html = `
     <div class="card-panel shortcut white row" data-id="${id}">

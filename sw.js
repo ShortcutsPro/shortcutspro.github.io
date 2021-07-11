@@ -16,6 +16,8 @@ const assets = [
   'images/shortcut.png',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
   'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
+  'https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js',
+  'https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js',
   'pages/fallback.html'
   'pages/about.html',
   'pages/contact.html'
@@ -72,7 +74,7 @@ self.addEventListener('fetch', evt => {
         });
       }).catch(() => {
         if(evt.request.url.indexOf('.html') > -1){
-          return caches.match('/pages/fallback.html');
+          return caches.match('pages/fallback.html');
         } 
       })
     );
