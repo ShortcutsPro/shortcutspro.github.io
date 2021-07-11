@@ -14,6 +14,7 @@ const assets = [
   'css/materialize.min.css',
   'css/bulma.min.css',
   'images/shortcut.png',
+  'images/navbar.jpg',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
   'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
   'https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js',
@@ -36,7 +37,7 @@ const limitCacheSize = (name, size) => {
 
 // install event
 self.addEventListener('install', evt => {
-  //console.log('service worker installed');
+  console.log('service worker installed');
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets');
@@ -47,7 +48,7 @@ self.addEventListener('install', evt => {
 
 // activate event
 self.addEventListener('activate', evt => {
-  //console.log('service worker activated');
+  console.log('service worker activated');
   evt.waitUntil(
     caches.keys().then(keys => {
       //console.log(keys);

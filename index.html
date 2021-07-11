@@ -24,8 +24,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <style>
-      @import "css/materialize.min.css"
-      @import "css/styles.css"
+      @import "css/bulma.min.css";
+      @import "css/materialize.min.css";
+      @import "css/styles.css";
+      @charset "utf-8"; 
+      html { font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif; }     
+      body, .title { margin: 0; padding: 1em; background: white; font-family: system-ui; color: black }
+      @media (prefers-color-scheme: dark) {
+        body, .title { background-color: #333333; color: #ffffff }
+      }
+      @media (max-device-width: 480px) { }
+      @media (min-device-width: 481px) { 
+         body { margin: auto; max-width: 600px; }
+      }
+      img { max-width: 90%; }
+/* debug.css | MIT License | zaydek.github.com/debug.css *
+      :not(path):not(g) {
+      	color:                    hsla(210, 100%, 100%, 0.9) !important;
+      	background:               hsla(210, 100%,  50%, 0.5) !important;
+      	outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+      	box-shadow: none !important;
+      }  */
     </style>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/pwacompat.min.js"></script>
@@ -82,7 +101,7 @@
           <label for="icon">Icon data/url</label>
         </div>
         <div class="input-field center">
-          <button class="btn-small" onclick="window.close();">Add</button>
+          <button class="btn-small" onclick="window.close();location.reload();">Add</button>
         </div>
       </form>
     </ul>
