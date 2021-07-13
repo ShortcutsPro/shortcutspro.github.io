@@ -1,27 +1,26 @@
-const staticCacheName = 'site-static-v4';
-const dynamicCacheName = 'site-dynamic-v4';
+const staticCacheName = 'site-static-v2';
+const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
   '/',
-  'index.html',
-  'manifest.webmanifest',
-  'apple-touch-icon.png',
-  'js/db.js',
-  'js/app.js',
-  'js/ui.js',
-  'js/materialize.min.js',
-  'js/pwacompat.min.js',
-  'css/styles.css',
-  'css/materialize.min.css',
-  'css/bulma.min.css',
-  'images/shortcut.png',
-  'images/navbar.jpg',
-  'https://fonts.googleapis.com/icon?family=Material+Icons',
-  'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
-  'https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js',
-  'https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js',
-  'pages/fallback.html'
-  'pages/about.html',
-  'pages/contact.html'
+  '/index.html',
+  '/manifest.webmanifest',
+  '/apple-touch-icon.png',
+  '/js/db.js',
+  '/js/app.js',
+  '/js/ui.js',
+  '/js/materialize.min.js',
+  '/js/pwacompat.min.js',
+  '/css/styles.css',
+  '/css/materialize.min.css',
+  '/images/',
+  '/images/icons/',
+  '/images/shortcut.png',
+  '/images/navbar.jpg',
+  '/https://fonts.googleapis.com/icon?family=Material+Icons',
+  '/https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
+  '/pages/fallback.html'
+  '/pages/about.html',
+  '/pages/contact.html'
 ];
 
 // cache size limit function
@@ -37,7 +36,7 @@ const limitCacheSize = (name, size) => {
 
 // install event
 self.addEventListener('install', evt => {
-  console.log('service worker installed');
+  //console.log('service worker installed');
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets');
@@ -48,7 +47,7 @@ self.addEventListener('install', evt => {
 
 // activate event
 self.addEventListener('activate', evt => {
-  console.log('service worker activated');
+  //console.log('service worker activated');
   evt.waitUntil(
     caches.keys().then(keys => {
       //console.log(keys);
@@ -60,25 +59,22 @@ self.addEventListener('activate', evt => {
   );
 });
 
-// fetch events
+// fetch event
 self.addEventListener('fetch', evt => {
-  if(evt.request.url.indexOf('firestore.googleapis.com') === -1){
-    evt.respondWith(
-      caches.match(evt.request).then(cacheRes => {
-        return cacheRes || fetch(evt.request).then(fetchRes => {
-          return caches.open(dynamicCacheName).then(cache => {
-            cache.put(evt.request.url, fetchRes.clone());
-            // check cached items size
-            limitCacheSize(dynamicCacheName, 30);
-            return fetchRes;
-          })
-        });
-      }).catch(() => {
-        if(evt.request.url.indexOf('.html') > -1){
-          return caches.match('pages/fallback.html');
-        } 
-      })
-    );
-  }
+  //console.log('fetch event', evt);
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone());
+          return fetchRes;
+        })
+      });
+    }).catch(() => {
+      if(evt.request.url.indexOf('.html') > -1){
+        return caches.match('/pages/fallback.html');
+      } 
+    })
+  );
 });
 console.log('sw.js');

@@ -10,9 +10,11 @@ form.addEventListener('submit', evt => {
     input: form.input.value,
     icon: form.icon.value
   };
-
-  db.collection('shortcuts').add(shortcut)
-    .catch(err => console.log(err));
+  
+  const shortcutString = JSON.stringify(shortcut);
+  if (localStorage.getItem(shortcut.name) === shortcutStrng) {
+  };
+  else {localStorage.setItem(shortcut.name, shortcutString)};
 
   form.name.value = '';
   form.input.value = '';
