@@ -1,26 +1,4 @@
-// enable offline data
-db.enablePersistence()
-  .catch(function(err) {
-    if (err.code == 'failed-precondition') {
-      // probably multible tabs open at once
-      console.log('persistance failed');
-    } else if (err.code == 'unimplemented') {
-      // lack of browser support for the feature
-      console.log('persistance not available');
-    }
-  });
 
-// real-time listener
-db.collection('shortcuts').onSnapshot(snapshot => {
-  snapshot.docChanges().forEach(change => {
-    if(change.type === 'added'){
-      renderShortcut(change.doc.data(), change.doc.id);
-    }
-    if(change.type === 'removed'){
-      removeShortcut(change.doc.id);
-    }
-  });
-});
 
 // add new shortcut
 const form = document.querySelector('form');
@@ -28,7 +6,7 @@ form.addEventListener('submit', evt => {
   evt.preventDefault();
   
   const shortcut = {
-    name: form.title.value,
+    name: form.name.value,
     input: form.input.value,
     icon: form.icon.value
   };
@@ -36,7 +14,7 @@ form.addEventListener('submit', evt => {
   db.collection('shortcuts').add(shortcut)
     .catch(err => console.log(err));
 
-  form.title.value = '';
+  form.name.value = '';
   form.input.value = '';
   form.icon.value = '';
 });
