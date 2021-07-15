@@ -10,31 +10,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // render shortcut data
-const renderShortcut = (data, id) => {
+
+if (localStorage.length > 0) {
+for (var i = 0; i < localStorage.length; i++) {
+  let data = JSON.parse(localStorage.getItem(localStorage.key(i)));
+  
   let dict = encodeURIComponent(`{\"name\":\"${data.name}\",\"input\":\"${data.input}\"}`);
-  console.log(`${data.name}`)
+  // console.log(`${data.name}`);
   
   const html = `
-    <div class="card-panel shortcut white row" data-id="${id}">
+    <div class="card-panel shortcut white row" data-id="${data.name}">
             <img class="img" src="${data.icon}" alt="shortcut icon" />
       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${dict}">
         <div class="shortcut-details">
-          <div class="shortcut-title">${data.name}</div>
+          <div class="shortcut-name">${data.name}</div>
           <div class="shortcut-input">${data.input}</div>
         </div>
       </a>
       <div class="shortcut-delete">
-        <i class="material-icons" data-id="${id}">delete_outline</i>
+        <i class="material-icons" data-id="${data.name}">delete_outline</i>
       </div>
     </div>
 
   `;
   shortcuts.innerHTML += html;
-
+};
 };
 
 // remove shortcut
 const removeShortcut = (id) => {
   const shortcut = document.querySelector(`.shortcut[data-id=${id}]`);
+  console.log('logged');
   shortcut.remove();
 };

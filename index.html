@@ -17,18 +17,18 @@
     
     <title>Bustl.Cutz</title>
 <!-- ios support -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<!--     <link rel="apple-touch-startup-image" href="apple-touch-startup-image.png" type="image/png"/> -->
-    <link rel="manifest" href="manifest.webmanifest" type="application/manifest+json"/>
-    <link rel="icon" href="apple-touch-icon.png" type="image/png" sizes="144x144" />
-<!--     <link rel="stylesheet" href="css/bulma.min.css" type="text/css" /> -->
-    <link rel="stylesheet" href="css/materialize.min.css" type="text/css" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<!--     <link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png" type="image/png"/> -->
+    <link rel="manifest" href="/manifest.webmanifest" type="application/manifest+json"/>
+    <link rel="icon" href="/apple-touch-icon.png" type="image/png" sizes="144x144" />
+<!--     <link rel="stylesheet" href="/css/bulma.min.css" type="text/css" /> -->
+    <link rel="stylesheet" href="/css/materialize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
     <style>
-      @import "css/bulma.min.css";
-      @import "css/materialize.min.css";
-      @import "css/styles.css";
+      /*@import "/css/bulma.min.css";*/
+      @import "/css/materialize.min.css";
+      @import "/css/styles.css";
       @charset "utf-8"; 
       /*html { font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif; }     
       body, .title { margin: 0; padding: 0; background: white; font-family: system-ui; color: black }
@@ -48,8 +48,8 @@
       	box-shadow: none !important;
       }  */
     </style>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/pwacompat.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/pwacompat.min.js"></script>
   </head>
   <body class="grey lighten-4">
     
@@ -66,10 +66,10 @@
     <!-- side nav -->
     <ul id="side-menu" class="sidenav side-menu">
       <li><a class="subheader">Bustl.Cutz</a></li>
-      <li><a href="index.html" class="waves-effect">Home</a></li>
-      <li><a href="pages/about.html" class="waves-effect">About</a></li>
+      <li><a href="/" class="waves-effect">Home</a></li>
+      <li><a href="/pages/about.html" class="waves-effect">About</a></li>
       <li><div class="divider"></div></li>
-      <li><a href="pages/contact.html" class="waves-effect">
+      <li><a href="/pages/contact.html" class="waves-effect">
         <i class="material-icons">mail_outline</i>Contact</a>
       </li>
     </ul>
@@ -91,8 +91,8 @@
         <h6 >New Shortcut</h6>
         <div class="divider"></div>
         <div class="input-field">
-          <input placeholder="e.g. Frame Photos" id="title" type="text" class="validate">
-          <label for="title">Shortcut Name</label>
+          <input placeholder="e.g. Frame Photos" id="name" type="text" class="validate">
+          <label for="name">Shortcut Name</label>
         </div>
         <div class="input-field">
           <input placeholder="" id="input" type="text" class="validate">
@@ -103,27 +103,12 @@
           <label for="icon">Icon data/url</label>
         </div>
         <div class="input-field center">
-          <button class="btn-small" onclick="window.open('index.html');location.reload();">Add</button>
+          <button class="btn-small"><!-- onclick="window.open('index.html');location.reload();" -->Add</button>
         </div>
       </form>
     </ul>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
-    <script type="text/javascript">
-      var firebaseConfig = {
-        apiKey: "AIzaSyDWh4YhdbeUVIg3uLFv2ABDBqk1ASAP-lc",
-        authDomain: "bustl-cutz-pwa.firebaseapp.com",
-        projectId: "bustl-cutz-pwa",
-        storageBucket: "bustl-cutz-pwa.appspot.com",
-        messagingSenderId: "861507271133",
-        appId: "1:861507271133:web:717b1fb68945e736591e34"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
-    </script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/db.js"></script>
-    <script type="text/javascript" src="js/ui.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/db.js"></script>
+    <script type="text/javascript" src="/js/ui.js"></script>
   </body>
 </html>

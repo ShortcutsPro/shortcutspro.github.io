@@ -1,52 +1,31 @@
-// enable offline data
-db.enablePersistence()
-  .catch(function(err) {
-    if (err.code == 'failed-precondition') {
-      // probably multible tabs open at once
-      console.log('persistance failed');
-    } else if (err.code == 'unimplemented') {
-      // lack of browser support for the feature
-      console.log('persistance not available');
-    }
-  });
-
-// real-time listener
-db.collection('shortcuts').onSnapshot(snapshot => {
-  snapshot.docChanges().forEach(change => {
-    if(change.type === 'added'){
-      renderShortcut(change.doc.data(), change.doc.id);
-    }
-    if(change.type === 'removed'){
-      removeShortcut(change.doc.id);
-    }
-  });
-});
-
 // add new shortcut
 const form = document.querySelector('form');
-form.addEventListener('submit', evt => {
-  evt.preventDefault();
-  
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
   const shortcut = {
-    name: form.title.value,
+    name: form.name.value,
     input: form.input.value,
     icon: form.icon.value
   };
 
-  db.collection('shortcuts').add(shortcut)
-    .catch(err => console.log(err));
+  if (shortcut.name.length) {
+      localStorage.setItem(form.name.value, JSON.stringify(shortcut));
+  };
 
-  form.title.value = '';
+  form.name.value = '';
   form.input.value = '';
   form.icon.value = '';
+  
+  location.reload();
 });
+
 
 // remove a shortcut
 const shortcutContainer = document.querySelector('.shortcuts');
-shortcutContainer.addEventListener('click', evt => {
-  if(evt.target.tagName === 'I'){
-    const id = evt.target.getAttribute('data-id');
-    //console.log(id);
-    db.collection('shortcuts').doc(id).delete();
-  }
-})
+shortcutContainer.addEventListener('click', e => {
+    const id = e.target.getAttribute('data-id');
+    console.log('clicked');
+    localStorage.removeItem(id);
+    location.reload();
+});
