@@ -2,8 +2,8 @@
 
 // add new shortcut
 const form = document.querySelector('form');
-form.addEventListener('submit', evt => {
-  evt.preventDefault();
+form.addEventListener('submit', e => {
+  e.preventDefault();
   
   const shortcut = {
     name: form.name.value,
@@ -11,22 +11,23 @@ form.addEventListener('submit', evt => {
     icon: form.icon.value
   };
   
-  const shortcutString = JSON.stringify(shortcut);
-  if (localStorage.getItem(shortcut.name) === shortcutStrng) {
-  };
-  else {localStorage.setItem(shortcut.name, shortcutString)};
-
+  console.log(shortcut.name);
+  
+  localStorage.setItem('key', 'value');
+      
+  
   form.name.value = '';
   form.input.value = '';
   form.icon.value = '';
 });
 
+
 // remove a shortcut
 const shortcutContainer = document.querySelector('.shortcuts');
 shortcutContainer.addEventListener('click', evt => {
   if(evt.target.tagName === 'I'){
-    const id = evt.target.getAttribute('data-id');
+    const id = evt.target.getAttribute('name');
     //console.log(id);
-    db.collection('shortcuts').doc(id).delete();
+    localStorage.setItem(id, null);
   }
 })

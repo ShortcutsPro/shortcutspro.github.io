@@ -8,7 +8,8 @@
 /* layout styles */
 nav{
   background: #000000;
-  background-image: url('../images/navbar.jpg');
+  background-color: black;
+  background-image: url('/images/navbar.jpg');
   background-position: center;
   background-size: cover;
   max-width: 100%;
