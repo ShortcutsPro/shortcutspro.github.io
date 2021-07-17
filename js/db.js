@@ -5,8 +5,8 @@ form.addEventListener('submit', e => {
 
   const shortcut = {
     name: form.name.value,
-    input: form.input.value,
-    icon: form.icon.value
+    input: form.input.value
+    // icon: form.icon.value
   };
 
   if (shortcut.name.length) {
@@ -15,7 +15,7 @@ form.addEventListener('submit', e => {
 
   form.name.value = '';
   form.input.value = '';
-  form.icon.value = '';
+  // form.icon.value = '';
   
   location.reload();
 });

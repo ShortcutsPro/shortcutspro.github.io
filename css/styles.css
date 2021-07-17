@@ -32,13 +32,17 @@ nav .sidenav-trigger{
 }
 .card-panel.shortcut{
   border-radius: 8px;
-  padding: 10px;
+  padding: 1rem;
   box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
   display: grid;
   grid-template-columns: 2fr 6fr 1fr;
   grid-template-areas: "image details delete";
   position: relative;
 }
+/*.shortcut {
+  text-align: center;
+  align-content: center;
+}*/
 .shortcut img{
   grid-area: image;
   max-width: 60px;

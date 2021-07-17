@@ -20,7 +20,7 @@ for (var i = 0; i < localStorage.length; i++) {
   
   const html = `
     <div class="card-panel shortcut white row" data-id="${data.name}">
-            <img class="img" src="${data.icon}" alt="shortcut icon" />
+            <img class="img" src="/images/shortcuts/${data.name}.png" alt="shortcut icon" />
       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${dict}">
         <div class="shortcut-details">
           <div class="shortcut-name">${data.name}</div>
