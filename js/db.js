@@ -1,20 +1,24 @@
 // add new shortcut
 const form = document.querySelector('form');
-form.addEventListener('submit', e => {
-  e.preventDefault();
+const ADD = document.querySelector('button');
+ADD.addEventListener('click', async () => {
 
+  const READ = await navigator.clipboard.readText();
+  const ADD = JSON.parse(READ);
+  console.log(ADD.name);
+  
   const shortcut = {
-    name: form.name.value,
-    input: form.input.value
-    // icon: form.icon.value
+    name: ADD.name,
+    input: ADD.input,
+    icon: ADD.icon
+  };
+  
+  if (ADD.name) {
+    localStorage.setItem(ADD.name, READ);
   };
 
-  if (shortcut.name.length) {
-      localStorage.setItem(form.name.value, JSON.stringify(shortcut));
-  };
-
-  form.name.value = '';
-  form.input.value = '';
+  // form.name.value = '';
+  // form.input.value = '';
   // form.icon.value = '';
   
   location.reload();

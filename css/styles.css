@@ -78,9 +78,11 @@ input{
   -webkit-box-shadow: none !important;
 }
 .side-form button{
+  visibility: visible;
   background: var(--title);
   box-shadow: 1px 1px 3px rgba(90,90,90,0.2);
 }
 form .input-field{
+  visibility: hidden;
   margin-top: 30px;
 }

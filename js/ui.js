@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const menus = document.querySelectorAll('.side-menu');
   M.Sidenav.init(menus, {edge: 'right'});
   // add shortcut form
-  const forms = document.querySelectorAll('.side-form');
-  M.Sidenav.init(forms, {edge: 'left'});
+  // const forms = document.querySelectorAll('.side-form');
+  // M.Sidenav.init(forms, {edge: 'left'});
 });
 
 // render shortcut data
@@ -20,7 +20,7 @@ for (var i = 0; i < localStorage.length; i++) {
   
   const html = `
     <div class="card-panel shortcut white row" data-id="${data.name}">
-            <img class="img" src="/images/shortcuts/${data.name}.png" alt="shortcut icon" />
+            <img class="img" src="${data.icon}" alt="shortcut icon" />
       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${dict}">
         <div class="shortcut-details">
           <div class="shortcut-name">${data.name}</div>
