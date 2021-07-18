@@ -7,12 +7,6 @@ ADD.addEventListener('click', async () => {
   const ADD = JSON.parse(READ);
   console.log(ADD.name);
   
-  // const shortcut = {
-  //   name: ADD.name,
-  //   input: ADD.input,
-  //   icon: ADD.icon
-  // };
-  
   if (ADD.name) {
     localStorage.setItem(ADD.name, READ);
   };
