@@ -3,6 +3,7 @@ const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
   '/',
   '/index.html',
+  '/404.html',
   '/manifest.webmanifest',
   '/apple-touch-icon.png',
   '/js/db.js',
@@ -14,7 +15,6 @@ const assets = [
   '/css/materialize.min.css',
   '/images/',
   '/images/icons/',
-  '/images/shortcut.png',
   '/images/navbar.jpg',
   '/https://fonts.googleapis.com/icon?family=Material+Icons',
   '/https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
@@ -67,6 +67,8 @@ self.addEventListener('fetch', evt => {
       return cacheRes || fetch(evt.request).then(fetchRes => {
         return caches.open(dynamicCacheName).then(cache => {
           cache.put(evt.request.url, fetchRes.clone());
+          // check cached items size
+          limitCacheSize(dynamicCacheName, 50);
           return fetchRes;
         })
       });
