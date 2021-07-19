@@ -20,6 +20,7 @@ nav{
   margin-right: env(safe-area-inset-right); 
   margin-bottom: env(safe-area-inset-bottom);
   margin-left: env(safe-area-inset-left);
+  padding-bottom: 50px;
   ...
   background-attachment: fixed;
   background-image: url("https://shortcutspro.GitHub.io/images/navbar.jpg");
@@ -29,6 +30,7 @@ nav{
   left: 0px;
   max-width: 100%;
   background-size: cover;
+  border-top: 10px solid #000000;
   border-bottom: 10px solid #000000;
 }
 nav a{
