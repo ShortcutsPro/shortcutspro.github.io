@@ -2,7 +2,7 @@
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
     nav{
-      margin-top: 0;
+      padding-top: env(safe-area-inset-top);
       padding-bottom: 85px;
     }
   }
