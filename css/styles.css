@@ -1,19 +1,8 @@
-/*@media screen and (display-mode: standalone) {
+@media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
   }
-  nav{
-        margin-top: env(safe-area-inset-top);
-
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-  }
-  nav .sidenav-trigger{
-    margin-top: env(safe-area-inset-top);
-  }
-}*/
+} 
 
 /* colours */
 :root{
@@ -26,7 +15,6 @@
 nav{
   background: #000000;
   background-color: black;
-  min-height: calc(100% + env(safe-area-inset-top));
   padding-top: env(safe-area-inset-top); 
   padding-right: env(safe-area-inset-right); 
   padding-bottom: env(safe-area-inset-bottom); 
@@ -38,9 +26,8 @@ nav{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 1rem;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  top: 0px;
   max-width: 100%;
   border-bottom: 10px solid var(--secondary);
 }
@@ -52,6 +39,7 @@ nav a span{
   font-weight: bold;
 }
 nav .sidenav-trigger{
+  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
   margin: 0;
 }
 
