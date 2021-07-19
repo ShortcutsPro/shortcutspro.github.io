@@ -1,13 +1,16 @@
 @media screen and (display-mode: standalone) {
   nav{
 /*    min-height: calc(100% + env(safe-area-inset-top));*/
-        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        padding: env(safe-area-inset-top);
           ...
-          margin-top: 11;
+          margin-top: 22;
           background-attachment: fixed;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
+  }
+  nav .sidenav-trigger{
+    padding: env(safe-area-inset-right);
   }
 }
 
