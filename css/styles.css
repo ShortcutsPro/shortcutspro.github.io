@@ -26,7 +26,7 @@
 nav{
   background: #000000;
   background-color: black;
-  background-image: "../images/navbar.jpg";
+  background-image: url("https://shortcutspro.GitHub.io/images/navbar.jpg");
   background-position: center;
   background-size: cover;
   max-width: 100%;
