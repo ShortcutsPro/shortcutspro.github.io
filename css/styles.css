@@ -3,7 +3,7 @@
     min-height: calc(100% + env(safe-area-inset-top));
   }
   nav{
-        padding-top: env(safe-area-inset-top);
+        margin-top: env(safe-area-inset-top);
           ...
           background-attachment: fixed;
           background-position: center;
@@ -11,7 +11,7 @@
           background-size: cover;
   }
   nav .sidenav-trigger{
-    padding-top: env(safe-area-inset-right);
+    margin-top: env(safe-area-inset-top);
   }
 }
 
