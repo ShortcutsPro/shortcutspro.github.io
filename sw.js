@@ -18,6 +18,7 @@ const assets = [
   '/images/icons/',
   '/images/navbar.jpg',
   'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
+  'https://fonts.googleapis.com/icon?family=Material+Icons',
   '/pages/fallback.html'
   '/pages/about.html',
   '/pages/contact.html'
