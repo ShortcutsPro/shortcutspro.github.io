@@ -1,8 +1,8 @@
-/*@media screen and (display-mode: standalone) {
+@media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
   }
-} */
+} 
 
 /* colours */
 :root{
@@ -29,8 +29,9 @@ nav{
   position: fixed;
   top: 0px;
   left: 0px;
+  right: 0px;
   max-width: 100%;
-  border-bottom: 10px solid var(--secondary);
+  border-bottom: 20px solid var(--secondary);
 }
 nav a{
   text-transform: lowercase;
