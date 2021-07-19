@@ -30,8 +30,8 @@ nav{
   left: 0px;
   max-width: 100%;
   background-size: cover;
-  border-top: 10px solid #000000;
-  border-bottom: 10px solid #000000;
+/*  border-top: 10px solid #000000;*/
+/*  border-bottom: 10px solid #000000;*/
 }
 nav a{
   text-transform: lowercase;
