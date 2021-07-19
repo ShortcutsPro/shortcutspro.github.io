@@ -51,7 +51,17 @@
       /*@import "/css/bulma.min.css";*/
       @import "/css/materialize.min.css";
       @import "/css/styles.css";
-      @charset "utf-8"; 
+      @charset "utf-8";
+      html {
+        min-height: calc(100% + env(safe-area-inset-top));
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+/*          ...
+          background-attachment: fixed;
+          /*background-image: url('/images/navbar.jpg');*/
+/*          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;*/*/
+      }
       /*html { font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif; }     
       body, .title { margin: 0; padding: 0; background: white; font-family: system-ui; color: black }
       @media (prefers-color-scheme: dark) {
@@ -77,7 +87,7 @@
   <body class="grey lighten-4">
     
 <!-- top nav -->
-    <nav class="fixed z-depth-0">
+    <nav class="z-depth-0">
       <div class="nav-wrapper container">
         <a href="https://bustl.io">bustl.<span>•io</span></a>
         <span class="right grey-text text-lighten-2">

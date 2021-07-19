@@ -1,9 +1,9 @@
-@media screen and (display-mode: standalone) {
+/*@media screen and (display-mode: standalone) {
   nav {
     height: 88px !important;
-    margin-top: 44;
+    margin-top: 88;
   }
-}
+}*/
 
 /* colours */
 :root{
@@ -14,10 +14,11 @@
 
 /* layout styles */
 nav{
-  margin-top: 22;
-  background: #000000;
-  background-color: black;
+/*  background: #000000;*/
+/*  background-color: black;*/
   background-image: url('/images/navbar.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   max-width: 100%;
