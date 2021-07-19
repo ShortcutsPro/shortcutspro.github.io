@@ -4,7 +4,7 @@
   }
   nav{
         margin-top: env(safe-area-inset-top);
-          ...
+
           background-attachment: fixed;
           background-position: center;
           background-repeat: no-repeat;
