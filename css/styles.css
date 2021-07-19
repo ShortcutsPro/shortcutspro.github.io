@@ -1,17 +1,18 @@
 @media screen and (display-mode: standalone) {
+  html { 
+    min-height: calc(100% + env(safe-area-inset-top));
+    background-attachment: fixed;
+  }
   nav{
-/*    min-height: calc(100% + env(safe-area-inset-top));*/
-        padding: env(safe-area-inset-top);
+        padding-top: env(safe-area-inset-top);
           ...
-          margin-top: 22;
           background-attachment: fixed;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
   }
   nav .sidenav-trigger{
-    padding: env(safe-area-inset-right);
-    margin-top: 22;
+    padding-top: env(safe-area-inset-right);
   }
 }
 
@@ -27,7 +28,6 @@ nav{
   background: #000000;
   background-color: black;
   background-image: url("/images/navbar.jpg");
-  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   max-width: 100%;
