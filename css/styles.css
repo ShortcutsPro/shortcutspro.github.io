@@ -1,6 +1,7 @@
 @media screen and (display-mode: standalone) {
   nav {
     height: 88px !important;
+    margin-top: 22;
   }
 }
 
