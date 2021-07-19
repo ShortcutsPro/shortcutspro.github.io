@@ -1,6 +1,8 @@
-// add new shortcut
+// get document elements
 const form = document.querySelector('form');
 const ADD = document.querySelector('button');
+
+// add a shortcut
 ADD.addEventListener('click', async () => {
 
   const READ = await navigator.clipboard.readText();

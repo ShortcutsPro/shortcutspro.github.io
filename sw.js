@@ -13,11 +13,11 @@ const assets = [
   '/js/pwacompat.min.js',
   '/css/styles.css',
   '/css/materialize.min.css',
+  '/css/material.icons.css',
   '/images/',
   '/images/icons/',
   '/images/navbar.jpg',
-  '/https://fonts.googleapis.com/icon?family=Material+Icons',
-  '/https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
+  '/css/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
   '/pages/fallback.html'
   '/pages/about.html',
   '/pages/contact.html'

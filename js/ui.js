@@ -1,3 +1,4 @@
+// get document elements 
 const shortcuts = document.querySelector('.shortcuts');
 
 document.addEventListener('DOMContentLoaded', function() {
