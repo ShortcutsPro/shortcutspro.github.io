@@ -17,7 +17,7 @@ const assets = [
   '/images/',
   '/images/icons/',
   '/images/navbar.jpg',
-  '/css/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
+  'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
   '/pages/fallback.html'
   '/pages/about.html',
   '/pages/contact.html'
