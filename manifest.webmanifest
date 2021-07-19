@@ -1,6 +1,7 @@
 {
   "name": "Bustl.Cutz",
   "short_name": "Bustl.",
+  “description”: “Shortcut launcher for Bustl.•io”,
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
