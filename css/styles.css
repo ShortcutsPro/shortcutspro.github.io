@@ -14,8 +14,8 @@
 
 /* layout styles */
 nav{
-/*  background: #000000;
-  background-color: black;*/
+  background: #000000;
+  background-color: black;
   background-image: url('/images/navbar.jpg');
 /*  background-attachment: fixed;*/
   background-repeat: no-repeat;
