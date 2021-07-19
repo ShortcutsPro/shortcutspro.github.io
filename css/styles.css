@@ -1,5 +1,5 @@
 @media screen and (display-mode: standalone) {
-  header {
+  nav {
     height: 88px !important;
   }
 }
@@ -13,6 +13,7 @@
 
 /* layout styles */
 nav{
+  margin-top: 11;
   background: #000000;
   background-color: black;
   background-image: url('/images/navbar.jpg');
