@@ -13,10 +13,6 @@
 
 /* layout styles */
 
-pageBody {
-  margin-top: 50px;
-}
-
 nav{
   background: #000000;
   background-color: black;
@@ -50,7 +46,7 @@ nav .sidenav-trigger{
 
 /* shortcut styles */
 .shortcuts{
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 .card-panel.shortcut{
   border-radius: 8px;
