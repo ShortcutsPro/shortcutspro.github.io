@@ -17,9 +17,9 @@ nav{
   background: #000000;
   background-color: black;
   padding-top: env(safe-area-inset-top); 
-/*  padding-right: env(safe-area-inset-right); 
-  padding-bottom: env(safe-area-inset-bottom); 
-  padding-left: env(safe-area-inset-left);*/
+  margin-right: env(safe-area-inset-right); 
+/*  padding-bottom: env(safe-area-inset-bottom); */
+  margin-left: env(safe-area-inset-left);
   ...
   background-attachment: fixed;
   background-image: url("https://shortcutspro.GitHub.io/images/navbar.jpg");
@@ -39,14 +39,14 @@ nav a span{
   font-weight: bold;
 }
 nav .sidenav-trigger{
-/*  padding-top: env(safe-area-inset-top);
-  padding-right: env(safe-area-inset-right);*/
+  margin-top: env(safe-area-inset-top);
+/*  padding-right: env(safe-area-inset-right);*/
   margin: 0;
 }
 
 /* shortcut styles */
 .shortcuts{
-  margin-top: 6rem;
+  margin-top: 20px;
 }
 .card-panel.shortcut{
   border-radius: 8px;
