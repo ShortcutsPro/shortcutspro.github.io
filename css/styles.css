@@ -111,7 +111,7 @@ form .input-field{
     min-height: calc(100% + env(safe-area-inset-top));
   }
   nav {
-    margin-top: env(safe-area-inset-top);
+    margin-top: 0;
     padding-top: env(safe-area-inset-top);
   }
   body {
