@@ -24,7 +24,7 @@ nav{
   background-attachment: fixed;
   background-image: url("https://shortcutspro.GitHub.io/images/navbar.jpg");
   background-position: center;
-  background-repeat: no-repeat;
+/*  background-repeat: no-repeat;*/
   background-size: cover;
   position: fixed;
   top: 0px;
