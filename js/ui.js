@@ -37,3 +37,4 @@ const removeShortcut = (id) => {
   const shortcut = document.querySelector(`.shortcut[data-id=${id}]`);
   shortcut.remove();
 };
+
