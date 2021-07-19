@@ -1,16 +1,3 @@
-@media screen and (display-mode: standalone) {
-  html { 
-    min-height: calc(100% + env(safe-area-inset-top));
-    nav{
-      margin-top: env(safe-area-inset-top);
-      padding-top: env(safe-area-inset-top);
-    }
-    body{
-      margin-top: 150px;
-    }
-  }
-} 
-
 /* colours */
 :root{
   --primary: #000000;
@@ -118,3 +105,16 @@ form .input-field{
   visibility: hidden;
   margin-top: 30px;
 }
+
+@media screen and (display-mode: standalone) {
+  html { 
+    min-height: calc(100% + env(safe-area-inset-top));
+  }
+  nav {
+    margin-top: env(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+  body {
+    margin-top: 150px;
+  }
+} 
