@@ -13,8 +13,8 @@
 
 /* layout styles */
 
-body{
-  margin-top: 5rem;
+pageBody {
+  margin-top: 50px;
 }
 
 nav{
