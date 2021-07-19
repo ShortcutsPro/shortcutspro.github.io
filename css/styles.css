@@ -39,7 +39,8 @@ nav a span{
   font-weight: bold;
 }
 nav .sidenav-trigger{
-  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
   margin: 0;
 }
 
