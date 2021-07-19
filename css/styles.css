@@ -47,8 +47,8 @@ nav a span{
 }
 nav .sidenav-trigger{
   margin: 0;
-  margin-top: env(safe-area-inset-top);
-  margin-right: env(safe-area-inset-right);
+/*  margin-top: env(safe-area-inset-top);
+  margin-right: env(safe-area-inset-right);*/
 }
 
 /* shortcut styles */
