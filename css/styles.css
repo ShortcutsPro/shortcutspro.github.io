@@ -16,9 +16,9 @@
 nav{
   background: #000000;
   background-color: black;
-  padding-top: env(safe-area-inset-top); 
+  margin-top: env(safe-area-inset-top); 
   margin-right: env(safe-area-inset-right); 
-/*  padding-bottom: env(safe-area-inset-bottom); */
+  margin-bottom: env(safe-area-inset-bottom);
   margin-left: env(safe-area-inset-left);
   ...
   background-attachment: fixed;
@@ -40,7 +40,7 @@ nav a span{
 }
 nav .sidenav-trigger{
   margin-top: env(safe-area-inset-top);
-/*  padding-right: env(safe-area-inset-right);*/
+  margin-right: env(safe-area-inset-right);
   margin: 0;
 }
 
