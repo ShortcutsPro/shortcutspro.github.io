@@ -29,9 +29,8 @@ nav{
   position: fixed;
   top: 0px;
   left: 0px;
-  right: 0px;
   max-width: 100%;
-  border-bottom: 0px solid var(--secondary);
+  border-bottom: 10px solid #000000;
 }
 nav a{
   text-transform: lowercase;
