@@ -14,7 +14,7 @@ body{
 nav{
   background: #000000;
   background-color: black;
-  margin-top: env(safe-area-inset-top); 
+/*  margin-top: env(safe-area-inset-top); */
   padding-top: env(safe-area-inset-top); 
 /*  margin-right: env(safe-area-inset-right); 
   margin-bottom: env(safe-area-inset-bottom);
