@@ -2,8 +2,8 @@
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
     nav{
+      margin-top: 0;
       padding-top: env(safe-area-inset-top);
-      margin-bottom: 85px;
     }
   }
 } 
@@ -22,9 +22,9 @@ nav{
   background-color: black;
   margin-top: env(safe-area-inset-top); 
   padding-top: env(safe-area-inset-top); 
-  margin-right: env(safe-area-inset-right); 
+/*  margin-right: env(safe-area-inset-right); 
   margin-bottom: env(safe-area-inset-bottom);
-  margin-left: env(safe-area-inset-left);
+  margin-left: env(safe-area-inset-left);*/
   padding-bottom: 60px;
   ...
   background-attachment: fixed;
