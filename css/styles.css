@@ -1,4 +1,4 @@
-@media screen and (display-mode: standalone) {
+/*@media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
   }
@@ -13,7 +13,7 @@
   nav .sidenav-trigger{
     margin-top: env(safe-area-inset-top);
   }
-}
+}*/
 
 /* colours */
 :root{
@@ -26,9 +26,18 @@
 nav{
   background: #000000;
   background-color: black;
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top); 
+  padding-right: env(safe-area-inset-right); 
+  padding-bottom: env(safe-area-inset-bottom); 
+  padding-left: env(safe-area-inset-left);
+  ...
+  background-attachment: fixed;
   background-image: url("https://shortcutspro.GitHub.io/images/navbar.jpg");
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   max-width: 100%;
   border-bottom: 10px solid var(--secondary);
 }
