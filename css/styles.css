@@ -1,3 +1,9 @@
+@media screen and (display-mode: standalone) {
+  header {
+    height: 88px !important;
+  }
+}
+
 /* colours */
 :root{
   --primary: #000000;
