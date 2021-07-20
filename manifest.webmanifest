@@ -7,7 +7,7 @@
     },
     {
       “src” : “/images/icons/apple-touch-icon-96x96.png”,
-      “type” : “image\/png”,
+      “type” : “image/png”,
       “sizes” : “96x96”
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       “src” : “/images/icons/apple-touch-icon-152x152.png”,
-      “type” : “image\/png”,
+      “type” : “image/png”,
       “sizes” : “152x152”
     },
     {
