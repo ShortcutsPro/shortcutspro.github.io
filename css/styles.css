@@ -18,7 +18,7 @@
 /* layout styles */
 
 nav{
-  background: #000000;
+  background: #ffffff;
   background-color: var(--primary);
   padding-top: env(safe-area-inset-top); 
   padding-bottom: 1ex;
