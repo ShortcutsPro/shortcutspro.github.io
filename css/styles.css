@@ -21,10 +21,6 @@ body{
   margin-top: 0;
 }
 
-container{
-  margin-top: 5em;
-}
-
 /* layout styles */
 
 nav{
@@ -97,6 +93,10 @@ nav .sidenav-trigger{
 .shortcut-input{
   font-size: 1rem;
   color: #828B94;
+}
+
+.info{
+  margin-top: 20%;
 }
 
 /* form-styles */
