@@ -1,7 +1,7 @@
 /* colours */
 :root{
   --primary: #000000;
-  --secondary: #000110;
+  --secondary: #3a3a3a;
   --title: #000000;
 }
 
@@ -15,17 +15,21 @@
       }
     }
   }
-
+}
 
 body{
   margin-top: 0;
+}
+
+container{
+  margin-top: 5em;
 }
 
 /* layout styles */
 
 nav{
   background: #000000;
-  background-color: black;
+  background-color: var(--primary);
   padding-top: env(safe-area-inset-top); 
   padding-bottom: auto;
   ...
@@ -37,8 +41,7 @@ nav{
   max-width: 100%;
   background-size: cover;
   position: fixed;
-/*  border-top: 10px solid #000000;*/
-  border-bottom: 1ex solid #3a3a3a;
+  border-bottom: 1ex solid var(--secondary);
 }
 nav a{
   text-transform: lowercase;
