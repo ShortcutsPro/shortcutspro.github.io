@@ -10,7 +10,7 @@
     min-height: calc(100% + env(safe-area-inset-top));
   }
   nav {
-    padding-top: env(safe-area-inset-top);
+    margin-top: env(safe-area-inset-top);
   }
 }
 
