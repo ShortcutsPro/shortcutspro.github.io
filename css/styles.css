@@ -10,7 +10,7 @@
     min-height: calc(100% + env(safe-area-inset-top));
   }
   nav {
-    margin-top: env(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
   }
 }
 
@@ -18,8 +18,8 @@
 /* layout styles */
 
 nav{
-  background: #ffffff;
-  background-color: white;
+  background: #000000;
+  background-color: black;
   padding-top: env(safe-area-inset-top); 
   padding-bottom: 1ex;
   ...
