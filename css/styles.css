@@ -82,6 +82,7 @@ nav .sidenav-trigger{
 }
 .shortcut-name{
   font-weight: bold;
+  text-align: left;
   color: black;
 }
 .shortcut-input{
