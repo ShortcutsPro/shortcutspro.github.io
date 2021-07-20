@@ -5,11 +5,15 @@
   --title: #000000;
 }
 
+body{
+  margin-top: 0;
+}
+
 @media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
     body {
-      margin-top: env(safe-area-inset-top);
+      padding-top: env(safe-area-inset-top);
       nav {
         padding-top: env(safe-area-inset-top);
       }
@@ -17,9 +21,6 @@
   }
 }
 
-body{
-  margin-top: 0;
-}
 
 /* layout styles */
 
