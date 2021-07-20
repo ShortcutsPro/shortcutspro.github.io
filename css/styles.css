@@ -12,12 +12,9 @@
 @media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
-    body {
-      padding-top: env(safe-area-inset-top);
-      nav {
-        padding-top: env(safe-area-inset-top);
-      }
-    }
+  }
+  nav {
+    padding-top: env(safe-area-inset-top);
   }
 }
 
