@@ -3,10 +3,19 @@
   "short_name": "Bustl.",
   "description": "Shortcut launcher for Bustl.•io",
   "start_url": "index.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "portrait",
+  “related_applications”: [
+    {
+    “platform”: “itunes”,
+    “url”: “https://shortcutspro.github.io”,
+    “id”: “com.shortcutspro.bustl-cuts”
+    }
+  ],
+  "prefer_related_applications": pTrue,
   "icons": [
     {
       "src": "/images/icons/apple-touch-icon-72x72.png",
