@@ -2,10 +2,10 @@ const staticCacheName = 'site-static-v2';
 const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
   '/',
-  '/index.html',
-  '/404.html',
-  '/manifest.webmanifest',
-  '/apple-touch-icon.png',
+  'index.html',
+  '404.html',
+  'manifest.webmanifest',
+  'apple-touch-icon.png',
   '/js/db.js',
   '/js/app.js',
   '/js/ui.js',
