@@ -5,8 +5,20 @@
   --title: #000000;
 }
 
+@media screen and (display-mode: standalone) {
+  html { 
+    min-height: calc(100% + env(safe-area-inset-top));
+    body {
+      margin-top: 0;
+      nav {
+        padding-top: env(safe-area-inset-top);
+      }
+    }
+  }
+
+
 body{
-  margin-top: 91px;
+  margin-top: 0;
 }
 
 /* layout styles */
@@ -14,23 +26,19 @@ body{
 nav{
   background: #000000;
   background-color: black;
-/*  margin-top: env(safe-area-inset-top); */
   padding-top: env(safe-area-inset-top); 
-/*  margin-right: env(safe-area-inset-right); 
-  margin-bottom: env(safe-area-inset-bottom);
-  margin-left: env(safe-area-inset-left);*/
-  padding-bottom: 60px;
+  padding-bottom: auto;
   ...
   background-attachment: fixed;
   background-image: url("https://shortcutspro.GitHub.io/images/navbar.jpg");
   background-position: center;
-  position: fixed;
   top: 0px;
   left: 0px;
   max-width: 100%;
   background-size: cover;
+  position: fixed;
 /*  border-top: 10px solid #000000;*/
-/*  border-bottom: 10px solid #000000;*/
+  border-bottom: 1ex solid #3a3a3a;
 }
 nav a{
   text-transform: lowercase;
@@ -47,7 +55,7 @@ nav .sidenav-trigger{
 
 /* shortcut styles */
 .shortcuts{
-  margin-top: 20px;
+  margin-top: 5rem;
 }
 .card-panel.shortcut{
   border-radius: 8px;
@@ -58,10 +66,10 @@ nav .sidenav-trigger{
   grid-template-areas: "image details delete";
   position: relative;
 }
-/*.shortcut {
+.shortcut {
   text-align: center;
   align-content: center;
-}*/
+}
 .shortcut img{
   grid-area: image;
   max-width: 60px;
@@ -103,18 +111,6 @@ input{
 }
 form .input-field{
   visibility: hidden;
-  margin-top: 30px;
+/*  margin-top: 30px; */
 }
 
-@media screen and (display-mode: standalone) {
-  html { 
-    min-height: calc(100% + env(safe-area-inset-top));
-  }
-  nav {
-    margin-top: 0;
-    padding-top: env(safe-area-inset-top);
-  }
-  body {
-    margin-top: 150px;
-  }
-} 
