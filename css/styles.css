@@ -42,13 +42,12 @@ nav a span{
 }
 nav .sidenav-trigger{
   margin: 0;
-/*  margin-top: env(safe-area-inset-top);
-  margin-right: env(safe-area-inset-right);*/
+  padding-top: env(safe-area-inset-top);
 }
 
 /* shortcut styles */
 .shortcuts{
-  margin-top: 5ex;
+  margin-top: 3ex;
 }
 .card-panel.shortcut{
   border-radius: 8px;
