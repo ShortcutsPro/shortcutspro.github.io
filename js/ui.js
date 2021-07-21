@@ -5,10 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // nav menu
   const menus = document.querySelectorAll('.side-menu');
   M.Sidenav.init(menus, {edge: 'right'});
-  
+});
   // const source = document.querySelectorAll('.side-form');
   // M.Sidenav.init(menus, {edge: 'left'});
-});
 
 // render shortcut data
 if (localStorage.length > 0) {
