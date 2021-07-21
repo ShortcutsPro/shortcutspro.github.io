@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const menus = document.querySelectorAll('.side-menu');
   M.Sidenav.init(menus, {edge: 'right'});
   
-  const source = document.querySelectorAll('.side-source');
-  M.Sidenav.init(menus, {edge: 'left'});
+  // const source = document.querySelectorAll('.side-source');
+  // M.Sidenav.init(menus, {edge: 'left'});
 });
 
 // render shortcut data
@@ -23,7 +23,7 @@ if (localStorage.length > 0) {
         <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${dict}">
           <div class="shortcut-details">
             <div class="shortcut-name">${data.name}</div>
-            <div class="shortcut-input">${data.input}</div>
+            <div class="shortcut-descriprion">${data.description}</div>
           </div>
         </a>
         <div class="shortcut-delete">

@@ -3,45 +3,44 @@
   --primary: #000000;
   --secondary: #3a3a3a;
   --title: #000000;
-}
+}}
 
 @media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
   }
-  nav .nav-wrapper{
-    background-color: black;
-    padding-top: env(safe-area-inset-top);
-  }
 }
-
 
 /* layout styles */
-
-nav{
-  background: black;
-  background-color: black;
-  padding-bottom: 1ex;
-  ...
-  background-attachment: fixed;
-  background-image: url("../images/navbar.jpg");
-  background-position: center;
+nav {
   top: 0px;
-  left: 0px;
-  max-width: 100%;
+  margin-top: 0;
+  background-color: black;
+  padding-top: env(safe-area-inset-top);
   background-size: cover;
   position: fixed;
+  text-align: center;
+  max-width: 100%;
   border-bottom: 1ex solid var(--secondary);
 }
-nav a{
+  
+nav a {
   text-transform: lowercase;
-  color: gray);
+  color: gray;
 }
-nav a span{
+
+nav a .bold {
   font-weight: bold;
 }
+
+nav .bustl {
+  font-family: "Space Age";
+  font-size: 32px;
+  color: #2073DE;
+}
+
 nav .sidenav-trigger{
-  margin: 0;
+  margin-top: 0;
   padding-top: env(safe-area-inset-top);
 }
 
@@ -84,7 +83,7 @@ nav .sidenav-trigger{
   text-align: left;
   color: black;
 }
-.shortcut-input{
+.shortcut-description{
   font-size: 1rem;
   color: #828B94;
 }
@@ -100,18 +99,18 @@ data-input {
 }
 
 .add-btn {
-  background: var(--title) !important;
+  margin-top: 1ex;
+  background-color: #2073DE;
 }
 input {
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
 .side-form button {
-  visibility: visible;
-  background: var(--title);
+  visibility: hidden;
+/*  background: var(--title);*/
   box-shadow: 1px 1px 3px rgba(90,90,90,0.2);
 }
 form .input-field {
   visibility: hidden;
 }
-

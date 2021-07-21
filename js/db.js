@@ -23,7 +23,7 @@ ADD.addEventListener('click', async () => {
 const shortcutContainer = document.querySelector('.shortcuts');
 shortcutContainer.addEventListener('click', e => {
     const id = e.target.getAttribute('data-id');
-    console.log('clicked');
+    console.log('remove clicked');
     localStorage.removeItem(id);
     location.reload();
 });
