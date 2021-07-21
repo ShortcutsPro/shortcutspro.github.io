@@ -65,7 +65,7 @@ nav .sidenav-trigger{
 }
 .shortcut img{
   grid-area: image;
-  max-width: 90%;
+  max-width: 50%;
 }
 .shortcut-details{
   grid-area: details;
