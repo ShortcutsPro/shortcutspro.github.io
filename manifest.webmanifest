@@ -55,5 +55,5 @@
   "description" : "Shortcut launcher for Bustl.•io",
   "orientation" : "portrait",
   "name" : "Bustl.Cutz",
-  "start_url" : "index.html"
+  "start_url" : "/"
 }

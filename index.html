@@ -7,8 +7,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Bustl." />
@@ -21,15 +21,15 @@
     <link rel="manifest" href="manifest.webmanifest" type="application/manifest+json" />
     <link rel="icon" href="apple-touch-icon.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" type="image/png" sizes="512x512" />
-    <link rel="stylesheet" href="/css/materialize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="/css/styles.css" type="text/css" />
     <style>
-      @import "/css/materialize.min.css";
-      @import "/css/styles.css";
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css");
+      @import url("https:shortcutspro.github.io/css/styles.css");
       @charset "utf-8";
-      /*html { font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif; }     
-      body, .title { margin: 0; padding: 0; background: white; font-family: system-ui; color: black }
+      html { background-color: white; font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif, Material+Icons; }     
+      body, .title { margin: 0; padding: 0; background: black; background-color: black; font-family: Material+Icons; color: white }
       @media (prefers-color-scheme: dark) {
         body, .title { background-color: #333333; color: #ffffff }
       }
@@ -37,7 +37,7 @@
       @media (min-device-width: 481px) { 
          body { margin: auto; max-width: 600px; }
       }
-      img { max-width: 100%; }*/
+      img { max-width: 100%; }
       
 /* debug.css | MIT License | zaydek.github.com/debug.css *
       :not(path):not(g) {
@@ -47,10 +47,9 @@
       	box-shadow: none !important;
       }  */
     </style>
-    <script type="text/javascript" src="/js/materialize.min.js"></script>
-    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
-  <body class="grey lighten-4">
+  <body class="body grey lighten-4">
     
 <!-- top nav -->
     <nav class="z-depth-0">
@@ -65,10 +64,10 @@
 <!-- side nav -->
     <ul id="side-menu" class="sidenav side-menu">
       <li><a class="subheader">Bustl.Cutz</a></li>
-      <li><a href="index.html" class="waves-effect">Home</a></li>
-      <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+      <li><a href="https:shortcutspro.github.io/index.html" class="waves-effect">Home</a></li>
+      <li><a href="https:shortcutspro.github.io/pages/about.html" class="waves-effect">About</a></li>
       <li><div class="divider"></div></li>
-      <li><a href="/pages/contact.html" class="waves-effect">
+      <li><a href="https:shortcutspro.github.io/pages/contact.html" class="waves-effect">
         <i class="material-icons">mail_outline</i>Contact</a>
       </li>
     </ul>
@@ -78,36 +77,27 @@
       
     </div>
   
-    <div class="center">
-      <button class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form" id="button">
+    <div class="center button">
+      <button class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-source" id="button" onclick="window.open(`shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20To%20App`);">
         <i class="material-icons">add</i>
       </button>
     </div>
   
-<!-- add shortcut side nav -->
-    <ul id="side-form" class="sidenav side-form">
-      <form class="add-shortcut container section">
-        <h6 >New Shortcut</h6>
-        <div class="divider"></div>
+<!-- add shortcut input fields -->
+      <form class="add-shortcut">
         <div class="input-field">
-          <input placeholder="e.g. Frame Photos" id="name" type="text" class="validate">
-          <label for="name">Shortcut Name</label>
+          <input id="name" type="text" class="validate">
         </div>
         <div class="input-field">
-          <input placeholder="" id="input" type="text" class="validate">
-          <label for="input">Input text</label>
+          <input id="input" type="text" class="validate">
         </div>
         <div class="input-field">
-          <input placeholder="" id="icon" type="text" class="validate">
-          <label for="icon">Icon data/url</label>
-        </div>
-        <div class="input-field center">
-          <button class="btn-small">Add</button>
+          <input id="icon" type="text" class="validate">
         </div>
       </form>
-    </ul>
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/db.js"></script>
     <script type="text/javascript" src="/js/ui.js"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
   </body>
 </html>

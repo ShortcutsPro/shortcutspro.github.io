@@ -9,7 +9,8 @@
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
   }
-  nav {
+  nav .nav-wrapper{
+    background-color: black;
     padding-top: env(safe-area-inset-top);
   }
 }
@@ -18,9 +19,8 @@
 /* layout styles */
 
 nav{
-  background: #000000;
+  background: black;
   background-color: black;
-  padding-top: env(safe-area-inset-top); 
   padding-bottom: 1ex;
   ...
   background-attachment: fixed;
@@ -64,7 +64,7 @@ nav .sidenav-trigger{
 }
 .shortcut img{
   grid-area: image;
-  max-width: 60px;
+  max-width: 15%;
 }
 .shortcut-details{
   grid-area: details;
@@ -90,24 +90,28 @@ nav .sidenav-trigger{
 }
 
 .info{
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 /* form-styles */
-.add-btn{
+
+data-input {
+  visibility: hidden;
+}
+
+.add-btn {
   background: var(--title) !important;
 }
-input{
+input {
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
-.side-form button{
+.side-source button {
   visibility: visible;
   background: var(--title);
   box-shadow: 1px 1px 3px rgba(90,90,90,0.2);
 }
-form .input-field{
+form .input-field {
   visibility: hidden;
-/*  margin-top: 30px; */
 }
 
