@@ -24,7 +24,7 @@ nav{
   padding-bottom: 1ex;
   ...
   background-attachment: fixed;
-  background-image: url("https://shortcutspro.GitHub.io/images/navbar.jpg");
+  background-image: url("../images/navbar.jpg");
   background-position: center;
   top: 0px;
   left: 0px;
@@ -90,7 +90,7 @@ nav .sidenav-trigger{
 }
 
 .info{
-  margin-top: 10%;
+  margin-top: 15%;
 }
 
 /* form-styles */
