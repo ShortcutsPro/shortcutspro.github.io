@@ -1,4 +1,4 @@
-<!-- Bustl.Cutz Oops -->
+<!-- Bustl.Cutz 404 -->
 <!---->
 <!-- INTEGRITY Framework | https://github.com/scottdwr -->
 <!-- Bustl.®︎™︎ is a trademark of Simpl System, llc.-->
@@ -7,52 +7,79 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Bustl." />
     <meta name="og:title" content="Bustl.Cutz" />
-    <meta name="og:image" content="../images/apple-rich-link-image.jpeg" type="image/jpeg" />
-    <meta name="og:video" content="../images/apple-rich-link-video.mp4" type="video/mp4" />
+    <meta name="og:image" content="/images/apple-rich-link-image.jpeg" type="image/jpeg" />
+    <meta name="og:video" content="/images/apple-rich-link-video.mp4" type="video/mp4" />
+<!--     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
     <meta name="theme-color" content="black" />
-    <title>Oops</title>
+    <title>Bustl.Cutz</title>
 <!-- ios support -->
-    <link rel="manifest" href="../manifest.webmanifest" type="application/manifest+json"/>
-    <link rel="icon" href="../apple-touch-icon.png" type="image/png" sizes="512x512" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" type="image/png" sizes="512x512" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/" type="text/css" />
+    <link rel="manifest" href="manifest.webmanifest" type="application/manifest+json" />
+    <link rel="icon" href="apple-touch-icon.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" type="image/png" sizes="512x512" />
+    <link rel="stylesheet" href="/css/materialize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://shortcutspro.GitHub.io/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts/space_age.ttf" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
     <style>
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css");
-      @import url("https://shortcutspro.GitHub.io/css/styles.css");
+      @import "/css/materialize.min.css";
+      @import "/fonts/space_age.ttf";
       @charset "utf-8";
+      @font-face { 
+        font-family: 'Space Age'; 
+        src: url("/fonts/space_age.ttf"); 
+      }
+      html { background-color: white; font-size: 100%; font-family: 'Material Icons', 'Space Age'; color: black; }
+      body, .title { margin: 0; padding: 0; background-color: white; }
+      @media (max-device-width: 480px) { 
+        body { margin: auto; max-width: 100%; }
+      }
+      @media (min-device-width: 481px) { 
+         body { margin: auto; max-width: 600px; }
+      }
+      img { max-width: 90%; }
+      @import "/css/styles.css";
+      
+/* debug.css | MIT License | zaydek.github.com/debug.css *
+      :not(path):not(g) {
+      	color:                    hsla(210, 100%, 100%, 0.9) !important;
+      	background:               hsla(210, 100%,  50%, 0.5) !important;
+      	outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+      	box-shadow: none !important;
+      }  */
     </style>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
   </head>
-  <body class="body grey lighten-4">
-
-  <!-- top nav -->
-  <nav class="z-depth-0">
-    <div class="nav-wrapper container">
-      <a href="../index.html">Bustl.<span>•io</span></a>
-      <span class="right grey-text text-darken-1">
-        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-      </span>
-    </div>
-  </nav>
-
-  <!-- side nav -->
-  <ul id="side-menu" class="sidenav side-menu">
-    <li><a class="subheader">Bustl.Cutz</a></li>
-    <li><a href="../index.html" class="waves-effect">Home</a></li>
-    <li><a href="about.html" class="waves-effect">About</a></li>
-    <li><div class="divider"></div></li>
-    <li><a href="contact.html" class="waves-effect">
-      <i class="material-icons">mail_outline</i>Contact</a>
-    </li>
-  </ul>
+  <body>
+    
+<!-- top nav -->
+    <nav class="z-depth-0" style="background: black;">
+      <div class="nav-wrapper container">
+        <a class="left" href="https://bustl.io">bustl.<span class="bold">•io</span></a>
+        <span class="center bustl">BUSTL.</span>
+        <span class="right grey-text text-lighten-2">
+          <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+        </span>
+      </div>
+    </nav>
+    
+<!-- side nav -->
+    <ul id="side-menu" class="sidenav side-menu">
+      <li><a class="subheader">Bustl.Cutz</a></li>
+      <li><a href="index.html" class="waves-effect">
+        <i class="material-icons">menu_open</i>Home</a></li>
+      <li><a href="/pages/about.html" class="waves-effect">
+        <i class="material-icons">info</i>About</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="/pages/contact.html" class="waves-effect">
+        <i class="material-icons">email</i>Contact</a>
+      </li>
+    </ul>
   
   <!-- content -->
   <div class="container info grey-text center">

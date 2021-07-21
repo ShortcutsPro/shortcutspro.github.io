@@ -34,26 +34,15 @@
         font-family: 'Space Age'; 
         src: url("/fonts/space_age.ttf"); 
       }
-      html { 
-        background-color: white; font-size: 100%; 
-        font-family: Helvetica, Arial, Freesans, clean, sans-serif, 'Material Icons', 'Space Age';
-        color: black;
-      }
-      body, .title { 
-        margin: 0; padding: 0; background-color: white; 
-        font-family: Helvetica, Arial, Freesans, clean, sans-serif, 'Material Icons', 'Space Age'; 
-        color: black;
-      }
-      @media (prefers-color-scheme: dark) {
-        body, .title { background-color: #333333; color: white; }
-      }
+      html { background-color: white; font-size: 100%; font-family: 'Material Icons', 'Space Age'; color: black; }
+      body, .title { margin: 0; padding: 0; background-color: white; }
       @media (max-device-width: 480px) { 
-        body { margin: 0; max-width: 100%; }
+        body { margin: auto; max-width: 100%; }
       }
       @media (min-device-width: 481px) { 
          body { margin: auto; max-width: 600px; }
       }
-      img { max-width: 100%; }
+      img { max-width: 90%; }
       @import "/css/styles.css";
       
 /* debug.css | MIT License | zaydek.github.com/debug.css *
@@ -98,14 +87,14 @@
     </div>
   
     <div class="center button">
-      <a href="window.open(`shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App`);">
+      <a href="window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App');">
       <button class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form" id="button" style="background: #2073DE;" />
         <i class="material-icons">add</i>
       </button></a>
     </div>
   
 <!-- add shortcut input fields -->
-    <ul id="side-form" class="sidenav side-form">
+<!--     <ul id="side-form" class="sidenav side-form">
       <form class="add-shortcut side-form">
         <div class="input-field">
           <input id="name" type="text" class="validate">
@@ -123,7 +112,7 @@
           <input type="submit" name="submit" />
         </div>
       </form>
-    </ul>
+    </ul> -->
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/db.js"></script>
     <script type="text/javascript" src="/js/ui.js"></script>
