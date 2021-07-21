@@ -13,12 +13,13 @@
 
 /* layout styles */
 nav {
-  top: 0px;
   margin-top: 0;
   background-color: black;
   padding-top: env(safe-area-inset-top);
   background-size: cover;
   position: fixed;
+  top: 0px;
+  left: 0px;
   text-align: center;
   max-width: 100%;
   border-bottom: 1ex solid var(--secondary);
@@ -100,15 +101,15 @@ data-input {
 
 .add-btn {
   margin-top: 1ex;
-  background-color: #2073DE;
+  background: #2073DE;
 }
 input {
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
 .side-form button {
-  visibility: hidden;
-/*  background: var(--title);*/
+  visibility: visible;
+  background-color: #2073DE;
   box-shadow: 1px 1px 3px rgba(90,90,90,0.2);
 }
 form .input-field {
