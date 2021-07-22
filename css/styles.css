@@ -16,7 +16,7 @@
 
 /* layout styles */
 nav {
-/*  margin-top: env(safe-area-inset-top);*/
+  margin-top: env(safe-area-inset-top);
   background-color: black;
 /*  padding-top: env(safe-area-inset-top);*/
   background-size: cover;
@@ -55,7 +55,7 @@ body {
 
 /* shortcut styles */
 .shortcuts{
-  padding-top: 0;
+  padding-top: 30px;
 }
 .card-panel.shortcut{
   border-radius: 8px;
