@@ -49,13 +49,13 @@ nav .sidenav-trigger{
 }
 
 body {
-  margin-top: auto;
+  margin-top: 0;
 }
 
 
 /* shortcut styles */
 .shortcuts{
-  margin-top: 30px;
+  padding-top: 50px;
 }
 .card-panel.shortcut{
   border-radius: 8px;
