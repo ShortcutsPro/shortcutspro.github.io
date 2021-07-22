@@ -55,7 +55,7 @@ body {
 
 /* shortcut styles */
 .shortcuts{
-  padding-top: 30px;
+  padding-top: 0;
 }
 .card-panel.shortcut{
   border-radius: 8px;
@@ -107,6 +107,7 @@ body {
 /* form-styles */
 
 .add-btn {
+  margin-top: 20px;
   background: #2073DE;
 }
 input {
