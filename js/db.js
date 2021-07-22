@@ -8,14 +8,12 @@ ADD.addEventListener('click', async () => {
   
   const READ = await navigator.clipboard.readText();
 
-  if (READ) {
-    ADD = JSON.parse(READ);
-    console.log(ADD.name);
+  var ADD = JSON.parse(READ);
+  console.log(ADD.name);
 
-    if (ADD.name) {
-      localStorage.setItem(ADD.name, READ);
-      location.reload();
-    };
+  if (ADD.name) {
+    localStorage.setItem(ADD.name, READ);
+    location.reload();
   };
 });
 
