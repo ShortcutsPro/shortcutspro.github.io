@@ -6,7 +6,7 @@ const ADD = document.querySelector('button');
 // add a shortcut
 ADD.addEventListener('click', async () => {
   
-  navigator.clipboard.writeText("");
+  // navigator.clipboard.writeText("");
   // window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut');
   var READ = await navigator.clipboard.readText();
 
