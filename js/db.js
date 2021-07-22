@@ -7,8 +7,8 @@ const ADD = document.querySelector('button');
 ADD.addEventListener('click', async () => {
   
   navigator.clipboard.writeText("");
-  window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut');
-  const READ = await navigator.clipboard.readText();
+  // window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut');
+  var READ = await navigator.clipboard.readText();
 
   const ADD = JSON.parse(READ);
   console.log(ADD.name);
