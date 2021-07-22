@@ -13,17 +13,16 @@
 
 /* layout styles */
 nav {
-  margin-top: 0;
+  margin-top: env(safe-area-inset-top);
   background-color: black;
   padding-top: env(safe-area-inset-top);
-  margin-bottom: env(safe-area-inset-bottom);
   background-size: cover;
   position: fixed;
   top: 0px;
   left: 0px;
   text-align: center;
   max-width: 100%;
-  border-bottom: 1ex solid var(--secondary);
+  border-bottom: 1ex solid var(orange);
 }
   
 nav a {
@@ -36,8 +35,8 @@ nav a .bold {
 }
 
 nav .bustl {
-  font-family: "SpaceAge";
-  font-size: 3rem;
+  font-family: SpaceAge;
+  font-size: 2rem;
   color: #2073DE;
 }
 
@@ -48,11 +47,11 @@ nav .sidenav-trigger{
 
 /* shortcut styles */
 .shortcuts{
-  margin-top: 10%;
+  padding-top: 0;
 }
 .card-panel.shortcut{
   border-radius: 8px;
-  padding: 1rem;
+  padding: 0.5rem;
   box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
   display: grid;
   grid-template-columns: 2fr 6fr 1fr;
@@ -65,11 +64,11 @@ nav .sidenav-trigger{
 }
 .shortcut img{
   grid-area: image;
-  max-width: 60%;
+  max-width: 50%;
 }
 .shortcut-details{
   grid-area: details;
-  margin-top: 6px;
+  margin-top: 1ex;
 }
 .shortcut-delete{
   grid-area: delete;
@@ -78,7 +77,7 @@ nav .sidenav-trigger{
   right: 0px;
 }
 .shortcut-delete i{
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .shortcut-name{
   font-size: 2rem;
@@ -93,8 +92,8 @@ nav .sidenav-trigger{
 }
 
 .info{
-  margin-top: 5%;
-  padding-top: 10%;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /* form-styles */
