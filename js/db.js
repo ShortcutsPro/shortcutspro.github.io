@@ -9,7 +9,7 @@ ADD.addEventListener('click', async () => {
   READ = await navigator.clipboard.readText();
 
   if (READ) {
-    const ADD = JSON.parse(READ);
+    ADD = JSON.parse(READ);
     console.log(ADD.name);
 
     if (ADD.name) {
