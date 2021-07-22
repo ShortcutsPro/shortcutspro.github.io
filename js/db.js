@@ -6,10 +6,10 @@ const ADD = document.querySelector('button');
 // add a shortcut
 ADD.addEventListener('click', async () => {
   
-  READ = await navigator.clipboard.readText();
+  const READ = await navigator.clipboard.readText();
 
   if (READ) {
-    ADD = JSON.parse(READ);
+    var ADD = JSON.parse(READ);
     console.log(ADD.name);
 
     if (ADD.name) {
