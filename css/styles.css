@@ -29,6 +29,8 @@ nav {
 }
   
 nav a {
+  position: relative;
+  top: -10px;
   text-transform: lowercase;
   color: gray;
 }
@@ -38,14 +40,17 @@ nav a .bold {
 }
 
 nav .bustl {
+  padding-bottom: 0;
   font-family: SpaceAge;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: #2073DE;
 }
 
 nav .sidenav-trigger{
   margin-top: 0;
+  position: relative;
+  top: -10px;
   padding-top: env(safe-area-inset-top);
 }
 
