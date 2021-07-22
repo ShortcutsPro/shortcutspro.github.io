@@ -46,6 +46,11 @@ nav .sidenav-trigger{
   padding-top: env(safe-area-inset-top);
 }
 
+.body {
+  margin-top: 5em;
+}
+
+
 /* shortcut styles */
 .shortcuts{
   padding-top: 0;
