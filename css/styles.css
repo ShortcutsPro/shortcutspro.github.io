@@ -46,7 +46,7 @@ nav .sidenav-trigger{
   padding-top: env(safe-area-inset-top);
 }
 
-.body {
+body {
   margin-top: 5em;
 }
 
