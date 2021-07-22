@@ -15,7 +15,7 @@
     <meta name="og:title" content="Bustl.Cutz" />
     <meta name="og:image" content="/images/apple-rich-link-image.jpeg" type="image/jpeg" />
     <meta name="og:video" content="/images/apple-rich-link-video.mp4" type="video/mp4" />
-<!--     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="theme-color" content="black" />
     <title>Bustl.Cutz</title>
 <!-- ios support -->
@@ -34,7 +34,7 @@
         font-family: SpaceAge; 
         src: url("/fonts/space_age.ttf"); 
       }
-      html { font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif, }     
+      html { background-color: black; font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif, }     
       body { margin: 0; padding: 0; background-color: white; font-family: system-ui; color: black; }
       @media (prefers-color-scheme: dark;) { body { background-color: #3a3a3a; color: white; }} 
       @media (max-device-width: 480px;) { body { margin: auto; max-width: 100%; }}
@@ -53,42 +53,39 @@
     <script type="text/javascript" src="/js/materialize.min.js"></script>
   </head>
   <body>
-    
+    <section class="section" style="background-color: white;">
 <!-- top nav -->
-    <nav class="z-depth-0" style="background: black;">
-      <div class="nav-wrapper container">
-        <a class="left" href="https://bustl.io">bustl.<span class="bold">•io</span></a>
-        <span class="center bustl">BUSTL.</span>
-        <span class="right grey-text text-lighten-2">
-          <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-        </span>
-      </div>
-    </nav>
+      <nav class="z-depth-0" style="background: black;">
+        <div class="nav-wrapper container">
+          <a class="left" href="https://bustl.io">bustl.<span class="bold">•io</span></a>
+          <span class="center bustl">BUSTL.</span>
+          <span class="right grey-text text-lighten-2">
+            <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+          </span>
+        </div>
+      </nav>
     
 <!-- side nav -->
-    <ul id="side-menu" class="sidenav side-menu">
-      <li><a class="subheader">Bustl.Cutz</a></li>
-      <li><a href="index.html" class="waves-effect">
-        <i class="material-icons">menu_open</i>Home</a></li>
-      <li><a href="/pages/about.html" class="waves-effect">
-        <i class="material-icons">info</i>About</a></li>
-      <li><div class="divider"></div></li>
-      <li><a href="/pages/contact.html" class="waves-effect">
-        <i class="material-icons">email</i>Contact</a>
-      </li>
-    </ul>
+      <ul id="side-menu" class="sidenav side-menu">
+        <li><a class="subheader">Bustl.Cutz</a></li>
+        <li><a href="index.html" class="waves-effect"><i class="material-icons">menu_open</i>Home</a></li>
+        <li><a href="/pages/about.html" class="waves-effect"><i class="material-icons">info</i>About</a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="/pages/contact.html" class="waves-effect"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
   
 <!-- shortcuts-->
-    <div class="shortcuts info">
+      <div class="shortcuts info">
       
-    </div>
+      </div>
   
-    <div class="center button">
-<!--       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App"> -->
-      <button class="btn-floating btn-small btn-large add-btn" data-target="side-form" id="button" onclick="window.open(`shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut`);" style="background: #2073DE;" />
+      <div class="center button"><!--       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App"> -->
+        <button id="button" class="btn-floating btn-small btn-large add-btn" data-target="side-form" onclick="window.open(`shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut`);"
+              style="background: #2073DE;">
         <i class="material-icons">add</i>
       </button><!-- </a> -->
     </div>
+  </section>
   
 <!-- add shortcut input fields -->
     <ul id="side-form" class="sidenav side-form">
@@ -100,7 +97,7 @@
           <input id="input" type="text" class="validate">
         </div>
         <div class="input-field">
-          <input id="icon" type="text" class="validate">o
+          <input id="icon" type="text" class="validate">
         </div>
         <div class="input-field">
           <input id="description" type="text" class="validate">
