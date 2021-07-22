@@ -16,9 +16,9 @@
 
 /* layout styles */
 nav {
-  margin-top: env(safe-area-inset-top);
+/*  margin-top: env(safe-area-inset-top);*/
   background-color: black;
-/*  padding-top: env(safe-area-inset-top);*/
+  padding-top: env(safe-area-inset-top);
   background-size: cover;
   position: fixed;
   top: 0px;
