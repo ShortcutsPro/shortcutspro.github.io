@@ -5,8 +5,11 @@ const ADD = document.querySelector('button');
 // add a shortcut
 ADD.addEventListener('click', async () => {
 
-  window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20To%20App');
+  
   const READ = await navigator.clipboard.readText();
+  if (READ.length === 0) {
+    window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20To%20App');
+  }
   const ADD = JSON.parse(READ);
   console.log(ADD.name);
   
