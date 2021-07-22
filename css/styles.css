@@ -57,6 +57,8 @@ body {
 /* shortcut styles */
 .shortcuts{
   padding-top: 0;
+  margin-left: 5ex;
+  margin-right: 5ex;
 }
 .card-panel.shortcut{
   border-radius: 8px;
