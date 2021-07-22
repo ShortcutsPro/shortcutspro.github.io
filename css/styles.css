@@ -37,7 +37,7 @@ nav a .bold {
 
 nav .bustl {
   font-family: "SpaceAge";
-  font-size: 32px;
+  font-size: 3rem;
   color: #2073DE;
 }
 
@@ -78,9 +78,10 @@ nav .sidenav-trigger{
   right: 0px;
 }
 .shortcut-delete i{
-  font-size: 20px;
+  font-size: 1rem;
 }
 .shortcut-name{
+  font-size: 2rem;
   font-weight: bold;
   text-align: left;
   color: black;
