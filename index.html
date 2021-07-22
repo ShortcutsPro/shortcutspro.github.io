@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="Bustl." />
     <meta name="og:title" content="Bustl.Cutz" />
     <meta name="og:image" content="/images/apple-rich-link-image.jpeg" type="image/jpeg" />
@@ -37,12 +37,12 @@
       html { font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif, }     
       body { margin: 0; padding: 0; background-color: white; font-family: system-ui; color: black; }
       @media (prefers-color-scheme: dark;) { body { background-color: #3a3a3a; color: white; }} 
-      @media (max-device-width: 480px;) { body { margin: auto; max-width: 90%; }}
+      @media (max-device-width: 480px;) { body { margin: auto; max-width: 100%; }}
       @media (min-device-width: 481px;) { body { margin: auto; max-width: 600px; }}
       img { max-width: 100%; }
       @import "/css/styles.css";
       
-/* debug.css | MIT License | zaydek.github.com/debug.css *
+/* debug.css | MIT License | zaydek.github.com/debug,.css *
       :not(path):not(g) {
       	color:                    hsla(210, 100%, 100%, 0.9) !important;
       	background:               hsla(210, 100%,  50%, 0.5) !important;
@@ -84,7 +84,7 @@
     </div>
   
     <div class="center button">
-      <a onclick="window.open(`shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App`);">
+      <a onclick="window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App');">
       <button class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form" id="button" style="background: #2073DE;" />
         <i class="material-icons">add</i>
       </button></a>
@@ -100,7 +100,7 @@
           <input id="input" type="text" class="validate">
         </div>
         <div class="input-field">
-          <input id="icon" type="text" class="validate">
+          <input id="icon" type="text" class="validate">o
         </div>
         <div class="input-field">
           <input id="description" type="text" class="validate">
