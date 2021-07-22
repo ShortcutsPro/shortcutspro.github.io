@@ -2,20 +2,21 @@
 const form = document.querySelector('form');
 const ADD = document.querySelector('button');
 
+
 // add a shortcut
 ADD.addEventListener('click', async () => {
+  
+  window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20To%20App')
+  .then(READ = await navigator.clipboard.readText());
+  
+  if (READ) {
+    var NEW = JSON.parse(READ);
+    console.log(ADD.name);
 
-  
-  const READ = await navigator.clipboard.readText();
-  if (READ.length === 0) {
-    window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20To%20App');
-  }
-  const ADD = JSON.parse(READ);
-  console.log(ADD.name);
-  
-  if (ADD.name) {
-    localStorage.setItem(ADD.name, READ);
-    location.reload();
+    if (NEW.name) {
+      localStorage.setItem(NEW.name, READ);
+      location.reload();
+    };
   };
 });
 
