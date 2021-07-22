@@ -8,7 +8,7 @@
 @media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
-    padding-top: auto;
+    padding-top: 50px;
     background: black;
     background-color: black;
   }
@@ -101,7 +101,7 @@ body {
 
 .info{
   margin-top: 0;
-  padding-top: 5em;
+  padding-top: 0;
 }
 
 /* form-styles */
