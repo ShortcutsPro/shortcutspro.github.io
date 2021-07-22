@@ -8,20 +8,20 @@
 @media screen and (display-mode: standalone) {
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
-    padding-top: 50px;
+    padding-top: 0;
     background: black;
     background-color: black;
   }
 }
 
 /* layout styles */
-nav {
+section nav {
 /*  margin-top: env(safe-area-inset-top);*/
   background-color: black;
 /*  padding-top: env(safe-area-inset-top);*/
   background-size: cover;
   position: fixed;
-  top: 0px;
+  top: -1ex;
   left: 0px;
   text-align: center;
   max-width: 100%;
@@ -30,9 +30,10 @@ nav {
   
 nav a {
   position: relative;
-  top: -10px;
+  top: -0.7ex;
   text-transform: lowercase;
   color: gray;
+  padding-top: env(safe-area-inset-top);
 }
 
 nav a .bold {
@@ -40,27 +41,31 @@ nav a .bold {
 }
 
 nav .bustl {
-  padding-bottom: 0;
+  padding-top: env(safe-area-inset-top);
+  top: 2ex;
+  text-align: bottom;
   font-family: SpaceAge;
   font-weight: bold;
-  font-size: 1.7rem;
+  font-size: 3rem;
   color: #2073DE;
 }
 
 nav .sidenav-trigger{
   margin-top: 0;
   position: relative;
-  top: -10px;
+  top: -0.7ex;
   padding-top: env(safe-area-inset-top);
 }
 
 body {
+  top: -1ex;
   padding-top: 10%;
 }
 
 
 /* shortcut styles */
 .shortcuts{
+  margin-top: 15%
   padding-top: 0;
   margin-left: 5ex;
   margin-right: 5ex;

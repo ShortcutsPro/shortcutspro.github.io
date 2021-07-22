@@ -37,8 +37,8 @@
       html { background-color: black; font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif, }     
       body { margin: 0; padding: 0; background-color: white; font-family: system-ui; color: black; }
       @media (prefers-color-scheme: dark;) { body { background-color: #3a3a3a; color: white; }} 
-      @media (max-device-width: 480px;) { body { margin: auto; max-width: 100%; }}
-      @media (min-device-width: 481px;) { body { margin: auto; max-width: 600px; }}
+      @media (max-device-width: 480px;) { body { margin: 0; max-width: 100%; }}
+      @media (min-device-width: 481px;) { body { margin: 0; max-width: 600px; }}
       img { max-width: 100%; }
       @import "/css/styles.css";
       
@@ -80,8 +80,7 @@
       </div>
   
       <div class="center button"><!--       <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App"> -->
-        <button id="button" class="btn-floating btn-small btn-large add-btn" data-target="side-form" onclick="window.open(`shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut`);"
-              style="background: #2073DE;">
+        <button id="button" class="btn-floating btn-small btn-large add-btn" data-target="side-form" style="background: #2073DE;">
         <i class="material-icons">add</i>
       </button><!-- </a> -->
     </div>
