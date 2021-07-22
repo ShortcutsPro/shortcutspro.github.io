@@ -6,15 +6,15 @@ const ADD = document.querySelector('button');
 // add a shortcut
 ADD.addEventListener('click', async () => {
   
-  window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20To%20App')
-  .then(READ = await navigator.clipboard.readText());
-  
+  window.open('shortcuts://run-shortcut?name=INTEGRITY&input=text&text=Add%20Shortcut%20to%20App');
+  READ = await navigator.clipboard.readText();
+
   if (READ) {
-    var NEW = JSON.parse(READ);
+    const ADD = JSON.parse(READ);
     console.log(ADD.name);
 
-    if (NEW.name) {
-      localStorage.setItem(NEW.name, READ);
+    if (ADD.name) {
+      localStorage.setItem(ADD.name, READ);
       location.reload();
     };
   };
