@@ -9,16 +9,14 @@
   html { 
     min-height: calc(100% + env(safe-area-inset-top));
     padding-top: 0;
-    background: black;
+/*    background: black;*/
     background-color: black;
   }
 }
 
 /* layout styles */
 section nav {
-/*  margin-top: env(safe-area-inset-top);*/
   background-color: black;
-/*  padding-top: env(safe-area-inset-top);*/
   background-size: cover;
   position: fixed;
   top: -1ex;
@@ -30,10 +28,10 @@ section nav {
   
 nav a {
   position: relative;
-  top: -0.7ex;
+  top: -1ex;
   text-transform: lowercase;
   color: gray;
-  padding-top: env(safe-area-inset-top);
+/*  padding-top: env(safe-area-inset-top);*/
 }
 
 nav a .bold {
@@ -54,7 +52,7 @@ nav .sidenav-trigger{
   margin-top: 0;
   position: relative;
   top: -0.7ex;
-  padding-top: env(safe-area-inset-top);
+/*  padding-top: env(safe-area-inset-top);*/
 }
 
 body {
