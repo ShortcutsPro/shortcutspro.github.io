@@ -9,6 +9,7 @@ const assets = [
   '/js/db.js',
   '/js/app.js',
   '/js/ui.js',
+  '/js/callback.js',
   '/js/materialize.min.js',
   '/js/pwacompat.min.js',
   '/css/styles.css',
@@ -19,7 +20,7 @@ const assets = [
   '/images/navbar.jpg',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
   'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
-  '/pages/fallback.html'
+  '/pages/fallback.html',
   '/pages/about.html',
   '/pages/contact.html'
 ];

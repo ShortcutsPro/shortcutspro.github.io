@@ -16,6 +16,7 @@
 
 /* layout styles */
 section nav {
+  margin-top: -5px;
   background-color: black;
   background-size: cover;
   position: fixed;
@@ -23,7 +24,7 @@ section nav {
   left: 0px;
   text-align: center;
   max-width: 100%;
-  border-bottom: 1ex solid var(--secondary);
+  border-bottom: 3px solid var(--secondary);
 }
   
 nav a {
@@ -39,12 +40,13 @@ nav a .bold {
 }
 
 nav .bustl {
-  padding-top: env(safe-area-inset-top);
-  top: 2ex;
-  text-align: bottom;
+/*  padding-top: env(safe-area-inset-top);*/
+  top: 3.3ex;
+  text-align: center;
   font-family: SpaceAge;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  margin-left: 5px;
   color: #2073DE;
 }
 
