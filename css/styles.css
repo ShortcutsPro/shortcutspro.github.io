@@ -6,7 +6,7 @@
 }}
 
 @media screen and (display-mode: standalone) {
-  html { 
+  * { 
     min-height: calc(100% + env(safe-area-inset-top));
     padding-top: 0;
 /*    background: black;*/
@@ -16,20 +16,21 @@
 
 /* layout styles */
 section nav {
-  margin-top: -5px;
+  margin-top: -1ex;
   background-color: black;
   background-size: cover;
   position: fixed;
   top: -1ex;
-  left: 0px;
+  left: 0;
   text-align: center;
+  margin-bottom: 1ex;;
   max-width: 100%;
-  border-bottom: 3px solid var(--secondary);
+  border-bottom: 1ex solid var(--secondary);
 }
   
 nav a {
   position: relative;
-  top: -1ex;
+  top: 0;
   text-transform: lowercase;
   color: gray;
 /*  padding-top: env(safe-area-inset-top);*/
@@ -41,25 +42,26 @@ nav a .bold {
 
 nav .bustl {
 /*  padding-top: env(safe-area-inset-top);*/
-  top: 3.3ex;
+  margin-top: -3ex;
+  top: -3ex;
   text-align: center;
   font-family: SpaceAge;
   font-weight: bold;
   font-size: 2.2rem;
-  margin-left: 5px;
+  margin-left: 1ex;
   color: #2073DE;
 }
 
 nav .sidenav-trigger{
   margin-top: 0;
   position: relative;
-  top: -0.7ex;
+  top: 0;
 /*  padding-top: env(safe-area-inset-top);*/
 }
 
 body {
-  top: -1ex;
-  padding-top: 10%;
+  top: 0;
+  padding-top: 0;
 }
 
 
