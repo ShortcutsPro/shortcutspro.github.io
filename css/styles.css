@@ -69,13 +69,13 @@ body {
 .shortcuts{
   margin-top: 15%
   padding-top: 0;
-  margin-left: 5ex;
-  margin-right: 5ex;
+  margin-left: 3ex;
+  margin-right: 3ex;
 }
 .card-panel.shortcut{
   border-radius: 8px;
   padding: 0.5rem;
-  box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
+  box-shadow: 0px 2px 5px rgba(90,90,90,0.1);
   display: grid;
   grid-template-columns: 2fr 6fr 1fr;
   grid-template-areas: "image details delete";
@@ -100,10 +100,11 @@ body {
   right: 0px;
 }
 .shortcut-delete i{
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: gray;
 }
 .shortcut-name{
-  font-size: 1.3rem;
+  font-size: 0.7rem;
   font-weight: bold;
   text-align: left;
   color: black;
