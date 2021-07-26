@@ -125,15 +125,19 @@ body {
 .add-btn {
   background: #2073DE;
 }
-input {
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  /* 16:9*/
+  position: relative;
 }
-.side-form button {
-  visibility: hidden;
-  background-color: #2073DE;
-  box-shadow: 1px 1px 3px rgba(90,90,90,0.2);
-}
-form .input-field {
-  visibility: hidden;
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }

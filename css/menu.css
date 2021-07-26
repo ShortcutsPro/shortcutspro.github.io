@@ -1,0 +1,302 @@
+/* styles for demo only.
+feel free to remove the following html and body styles for your design*/
+html {
+  height: 100%;
+}
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  min-height: 100%;
+  position: relative;
+  background: #fff;
+  font-family: Helvetica Neue;
+  margin: 0;
+  -webkit-background-size: cover;
+  background-position: right center;
+  /*  background-image: url(http://cdn.freshome.com/wp-content/uploads/2013/11/Modern-house.jpg);*/
+}
+a {
+  cursor: pointer;
+}
+/* Global Variables 
+***************************************************************/
+/* Heading and buttons */
+/* Secondary headings */
+/* Main text color */
+/* Borders and chevrons */
+/* Secondary page color */
+.border-box {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+/* Element Variables
+   Change @bar-w to adjust entire button size.
+*/
+/* Start Styles - Side Menu 
+***************************************************************/
+.panel {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  height: 100%;
+  width: 450px;
+  /* ul */
+  /* Ninja Button styles */
+  /* Ninja Button */
+  /* Ninja Button Active */
+}
+.panel ul {
+  list-style-type: none;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 60px;
+  right: 60px;
+  height: auto;
+  text-align: left;
+  /* li & a */
+}
+.panel ul li,
+.panel ul a {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  line-height: 1.4;
+  padding: 0;
+  font-weight: 200;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.panel ul li.menu-label {
+  font-size: 16px;
+  margin: 30px 0 10px 0;
+  text-transform: lowercase;
+}
+.panel ul li.menu-label:first-child {
+  margin-top: 0;
+}
+.panel ul a {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.panel ul li.menu-contacts a {
+  font-size: 16px;
+  text-transform: inherit;
+}
+.panel .ninja-btn {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+  padding: 34.28571429px 30px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 30px;
+  height: 20.18181818px;
+}
+.panel .ninja-btn span,
+.panel .ninja-btn span:before,
+.panel .ninja-btn span:after {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  width: 30px;
+  height: 2px;
+}
+.panel .ninja-btn span {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-top: 9.09090909px;
+}
+.panel .ninja-btn span:before,
+.panel .ninja-btn span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.panel .ninja-btn span:before {
+  top: -9.09090909px;
+}
+.panel .ninja-btn span:after {
+  top: 9.09090909px;
+}
+.panel .ninja-btn.active span {
+  background-color: transparent;
+}
+.panel .ninja-btn.active span:before,
+.panel .ninja-btn.active span:after {
+  top: 0;
+}
+.panel .ninja-btn.active span:before {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+}
+.panel .ninja-btn.active span:after {
+  -webkit-transition-delay: 0.09s;
+  -moz-transition-delay: 0.09s;
+  -o-transition-delay: 0.09s;
+  -msa-transition-delay: 0.09s;
+  transition-delay: 0.09s;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+}
+/* Panel */
+.panel-overlay {
+  position: fixed;
+  top: 0;
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.35);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(100%, rgba(0, 0, 0, 0.6)));
+  cursor: pointer;
+}
+/* overlay */
+.panel-white {
+  background-color: #ffffff;
+  /* ul */
+}
+.panel-white ul {
+  /* li */
+}
+.panel-white ul li,
+.panel-white ul a {
+  color: #8e8e93;
+}
+.panel-white ul li a:hover,
+.panel-white ul li.active a {
+  color: #007aff;
+}
+.panel-white .ninja-btn {
+  background-color: #ffffff;
+}
+.panel-white .ninja-btn span,
+.panel-white .ninja-btn span:before,
+.panel-white .ninja-btn span:after {
+  background-color: #007aff;
+}
+/* panel white */
+.panel-black {
+  background-color: #000000;
+  /* ul */
+}
+.panel-black ul {
+  /* li */
+}
+.panel-black ul li,
+.panel-black ul a {
+  color: rgba(255, 255, 255, 0.5);
+}
+.panel-black ul li a:hover,
+.panel-black ul li.active a {
+  color: #ffffff;
+}
+.panel-black .ninja-btn {
+  background-color: #000000;
+}
+.panel-black .ninja-btn span,
+.panel-black .ninja-btn span:before,
+.panel-black .ninja-btn span:after {
+  background-color: #007aff;
+}
+/* panel black */
+.panel-brand {
+  background-color: #007aff;
+  /* ul */
+  /*
+  .ninja-btn.active span:before,
+  .ninja-btn.active span:after {
+    background-color: rgba( 0, 0, 0, 0.50 );
+  }*/
+}
+.panel-brand ul {
+  /* li */
+}
+.panel-brand ul li,
+.panel-brand ul a {
+  color: rgba(0, 0, 0, 0.5);
+}
+.panel-brand ul li a:hover,
+.panel-brand ul li.active a {
+  color: #ffffff;
+}
+.panel-brand .ninja-btn {
+  background-color: #007aff;
+}
+.panel-brand .ninja-btn span,
+.panel-brand .ninja-btn span:before,
+.panel-brand .ninja-btn span:after {
+  background-color: #ffffff;
+}
+/* panel brand */
+.panel.left {
+  left: -450px;
+}
+.panel.left .ninja-btn {
+  left: 100%;
+}
+/* Panel Left Active */
+.panel.left.active {
+  left: 0;
+}
+.panel.left.active .ninja-btn {
+  left: 100%;
+  margin-left: -90px;
+}
+/* Panel Menu Active */
+.panel.right {
+  right: -450px;
+}
+.panel.right .ninja-btn {
+  right: 100%;
+}
+/* Panel Right Active */
+.panel.right.active {
+  right: 0;
+}
+.panel.right.active .ninja-btn {
+  right: 100%;
+  margin-right: -90px;
+}
+/* Panel Menu Active */
