@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Webview</title>
   <script>
+  document.querySelector("body").innerHTML = "";
     var query_string = {};
     var query = window.location.search.substring(1);
     console.log(query);
@@ -11,9 +12,9 @@
     if (query) {
       var param = atob(query);
       } else 
-      var param = query_string;
+      var param = query;
       };
-      document.querySelector("html").innerHTML = "<pre>"+param+"</pre>";
+      document.querySelector("body").innerHTML = "<pre>"+param+"</pre>";
 </script>
 </head>
 <body>
