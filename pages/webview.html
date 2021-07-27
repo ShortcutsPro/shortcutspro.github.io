@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Webview</title>
-  <script>
+</head>
+<body>
+<script>
   var query_string = {};
   var query = window.location.search.substring(1);
-  console.log(query);
     
   if (query) {
   var page = window.atob(query);
-  document.documentElement.innerHTML = "<pre>"+page+"</pre></div>";
+  document.documentElement.innerHTML = "<pre>"+page+"</pre>";
   };
-          </script>
-</head>
-<body>
+</script>
 </body>
 </html>
