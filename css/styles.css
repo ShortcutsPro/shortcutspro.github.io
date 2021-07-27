@@ -20,19 +20,6 @@ body { margin: 0; padding: 0; background-color: white; font-family: system-ui; c
 @media (min-device-width: 481px;) { body { margin: 0; max-width: 100%; }}
 img { max-width: 90%; }
 
-.iframe-container {
-/*  overflow: hidden;*/
-  margin-top: 15%;
-} 
-
-.iframe-container iframe {
-  border: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
 
 /* layout styles */
 nav {
@@ -64,7 +51,7 @@ nav .bustl {
   padding-top: env(safe-area-inset-top);
   margin-top: 0;
   top: 0;
-  text-align: center;
+  text-align: left;
   font-family: SpaceAge;
   font-weight: bold;
   font-size: 2.2rem;
@@ -152,4 +139,18 @@ html {
 /*    background: black;*/
 /*    background-color: black;*/
   }
+}
+
+iframe-container {
+/*  overflow: hidden;*/
+  margin-top: 5ex;
+} 
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 6ex;
+  width: 100%;
 }
