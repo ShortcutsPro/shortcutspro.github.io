@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <title>Webview</title>
   <script>
-const body = document.querySelector('body');
-  var query_string = {};
-  var query = window.location.search.substring(1);
+    var query_string = {};
+    var query = window.location.search.substring(1);
+    console.log(query);
     
-  if (query) {
-  const page = decodeURIComponent(query);
-   body.innerHTML = "<pre>"+page+"</pre>";
-   } else {
-   body.innerHTML = "<pre>"+"NONE"+"</pre>"
-   };
+    if (query) {
+      var param = decodeURIComponent(query);
+      if (param) {
+      document.querySelector("html").innerHTML = "<pre>"+param+"</pre>";
+      };
+  };
 </script>
 </head>
 <body>
