@@ -9,7 +9,7 @@
   console.log(query);
     
   if (query) {
-  var page = atob(query);
+  var page = window.atob(query);
   document.documentElement.innerHTML = "<pre>"+page+"</pre></div>";
   };
           </script>
