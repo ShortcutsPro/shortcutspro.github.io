@@ -35,7 +35,7 @@ img { max-width: 90%; }
 }
 
 /* layout styles */
-nav {
+.section nav {
   margin-top: -0.5ex;
   background-color: black;
   background-size: cover;
