@@ -5,14 +5,12 @@
   --title: #000000;
 }}
 
-@media screen and (display-mode: standalone) {
-  * { 
-    min-height: calc(100% + env(safe-area-inset-top));
-    padding-top: env(safe-area-inset-top);
-/*    background: black;*/
-    background-color: black;
-  }
-}
+html { background-color: black; font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif, SpaceAge;}     
+body { margin: 0; padding: 0; background-color: white; font-family: system-ui; color: black; }
+@media (prefers-color-scheme: dark;) { body { background-color: #3a3a3a; color: white; }} 
+@media (max-device-width: 480px;) { body { margin: 0; max-width: 100%; }}
+@media (min-device-width: 481px;) { body { margin: 0; max-width: 100%; }}
+img { max-width: 90%; }
 
 /* layout styles */
 section nav {
@@ -64,7 +62,6 @@ body {
   padding-top: 0;
 }
 
-
 /* shortcut styles */
 .shortcuts{
   margin-top: 15%
@@ -112,7 +109,7 @@ body {
 .shortcut-description{
   font-size: 0.9rem;
   text-align: center;
-  color: #828B94;
+  color: gray;
 }
 
 .info{
@@ -127,11 +124,11 @@ body {
 }
 
 .iframe-container {
-  overflow: hidden;
-  padding-top: 56.25%;
+/*  overflow: hidden;*/
   /* 16:9*/
-  position: relative;
-}
+  margin-top: 15%;
+  position: fixed;
+} 
 
 .iframe-container iframe {
   border: 0;
@@ -140,4 +137,13 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+@media screen and (display-mode: standalone) {
+  * { 
+    min-height: calc(100% + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+    background: black;
+    background-color: black;
+  }
 }
