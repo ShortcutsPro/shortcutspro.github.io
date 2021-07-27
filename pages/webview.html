@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Webview</title>
-</head>
-<body>
-<script>
+  <script>
 const body = document.querySelector('body');
   var query_string = {};
   var query = window.location.search.substring(1);
     
   if (query) {
   const page = decodeURIComponent(query);
-   body.innerHTML = page;
+   body.innerHTML = "<pre>"+page+"</pre>";
    } else {
    body.innerHTML = "<pre>"+"NONE"+"</pre>"
    };
 </script>
+</head>
+<body>
 </body>
 </html>
