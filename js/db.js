@@ -1,6 +1,6 @@
 // get document elements
 const form = document.querySelector('form');
-const ADD = document.querySelector('button');
+const ADD = document.querySelector('#button');
 
 
 // add a shortcut

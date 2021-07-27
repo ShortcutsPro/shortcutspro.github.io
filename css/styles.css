@@ -20,6 +20,20 @@ body { margin: 0; padding: 0; background-color: white; font-family: system-ui; c
 @media (min-device-width: 481px;) { body { margin: 0; max-width: 100%; }}
 img { max-width: 90%; }
 
+.iframe-container {
+/*  overflow: hidden;*/
+  margin-top: 15%;
+} 
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 /* layout styles */
 section nav {
   margin-top: -0.5ex;
@@ -122,29 +136,13 @@ body {
 
 .info{
   margin-top: 0;
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 /* form-styles */
 
 .add-btn {
   background: #2073DE;
-}
-
-.iframe-container {
-/*  overflow: hidden;*/
-  /* 16:9*/
-  margin-top: 15%;
-  position: fixed;
-} 
-
-.iframe-container iframe {
-  border: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
 }
 
 @media screen and (display-mode: standalone) {
