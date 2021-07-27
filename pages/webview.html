@@ -9,7 +9,9 @@
   console.log(query);
     
   if (query) {
-    document.documentElement.innerHTML = atob(query);
-  }</script>
+  var page = atob(query);
+  document.documentElement.innerHTML = page;
+  }
+  </script>
 </head>
 </html>
