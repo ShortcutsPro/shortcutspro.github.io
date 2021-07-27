@@ -146,7 +146,7 @@ body {
 }
 
 @media screen and (display-mode: standalone) {
-  * { 
+html { 
     min-height: calc(100% + env(safe-area-inset-top));
     padding-top: env(safe-area-inset-top);
 /*    background: black;*/
