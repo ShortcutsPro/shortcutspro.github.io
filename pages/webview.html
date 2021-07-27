@@ -12,7 +12,7 @@ const body = document.querySelector('body');
     
   if (query) {
   const page = decodeURIComponent(query);
-   body.innerHTML = "<pre>"+page+"</pre>";
+   body.innerHTML = page;
    } else {
    body.innerHTML = "<pre>"+"NONE"+"</pre>"
    };
