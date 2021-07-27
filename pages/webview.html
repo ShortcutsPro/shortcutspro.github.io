@@ -10,11 +10,9 @@
     console.log(query);
     
     if (query) {
-      var param = atob(query);
-      } else 
-      var param = query;
-      };
+      var param = decodeURIComponent(escape(window.atob(query)));
       document.querySelector("body").innerHTML = "<pre>"+param+"</pre>";
+      };
 </script>
 </head>
 <body>
