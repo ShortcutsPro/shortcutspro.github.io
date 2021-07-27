@@ -9,7 +9,7 @@
     console.log(query);
     
     if (query) {
-      var param = decodeURIComponent(query);
+      var param = atob(query);
       if (param) {
       document.querySelector("html").innerHTML = "<pre>"+param+"</pre>";
       };
