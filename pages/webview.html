@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Webview</title>
-  <script>
-  document.querySelector("body").innerHTML = "";
+</head>
+<body>
+<script>
+
     var query_string = {};
     var query = window.location.search.substring(1);
     console.log(query);
     
-    if (query) {
-      var param = decodeURIComponent(escape(window.atob(query)));
-      document.querySelector("body").innerHTML = "<pre>"+param+"</pre>";
-      };
+      var param = decodeURIComponent(window.atob(query));
+      document.querySelector('html').innerHTML = "<pre>"+query+"</pre>";
 </script>
-</head>
-<body>
 </body>
 </html>
