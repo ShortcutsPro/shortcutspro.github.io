@@ -8,10 +8,10 @@
 <script>
 
     var query_string = {};
-    var query = window.location.search.substring(1);
+    let query = window.location.search.substring(1);
     console.log(query);
     
-      var param = decodeURIComponent(window.atob(query));
+      let param = window.atob(query);
       document.querySelector('html').innerHTML = "<pre>"+query+"</pre>";
 </script>
 </body>
