@@ -5,7 +5,7 @@
   <title>Webview</title>
 <script>
 
-let query = new URLSesrchParams(window.location.search);
+let query = new URLSearchParams(window.location.search);
 let input = query.get('input');
 let param = window.atob(input);
 document.querySelector('html').innerHTML = "<pre>"+param+"</pre>";
