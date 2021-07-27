@@ -5,17 +5,14 @@
   <title>Webview</title>
 </head>
 <body>
-<div class="iframe-container">
-         <iframe width="420" height="1080" src="https://scottdwr.github.io/papercuts/" frameborder="1" loading="lazy" allowfullscreen></iframe>
-       </div>
 <script>
-const iframe = document.querySelector('iframe');
+const body = document.querySelector('body');
   var query_string = {};
   var query = window.location.search.substring(1);
     
   if (query) {
-  const page = window.atob(query);
-   iframe.innerHTML = page;
+  const page = decodeURIComponent(query);
+   iframe.innerHTML = "<pre>"+page+"</pre>";
 </script>
 </body>
 </html>
