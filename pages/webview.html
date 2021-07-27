@@ -12,8 +12,10 @@ const body = document.querySelector('body');
     
   if (query) {
   const page = decodeURIComponent(query);
-   iframe.innerHTML = "<pre>"+page+"</pre>";
-   }
+   body.innerHTML = "<pre>"+page+"</pre>";
+   } else {
+   body.innerHTML = "<pre>"+"NONE"+"</pre>"
+   };
 </script>
 </body>
 </html>
