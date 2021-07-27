@@ -10,10 +10,10 @@
     
     if (query) {
       var param = atob(query);
-      if (param) {
-      document.querySelector("html").innerHTML = "<pre>"+param+"</pre>";
+      } else 
+      var param = query_string;
       };
-  };
+      document.querySelector("html").innerHTML = "<pre>"+param+"</pre>";
 </script>
 </head>
 <body>
