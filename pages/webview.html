@@ -6,8 +6,9 @@
 <script>
 
 let query = new URLSearchParams(window.location.search);
-let input = query.get("input");
-let param = window.atob(input);
+let input = query.get('input');
+let decoded = decodeURIComponent(input);
+let param = window.atob(decoded);
 document.querySelector('html').innerHTML = "<pre>"+param+"</pre>";
 </script>
 </head>
