@@ -9,7 +9,9 @@
     const query = new URL (window.location.href);
     if (query) {
       let input = query.searchParams.get("input");
-      var param = window.atob(JSON.parse(input));
+      if (input) {
+      alert(input);};
+      var param = window.atob(input);
       document.querySelector("html").innerHTML = ""+param+"";
     };
   };
