@@ -39,8 +39,9 @@ var query_string = {};
     console.log(query);
 var decode = window.atob(query);
 
+var param = decodeURIComponent(decode);
 
-document.querySelector('body').innerHTML = "<pre>"+decode+"</pre>";
+document.querySelector('body').innerHTML = "<pre>"+param+"</pre>";
 </script>
   </body>
 </html>
