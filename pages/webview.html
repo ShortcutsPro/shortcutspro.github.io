@@ -8,8 +8,10 @@
 const query = window.location.search.substring[0];
 
 const decoded = decodeURIComponent(query);
-let param = window.atob(decoded);
-document.querySelector('body').innerHTML = query;
+
+const param = decodeURIComponent(decoded);
+
+document.querySelector("*").innerHTML = query;
 </script>
 </head>
 <body>
