@@ -5,11 +5,11 @@
   <title>Webview</title>
 <script>
 
-let query = new URLSearchParams(window.location.search);
-let input = query.get('input');
-let decoded = decodeURIComponent(input);
+const query = new URLSearchParams(window.location.search);
+const input = query.get('input');
+const decoded = decodeURIComponent(input);
 let param = window.atob(decoded);
-document.querySelector('html').innerHTML = "<pre>"+query+"</pre>";
+document.querySelector('html').innerHTML = "<pre>"+param+"</pre>";
 </script>
 </head>
 <body>
