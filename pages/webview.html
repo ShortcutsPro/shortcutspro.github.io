@@ -5,13 +5,13 @@
   <title>Webview</title>
 <script>
 
-const query = window.location.search.substring[1];
+var query_string = {};
+    var query = window.location.search.substring(1);
+    console.log(query);
+var decode = decodeURIComponent(query);
 
-const decoded = decodeURIComponent(query);
 
-const param = decodeURIComponent(decoded);
-
-document.querySelector("html").innerHTML = query;
+document.querySelector('html').innerHTML = query;
 </script>
 </head>
 <body>
