@@ -5,9 +5,9 @@
   <title>Webview</title>
 <script>
 
-const query = new URLSearchParams(window.location.search);
-const input = query.get('input');
-const decoded = decodeURIComponent(input);
+const query = window.location.search;
+
+const decoded = decodeURIComponent(query);
 let param = window.atob(decoded);
 document.querySelector('html').innerHTML = "<pre>"+query+"</pre>";
 </script>
