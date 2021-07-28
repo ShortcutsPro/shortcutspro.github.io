@@ -3,16 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Webview</title>
-<script>
-
-var query_string = {};
-    var query = window.location.search.substring(1);
-    console.log(query);
-var decode = window.atob(query);
-
-
-document.querySelector('body').innerHTML = "<pre>"+decode+"</pre>";
-</script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
@@ -42,5 +32,15 @@ document.querySelector('body').innerHTML = "<pre>"+decode+"</pre>";
     </style>
   </head>
   <body>
+  <script>
+
+var query_string = {};
+    var query = window.location.search.substring(1);
+    console.log(query);
+var decode = window.atob(query);
+
+
+document.querySelector('body').innerHTML = "<pre>"+decode+"</pre>";
+</script>
   </body>
 </html>
