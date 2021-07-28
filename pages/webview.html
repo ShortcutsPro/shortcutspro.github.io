@@ -8,8 +8,8 @@
   
     const query = new URL (window.location.href);
     if (query) {
-      let url = query.searchParams.get("url");
-      var param = window.atob(JSON.parse(url));
+      let input = query.searchParams.get("input");
+      var param = window.atob(JSON.parse(input));
       document.querySelector("html").innerHTML = ""+param+"";
     };
   };
