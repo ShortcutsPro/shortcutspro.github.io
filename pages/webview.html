@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Webview</title>
-  <script>
-var query = window.location.search.substring(1);
-var param = window.atob(query);
-document.querySelector('html').innerHTML = ""+param+"";
+<script>
+  function view () {
+  
+    const query = new URL (window.location.href);
+    if (query) {
+      let url = query.searchParams.get("url");
+      var param = window.atob(JSON.parse(url));
+      document.querySelector("html").innerHTML = ""+param+"";
+    };
+  };
+  view();
 </script>
 </head>
 </html>
