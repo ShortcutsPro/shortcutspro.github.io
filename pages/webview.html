@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <title>Webview</title>
   <script>
-const page = document.querySelector('html');
 var query_string = {};
     var query = window.location.search.substring(1);
-    console.log(query);
-var decode = atob(query);
 
 var param = decodeURIComponent(decode);
 
-page.innerHTML = '<pre>'+decode+'</pre>';
+document.querySelector(iframe).innerHTML = '<pre>'+decode+'</pre>';
 </script>
 </head>
 </html>
