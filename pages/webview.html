@@ -32,8 +32,7 @@
       color: black;
       }
     </style>
-    <script type="text/javascript" src="../js/zip-full.min.js"></script>
-    <script>
+    <script type="text/javascript" src="../js/zip-full.min.js">
       zip.configure({ useWebWorkers: false});
       
       function view () {
@@ -56,7 +55,7 @@
                  // get first entry content as text by using a TextWriter
                  const text = await entries[0].getData( new zip.TextWriter(), { onprogress: (index, max) => {} } );
                  // text contains the entry data as a String
-                 console.log(text);
+                 alert(text);
               };
             };
             // close the ZipReader
