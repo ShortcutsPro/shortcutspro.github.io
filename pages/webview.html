@@ -38,31 +38,33 @@
       
       function view () {
         
-      if (query) {
-        let input = query.searchParams.get('input');
-        
-        if (input) {
-          alert("URL Parameters: True");
-          // create a BlobReader to read with a ZipReader the zip from a Blob object
-          const archive = new Blob(window.atob(input));
+        if (query) {
+          let input = query.searchParams.get('input');
           
-          if (archive) {
-            alert("Zip File: True");
-            const reader = new zip.ZipReader(new zip.BlobReader(archive));
-            // get all entries from the zip
-            const entries = await reader.getEntries();
+          if (input) {
+            alert("URL Parameters: True");
+            // create a BlobReader to read with a ZipReader the zip from a Blob object
+            const archive = new Blob(window.atob(input));
             
-            if (entries.length) {
-               // get first entry content as text by using a TextWriter
-               const text = await entries[0].getData( new zip.TextWriter(), { onprogress: (index, max) => {} } );
-               // text contains the entry data as a String
-               console.log(text);
-               document.querySelector('html').innerHTML = ""+text+"";
-             };
-          };
-         // close the ZipReader
-         await reader.close();
+            if (archive) {
+              alert("Zip File: True");
+              const reader = new zip.ZipReader(new zip.BlobReader(archive));
+              // get all entries from the zip
+              const entries = await reader.getEntries();
+              
+              if (entries.length) {
+                 // get first entry content as text by using a TextWriter
+                 const text = await entries[0].getData( new zip.TextWriter(), { onprogress: (index, max) => {} } );
+                 // text contains the entry data as a String
+                 console.log(text);
+               };
+            };
+           // close the ZipReader
+           await reader.close();
+         };
        };
+       view();
+       document.querySelector('html').innerHTML = ""+text+"";
     </script>
   </head>
   <body>
