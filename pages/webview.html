@@ -1,21 +1,78 @@
+<!---->
+<!-- Bustl. WebView -->
+<!---->
 <!DOCTYPE html>
 <html lang="en" >
-<head>
+  <head>
   <meta charset="UTF-8">
-  <title>Webview</title>
-<script>
-  function view () {
-  
-    const query = new URL (window.location.href);
-    if (query) {
-      let input = query.searchParams.get('input');
-      if (input) {
-      alert(input);};
-      var param = window.atob(input);
-      document.querySelector('html').innerHTML = ""+param+"";
-    };
-  };
-  view();
-</script>
-</head>
+  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="WebView" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="white" />
+<!---->
+  <title>WebView</title>
+<!---->
+    <style>
+      body {
+        padding: 0px;
+        margin-top: 5%;
+        font-family: Verdana;
+        background-color: white;
+        color: gray;
+      }
+      h2 {
+        font-size:30px;
+        margin-top: 5px;
+        text-align: center;
+      }
+      p {
+      margin: 1ex;
+      padding: 3ex;
+      color: black;
+      }
+    </style>
+    <script type="text/javascript" src="../js/zip-full.min.js">
+      zip.configure({ useWebWorkers: false});
+      const query = new URL (window.location.href);
+      
+      function view () {
+        
+      if (query) {
+        let input = query.searchParams.get('input');
+        
+        if (input) {
+          alert("URL Parameters: True");
+          // create a BlobReader to read with a ZipReader the zip from a Blob object
+          const archive = new Blob(window.atob(input));
+          
+          if (archive) {
+            alert("Zip File: True");
+            const reader = new zip.ZipReader(new zip.BlobReader(archive));
+            // get all entries from the zip
+            const entries = await reader.getEntries();
+            
+            if (entries.length) {
+               // get first entry content as text by using a TextWriter
+               const text = await entries[0].getData( new zip.TextWriter(), { onprogress: (index, max) => {} } );
+               // text contains the entry data as a String
+               console.log(text);
+               document.querySelector('html').innerHTML = ""+text+"";
+             };
+          };
+         // close the ZipReader
+         await reader.close();
+       };
+    </script>
+  </head>
+  <body>
+<!---->
+    <div>
+      <h2>Something Went Wrong</h2>
+      <p>The WebView received data, but it is not displayed.<br />Pass a base64 encoded zip file as input.</p>
+    </div>
+<!---->
+  </body>
+  </html>
+</body>
 </html>

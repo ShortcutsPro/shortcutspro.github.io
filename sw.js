@@ -2,10 +2,10 @@ const staticCacheName = 'site-static-v2';
 const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
   '/',
-  'index.html',
-  '404.html',
-  'manifest.webmanifest',
-  'apple-touch-icon.png',
+  '/index.html',
+  '/404.html',
+  '/manifest.webmanifest',
+  '/apple-touch-icon.png',
   '/js/db.js',
   '/js/app.js',
   '/js/ui.js',
@@ -22,7 +22,8 @@ const assets = [
   'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
   '/pages/fallback.html',
   '/pages/about.html',
-  '/pages/contact.html'
+  '/pages/contact.html',
+  '/pages/papercuts.html'
 ];
 
 // cache size limit function
