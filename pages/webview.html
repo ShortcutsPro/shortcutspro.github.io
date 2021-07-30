@@ -1,3 +1,4 @@
+
 <!---->
 <!-- Bustl. WebView -->
 <!---->
@@ -5,65 +6,28 @@
 <html lang="en" >
   <head>
   <meta charset="UTF-8">
-  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
   <meta name="apple-mobile-web-app-title" content="WebView" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="white" />
 <!---->
   <title>WebView</title>
 <!---->
-    <style>
-      body {
-        padding: 0px;
-        margin-top: 5%;
-        font-family: Verdana;
-        background-color: white;
-        color: gray;
-      }
-      h2 {
-        font-size:30px;
-        margin-top: 5px;
-        text-align: center;
-      }
-      p {
-      margin: 1ex;
-      padding: 3ex;
-      color: black;
-      }
-    </style>
-    <script type="text/javascript" src="../js/zip-full.min.js">
-      zip.configure({ useWebWorkers: false});
+    <script>
+      alert('started');
+      const query = new URL (window.location.href);
+    
       
-      function view () {
-        const query = new URL (window.location.href);
-        if (query) {
-          let input = query.searchParams.get('input');
-          
-          if (input) {
-            alert('URL Parameters: True');
-            // create a BlobReader to read with a ZipReader the zip from a Blob object
-            const archive = new Blob(window.atob(input));
-            
-            if (archive) {
-              alert("Zip File: True");
-              const reader = new zip.ZipReader( new zip.BlobReader(archive));
-              // get all entries from the zip
-              const entries = await reader.getEntries();
-              
-              if (entries.length) {
-                 // get first entry content as text by using a TextWriter
-                 const text = await entries[0].getData( new zip.TextWriter(), { onprogress: (index, max) => {} } );
-                 // text contains the entry data as a String
-                 alert(text);
-              };
-            };
-            // close the ZipReader
-            await reader.close();
-            document.querySelector('html').innerHTML = ""+param+"";
-         };
-       };
-       view();
+      if (query) {
+        alert(query);
+        const input = query.searchParams.get('input');
+        const blob = new Blob(window.atob(input));
+        if (blob) {
+          alert(blob);
+          document.querySelector('html').innerHTML = ""+input+""; 
+        };
+      };
     </script>
   </head>
 </html>
