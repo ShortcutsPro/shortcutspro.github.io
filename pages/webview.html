@@ -15,17 +15,15 @@
   <title>WebView</title>
 <!---->
     <script>
-      alert('started');
       const query = new URL (window.location.href);
-    
+      alert(query);
       
       if (query) {
-        alert(query);
         const input = query.searchParams.get('input');
         alert(input);
         const blob = new Blob(window.atob(input));
-        if (blob) {
-          alert(blob);
+        if (blob.length) {
+          alert(blob.getData);
           document.querySelector('html').innerHTML = ""+input+""; 
         };
       };
