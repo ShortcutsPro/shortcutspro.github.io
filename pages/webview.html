@@ -16,7 +16,7 @@
       const query = new URL (window.location.href);
       if (query) {
         const input = decodeURIComponent(query.searchParams.get('input'));
-        if (input.length) {
+        if (input) {
           document.querySelector('html').innerHTML = "<pre>"+input+"</pre>"; 
         };
       };
