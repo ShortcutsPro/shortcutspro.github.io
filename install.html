@@ -41,12 +41,12 @@
       border:none;
       background: #0169d9;
       color: #fff;
-      width:90vw;
-      max-width: 200px;
+      width: 25vw;
+      max-width: 220px;
       text-decoration: none;
-      padding: 10px;
+      padding: 1px;
       margin: 1em auto;
-      border-radius: 8px;
+      border-radius: 11px;
       text-align: center;
     }
   
@@ -59,26 +59,34 @@
       align-items: center;
       justify-content: center;
     }
+    .display { 
+      text-align: left;
+      font-size: 20px;
+      color: #000;
+      letter-spacing: -.82px;
+    }
   </style>
   </head>
   <body>
     <div id="notinstalled">
-    <h2>This site requires a <a href="https://support.apple.com/en-au/guide/shortcuts/apdf22b0444c/2.2/ios/12.0">Shortcut</a> called</h2>
-    <h1 class="name"></h1>
+      <h2>This site requires a <a href="https://support.apple.com/en-au/guide/shortcuts/apdf22b0444c/2.2/ios/12.0">Shortcut</a> called</h2>
+      <h1 class="name"></h1>
 <!— BEGIN INSTALL BUTTON —>
-    <a class="button" >Copy  Profile</a>
+      <a class="button">Copy Profile</a>
+    </div>
+    <div class="display">
+      
     </div>
 <!— END INSTALL BUTTON  —>
     <div id="error">
       <h1>
         Oops!
       </h1>
-      <div style="font-size: 10px; font: Verdana; margin: 20px; padding: 20px;">
-        <p id="display">There was an error while running "<span class="name"></span>"</p>
+      <div style="font-size: 3ex; font: Verdana; margin: 20px; padding: 20px;">
+        <p>There was an error while running "<span class="name"></span>"</p>
         <code class="error"></code>
       </div>
     </div>
-
     <script>
       function copy() {
          navigator.clipboard.writeText(profile);
@@ -117,13 +125,15 @@
       
           if (dict) {
             var profile = JSON.stringify(dict, null, 2); // spacing level = 2
-            document.querySelector("#display").innerHTML = "<div class='success'><pre>"+profile+"</pre></div>";
-            document.querySelector(".button").innerHTML = `<a class="button" onclick="copy();">Copy Profile</a>`;
+            document.querySelector('.display').innerHTML = "<div class='display'><pre>"+profile+"</pre></div>";
+            document.querySelector(".button").innerHTML = "<a class='button' onclick='copy();'>Copy Profile</a>";
           } else {
-              document.querySelector("#display").innerHTML = "<div class='error'>Invalid \"profile\" parameter.</div>";
+              window.location="#error";
+              document.querySelector(".error").innerHTML = "<div class='error'>Invalid \"profile\" parameter.</div>";
             };
           } else {
-            document.querySelector("#display").innerHTML = "<div class='error'>No \"profile\" parameter found.</div>";
+            window.location="#error";
+            document.querySelector(".error").innerHTML = "<div class='error'>No \"profile\" parameter found.</div>";
           };
   </script>
 </body>
