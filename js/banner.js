@@ -92,7 +92,6 @@ function makeShortcutURL(url, name, color) {
 		<integer>59717</integer>
 		<key>WFWorkflowIconImageData</key>
 		<data>
-             
 		</data>
 		<key>WFWorkflowIconStartColor</key>
 		<integer>${color}</integer>
@@ -127,7 +126,7 @@ function makeShortcutURL(url, name, color) {
 </plist>
 `
     let data = "data:application/octet-stream;base64," + btoa(plist);
-    if (iOS == "13" || iOS == "14") {
+    if (iOS == "14" || iOS == "15") {
         url =
             "shortcuts://x-callback-url/run-shortcut?name=Get%20Non-iCloud%20Shortcut&input=text&text=" +
             encodeURIComponent(JSON.stringify({
