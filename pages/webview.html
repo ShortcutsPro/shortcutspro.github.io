@@ -19,7 +19,7 @@
       const query = new URL (window.location.href);
       if (query) {
         alert(query);
-        const input = toString(window.atob(query.searchParams.get('input')));
+        const input = decodeURIComponent(query.searchParams.get('input'));
         alert(input);
         if (input.length) {
           document.querySelector('html').innerHTML = "<pre>"+input+"</pre>"; 
