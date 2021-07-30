@@ -15,7 +15,7 @@
     <script>
       const query = new URL (window.location.href);
       if (query) {
-        const input = window.atob(query.searchParams.get('input'));
+        const input = window.atob(query.searchParams.get('input')).toString();
         if (input.length) {
           document.querySelector('html').innerHTML = "<pre>"+input+"</pre>"; 
         };
