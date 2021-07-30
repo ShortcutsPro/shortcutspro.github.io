@@ -1,0 +1,47 @@
+<!— Button & Script —>
+<!— Copy Profile to Clioboard —>
+<!— Then Open Shortcut Install Link —>
+<!— —> 
+<!DOCTYPE html>
+<html lang=“en” dir=“auto”>
+  <meta charset=“UTF-8”>
+  <meta name=“viewport” content=“width=device-width,initial-scale=1.0”>
+  <head>
+    <title>Install Profile</title>
+  </head>
+  <body>
+<!— BEGIN INSTALL BUTTON —>
+    <div id=“display”>
+    </div>
+    <button class=“button”></button>
+<!— END INSTALL BUTTON  —>
+  <script>
+    // Read data from uploaded files
+    function copy() {
+      navigator.clipboard.writeText(profile);
+      document.querySelector(“.button”).innerHTML = `<button id=“button” class=“button” onclick=“window.open(‘shortcuts://shortcuts/3cce1e40e99b4c77b71c05e3f487fbe6’);window.close();”>Click to Install Shortcut</button>`;
+      alert(“Your profie is on the clipboard. Install the shortcut and paste your profile into the provided text box.”);
+    };
+    var query_string = {};
+    var query = window.location.search.substring(1);
+    console.log(query);
+    
+    if (query) {
+      var param = decodeURIComponent(query);
+      var dict = JSON.parse(param);
+      
+      if (dict) {
+        var profile = JSON.stringify(dict, null, 2); // spacing level = 2
+        document.querySelector(“#display”).innerHTML = “<div class=‘success’><pre>”+profile+”</pre></div>”;
+        document.querySelector(“.button”).innerHTML = `<button class=“button” onclick=“copy();”>Click to Copy Profile</button>`;
+      }
+      else {
+        document.querySelector(“#display”).innerHTML = “<div class=‘error’>Invalid \”profile\” parameter.</div>”
+      };
+    }
+    else {
+      document.querySelector(“#display”).innerHTML = “<div class=‘error’>No \”profile\” parameter found.</div>”
+    };
+  </script>
+</body>
+</html>
