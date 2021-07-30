@@ -16,15 +16,12 @@
 <!---->
     <script>
       const query = new URL (window.location.href);
-      alert(query);
       
       if (query) {
-        const input = query.searchParams.get('input');
+        const input = decodeURIComponent(query.searchParams.get('input'));
         alert(input);
-        const decode = decodeURIComponent(input);
-        if (decode) {
-          alert(decode);
-          document.querySelector('html').innerHTML = ""+decode+""; 
+        if (input.length) {
+          document.querySelector('html').innerHTML = "<pre>"+input+"</pre>"; 
         };
       };
     </script>
