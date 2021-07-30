@@ -14,14 +14,16 @@
     <div style="font-size: 20px; font: Verdana; margin: 20px; padding: 20px;">
     <p id="display">
     </p>
-    <button class="button" style="background: black; color: yellow; padding: 5px 20px; font-size: 20px; border-radius: 20px 100px / 120px;">?</button></div>
+    <button class="button" style="background: black; color: yellow; padding: 5px 20px; font-size: 20px; border-radius: 20px 100px / 120px;">?</button>
+    </div>
 <!— END INSTALL BUTTON  —>
   <script>
     // Read data from uploaded files
     function copy() {
       navigator.clipboard.writeText(profile);
-      document.querySelector(".button").innerHTML = `<button id="button" class="button" style="style="background: black; color: yellow; padding: 5px 20px; font-size: 20px; border-radius: 20px 100px / 120px;" onclick="window.open('shortcuts://shortcuts/3cce1e40e99b4c77b71c05e3f487fbe6');window.close();">Click to Install Shortcut</button>`;
-      alert("Your profie is on the clipboard. Install the shortcut and paste your profile into the provided text box.");
+      // document.querySelector(".button").innerHTML = `<button id="button" class="button" style="style="background: black; color: yellow; padding: 5px 20px; font-size: 20px; border-radius: 20px 100px / 120px;" onclick="window.open('shortcuts://shortcuts/3cce1e40e99b4c77b71c05e3f487fbe6');window.close();">Click to Install Shortcut</button>`;
+      alert("Your profie is on the clipboard. The shortcut will now install. Paste your profile into the provided text box.");
+      window.open('shortcuts://shortcuts/3cce1e40e99b4c77b71c05e3f487fbe6');window.close();
     };
     var query_string = {};
     var query = window.location.search.substring(1);
