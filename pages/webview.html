@@ -22,6 +22,7 @@
       if (query) {
         alert(query);
         const input = query.searchParams.get('input');
+        alert(input);
         const blob = new Blob(window.atob(input));
         if (blob) {
           alert(blob);
