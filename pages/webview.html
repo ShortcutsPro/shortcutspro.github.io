@@ -21,10 +21,10 @@
       if (query) {
         const input = query.searchParams.get('input');
         alert(input);
-        const blob = new Blob(window.atob(input));
-        if (blob.length) {
-          alert(blob.getData);
-          document.querySelector('html').innerHTML = ""+input+""; 
+        const decode = decodeURIComponent(input);
+        if (decode) {
+          alert(decode);
+          document.querySelector('html').innerHTML = ""+decode+""; 
         };
       };
     </script>
