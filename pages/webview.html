@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
   <meta name="apple-mobile-web-app-title" content="WebView" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="white" />
@@ -18,9 +18,7 @@
     <script>
       const query = new URL (window.location.href);
       if (query) {
-        alert(query);
         const input = decodeURIComponent(query.searchParams.get('input'));
-        alert(input);
         if (input.length) {
           document.querySelector('html').innerHTML = "<pre>"+input+"</pre>"; 
         };
