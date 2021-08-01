@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Your app title -->
+    <title>Bustl. Cutz</title>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <ion-app>
+      <ion-tabs>
+        <ion-tab tab="home">
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Bustl. Cutz</ion-title>
+            </ion-toolbar>
+<!--             <ion-searchbar disabled></ion-searchbar> -->
+          </ion-header>
+
+          <ion-content class="ion-padding">
+            <ion-list id="packageList">
+            </ion-list>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab tab="sources">
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Sources</ion-title>
+            </ion-toolbar>
+          </ion-header>
+
+          <ion-content class="ion-padding">
+            <ion-list id="sourceList">
+            </ion-list>
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+              <ion-fab-button id="addSource">
+                <ion-icon name="add"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="home">
+            <ion-label>Browse</ion-label>
+            <ion-icon name="compass"></ion-icon>
+          </ion-tab-button>
+          <ion-tab-button tab="sources">
+            <ion-label>Sources</ion-label>
+            <ion-icon name="list"></ion-icon>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-app>
+    <!-- Path to your app js-->
+    <script type="module" src="papercuts.js"></script>
+  </body>
+</html>

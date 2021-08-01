@@ -1,5 +1,5 @@
 // get document elements
-const form = document.querySelector('form');
+// const form = document.querySelector('form');
 const ADD = document.querySelector('#button');
 
 
