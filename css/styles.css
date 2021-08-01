@@ -153,5 +153,7 @@ iframe-container {
   position: fixed;
   top: 6ex;
   width: 100%;
-  padding-bottom: 20ex;
+  padding-bottom: 10ex;
 }
+
+@import url("clean.css");
