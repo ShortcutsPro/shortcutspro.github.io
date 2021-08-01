@@ -5,85 +5,80 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <head>
     <title>Install Profile</title>
     <style>
       body {
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 34px;
-      color: #000;
-      letter-spacing: -.82px;
-    }
-
-    h2 {
-      font-weight: 500;
-    }
-  
-    a {
-      color: #0169d9;
-      text-decoration: none;
-    }
-  
-    button,.button,[type="button"],[type="submit"],[type="reset"] {
-      display:block;
-      cursor: pointer;
-      font-weight: 500;
-      font:inherit;
-      border:none;
-      background: #0169d9;
-      color: #fff;
-      width: 25vw;
-      max-width: 220px;
-      text-decoration: none;
-      padding: 1px;
-      margin: 1em auto;
-      border-radius: 11px;
-      text-align: center;
-    }
-  
-    #notinstalled, #error {
-      display:none;
-    }
-    #notinstalled:target, #error:target {
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .display { 
-      text-align: left;
-      font-size: 20px;
-      color: #000;
-      letter-spacing: -.82px;
-    }
-  </style>
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      h1 {
+        font-size: 34px;
+        color: #000;
+        letter-spacing: -.82px;
+      }
+      h2 {
+        font-weight: 500;
+      }
+      a {
+        color: #0169d9;
+        text-decoration: none;
+      }
+      button,.button,[type="button"],[type="submit"],[type="reset"] {
+        display:block;
+        cursor: pointer;
+        font-weight: 500;
+        font:inherit;
+        border:none;
+        background: #0169d9;
+        color: #fff;
+        width: 25vw;
+        max-width: 220px;
+        text-decoration: none;
+        padding: 1px;
+        margin: 1em auto;
+        border-radius: 11px;
+        text-align: center;
+      }
+      #notinstalled, #error {
+        display:none;
+      }
+      #notinstalled:target, #error:target {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .display { 
+        text-align: left;
+        font-size: 20px;
+        color: #000;
+        letter-spacing: -.82px;
+      }
+    </style>
   </head>
   <body>
+<!— BEGIN INSTALL BUTTON —>
     <div id="notinstalled">
       <h2>This site requires a <a href="https://support.apple.com/en-au/guide/shortcuts/apdf22b0444c/2.2/ios/12.0">Shortcut</a> called</h2>
       <h1 class="name"></h1>
-<!— BEGIN INSTALL BUTTON —>
       <a class="button">Copy Profile</a>
     </div>
     <div class="display">
       
     </div>
-<!— END INSTALL BUTTON  —>
+<!— BEGIN ERROR MESSAGE  —>
     <div id="error">
       <h1>
         Oops!
       </h1>
       <div style="font-size: 3ex; font: Verdana; margin: 20px; padding: 20px;">
-        <p>There was an error while running "<span class="name"></span>"</p>
+        <p>There was an error while installing "<span class="name"></span>"</p>
         <code class="error"></code>
       </div>
     </div>
@@ -92,49 +87,30 @@
          navigator.clipboard.writeText(profile);
          alert("Your profie is on the clipboard. The shortcut will now install. Paste your profile into the provided text box.");
          window.open('shortcuts://shortcuts/3cce1e40e99b4c77b71c05e3f487fbe6');window.close();
-       };
+      };
        
-       // var params = new URLSearchParams(window.location.search);
-       var sname = "File Provider";
-       // if (sname) {
-       //   var link = params.get("uri");
-       //   var error = params.get("errorMessage");
-       //   document.querySelector("#link").href=link;
-         document.querySelectorAll(".name").forEach(n=>n.textContent=sname);
-       //   document.querySelectorAll(".error").forEach(n=>n.textContent=error);
-       // };
-       //   if (error === null) {
-           window.location="#notinstalled";
-         // } else if (error.match(/not.*?find.*?shortcut/i)) {
-         //     window.location="#notinstalled";
-         //   } else {
-         //       window.location="#error";
-         //     };
-
-         
-       // Read data from uploaded files
-       
-        
-        // var query_string = {};
-        var query = window.location.search.substring(1);
-        console.log(query);
+      document.querySelectorAll(".name").forEach(n=>n.textContent="File Provider");
+      var query = window.location.search.substring(1);
+      console.log(query);
+  
+      if (query) {
+        var param = decodeURIComponent(query);
+        var dict = JSON.parse(param);
     
-        if (query) {
-          var param = decodeURIComponent(query);
-          var dict = JSON.parse(param);
-      
-          if (dict) {
-            var profile = JSON.stringify(dict, null, 2); // spacing level = 2
-            document.querySelector('.display').innerHTML = "<div class='display'><pre>"+profile+"</pre></div>";
-            document.querySelector(".button").innerHTML = "<a class='button' onclick='copy();'>Copy Profile</a>";
-          } else {
-              window.location="#error";
-              document.querySelector(".error").innerHTML = "<div class='error'>Invalid \"profile\" parameter.</div>";
-            };
-          } else {
+        if (dict) {
+          window.location="#notinstalled";
+          var profile = JSON.stringify(dict, null, 2); // spacing level = 2
+          document.querySelector('.display').innerHTML = "<div class='display'><pre>"+profile+"</pre></div>";
+          document.querySelector(".button").innerHTML = "<a class='button' onclick='copy();'>Copy Profile</a>";
+        } else {
             window.location="#error";
-            document.querySelector(".error").innerHTML = "<div class='error'>No \"profile\" parameter found.</div>";
+            document.querySelector(".error").innerHTML = "<div class='error'>Invalid \"profile\" parameter.</div>";
           };
-  </script>
-</body>
+          
+       } else {
+           window.location="#error";
+           document.querySelector(".error").innerHTML = "<div class='error'>No \"profile\" parameter found.</div>";
+       };
+    </script>
+  </body>
 </html>
