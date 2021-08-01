@@ -239,23 +239,7 @@ async function installUi(pkg) {
       break
     };
   }
-  
-  if(!canceled) {
-    alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`)
-   
-    const shortcut {
-      name = pkg.name.value,
-      input = "",
-      description = pkg.description.value,
-      icon = pkg.icon.value
-    };
-    console.log(shortcut.name);
-
-    if (shortcut.name) {
-      localStorage.setItem(shortcut.name, shortcut);
-      window.location = "../index.html";
-    };
-  }
+  if(!canceled) alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`)
 }
 
 async function depict(pkg) {
