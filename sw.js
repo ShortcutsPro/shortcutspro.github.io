@@ -23,7 +23,8 @@ const assets = [
   '/pages/fallback.html',
   '/pages/about.html',
   '/pages/contact.html',
-  '/pages/papercuts.html'
+  '/pages/papercuts.html',
+  '/papercuts/'
 ];
 
 // cache size limit function
@@ -71,7 +72,7 @@ self.addEventListener('fetch', evt => {
         return caches.open(dynamicCacheName).then(cache => {
           cache.put(evt.request.url, fetchRes.clone());
           // check cached items size
-          limitCacheSize(dynamicCacheName, 50);
+          limitCacheSize(dynamicCacheName, 30);
           return fetchRes;
         })
       });
