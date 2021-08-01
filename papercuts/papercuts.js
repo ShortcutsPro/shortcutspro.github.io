@@ -239,7 +239,10 @@ async function installUi(pkg) {
       break
     };
   }
-  if(!canceled) alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`)
+  if(!canceled) {
+    alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
+    localStorage.setItem(pkg.name, JSON.stringify(pkg));
+  };
 }
 
 async function depict(pkg) {

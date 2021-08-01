@@ -19,7 +19,7 @@ if (localStorage.length > 0) {
     const html = `
       <div class="card-panel shortcut white row" data-id="${data.name}">
               <img class="img" src="${data.icon}" alt="shortcut icon" />
-        <a href="shortcuts://run-shortcut?name=INTEGRITY&input=text&text=${dict}">
+        <a href="shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=${dict}">
           <div class="shortcut-details">
             <div class="shortcut-name">${data.name}</div>
             <div class="shortcut-descriprion">${data.description}</div>
