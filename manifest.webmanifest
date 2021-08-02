@@ -45,8 +45,8 @@
   "theme_color" : "#000000",
   "related_applications" : [
     {
-      "platform" : "itunes",
-      "id" : "com.shortcutspro.bustl-cuts"
+      "url" : "https://shortcutspro.github.io",
+      "id" : "io.github.shortcutspro.library.bustl.-cutz"
     }
   ],
   "prefer_related_applications" : true,
@@ -55,5 +55,11 @@
   "description" : "Shortcut launcher for Bustl.•io",
   "orientation" : "portrait",
   "name" : "Bustl.Cutz",
-  "start_url" : "/"
+  "start_url" : "/",
+  "categories" : [
+    "business",
+    "productivity",
+    "utilities"
+  ],
+  "id" : "io.github.shortcutspro.library.bustl.-cutz"
 }
