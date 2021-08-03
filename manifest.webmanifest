@@ -41,7 +41,7 @@
       "sizes" : "512x512"
     }
   ],
-  "display" : "standalone",
+  "display" : "fullscreen",
   "theme_color" : "#000000",
   "related_applications" : [
     {
@@ -52,7 +52,7 @@
   "prefer_related_applications" : true,
   "background_color" : "#000000",
   "short_name" : "Cutz",
-  "description" : "Shortcut launcher for Bustl.•io",
+  "description" : "INTEGRITY Shortcuts System | bustl.•io",
   "orientation" : "portrait",
   "name" : "Bustl.Cutz",
   "start_url" : "/",
@@ -65,7 +65,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+cutz",
-      "url": "/%s"
+      "url": "/index.html?%s"
     }
   ]
 }
