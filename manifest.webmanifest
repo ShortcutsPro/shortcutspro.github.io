@@ -1,4 +1,35 @@
 {
+  "prefer_related_applications" : true,
+  "description" : "INTEGRITY Shortcuts System | bustl.•io",
+  "orientation" : "portrait",
+  "categories" : [
+    "business",
+    "productivity",
+    "utilities"
+  ],
+  "background_color" : "#000000",
+  "display" : "fullscreen",
+  "id" : "io.github.shortcutspro.library.bustl-cutz",
+  "protocol_handlers" : [
+    {
+      "url" : "/index.html?%s",
+      "protocol" : "web+cutz"
+    },
+    {
+      "url" : "/papercuts/x-callback-url/add?%s",
+      "protocol" : "web+repo"
+    }
+  ],
+  "short_name" : "Cutz",
+  "related_applications" : [
+    {
+      "url" : "https://shortcutspro.github.io",
+      "id" : "io.github.shortcutspro.library.bustl-cutz"
+    }
+  ],
+  "start_url" : "/",
+  "theme_color" : "#000000",
+  "name" : "Bustl.Cutz",
   "icons" : [
     {
       "src" : "/images/icons/apple-touch-icon-72x72.png",
@@ -39,33 +70,6 @@
       "src" : "/images/icons/apple-touch-icon-512x512.png",
       "type" : "image/png",
       "sizes" : "512x512"
-    }
-  ],
-  "display" : "fullscreen",
-  "theme_color" : "#000000",
-  "related_applications" : [
-    {
-      "url" : "https://shortcutspro.github.io",
-      "id" : "io.github.shortcutspro.library.bustl-cutz"
-    }
-  ],
-  "prefer_related_applications" : true,
-  "background_color" : "#000000",
-  "short_name" : "Cutz",
-  "description" : "INTEGRITY Shortcuts System | bustl.•io",
-  "orientation" : "portrait",
-  "name" : "Bustl.Cutz",
-  "start_url" : "/",
-  "categories" : [
-    "business",
-    "productivity",
-    "utilities"
-  ],
-  "id" : "io.github.shortcutspro.library.bustl-cutz",
-  "protocol_handlers": [
-    {
-      "protocol": "web+cutz",
-      "url": "/index.html?%s"
     }
   ]
 }
