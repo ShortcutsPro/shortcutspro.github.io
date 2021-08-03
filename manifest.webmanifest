@@ -46,7 +46,7 @@
   "related_applications" : [
     {
       "url" : "https://shortcutspro.github.io",
-      "id" : "io.github.shortcutspro.library.bustl.-cutz"
+      "id" : "io.github.shortcutspro.library.bustl-cutz"
     }
   ],
   "prefer_related_applications" : true,
@@ -61,5 +61,11 @@
     "productivity",
     "utilities"
   ],
-  "id" : "io.github.shortcutspro.library.bustl.-cutz"
+  "id" : "io.github.shortcutspro.library.bustl-cutz",
+  "protocol_handlers": [
+    {
+      "protocol": "web+cutz",
+      "url": "/%s"
+    }
+  ]
 }
