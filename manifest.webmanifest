@@ -8,7 +8,7 @@
     "utilities"
   ],
   "background_color" : "#000000",
-  "display" : "fullscreen",
+  "display" : "standalone",
   "id" : "io.github.shortcutspro.library.bustl-cutz",
   "protocol_handlers" : [
     {
