@@ -12,11 +12,11 @@
   "id" : "io.github.shortcutspro.library.bustl-cutz",
   "protocol_handlers" : [
     {
-      "url" : "/index.html?%s",
+      "url" : "/index.html?url=%s",
       "protocol" : "web+cutz"
     },
     {
-      "url" : "/papercuts/x-callback-url/add?%s",
+      "url" : "/papercuts/x-callback-url/index.html?add=?%s",
       "protocol" : "web+repo"
     }
   ],
@@ -27,7 +27,7 @@
       "id" : "io.github.shortcutspro.library.bustl-cutz"
     }
   ],
-  "start_url" : "/",
+  "start_url" : "/index.html?pwa=true",
   "theme_color" : "#000000",
   "name" : "Bustl.Cutz",
   "icons" : [

@@ -1,3 +1,13 @@
+@charset "utf-8";
+@import url("./materialize.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("../fonts/space_age.ttf");
+@import url("./clean.css");
+@font-face { 
+  font-family: SpaceAge; 
+  src: url("../fonts/space_age.ttf"); 
+}
+
 /* colours */
 :root{
   --primary: #000000;
@@ -5,20 +15,37 @@
   --title: #000000;
 }}
 
-@charset "utf-8";
-@import url("./materialize.min.css");
-@import url("../fonts/space_age.ttf");
-@font-face { 
-  font-family: SpaceAge; 
-  src: url("../fonts/space_age.ttf"); 
+html { 
+  font-size: 100%; 
+  font-family: Helvetica, Arial, Freesans, clean, sans-serif, SpaceAge;
+}     
+body { 
+  margin: 0; 
+  padding: 1em; 
+  background-color: white; 
+  font-family: system-ui; 
+  color: black; 
 }
-
-html { font-size: 100%; font-family: Helvetica, Arial, Freesans, clean, sans-serif, SpaceAge;}     
-body { margin: 0; padding: 0; background-color: white; font-family: system-ui; color: black; }
-@media (prefers-color-scheme: dark;) { body { background-color: #3a3a3a; color: white; }} 
-@media (max-device-width: 480px;) { body { margin: 0; max-width: 100%; }}
-@media (min-device-width: 481px;) { body { margin: 0; max-width: 100%; }}
-img { max-width: 90%; }
+@media (prefers-color-scheme: dark;) { 
+  body { 
+    background-color: #3a3a3a; 
+    color: white; 
+  }
+} 
+@media (max-device-width: 480px;) { 
+  body { margin: 0; 
+    max-width: 100%; 
+  }
+}
+@media (min-device-width: 481px;) { 
+  body { 
+    margin: 0; 
+    max-width: 600px; 
+  }
+}
+img { 
+  max-width: 90%; 
+}
 
 
 /* layout styles */
@@ -156,4 +183,12 @@ iframe-container {
   padding-bottom: 10ex;
 }
 
-@import url("clean.css");
+
+/* debug.css | MIT License | zaydek.github.com/debug,.css *
+  
+:not(path):not(g) {
+  color:                    hsla(210, 100%, 100%, 0.9) !important;
+  	background:               hsla(210, 100%,  50%, 0.5) !important;
+  	outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+  	box-shadow: none !important;
+    }  */
