@@ -26,15 +26,18 @@
   <body>
     <script>
       const query = new URL (window.location.href);
-      if (query.length > 0) {
-        const input = decodeURIComponent(query.searchParams.get('input'));
+      const input = decodeURIComponent(query.searchParams.get('input'));
+      console.log(input);
+      if (input === 'null') {
+        alert('\n'+"Nothing here."+'\n');
+      } else {
         const message = decodeURIComponent(query.searchParams.get('message'));
-        if (message.length > 0) {
+        if (message === 'null') {
+          console.log(message);
+        } else {
           alert(message);
         };
         document.querySelector('body').innerHTML = "<pre>"+input+"</pre>";
-      } else {
-        alert('\n'+"Nothing here."+'\n');
       };
     </script>
   </body>
