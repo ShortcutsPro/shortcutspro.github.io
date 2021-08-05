@@ -29,9 +29,11 @@
       const input = decodeURIComponent(query.searchParams.get('input'));
       console.log(input);
       if (input === 'null') {
-        console.log('\n'+"Nothing"+'\n');
+        alert('\n'+"Nothing"+'\n');
       } else {
-        document.querySelector('body').innerHTML = "<pre>"+input+"</pre>";
+        document.querySelector('body').innerHTML = `
+        "<pre>${input}</pre>"
+        `;
       };
     </script>
   </body>
