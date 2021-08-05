@@ -1,5 +1,5 @@
 <script>
-  let cu=new URL(new URLSearchParams(location.search).get("x-success"))
+  let cu = new URL(new URLSearchParams(location.search).get("x-success"));
   cu.searchParams.set("text",'{"repos":'+(localStorage.getItem("sources") || '["https://shortcutspro.github.io/library/"]')+'}')
-  location.href=cu.href;
+  location.href = cu.href;
 </script>

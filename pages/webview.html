@@ -26,9 +26,16 @@
   <body>
     <script>
       const query = new URL (window.location.href);
-      const input = decodeURIComponent(query.searchParams.get('input'));
-      alert(input);
-      document.querySelector('body').innerHTML = "<pre>"+input+"</pre>"; 
+      if (query.length) {
+        const input = decodeURIComponent(query.searchParams.get('input'));
+        const message = decodeURIComponent(query.searchParams.get('message'));
+        if (message.length) {
+          alert(message);
+        };
+        document.querySelector('body').innerHTML = "<pre>"+input+"</pre>";
+      } else {
+        alert('\n'+"Nothing for you."+'\n'+"Bye now… 👋");
+      };
     </script>
   </body>
 </html>
