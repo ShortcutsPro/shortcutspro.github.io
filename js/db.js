@@ -7,23 +7,28 @@ const INPUT = decodeURIComponent(query.searchParams.get('add'));
 if (INPUT === 'null') {
     console.log(INPUT);
 } else {
-    alert("Adding "+INPUT);
+    const DATA = JSON.parse(INPUT);
+    alert("Adding "+DATA.name);
+    if (DATA.integrity) {
+      localStorage.setItem(DATA.name, INPUT);
+      location.reload();
+    };
 };
 // add a shortcut
 ADD.addEventListener('click', async () => {
   
-  if (INPUT === 'null') {
+  // if (INPUT === 'null') {
     window.open('shortcuts://x-callback-url/run-shortcut?name=Add%20Shortcut&x-error=shortcuts://');
-  } else {
-    var READ = navigator.clipboard.readText();
-    const ADD = JSON.parse(READ);
-    console.log(ADD.name);
+  // } else {
+  //   var READ = navigator.clipboard.readText();
+  //   const ADD = JSON.parse(READ);
+  //   console.log(ADD.name);
     
-    if (ADD.integrity) {
-      localStorage.setItem(ADD.name, READ);
-      location.reload();
-    };
-  };
+  //   if (ADD.integrity) {
+  //     localStorage.setItem(ADD.name, READ);
+  //     location.reload();
+  //   };
+  // };
 });
 
 
