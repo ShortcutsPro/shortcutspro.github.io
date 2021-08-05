@@ -2,9 +2,12 @@
 // const form = document.querySelector('form');
 const ADD = document.querySelector('#button');
 const query = new URL (window.location.href);
-const INPUT = query.searchParams.get('add');
-if (INPUT) {
-  alert(INPUT);
+const INPUT = decodeURIComponent(query.searchParams.get('add'));
+
+if (INPUT === 'null') {
+    console.log(INPUT);
+} else {
+    alert("Adding "+INPUT);
 };
 // add a shortcut
 ADD.addEventListener('click', async () => {
@@ -12,7 +15,7 @@ ADD.addEventListener('click', async () => {
   if (INPUT === 'null') {
     window.open('shortcuts://x-callback-url/run-shortcut?name=Add%20Shortcut&x-error=shortcuts://');
   } else {
-    var READ = await navigator.clipboard.readText();
+    var READ = navigator.clipboard.readText();
     const ADD = JSON.parse(READ);
     console.log(ADD.name);
     
