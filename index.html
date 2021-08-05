@@ -95,23 +95,6 @@
         </button>
       </div>
     </section>
-    <script>
-      const query = new URL (window.location.href);
-      const INPUT = decodeURIComponent(query.searchParams.get('add'));
-
-      if (INPUT === 'null') {
-        console.log(INPUT);
-      } else {
-        var READ = await navigator.clipboard.readText();
-        const ADD = JSON.parse(READ);
-        console.log(ADD.name);
-        
-        if (ADD.integrity) {
-          localStorage.setItem(ADD.name, READ);
-          location.reload();
-        };
-      };
-    </script>
     <script src="./js/app.js"></script>
     <script src="./js/ui.js"></script>
     <script src="./js/db.js"></script>
