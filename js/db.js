@@ -2,8 +2,10 @@
 // const form = document.querySelector('form');
 const ADD = document.querySelector('#button');
 const query = new URL (window.location.href);
-const INPUT = decodeURIComponent(query.searchParams.get('add'));
-
+const INPUT = query.searchParams.get('add');
+if (INPUT) {
+  alert(INPUT);
+};
 // add a shortcut
 ADD.addEventListener('click', async () => {
   
