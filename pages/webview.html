@@ -31,12 +31,6 @@
       if (input === 'null') {
         alert('\n'+"Nothing"+'\n');
       } else {
-        const message = decodeURIComponent(query.searchParams.get('message'));
-        if (message === 'null') {
-          console.log(message);
-        } else {
-          alert(message);
-        };
         document.querySelector('body').innerHTML = "<pre>"+input+"</pre>";
       };
     </script>
