@@ -6,7 +6,8 @@ const ADD = document.querySelector('#button');
 ADD.addEventListener('click', async () => {
   
   // if (INPUT === 'null') {
-    window.open('shortcuts://x-callback-url/run-shortcut?name=Add%20Shortcut&x-error=https://shortcutspro.github.io/error.html?uri%3Dshortcuts://shortcuts/148a9940a58245a88ae73c108c41d44f%26name%3DAdd%2520Shortcut');
+    window.open('shortcuts://x-callback-url/run-shortcut?name=Add%20Bustl.Cutz&x-error=https://shortcutspro.github.io/error.html?uri%3Dshortcuts://shortcuts/c0aa214ac24b4095979344f170f56eae%26name%3DAdd%2520Bustl.Cutz');
+    window.close();
   // } else {
   //   var READ = navigator.clipboard.readText();
   //   const ADD = JSON.parse(READ);
