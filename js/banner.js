@@ -16,7 +16,7 @@ const colorGradients = {
   "a9a9a9": "linear-gradient(#A49995, #968984)",
   "zzzzzz": "linear-gradient(#fff722, #ffb101)"
 }
-
+const SOURCE = decodeURIComponent(query.searchParams.get('s'));
 if (SOURCE != "pwa" && SOURCE != "shortcuts") {
   if (!navigator.standalone && localStorage.getItem("_shortcutInstalled") != "1") {
       let siteName = document.title;
