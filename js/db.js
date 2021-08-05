@@ -5,6 +5,7 @@ const ADD = document.querySelector('#button');
 // add a shortcut
 ADD.addEventListener('click', async () => {
     window.open('shortcuts://x-callback-url/run-shortcut?name=Add%20Bustl.Cutz&x-error=https://shortcutspro.github.io/error.html?uri%3Dshortcuts://shortcuts/c0aa214ac24b4095979344f170f56eae%26name%3DAdd%2520Bustl.Cutz');
+    window.close();
 });
 
 // remove a shortcut
