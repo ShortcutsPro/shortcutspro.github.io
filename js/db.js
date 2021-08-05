@@ -13,7 +13,7 @@ ADD.addEventListener('click', async () => {
   const ADD = JSON.parse(READ);
   console.log(ADD.name);
 
-  if (ADD.name) {
+  if (ADD.integrity) {
     localStorage.setItem(ADD.name, READ);
     location.reload();
   };

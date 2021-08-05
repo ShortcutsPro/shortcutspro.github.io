@@ -13,7 +13,7 @@
   --primary: #000000;
   --secondary: #3a3a3a;
   --title: #000000;
-}}
+}
 
 html { 
   font-size: 100%; 
@@ -57,7 +57,7 @@ nav {
   top: -0.5ex;
   left: 0;
   text-align: center;
-  margin-bottom: 1ex;;
+  margin-bottom: 0ex;
   max-width: 100%;
   border-bottom: 1ex solid var(--secondary);
 }
@@ -67,21 +67,22 @@ nav a {
   top: 0;
   text-transform: lowercase;
   color: gray;
+  text: lighten-1;
 /*  padding-top: env(safe-area-inset-top);*/
 }
 
-nav a .bold {
+.bold {
   font-weight: bold;
 }
 
-nav .bustl {
+.bustl {
   padding-top: env(safe-area-inset-top);
   margin-top: 0;
   top: 0;
   text-align: left;
   font-family: SpaceAge;
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   margin-left: 1ex;
   color: #2073DE;
 }

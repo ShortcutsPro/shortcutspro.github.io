@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const menus = document.querySelectorAll('.side-menu');
   M.Sidenav.init(menus, {edge: 'right'});
 });
-  // const source = document.querySelectorAll('.side-form');
+  // const source = document.querySelectorAll('.side-form');7
   // M.Sidenav.init(menus, {edge: 'left'});
 
 // render shortcut data
