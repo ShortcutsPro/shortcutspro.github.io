@@ -48,11 +48,11 @@
       content = "black" />
 
     <link rel = "manifest" 
-          href = "./manifest.webmanifest" type="application/manifest+json" />
+          href = "manifest.webmanifest" type="application/manifest+json" />
     <link rel = "icon" 
-          href = "./apple-touch-icon.png" type="image/png" sizes="512x512" />   
-    <link relv= "apple-touch-icon" 
-          href =v"./apple-touch-icon.png" type="image/png" sizes="512x512" />
+          href = "apple-touch-icon.png" type="image/png" sizes="512x512" />   
+    <link rel = "apple-touch-icon" 
+          href = "apple-touch-icon.png" type="image/png" sizes="512x512" />
     <style>
       @import url("./css/styles.css");
     </style>
@@ -60,6 +60,7 @@
     <script src = "https://jsconsole.com/remote.js?8903ED7E-E625-475C-9872-BC959EC8F7B1"></script>
     <script>
       const query = new URL(window.location.href);
+      const SOURCE = decodeURIComponent(query.searchParams.get('s'));
       const INPUT = decodeURIComponent(query.searchParams.get('add'));
       if (INPUT === 'null') {
         console.log(INPUT);
@@ -89,7 +90,7 @@
 <!-- side nav -->
     <ul id="side-menu" class="sidenav side-menu">
       <li><a class="subheader bustl"><em>Bustl. Cutz</em></a></li>
-      <li><a href="./index.html" class="waves-effect"><i class="material-icons">menu_open</i>Home</a></li>
+      <li><a href="index.html" class="waves-effect"><i class="material-icons">menu_open</i>Home</a></li>
       <li><a href="./pages/papercuts.html" class="waves-effect"><i class="material-icons">search</i>Catalog</a></li>
       <li><a href="./pages/about.html" class="waves-effect"><i class="material-icons">info</i>About</a></li>
       <li><div class="divider"></div></li>
