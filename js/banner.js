@@ -21,7 +21,7 @@ if (SOURCE != "pwa" && SOURCE != "shortcuts") {
   if (!navigator.standalone && localStorage.getItem("_shortcutInstalled") != "1") {
       let siteName = document.title;
       let color = colorGradients['zzzzzz'];
-      let url = "shortcuts://shortcuts/28149ad907de4d049a13c860871c39d9";
+      let url = "shortcuts://shortcuts/68073dadff654a1cad5f39df8f9d6c41";
       var t = document.createElement("div")
       t.setAttribute("style", "all: initial; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; background:"+color+"; width: 100%; position: fixed; top:0; left:0; display: flex; flex-direction: row;padding: 0 16px 0 10px; align-items: center; height: 64px; transform: translateY(-64px);")
       t.innerHTML = `
