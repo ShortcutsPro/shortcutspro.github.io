@@ -1,19 +1,7 @@
 // get document elements
 // const form = document.querySelector('form');
 const ADD = document.querySelector('#button');
-const query = new URL (window.location.href);
-const INPUT = decodeURIComponent(query.searchParams.get('add'));
 
-if (INPUT === 'null') {
-    console.log(INPUT);
-} else {
-    const DATA = JSON.parse(INPUT);
-    alert("Adding "+DATA.name);
-    if (DATA.integrity) {
-      localStorage.setItem(DATA.name, INPUT);
-      location.reload();
-    };
-};
 // add a shortcut
 ADD.addEventListener('click', async () => {
   

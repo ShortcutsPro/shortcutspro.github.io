@@ -58,6 +58,20 @@
     </style>
     <script src = "./js/materialize.min.js"></script>
     <script src = "https://jsconsole.com/remote.js?8903ED7E-E625-475C-9872-BC959EC8F7B1"></script>
+    <script>
+      const query = new URL(window.location.href);
+      const INPUT = decodeURIComponent(query.searchParams.get('add'));
+      if (INPUT === 'null') {
+        console.log(INPUT);
+      } else {
+        const DATA = JSON.parse(INPUT);
+        alert("Adding "+DATA.name);
+        if (DATA.integrity) {
+          localStorage.setItem(DATA.name, INPUT);
+          location.reload();
+        };
+      };
+    </script>
   </head>
   <body>
 <!-- top nav -->
