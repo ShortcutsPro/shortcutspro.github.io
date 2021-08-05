@@ -95,7 +95,24 @@
         </button>
       </div>
     </section>
+    <script>
+      const query = new URL (window.location.href);
+      const INPUT = decodeURIComponent(query.searchParams.get('add'));
+      alert(INPUT);
 
+      // var READ = await navigator.clipboard.readText();
+      if (INPUT === 'null') {
+        console.log(INPUT);
+      } else {
+        const PARAM = JSON.parse(INPUT);
+        console.log(PARAM.name);
+        
+        if (PARAM.integrity) {
+          localStorage.setItem(PARAM.name, INPUT);
+          location.reload();
+        };
+      };
+    </script>
     <script src="./js/app.js"></script>
     <script src="./js/ui.js"></script>
     <script src="./js/db.js"></script>
