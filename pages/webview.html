@@ -26,15 +26,15 @@
   <body>
     <script>
       const query = new URL (window.location.href);
-      if (query.length) {
+      if (query.length > 0) {
         const input = decodeURIComponent(query.searchParams.get('input'));
         const message = decodeURIComponent(query.searchParams.get('message'));
-        if (message.length) {
+        if (message.length > 0) {
           alert(message);
         };
         document.querySelector('body').innerHTML = "<pre>"+input+"</pre>";
       } else {
-        alert('\n'+"Nothing for you."+'\n'+"Bye now… 👋");
+        alert('\n'+"Nothing here."+'\n');
       };
     </script>
   </body>
