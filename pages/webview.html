@@ -6,20 +6,24 @@
 <html lang="en">
   <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="white" />
 <!---->
   <title>WebView</title>
 <!---->
+    <style>
+    @import url("../css/basic.css");
+    </style>
     <script>
       const query = new URL (window.location.href);
       if (query) {
         const input = decodeURIComponent(query.searchParams.get('input'));
         if (input) {
-          document.querySelector('html').innerHTML = "<pre>"+input+"</pre>"; 
+          document.querySelector('body').innerHTML = "<pre>"+input+"</pre>"; 
         };
       };
     </script>
   </head>
+  <body></body>
 </html>
