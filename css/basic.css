@@ -1,7 +1,7 @@
 @charset "UTF-8";
-@import url("bulma.min.css");
-@import url("materialize.min.css");
-      
+@import url("./materialize.min.css");
+@import url("./bulma.min.css");
+
 html {
   font-size: 100%;
   font-family: Helvetica, Arial, Freesans, clean, sans-serif;
@@ -9,19 +9,33 @@ html {
 
 body {
   margin: 0;
-  padding: 1em; 
+  padding: 1em;
+  background-color: white;
+  font-family: system-ui;
+  color: black;
   }
 
-@media ( max-device-width: 480px ) {
-  }
-
-@media ( min-device-width: 481px ) { 
-  body { 
-    margin: auto; 
-    max-width: 600px; 
+@media (prefers-color-scheme: dark;) {
+  body {
+    background-color: #3a3a3a;
+    color: white;
     }
   }
 
-img { 
-  max-width: 90%; 
+@media ( max-device-width: 480px ) {
+  body {
+    margin: 0;
+    max-width: 100%;
+    }
+  }
+
+@media ( min-device-width: 481px ) {
+  body {
+    margin: auto;
+    max-width: 600px;
+    }
+  }
+  
+img {
+  max-width: 90%;
   }
