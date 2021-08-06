@@ -1,5 +1,7 @@
+/* basic.css */
 @charset "UTF-8";
 @import url("./materialize.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("./bulma.min.css");
 
 html {
@@ -15,27 +17,43 @@ body {
   color: black;
   }
 
-@media (prefers-color-scheme: dark;) {
+@media screen and (display-mode: standalone) {
+  html { 
+    min-height: calc(100% + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+    }
+  }
+	
+@media ( prefers-color-scheme: dark; ) {
   body {
     background-color: #3a3a3a;
     color: white;
     }
   }
 
-@media ( max-device-width: 480px ) {
+@media ( max-device-width: 480px; ) {
   body {
     margin: 0;
     max-width: 100%;
     }
   }
 
-@media ( min-device-width: 481px ) {
+@media ( min-device-width: 481px; ) {
   body {
     margin: auto;
     max-width: 600px;
     }
   }
-  
+
 img {
   max-width: 90%;
   }
+
+/* debug.css | MIT License | zaydek.github.com/debug,.css *
+  
+:not(path):not(g) {
+    color:                    hsla(210, 100%, 100%, 0.9) !important;
+    background:               hsla(210, 100%,  50%, 0.5) !important;
+    outline:  solid 0.25rem   hsla(210, 100%, 100%, 0.5) !important;
+    box-shadow:                                     none !important;
+    }  */

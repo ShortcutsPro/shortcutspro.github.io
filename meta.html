@@ -1,67 +1,61 @@
-<!-- Bustl.Cutz Menu -->
-<!---->
-<!-- INTEGRITY Framework | https://github.com/scottdwr -->
-<!-- Bustl.®︎™︎ is a trademark of Simpl System, llc.-->
-<!-- bulma.io v0.9.2 | github.com/jgthms/bulma -->
-<!---->
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang = "en">
   <head>
-    <meta 
-      charset="utf-8">
-    <meta 
-      name="viewport" 
-      content="width=device-width, initial-scale=1.0, maximum-scale =1.0, user-scalable=no, viewport-fit=cover" />
-    <meta 
-      http-equiv="X-UA-Compatible" 
-      content="ie=edge" />
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, user-scalable = no, viewport-fit = cover">
+    <title>What PWA Can Do Today</title>
 
-    <title>Bustl.Cutz</title>
+<!--     <script async src = "https://www.googletagmanager.com/gtag/js?id = UA-160290570-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-<!-- ios support -->
+      gtag('config', 'UA-160290570-1');
+    </script> -->
+
     <meta 
       property = "og:title" 
-      content = "Bustl.Cutz" />
+      content = "What PWA Can Do Today" />
     <meta 
       property = "og:description" 
-      content = "INTEGRITY Shortcuts System | bustl.•io" />
-    <meta 
-      property = "og:url" 
-      content = "https:shortctspro.github.io" />
-    <meta 
-      property = "og:video" 
-      content = "./images/apple-rich-link-video-hd.mp4" />
+      content = "A showcase of what is possible with Progressive Web Apps today." />
     <meta 
       property = "og:image" 
-      content = "./images/apple-rich-link-image.jpeg" />
+      content = "https://whatpwacando.today/src/img/social-logo.png" />
+    <meta 
+      property = "og:url" 
+      content = "https://whatpwacando.today" />
     <meta 
       name = "twitter:card" 
       content = "summary_large_image" />
     <meta 
-      name = "author" 
-      content = "Scott Wright" />
+      name = "Author" 
+      content = "Danny Moerkerke" />
     <meta 
-      name = "apple-mobile-web-app-status-bar-style"  
-      content = "black" />
+      name = "apple-mobile-web-app-status-bar-style" 
+      content = "default" />
     <meta 
       name = "apple-mobile-web-app-capable" 
       content = "yes" />
     <meta 
-      name = "apple-mobile-web-app-title" 
-      content = "Bustl.Cutz." />
+      name = "msapplication-TileColor" 
+      content = "#da532c" />
+    <meta 
+      name = "msapplication-config" 
+      content = "src/img/icons/browserconfig.xml" />
     <meta 
       name = "theme-color" 
-      content = "#000000" />
+      content = "#ffffff" />
 
     <link rel = "manifest" 
-		      href = "manifest.webmanifest" 
-			    type = "application/manifest+json" />
-    <link rel = "icon" 
+		      href = "manifest.json" />
+		<link rel = "icon"  
 		      href = "apple-touch-icon.png" 
 					type = "image/png" sizes = "512x512" />
-					
+		
     <!-- iOS icons -->
-    <link rel = "apple-touch-icon" 
+		<link rel = "apple-touch-icon" 
 		      href = "apple-touch-icon.png" 
 					type = "image/png" sizes = "512x512" />
 		<link rel = "apple-touch-icon" 
@@ -219,52 +213,3 @@
     <link rel = "apple-touch-startup-image" 
           href = "./images/splash/apple-touch-startup-image-dark-1136x640.png" 
           media = "(prefers-color-scheme: dark) and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-    <style>
-      @import url("./css/styles.css");
-    </style>
-    <script src = "./js/materialize.min.js"></script>
-		<script src = "./js/params.js"></script>
-  </head>
-  <body>
-		
-<!-- top navigation bar-->
-    <nav class = "z-depth-0" style = "background: black;">
-      <div class = "nav-wrapper container">
-        <a class = "left" href = "https://bustl.io">bustl.<span class = "bold">•io</span></a>
-        <span class="center bustl">BUSTL.</span>
-        <span class="right grey-text text-lighten-2">
-          <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-        </span>
-      </div>
-    </nav>
-
-<!-- side menu slide out -->
-    <ul id="side-menu" class="sidenav side-menu">
-      <li><a class="subheader bustl"><em>Bustl. Cutz</em></a></li>
-      <li><a href="index.html" class="waves-effect"><i class="material-icons">menu_open</i>Home</a></li>
-      <li><a href="./pages/papercuts.html" class="waves-effect"><i class="material-icons">search</i>Catalog</a></li>
-      <li><a href="./pages/about.html" class="waves-effect"><i class="material-icons">info</i>About</a></li>
-      <li><div class="divider"></div></li>
-      <li><a href="./pages/contact.html" class="waves-effect"><i class="material-icons">email</i>Contact</a></li>
-    </ul>
-
-<!-- shortcuts-->
-    <section class="section">
-      <div class="shortcuts info">
-     <!-- Shortcuts Launcher -->
-      </div>
-     <!-- add button -->
-      <div class="center">
-        <button id="button" class="btn-floating btn-small btn-large add-btn" type="button" data-target="side-form" style="background: #2073DE;">
-        <i class="material-icons">add</i>
-        </button>
-      </div>
-    </section>
-		
-    <script src="./js/app.js"></script>
-    <script src="./js/ui.js"></script>
-    <script src="./js/db.js"></script>
-    <script async src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
-    <script async src="./js/banner.js"></script>
-  </body>
-</html>

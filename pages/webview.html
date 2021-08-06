@@ -1,40 +1,45 @@
-
 <!---->
-<!-- Bustl. WebView -->
+<!--    Bustl. WebView   -->
 <!---->
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en" dir = "ltr">
   <head>
   <meta 
-    charset="UTF-8">
+    charset = "UTF-8" />
   <meta 
-    name="viewport" 
-    content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    name = "viewport" 
+    content = "
+      width = device-width, 
+      viewport-fit = cover, 
+      initial-scale = 1.0, 
+      maximum-scale = 1.0, 
+      user-scalable = no" />
   <meta 
-    http-equiv="X-UA-Compatible" 
-    content="ie=edge" />
+    http-equiv = "X-UA-Compatible" 
+    content = "ie=edge" />
   <meta 
-    name="theme-color" 
-    content="white" />
+    name = "theme-color" 
+    content = "white" />
+  <link
+    rel = "stylesheet"
+    type = "text/css"
+    href = "./css/basic.css" />
 <!---->
   <title>WebView</title>
 <!---->
-    <style>
-    @import url("../css/basic.css");
-    </style>
+    <script 
+      src = "./js/materialize.min.js" />
+    <script
+      src = "./js/params.js" />
+<!---->
   </head>
   <body>
-    <script>
-      const query = new URL (window.location.href);
-      const input = decodeURIComponent(query.searchParams.get('input'));
-      console.log(input);
-      if (input === 'null') {
-        alert('\n'+"Nothing"+'\n');
-      } else {
-        document.querySelector('body').innerHTML = `
-        "<pre>${input}</pre>"
-        `;
-      };
-    </script>
+<!---->
+
+
+    <!-- HTML Content -->
+    
+    
+<!---->
   </body>
 </html>
