@@ -8,5 +8,7 @@ const BODY = decodeURIComponent(QUERY.searchParams.get('body'));
 if (BODY === 'null') {
   alert('\n'+"Nothing to see here"+'\n');
   } else {
-    document.querySelector('body').innerHTML = "<pre>"+BODY+"</pre>";
+    document.querySelector('body').innerHTML = `
+    "<pre>"${BODY}"</pre>"
+    `;
 };
