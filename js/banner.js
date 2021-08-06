@@ -1,7 +1,7 @@
 // banner.js
 /* present a rich banner notification to prompt users
 to install the website as a PWA */
-
+const QUERY = new URL (window.location.href);
 const SOURCE = decodeURIComponent(QUERY.searchParams.get('s'));
 
 if (SOURCE != "pwa" && SOURCE != "shortcuts") {

@@ -1,22 +1,26 @@
 // params.js
 // get url search query parameters
+function query() {
 
-const QUERY = new URL (window.location.href);
-const BODY = decodeURIComponent(QUERY.searchParams.get('body'));
-
-// console.log(BODY);
-if (BODY === 'null') {
-  alert('\n'+"Nothing to see here"+'\n');
-  } else {
-    document.querySelector('html').innerHTML = `
-      <!---->
+  const QUERY = new URL (window.location.href);
+  const BODY = decodeURIComponent(QUERY.searchParams.get("body"));
+  
+  console.log(QUERY);
+  if (QUERY === 'https://shortcutspro.github.io/webview.html') {
+    
+    let html = document.querySelector('html');
+    if (BODY === 'null') {
+      alert('\n'+'Nothing to see here'+'\n');
+      
+    } else {
+      html.innerHTML = `
+      <pre><!---->
       <!-- Bustl. WebView. -->
       <!---->
       <!DOCTYPE html>
       <html lang = "en" dir = "ltr"><head>
       <meta charset = "UTF-8" />
       <meta name = "viewport" content = "width = device-width, viewport-fit = cover, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
-      <meta http-equiv = "X-UA-Compatible" content = "ie=edge" />
       <meta name = "theme-color" content = "white" />
       <link rel = "stylesheet" href ="./css/basic.css" type = "text/css" />
       <title>WebView</title>
@@ -25,9 +29,11 @@ if (BODY === 'null') {
       <script src = "./js/fa.js"></script>
       </head><body>
       <!---->
-      <pre>${BODY}</pre>
+      ${BODY}
       <!---->
       </body>
-      </html>
-    `;
+      </html></pre>
+      `;
+    };
+  };
 };
