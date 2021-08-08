@@ -9,25 +9,21 @@
   ],
   "background_color" : "#000000",
   "display" : "standalone",
-  "id" : "io.github.shortcutspro.library.bustl-cutz",
+  "id" : "io.bustl.cutz",
   "protocol_handlers" : [
     {
-      "url" : "/pages/callback.html?url=%s",
+      "url" : "/?input=%s",
       "protocol" : "web+cutz"
-    },
-    {
-      "url" : "/papercuts/x-callback-url/repos/add/index.html?%s",
-      "protocol" : "web+repo"
     }
   ],
   "short_name" : "Cutz",
   "related_applications" : [
     {
-      "url" : "https://shortcutspro.github.io",
-      "id" : "io.github.shortcutspro.library.bustl-cutz"
+      "url" : "https://cutz.bustl.io",
+      "id" : "io.bustl.cutz"
     }
   ],
-  "start_url" : "/index.html?s=pwa",
+  "start_url" : "/?s=pwa",
   "theme_color" : "#000000",
   "name" : "Bustl.Cutz",
   "icons" : [
