@@ -81,7 +81,8 @@
     </style>
     <script src="./js/materialize.min.js"></script>
 		<script src="./js/params.js"></script>
-  <script type="text/javascript">function simpleObjToString(obj, lvl=0) {
+  <script >
+    function simpleObjToString(obj, lvl=0) {
 
         if (typeof(obj) == "string") {
             return JSON.stringify(obj);
@@ -118,54 +119,45 @@
             return str+"]";
         }
     }
-function objToString(obj, lvl=0, returnIsObject=false) {
+    function objToString(obj, lvl=0, returnIsObject=false) {
         
         var simple = simpleObjToString(obj, lvl);
         if (simple !== undefined) {
             return simple;
         }
-
         if (lvl > 1 || (Object.entries(obj).length == 0)) {
             try {
                 var repr = simpleObjToString(obj, lvl);
                 if (repr === undefined) {
                     repr = obj.toString();
                 }
-
                 return repr;
             } catch (error) {
                 return JSON.stringify(error.toString());
             }
         }
-
         if (returnIsObject) {
             return true;
         }
-        
+      
         let str = '{';
         var i = 0;
-
         var entries = [];
-
         for (const [p, val] of Object.entries(obj)) {
             if (!entries.includes(p)) {
                 entries.push(p);
             }
         }
-
         for (const p of getProperties(obj)) {
             if (!entries.includes(p)) {
                 entries.push(p);
             }
         }
-
         for (const p of entries) {
             const val = obj[p];
-
             if (i > 0) {
                 str += ', ';
             }
-            
             var repr = objToString(val, lvl+1, true);
             if (repr != true) {
                 repr = '"'+encodeURIComponent(repr)+'"';
@@ -176,7 +168,6 @@ function objToString(obj, lvl=0, returnIsObject=false) {
 
             i += 1;
         }
-
         var toStr = "";
         if (lvl == 0) {
             if (obj instanceof Node) {
@@ -187,51 +178,41 @@ function objToString(obj, lvl=0, returnIsObject=false) {
         }
         return toStr+"\n"+str+'}';
     }
-const isGetter = (x, name) => (Object.getOwnPropertyDescriptor(x, name) || {}).get
+    const isGetter = (x, name) => (Object.getOwnPropertyDescriptor(x, name) || {}).get
     const deepProperties = x =>
     x && x !== Object.prototype &&
     Object.getOwnPropertyNames(x)
         .filter(name => isGetter(x, name))
         .concat(deepProperties(Object.getPrototypeOf(x)) || []);
     const distinctDeepProperties = x => Array.from(new Set(deepProperties(x)));
-    
-const getProperties = (obj) => distinctDeepProperties(obj).filter(
+    const getProperties = (obj) => distinctDeepProperties(obj).filter(
         name => name !== "constructor" && !~name.indexOf("__"));
-function argumentsToString(args) {
         
+   function argumentsToString(args) {
         if (args.length == 1 && typeof(args[0]) == "string") {
             return args[0];
         }
-        
         let str = "";
-
         var i = 0;
         for (let arg of args) {
             if (i > 0) {
                 str += "\n";
             }
-
             str += objToString(arg, 1);
-
             i += 1;
         }
-        
         return str;
     }
-var oldLog = console.log;
-var oldError = console.error;
-var oldWarn = console.warn;
-console.log = function (message) {
+    var oldLog = console.log;
+    var oldError = console.error;
+    var oldWarn = console.warn;
+    console.log = function (message) {
         oldLog.apply(console, arguments);
-        
         if (arguments.length == 0) {
             return;
         }
-
         var i = 0;
-
         var text = "";
-
         for (let arg of arguments) {
             if (i == 0 && typeof(arg) == "string") {
                 text += "JSLog:";
@@ -247,39 +228,41 @@ console.log = function (message) {
             }
             i += 1;
         }
-
         window.postMessage({ console : text }, "*");
     }
-console.warn = function (message) {
+    console.warn = function (message) {
         oldWarn.apply(console, arguments);
-        
         if (arguments.length == 0) {
             return;
         }
-
         var i = 0;
-
         window.postMessage({ console : "JSWarning:"+argumentsToString(arguments) }, "*");
     }
-console.error = function (message) {
+    console.error = function (message) {
         oldError.apply(console, arguments);
-        
         if (arguments.length == 0) {
             return;
         }
-
         var i = 0;
-
         window.postMessage({ console : "JSError:"+argumentsToString(arguments) }, "*");
     }
-function inIframe() {
+    function inIframe() {
         try {
             return window.self !== window.top;
         } catch (e) {
             return true;
         }
-        }</script><link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-384x384.png" sizes="384x384" /><link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-192x192.png" sizes="192x192" /><link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-152x152.png" sizes="152x152" /><link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-144x144.png" sizes="144x144" /><link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-128x128.png" sizes="128x128" /><link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-96x96.png" sizes="96x96" /><link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-72x72.png" sizes="72x72" /><meta name="mobile-web-app-capable" content="yes" /> 
-<body style="">
+    }
+    </script>
+    <link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-384x384.png" sizes="384x384" />
+    <link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-192x192.png" sizes="192x192" />
+    <link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-152x152.png" sizes="152x152" />
+    <link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-144x144.png" sizes="144x144" />
+    <link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-128x128.png" sizes="128x128" />
+    <link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-96x96.png" sizes="96x96" />
+    <link rel="icon" href="https://shortcutspro.github.io/images/icons/apple-touch-icon-72x72.png" sizes="72x72" />
+    <meta name="mobile-web-app-capable" content="yes" /> 
+    <body>
 		
 <!-- top navigation bar-->
     <nav class="z-depth-0" style="background: black;">
