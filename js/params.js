@@ -7,23 +7,21 @@ function query() {
   
   console.log(QUERY);
     
-    let html = document.querySelector('html');
     if (BODY === 'null') {
       alert('\n'+'Nothing to see here'+'\n');
       
     } else {
-      html.innerHTML = `
+      const HTML = `
       <!---->
       <!-- Bustl. WebView. -->
       <!---->
       <!DOCTYPE html>
-      <html lang = "en" dir = "ltr"><head>
+      <html><head>
       <meta charset = "UTF-8" />
-      <meta name = "viewport" content = "width = device-width, viewport-fit = cover, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+      <meta name = "viewport' content = 'width = device-width, viewport-fit = cover, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
       <meta name = "theme-color" content = "white" />
-      <link rel = "stylesheet" href ="./css/basic.css" type = "text/css" />
       <title>WebView</title>
-      <script src = "./js/params.js"></script>
+      <style>@import url("./css/basic.css");</style>
       <script src = "./js/materialize.min.js"></script>
       <script src = "./js/fa.js"></script>
       </head><body>
@@ -33,5 +31,6 @@ function query() {
       </body>
       </html>
       `;
+    document.querySelector('html').innerHTML = HTML;
     };
   };

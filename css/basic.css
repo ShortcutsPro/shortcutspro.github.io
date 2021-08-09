@@ -3,7 +3,6 @@
 @import url("./materialize.min.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("./bulma.min.css");
-@import url('./fa.js');
 
 html {
   font-size: 100%;
