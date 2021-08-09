@@ -6,7 +6,6 @@ function query() {
   const BODY = decodeURIComponent(QUERY.searchParams.get("body"));
   
   console.log(QUERY);
-  if (QUERY === 'https://shortcutspro.github.io/webview.html') {
     
     let html = document.querySelector('html');
     if (BODY === 'null') {
@@ -14,7 +13,7 @@ function query() {
       
     } else {
       html.innerHTML = `
-      <pre><!---->
+      <!---->
       <!-- Bustl. WebView. -->
       <!---->
       <!DOCTYPE html>
@@ -32,8 +31,7 @@ function query() {
       ${BODY}
       <!---->
       </body>
-      </html></pre>
+      </html>
       `;
     };
   };
-};
