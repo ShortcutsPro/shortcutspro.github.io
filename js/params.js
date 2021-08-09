@@ -7,8 +7,8 @@ function query() {
   
   console.log(QUERY);
     
-    if (BODY === 'null') {
-      alert('\n'+'Nothing to see here'+'\n');
+  if (BODY === 'null') {
+    alert('\n'+'This is not the page'+'\n'+'…you are looking for.'+'\n\n'+'Move along. 👋 Move along.');
       
     } else {
       const HTML = `
@@ -31,6 +31,6 @@ function query() {
       </body>
       </html>
       `;
-    document.querySelector('html').innerHTML = HTML;
+      document.querySelector('html').innerHTML = HTML;
     };
-  };
+};
