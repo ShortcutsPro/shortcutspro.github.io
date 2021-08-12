@@ -244,6 +244,7 @@ async function installUi(pkg) {
     if (pkg.integrity) {
       localStorage.setItem(pkg.name, JSON.stringify(pkg));
     };
+    window.location = "../index.html";
   };
 }
 

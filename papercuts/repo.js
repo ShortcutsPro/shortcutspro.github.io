@@ -17,7 +17,7 @@ async function load(repo, dryrun) {
     dbrepo.name = meta.name + "";
     dbrepo.version = "1.0"; //TODO: is this needed?
     dbrepo.description = meta.description + "" || "";
-    dbrepo.icon = meta.icon + "" || "https://via.placeholder.com/57";
+    dbrepo.icon = meta.icon + "" || "../images/shortcut.png";
     if (!dryrun) {
       db.repos.push(dbrepo);
       let packages = await (await fetch(repo + "/packages.json")).json();
@@ -42,7 +42,7 @@ async function load(repo, dryrun) {
 
         if (!dbpackage.depiction) {
           dbpackage.depiction =
-            "https://easrng.github.io/papercuts/fallback-depiction.html#" +
+            "./fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
         }
         db.packages.push(dbpackage);
