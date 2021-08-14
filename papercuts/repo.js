@@ -17,14 +17,14 @@ async function load(repo, dryrun) {
     dbrepo.name = meta.name + "";
     dbrepo.version = "1.0"; //TODO: is this needed?
     dbrepo.description = meta.description + "" || "";
-    dbrepo.icon = meta.icon + "" || "../images/shortcut.png";
+    dbrepo.icon = meta.icon + "" || "https://Cutz.Bustl.io/images/shortcut.png";
     if (!dryrun) {
       db.repos.push(dbrepo);
       let packages = await (await fetch(repo + "/packages.json")).json();
       for (let pakage of packages) {
         let dbpackage = {};
         dbpackage.id = pakage.id + "";
-        dbpackage.icon = pakage.icon + "" || "https://via.placeholder.com/57";
+        dbpackage.icon = pakage.icon + "" || "https://Cutz.Bustl.io/images/shortcut.png";
         dbpackage.version = pakage.version + "";
         dbpackage.name = pakage.name + "";
         dbpackage.link = pakage.link + "";
@@ -42,7 +42,7 @@ async function load(repo, dryrun) {
 
         if (!dbpackage.depiction) {
           dbpackage.depiction =
-            "./fallback-depiction.html#" +
+            "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
         }
         db.packages.push(dbpackage);
@@ -103,7 +103,7 @@ export async function init() {
   db.repos = [];
   db.packages = [];
   sources = JSON.parse(
-    localStorage.getItem("sources") || '["https://cutz.bustl.io/library/"]'
+    localStorage.getItem("sources") || '["https://Cutz.Bustl.io/library/"]'
   );
   await Promise.all(sources.map(e => load(e)));
 }
