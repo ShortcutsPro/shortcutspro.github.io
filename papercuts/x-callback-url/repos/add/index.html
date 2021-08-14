@@ -1,12 +1,11 @@
 <script type="module">
-  import * as client from "../../../papercuts/repo.js";
+  import * as client from "../../../repo.js";
   
   ( async () => {
-    let params = new URLSearchParams(location.search);
-    let callbackURL = new URL(params.get("x-success"))
+    let callbackURL = new URL(window.location.href).searchParams.get("x-success");
     try{
       await client.init()
-      await client.addSource(params.get("source"))
+      await client.addSource(callbackURL.get("source"))
     } catch (e) {
       }
     location.href = callbackURL.href;
