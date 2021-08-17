@@ -241,9 +241,7 @@ async function installUi(pkg) {
   }
   if(!canceled) {
     alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
-    if (pkg.integrity) {
       localStorage.setItem(pkg.name, JSON.stringify(pkg));
-    };
     window.location = "../index.html";
   };
 }
@@ -252,6 +250,7 @@ async function depict(pkg) {
   // create the modal with the `modal-page` component
   const modalElement = document.createElement("ion-modal");
   modalElement.component = "depiction-page";
+  
   modalElement.componentProps = pkg;
 
   // present the modal
