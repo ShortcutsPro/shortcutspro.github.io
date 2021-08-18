@@ -1,5 +1,5 @@
 {
-  "prefer_related_applications" : true,
+  "prefer_related_applications" : false,
   "description" : "INTEGRITY Shortcuts System | bustl.•io",
   "orientation" : "portrait",
   "categories" : [

@@ -13,7 +13,7 @@ if (localStorage.length > 0) {
   for (let i = 0; i < localStorage.length; i++) {
     let data = JSON.parse(localStorage.getItem(localStorage.key(i)));
 
-    if (data.integrity) {
+    if (data.integrity != null) {
       let dict;
       if (data.input.length) {
         dict = encodeURIComponent(`{\"name\":\"${data.name}\",\"input\":\"${data.input}\"}`);
