@@ -90,7 +90,7 @@ function createSourceListItem(repo) {
 function createPackageListItem(pkg) {
   let ii = document.createElement("ion-item");
   ii.addEventListener("click", () => {
-    pkg.callback;
+    window.open(`${pkg.depiction}`);
   });
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
