@@ -90,7 +90,7 @@ function createSourceListItem(repo) {
 function createPackageListItem(pkg) {
   let ii = document.createElement("ion-item");
   ii.addEventListener("click", () => {
-    depict(pkg);
+    pkg.callback;
   });
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
@@ -103,7 +103,7 @@ function createPackageListItem(pkg) {
   ilh.textContent = pkg.name;
   il.appendChild(ilh);
   let ilp = document.createElement("p");
-  ilp.textContent = `v${pkg.version} - ${pkg.author.name} - ${pkg.arch}`;
+  ilp.textContent = `v${pkg.version} - ${pkg.author.name} - ${pkg.description}`;
   il.appendChild(ilp);
   ii.appendChild(il);
   return ii;
