@@ -1,24 +1,20 @@
 // get document elements 
-// localStorage.clear();
-document.addEventListener('DOMContentLoaded', function() {
-// nav menu
-  const menus = document.querySelectorAll('.side-menu');
-  M.Sidenav.init(menus, {edge: 'right'});
-});
+import * as client from "./repo.js";
+import * as bplist from "./bplist.js";
+
+// document.addEventListener('DOMContentLoaded', function() {
+// // nav menu
+//   const menus = document.querySelectorAll('.side-menu');
+//   M.Sidenav.init(menus, {edge: 'right'});
+// });
 
 const shortcuts = document.querySelector('.shortcuts');
 
-// let launcher = [];
-// if (localStorage.length > 0) {
-//   launcher = localStorage.getItem("launcher");
-// };
-
+let packages = client.getDb().packages;
 // render shortcut data
-if (localStorage.length > 0) {
-  let key;
-  for (let i = 0; i < localStorage.length; i++) {
-    key = localStorage.key(i);
-    let data = JSON.parse(localStorage.getItem(key));
+if (packages.length > 0) {
+  for (let i = 0; i < packages.length; i++) {
+    let data = JSON.parse(packages(i));
 
     if (data.input) {
       let dict;

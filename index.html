@@ -411,6 +411,12 @@
           </ion-tab>
         </ion-tabs>
       </ion-app>
+    <script src="" type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        const menus = document.querySelectorAll('.side-menu');
+        M.Sidenav.init(menus, {edge: 'right'});
+      });
+    </script>
     <script src = "./js/app.js"></script>
     <script src = "./js/ui.js"></script>
     <script src = "./js/db.js"></script>
