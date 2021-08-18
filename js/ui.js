@@ -1,5 +1,5 @@
 // get document elements 
-
+// localStorage.clear();
 document.addEventListener('DOMContentLoaded', function() {
 // nav menu
   const menus = document.querySelectorAll('.side-menu');
@@ -8,12 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const shortcuts = document.querySelector('.shortcuts');
 
+// let launcher = [];
+// if (localStorage.length > 0) {
+//   launcher = localStorage.getItem("launcher");
+// };
+
 // render shortcut data
 if (localStorage.length > 0) {
+  let key;
   for (let i = 0; i < localStorage.length; i++) {
-    let data = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    key = localStorage.key(i);
+    let data = JSON.parse(localStorage.getItem(key));
 
-    if (data.integrity != null) {
+    if (data.input) {
       let dict;
       if (data.input.length) {
         dict = encodeURIComponent(`{\"name\":\"${data.name}\",\"input\":\"${data.input}\"}`);

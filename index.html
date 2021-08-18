@@ -279,30 +279,37 @@
       rel = "apple-touch-startup-image" 
       href = "./images/splash/apple-touch-startup-image-1136x640.png" 
       media = "(prefers-color-scheme: dark) and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
+
+<!--     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" /> -->
       
-    <link 
-      rel = "stylesheet" 
-      href = "./css/materialize.min.css" 
-      type = "text/css" />
-    <link 
-      rel = "stylesheet" 
-      href = "https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link 
-      rel = "stylesheet" 
-      href = "./css/styles.css" />
-      
-    <style type ="text/css">
+    <style type="text/css">
       @import url("./css/styles.css");
     </style>
-    <script src = "./js/materialize.min.js" 
-      type = "text/javascript">
-    </script>
+    
+<!--     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script> -->
+    <script src = "./js/materialize.min.js"></script>
+    
     <script type="text/javascript">
-      alert(decodeURIComponent(JSON.stringify(localStorage)));
+      const Q = new URL (window.location.href);
+      const S = decodeURIComponent(Q.searchParams.get("s"));
+      localStorage.setItem('_shortcutInstalled','1');
     </script>
+    
   </head>
-  <body type = "text/html">
-		
+  <body type = "text/html" class="ios">
+        <ion-app>
+          <ion-tabs>
+            <ion-tab tab="home">
+              <ion-header>
+                <ion-toolbar>
+                  <ion-title>
+                    <span class="s2">
+                      &#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;. C&#x2060;&#x1D1C;&#x1D1B;z
+                    </span>
+                  </ion-title>
+                  
+
 <!-- top navigation bar-->
     <nav class = "z-depth-0" 
       style = "background: black;">
@@ -325,6 +332,8 @@
         </span>
       </div>
     </nav>
+
+
 
 <!-- side menu slide out -->
     <ul id = "side-menu" 
@@ -377,6 +386,11 @@
       </li>
     </ul>
 
+                </ion-toolbar>
+<!--               <ion-searchbar disabled></ion-searchbar> -->
+            </ion-header>
+
+
 <!-- Shortcuts Launcher -->
     <section class = "section">
       <div class = "shortcuts info">
@@ -393,18 +407,13 @@
         </button>
       </div>
     </section>
-
-    <script src = "./js/app.js"
-      type = "text/javascript">
-    </script>
-    <script src = "./js/ui.js"
-      type = "text/javascript">
-    </script>
-    <script src = "./js/db.js"
-      type = "text/javascript">
-    </script>
-    <script async src = "./js/banner.js" 
-      type = "text/javascript">
-    </script>
+   
+          </ion-tab>
+        </ion-tabs>
+      </ion-app>
+    <script src = "./js/app.js"></script>
+    <script src = "./js/ui.js"></script>
+    <script src = "./js/db.js"></script>
+    <script async src = "./js/banner.js"></script>
   </body>
 </html>

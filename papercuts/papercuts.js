@@ -241,7 +241,15 @@ async function installUi(pkg) {
   }
   if(!canceled) {
     alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
-      localStorage.setItem(pkg.name, decodeURIComponent(JSON.stringify(pkg)));
+    
+    let data =  {
+      name: pkg.name.value,
+      description: pkg.description.value,
+      icon: pkg.icon.value,
+      integrity: pkg.integrity.value
+    };
+    let json = JSON.stringify(data);
+    localStorage.setItem(data.name, JSON.stringify(data));
   };
 }
 
