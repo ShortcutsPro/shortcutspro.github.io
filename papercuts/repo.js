@@ -39,6 +39,8 @@ async function load(repo, dryrun) {
         dbpackage.description = pakage.description + "" || "";
         dbpackage.depends = pakage.depends || [];
         dbpackage.depiction = pakage.depiction + "" || false;
+        dbpackage.callback = pakage.callback || false;
+        dbpackage.integrity = pakage.integrity || false;
 
         if (!dbpackage.depiction) {
           dbpackage.depiction =
