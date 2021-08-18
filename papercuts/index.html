@@ -20,31 +20,20 @@
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 <!--     <link rel="stylesheet" href="./style.css" /> -->
     <style>
-      span.s1 {
-        font-family: 'Times New Roman'; 
-        font-weight: normal; 
-        font-style: normal; 
-        font-size: 100%; 
-        font-kerning: none
-      }
-      span.s2 {
-        font-family: 'STIXGeneral-Regular'; 
-        font-weight: normal; 
-        font-style: normal; 
-        font-size: 100%; 
-        font-kerning: none
-      }
+      @import url("./style.css");
     </style>
   </head>
   <body>
     <ion-app>
       <ion-tabs>
         
-        <ion-tab tab="home">
+        <ion-tab 
+          tab="home">
           <ion-header>
             <ion-toolbar>
               <ion-title>
-               <span class="s2">
+               <span 
+                 class="s2">
                  &#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;. C&#x2060;&#x1D1C;&#x1D1B;z
                </span>
               </ion-title>
@@ -52,8 +41,10 @@
 <!--             <ion-searchbar disabled></ion-searchbar> -->
           </ion-header>
 
-          <ion-content class="ion-padding">
-            <ion-list id="packageList">
+          <ion-content 
+            class="ion-padding">
+            <ion-list 
+              id="packageList">
             </ion-list>
           </ion-content>
         </ion-tab>
@@ -61,35 +52,57 @@
         <ion-tab tab="sources">
           <ion-header>
             <ion-toolbar>
-              <ion-title>Sources</ion-title>
+              <ion-title>
+                Sources
+              </ion-title>
             </ion-toolbar>
           </ion-header>
 
-          <ion-content class="ion-padding">
+          <ion-content 
+            class="ion-padding">
             <ion-list id="sourceList">
             </ion-list>
-            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-              <ion-fab-button id="addSource">
-                <ion-icon name="add"></ion-icon>
+            <ion-fab 
+              vertical="bottom" 
+              horizontal="end" 
+              slot="fixed">
+              <ion-fab-button 
+                id="addSource">
+                <ion-icon name="add">
+                </ion-icon>
               </ion-fab-button>
             </ion-fab>
           </ion-content>
         </ion-tab>
 
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="home">
-            <ion-label>Browse</ion-label>
-            <ion-icon name="compass"></ion-icon>
+        <ion-tab-bar 
+          slot="bottom">
+          <ion-tab-button 
+            tab="home">
+            <ion-label>
+              Browse
+            </ion-label>
+            <ion-icon 
+              name="compass">
+            </ion-icon>
           </ion-tab-button>
-          <ion-tab-button tab="sources">
-            <ion-label>Sources</ion-label>
-            <ion-icon name="list"></ion-icon>
+          <ion-tab-button 
+            tab="sources">
+            <ion-label>
+              Sources
+            </ion-label>
+            <ion-icon 
+              name="list">
+            </ion-icon>
           </ion-tab-button>
         </ion-tab-bar>
         
       </ion-tabs>
     </ion-app>
     <!-- Path to your app js-->
-    <script type="module" src="./papercuts.js"></script>
+    <script 
+      type="module" 
+      src="./papercuts.js">
+    </script>
   </body>
 </html>
