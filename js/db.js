@@ -1,11 +1,22 @@
 // Database functions
+import getDb as client from '../papercuts/repo.js';
 
-const ADD = document.querySelector('#button');
+let packages = []
+  
+(async () => {
 
-// add a shortcut
-ADD.addEventListener('click', async () => {
-    window.location = '../pages/papercuts.html';
-});
+  try {
+    await client.init()
+    packages = client.getDb().packages;
+  } catch (e) {
+  } 
+console.log(packages);
+})();
+
+  
+
+
+
 
 // remove a shortcut
 const shortcutContainer = document.querySelector('.shortcuts');

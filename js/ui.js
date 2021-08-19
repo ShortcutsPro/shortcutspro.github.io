@@ -1,25 +1,26 @@
-// get document elements 
-import * as client from "./repo.js";
-import * as bplist from "./bplist.js";
-
-// document.addEventListener('DOMContentLoaded', function() {
-// // nav menu
-//   const menus = document.querySelectorAll('.side-menu');
-//   M.Sidenav.init(menus, {edge: 'right'});
-// });
+// 
+document.addEventListener('DOMContentLoaded', function() {
+  const menus = document.querySelectorAll('.side-menu');
+  M.Sidenav.init(menus, {edge: 'right'});
+});
 
 const shortcuts = document.querySelector('.shortcuts');
 
-let packages = client.getDb().packages;
 // render shortcut data
-if (packages.length > 0) {
-  for (let i = 0; i < packages.length; i++) {
-    let data = JSON.parse(packages(i));
+if (localStorage.length > 0) {
+  for (let i = 0; i < localStorage.length; i++) {
+    let data = JSON.parse(decodeURIComponent(localStorage.getItem(localStorage.key(i))));
 
-    if (data.input) {
-      let dict;
-      if (data.input.length) {
-        dict = encodeURIComponent(`{\"name\":\"${data.name}\",\"input\":\"${data.input}\"}`);
+    if (data) {
+      if (data.name) {
+        
+
+      let dict = {};
+      
+      if (data.input != null) {
+        if (data.input.length) {
+          dict = encodeURIComponent(`{\"name\":\"${data.name}\",\"input\":\"${data.input}\"}`);
+        };
       } else {
         dict = encodeURIComponent(`{\"name\":\"${data.name}\"}`);
       };
@@ -40,6 +41,7 @@ if (packages.length > 0) {
 
       `;
       shortcuts.innerHTML += html;
+       };
     };
   };
 };

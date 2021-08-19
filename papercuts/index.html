@@ -1,108 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="auto">
+  <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
+  <meta http-equiv="Content-Style-Type" content = "text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover" />
   <head>
-    <!-- Required meta tags-->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!-- Your app title -->
     <title>Bustl. Cutz</title>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
-    ></script>
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-<!--     <link rel="stylesheet" href="./style.css" /> -->
     <style>
       @import url("./style.css");
     </style>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
   </head>
   <body>
     <ion-app>
       <ion-tabs>
-        
-        <ion-tab 
-          tab="home">
+        <ion-tab tab="home">
           <ion-header>
             <ion-toolbar>
               <ion-title>
-               <span 
-                 class="s2">
-                 &#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;. C&#x2060;&#x1D1C;&#x1D1B;z
-               </span>
+                <p class="p1">
+                  <span class="s1">&#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;.</span>
+                  <span class="s2">C&#x2060;&#x1D1C;&#x1D1B;z</span>
+                </p>
               </ion-title>
             </ion-toolbar>
-<!--             <ion-searchbar disabled></ion-searchbar> -->
+            <!-- <ion-searchbar disabled></ion-searchbar> -->
           </ion-header>
-
-          <ion-content 
-            class="ion-padding">
-            <ion-list 
-              id="packageList">
+          <ion-content class="ion-padding">
+            <ion-list id="packageList">
+<!-- Package List -->
             </ion-list>
           </ion-content>
         </ion-tab>
-
         <ion-tab tab="sources">
           <ion-header>
             <ion-toolbar>
               <ion-title>
-                Sources
+                <span class="s1">&#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;.</span>
+                <span class="s2">Librariez</span>
               </ion-title>
             </ion-toolbar>
           </ion-header>
-
-          <ion-content 
-            class="ion-padding">
+          <ion-content class="ion-padding">
             <ion-list id="sourceList">
+<!-- Source List   -->
             </ion-list>
-            <ion-fab 
-              vertical="bottom" 
-              horizontal="end" 
-              slot="fixed">
-              <ion-fab-button 
-                id="addSource">
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+              <ion-fab-button id="addSource">
                 <ion-icon name="add">
                 </ion-icon>
               </ion-fab-button>
             </ion-fab>
           </ion-content>
         </ion-tab>
-
-        <ion-tab-bar 
-          slot="bottom">
-          <ion-tab-button 
-            tab="home">
+         <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="home">
             <ion-label>
-              Browse
+              <span class="s3">&#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;.</span>
+              <span class="s4">C&#x2060;&#x1D1C;&#x1D1B;z</span>
             </ion-label>
-            <ion-icon 
-              name="compass">
-            </ion-icon>
+            <ion-icon name="home"></ion-icon>
           </ion-tab-button>
-          <ion-tab-button 
-            tab="sources">
+          <ion-tab-button tab="sources">
             <ion-label>
-              Sources
+              <span class="s3">&#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;.</span>
+              <span class="s4">Librariez</span>
             </ion-label>
-            <ion-icon 
-              name="list">
-            </ion-icon>
+            <ion-icon name="library"></ion-icon>           
           </ion-tab-button>
         </ion-tab-bar>
-        
       </ion-tabs>
     </ion-app>
-    <!-- Path to your app js-->
-    <script 
-      type="module" 
-      src="./papercuts.js">
+    <script type="module" src="./papercuts.js">
     </script>
   </body>
 </html>

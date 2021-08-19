@@ -90,11 +90,8 @@ function createSourceListItem(repo) {
 function createPackageListItem(pkg) {
   let ii = document.createElement("ion-item");
   ii.addEventListener("click", () => {
-    if (pkg.callback.length > 0) {
-      window.open(`${pkg.callback}`);
-    } else {
-      depict(pkg);
-    };
+      let callback = new URL( `${pkg.callback}`);
+      location.href = callback.href;
   });
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
@@ -247,14 +244,19 @@ async function installUi(pkg) {
     alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
     
     let data =  {
+      id: `${pkg.id}`,
+      version: `${pkg.version}`,
+      auuid: `${pkg.auuid}`,
       name: `${pkg.name}`,
       description: `${pkg.description}`,
       icon: `${pkg.icon}`,
       integrity: `${pkg.integrity}`
     };
-    let json = JSON.stringify(data);
-    localStorage.setItem(data.name, JSON.stringify(data));
-  };
+    let readable = JSON.stringify(data,null,'\t');
+    console.log(readable);
+    alert(readable);
+    localStorage.setItem(data.id, JSON.stringify(data));
+  }
 }
 
 async function depict(pkg) {

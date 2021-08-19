@@ -322,14 +322,53 @@ iframe-container {
   padding-bottom: 10ex;
 }
 
+p.p1 {
+  margin: 0.0px 0.0px 3.0px 0.0px; 
+  font: 25px 'Times New Roman'; 
+  color: #000000; 
+  -webkit-text-stroke: #000000;
+  text-align: center;
+}
+p.p2 {
+  margin: 0.0px 0.0px 3.0px 0.0px; 
+  font: 25px STIXGeneral; 
+  color: #000000; 
+  -webkit-text-stroke: #000000;
+  text-align: left;
+}
 span.s1 {
-  font-family: 'STIXGeneral-Regular'; 
+  font-family: 'Times New Roman'; 
   font-weight: normal; 
   font-style: normal; 
-  font-size: 150%; 
-  font-kerning: none
+  font-size: 25px; 
+  font-kerning: none;
+  text-align: left;
+}
+span.s2 {
+  font-family: 'STIXGeneral-Regular';   
+  font-weight: normal; 
+  font-style: normal; 
+  font-size: 25px; 
+  font-kerning: none;
+  text-align: center;
 }
 
+span.s3 {
+  font-family: 'Times New Roman'; 
+  font-weight: normal; 
+  font-style: normal; 
+  font-size: 11px; 
+  font-kerning: none;
+  text-align: center;
+}
+span.s4 {
+  font-family: 'STIXGeneral-Regular';   
+  font-weight: normal; 
+  font-style: normal; 
+  font-size: 11px; 
+  font-kerning: none;
+  text-align: center;
+}
 
 /* debug.css | MIT License | zaydek.github.com/debug,.css *
   
