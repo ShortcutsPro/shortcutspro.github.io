@@ -4,6 +4,12 @@ window.bplist=bplist;
 
 window.onerror = error;
 
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js')
+    .then(reg => console.log('service worker registered'))
+    .catch(err => console.log('service worker not registered', err));
+}
+
 async function error(e) {
   await alert("Error", e)
 }
@@ -90,8 +96,8 @@ function createSourceListItem(repo) {
 function createPackageListItem(pkg) {
   let ii = document.createElement("ion-item");
   ii.addEventListener("click", () => {
-      let callback = new URL( `${pkg.callback}`);
-      location.href = callback.href;
+      window.open(`${pkg.callback}`);
+      window.close();
   });
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
@@ -117,6 +123,7 @@ window.client = client;
 
 const sourceList = document.querySelector("#sourceList");
 const packageList = document.querySelector("#packageList");
+const shortcutList = document.querySelector("#shortcutList");
 
 const wait = ms => new Promise(c => setTimeout(c, ms));
 
@@ -250,7 +257,9 @@ async function installUi(pkg) {
       name: `${pkg.name}`,
       description: `${pkg.description}`,
       icon: `${pkg.icon}`,
-      integrity: `${pkg.integrity}`
+      integrity: `${pkg.integrity}`,
+      color: `${pkg.color}`,
+      callback: `${pkg.callback}`
     };
     let readable = JSON.stringify(data,null,'\t');
     console.log(readable);
@@ -263,7 +272,6 @@ async function depict(pkg) {
   // create the modal with the `modal-page` component
   const modalElement = document.createElement("ion-modal");
   modalElement.component = "depiction-page";
-  
   modalElement.componentProps = pkg;
 
   // present the modal

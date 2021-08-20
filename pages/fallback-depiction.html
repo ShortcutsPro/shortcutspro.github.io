@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<style>
+  body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background-color: #efeff4; margin: 0; padding: 0; font-size: 17px; font-weight: 200; }
+  body > * { width: 100%; padding: 0.25rem 0.5rem; background-color: white; margin: 0.25rem 0; border: 1px #c7c7c7; border-style: solid none; }
+  * { box-sizing: border-box; font-weight: normal; margin:0; }
+</style>
+<script>
+  let package = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+  document.querySelector("#name").textContent = document.title = package.name;
+  document.querySelector("#info").textContent = `v${package.version} by ${package.author.name}`;
+  document.querySelector("#description").textContent = package.description;
+</script>
+</head>
+<body>
+<header>
+  <h1 id="name"></h1>
+  <h3 id="info"></h3>
+</header>
+<p id="description"></p>
+</body>
+</html>

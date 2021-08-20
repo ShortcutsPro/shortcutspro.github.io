@@ -4,7 +4,7 @@ let arch = (navigator.userAgent.match(/iP.+? OS ([\d_]+)/) || [
   "",
   ""
 ])[1].split("_")[0];
-arch = arch ? "iOS" + arch : "iOS99999999999999999999";
+arch = arch ? "ios" + arch : "ios99999999999999999999";
 
 db.repos = [];
 db.packages = [];
@@ -17,56 +17,45 @@ async function load(repo, dryrun) {
     dbrepo.name = meta.name + "";
     dbrepo.version = "1.0"; //TODO: is this needed?
     dbrepo.description = meta.description + "" || "";
-    dbrepo.icon = meta.icon + "" || "https://Cutz.Bustl.io/images/shortcut.png";
+    dbrepo.icon = meta.icon + "" || "https://via.placeholder.com/57";
     if (!dryrun) {
       db.repos.push(dbrepo);
       let packages = await (await fetch(repo + "/packages.json")).json();
       for (let pakage of packages) {
         let dbpackage = {};
         dbpackage.id = pakage.id + "";
-        dbpackage.auuid = pakage.auuid + "";
-        dbpackage.icon = pakage.icon + "" || "https://Cutz.Bustl.io/images/shortcut.png";
+        dbpackage.icon = pakage.icon + "" || "https://via.placeholder.com/57";
         dbpackage.version = pakage.version + "";
         dbpackage.name = pakage.name + "";
         dbpackage.link = pakage.link + "";
-        dbpackage.arch = pakage.arch + "" || "iOS99999999999999999999";
+        dbpackage.arch = pakage.arch + "" || "ios12";
+        dbpackage.integrity = pakage.integrity || false;
+        dbpackage.callback = pakage.callback + "" || "";
+        dbpackage.input = pakage.input + "" || "";
         dbpackage.author = pakage.author || {
           name: "No Contact",
-          link: ["about:blank"]
+          link: "about:blank"
         };
         dbpackage.compatible =
           dbpackage.arch == "universal" || +dbpackage.arch.slice(3)<=+arch.slice(3);
         dbpackage.maintainer = pakage.maintainer || dbpackage.author;
         dbpackage.description = pakage.description + "" || "";
         dbpackage.depends = pakage.depends || [];
-        dbpackage.category = pakage.category || [];
         dbpackage.depiction = pakage.depiction + "" || false;
-        dbpackage.callback = pakage.callback + "" || "";
-        dbpackage.integrity = pakage.integrity || false;
-        dbpackage.input = pakage.input + "" || false;
-
-
 
         if (!dbpackage.depiction) {
           dbpackage.depiction =
-            "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
+            "https:/Cutz.Bustl.io/fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
-        };
-        if (!dbpackage.input) {
-          dbpackage.callback =
-          "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&x-cancel=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage))+"&x-error=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage));
-        } else if (dbpackage.input == 'clipboard') {
-          dbpackage.callback =
-            "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=clipboard&x-cancel=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage))+"&x-error=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage));
-        } else {
-          dbpackage.callback =
-            "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+`${dbpackage.input}`+"&x-cancel=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage))+"&x-error=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage));
-        };
+        }
+        if (dbpackage.input.length < 1) {
+          dbpackage.callback = "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY%201&input=text&text=" + encodeURIComponent(dbpackage.name) + "&x-error=" + encodeURI(dbpackage.link);
+        }
         db.packages.push(dbpackage);
       }
     }
   } else throw new Error("Invalid repo!")
-};
+}
 export function getDb() {
   return db;
 }

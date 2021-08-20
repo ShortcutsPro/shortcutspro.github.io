@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url("materialize.min.css");
+/*@import url("materialize.min.css");*/
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @font-face { 
   font-family: SpaceAge; 
@@ -187,7 +187,7 @@ img {
 
 
 /* layout styles */
-nav {
+/*nav {
   margin-top: -0.5ex;
   background-color: black;
   background-size: cover;
@@ -211,31 +211,29 @@ nav a {
 
 .bold {
   font-weight: bold;
-}
+}*/
 
 .bustl {
-  padding-top: env(safe-area-inset-top);
-  margin-top: 0;
-  top: 0;
-  text-align: left;
+/*  padding-top: env(safe-area-inset-top);*/
+/*  margin-top: 0;*/
+/*  top: 0;*/
   font-family: SpaceAge;
   font-weight: bold;
   font-size: 2.1rem;
-  margin-left: 1ex;
   color: #2073DE;
 }
 
-nav .sidenav-trigger{
+/*nav .sidenav-trigger{
   margin-top: 0;
   position: relative;
   top: 0;
   padding-top: env(safe-area-inset-top);
-}
+}*/
 
-body {
+/*body {
   top: 0;
   padding-top: 0;
-}
+}*/
 
 /* shortcut styles */
 .shortcuts{
@@ -298,16 +296,14 @@ body {
   background: #2073DE;
 }
 
-@media screen and (display-mode: standalone) {
+/*@media screen and (display-mode: standalone) {
 html { 
     min-height: calc(100% + env(safe-area-inset-top));
     padding-top: env(safe-area-inset-top);
-    background: black;
-    background-color: black;
   }
-}
+}*/
 
-iframe-container {
+/*iframe-container {
   overflow: hidden;
   margin-top: 5ex;
 } 
@@ -320,7 +316,7 @@ iframe-container {
   top: 6ex;
   width: 100%;
   padding-bottom: 10ex;
-}
+}*/
 
 p.p1 {
   margin: 0.0px 0.0px 3.0px 0.0px; 
@@ -343,6 +339,7 @@ span.s1 {
   font-size: 25px; 
   font-kerning: none;
   text-align: left;
+  color: white;
 }
 span.s2 {
   font-family: 'STIXGeneral-Regular';   
@@ -351,6 +348,7 @@ span.s2 {
   font-size: 25px; 
   font-kerning: none;
   text-align: center;
+  color: white;
 }
 
 span.s3 {

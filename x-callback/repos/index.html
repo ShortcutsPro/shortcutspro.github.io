@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  let callback = new URL (new URLSearchParams(location.search).get("x-success"));
+  let callback = new URL(new URLSearchParams(location.search).get("x-success"));
   callback.searchParams.set("text",'{"repos":'+(localStorage.getItem("sources") || '["https://Cutz.Bustl.io/library/"]')+'}');
   location.href = callback.href;
 </script>

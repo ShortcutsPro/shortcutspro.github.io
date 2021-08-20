@@ -1,48 +1,31 @@
 // 
-document.addEventListener('DOMContentLoaded', function() {
-  const menus = document.querySelectorAll('.side-menu');
-  M.Sidenav.init(menus, {edge: 'right'});
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   const menus = document.querySelectorAll('.side-menu');
+//   M.Sidenav.init(menus, {edge: 'right'});
+// });
 
-const shortcuts = document.querySelector('.shortcuts');
-
+const shortcuts = document.querySelector('#shortcuts');
+shortcuts.innerHTML = "";
 // render shortcut data
 if (localStorage.length > 0) {
-  for (let i = 0; i < localStorage.length; i++) {
-    let data = JSON.parse(decodeURIComponent(localStorage.getItem(localStorage.key(i))));
+  let packages = localStorage.getItem('packages');
+  if (packages) {
 
-    if (data) {
-      if (data.name) {
-        
-
-      let dict = {};
-      
-      if (data.input != null) {
-        if (data.input.length) {
-          dict = encodeURIComponent(`{\"name\":\"${data.name}\",\"input\":\"${data.input}\"}`);
-        };
-      } else {
-        dict = encodeURIComponent(`{\"name\":\"${data.name}\"}`);
-      };
-
-      const html = `
-        <div class="card-panel shortcut white row" data-id="${data.name}">
-                <img class="img" src="${data.icon}" alt="shortcut icon" />
-          <a href="shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=${dict}">
-            <div class="shortcut-details">
-              <div class="shortcut-name">${data.name}</div>
-              <div class="shortcut-descriprion">${data.description}</div>
-            </div>
+    packages.forEach(data => {
+      shortcuts.appendChild(`
+        <IonItem key={${data.id}}>
+          <a src="${data.callback}">
+            <IonThumbnail slot="start">
+              <img src={${data.icon}} />
+            </IonThumbnail>
+            <IonLabel>
+              <h2>{${data.name}}</h2>
+              <p>{${data.description}}</p>
+            </IonLabel>
           </a>
-          <div class="shortcut-delete">
-            <i class="material-icons" data-id="${data.name}">delete_outline</i>
-          </div>
-        </div>
-
-      `;
-      shortcuts.innerHTML += html;
-       };
-    };
+        </IonItem>
+      `);
+     });
   };
 };
 
