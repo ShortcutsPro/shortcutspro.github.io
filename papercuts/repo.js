@@ -43,24 +43,24 @@ async function load(repo, dryrun) {
         dbpackage.depiction = pakage.depiction + "" || false;
         dbpackage.callback = pakage.callback + "" || "";
         dbpackage.integrity = pakage.integrity || false;
-        dbpackage.input = pakage.input + "" || false;
-
-
+        dbpackage.input = pakage.input + "" || "";
 
         if (!dbpackage.depiction) {
           dbpackage.depiction =
             "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
         };
-        if (!dbpackage.input) {
+        if (dbpackage.input.length < 1) {
           dbpackage.callback =
-          "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&x-cancel=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage))+"&x-error=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage));
-        } else if (dbpackage.input == 'clipboard') {
-          dbpackage.callback =
-            "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=clipboard&x-cancel=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage))+"&x-error=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage));
+          "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY%201&input=text&text="+encodeURIComponent(dbpackage.name)+"&x-error="+encodeURI(dbpackage.link)
         } else {
+          let dict = {
+            name: `${dbpackage.name}`,
+            input: `${dbpackage.input}`
+          }
+          let param = encodeURIComponent(JSON.stringify(dict));
           dbpackage.callback =
-            "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+`${dbpackage.input}`+"&x-cancel=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage))+"&x-error=https://Cutz.Bustl.io/papercuts/fallback-depiction.html#"+encodeURIComponent(JSON.stringify(dbpackage));
+            "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY%201&input=text&text=" + param + "&x-error=" + encodeURI(dbpackage.link)
         };
         db.packages.push(dbpackage);
       }
