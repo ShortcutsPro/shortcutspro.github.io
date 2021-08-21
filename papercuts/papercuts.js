@@ -55,8 +55,9 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
-  await wait(2000).then(
-  location.href = "../index.html");
+  await wait(2000).then( async () => {
+    await refreshSources();
+  });
   // location.reload(byPassCache);
 }
 
@@ -74,7 +75,7 @@ function createSourceListItem(repo) {
   ilh.textContent = repo.name;
   il.appendChild(ilh);
   let ilp = document.createElement("p");
-  ilp.textContent = repo.url;
+  ilp.textContent = repo.description;
   il.appendChild(ilp);
   ii.appendChild(il);
   iis.appendChild(ii);
