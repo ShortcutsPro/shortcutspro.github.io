@@ -56,8 +56,18 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
-  await wait(1000);
-  await client.init();
+  await Promise.all([
+    (async () => {
+      await client.init();
+      sourceList.innerHTML = "";
+      client.getDb().repos.forEach(e => {
+        sourceList.appendChild(createSourceListItem(e));
+      });
+      loadBustlList();
+      loadPackageList();
+    })(),
+    wait(1000)
+    ]);
 }
 
 function createSourceListItem(repo) {
@@ -93,6 +103,7 @@ function createSourceListItem(repo) {
 }
 
 function createBustlListItem(pkg) {
+  let iis = document.createElement("ion-item-sliding");
   let ii = document.createElement("ion-item");
   ii.addEventListener("click", () => {
     window.open(pkg.callback);
@@ -111,7 +122,19 @@ function createBustlListItem(pkg) {
   // ilp.textContent = `${pkg.description}`;
   // il.appendChild(ilp);
   ii.appendChild(il);
-  return ii;
+  iis.appendChild(ii);
+  let iios = document.createElement("ion-item-options");
+  iios.side = "start";
+  iis.appendChild(iios);
+  let iio = document.createElement("ion-item-option");
+  iio.color = "danger";
+  iio.textContent = "Remove";
+  iio.addEventListener("click", () => {
+    // client.removeSource(repo.url);
+    // refreshSources();
+  });
+  iios.appendChild(iio);
+  return iis;
 }
 
 function createPackageListItem(pkg) {
@@ -157,6 +180,7 @@ function loadBustlList() {
     if (bustl.length > 0) {
       let db = JSON.parse(bustl);
       let p = db.packages;
+      p = p.filter(e => !e.repo);
       p.forEach(e => {
         console.log(e.name);
         // let repo = e.repo || false;
