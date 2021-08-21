@@ -18,12 +18,12 @@
 */
 
   body {
-    --ion-color-primary: #428cff;
-    --ion-color-primary-rgb: 66, 140, 255;
+    --ion-color-primary: #2073DE;
+/*    --ion-color-primary-rgb: 66, 140, 255;*/
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255, 255, 255;
-    --ion-color-primary-shade: #3a7be0;
-    --ion-color-primary-tint: #5598ff;
+/*    --ion-color-primary-shade: #3a7be0;
+    --ion-color-primary-tint: #5598ff;*/
 
     --ion-color-secondary: #50c8ff;
     --ion-color-secondary-rgb: 80, 200, 255;
@@ -168,6 +168,12 @@ body {
   font-family: system-ui; 
   color: black; 
 }
+@media screen and (display-mode: standalone) {
+html { 
+    min-height: calc(100% + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+  }
+}
 @media (max-device-width: 480px;) { 
   body { margin: 0; 
     max-width: 100%; 
@@ -183,52 +189,22 @@ img {
   max-width: 90%; 
 }
 
-
-.bold {
-  font-weight: bold;
-}
-
-
-
-
-
-@media screen and (display-mode: standalone) {
-html { 
-    min-height: calc(100% + env(safe-area-inset-top));
-    padding-top: env(safe-area-inset-top);
-  }
-}
-
 ion-title {
   background-color: black;
-  color: #2073DE;
 }
 
-ion-item {
-  background-color: gray;
-}
 .bustl {
-/*  padding-top: env(safe-area-inset-top);*/
   font-family: SpaceAge;
   font-weight: bold;
-  font-size: 27px;
+  font-size: 25px;
   color: #2073DE;
 }
 
-p.p1 {
-  margin: 0.0px 0.0px 3.0px 0.0px; 
-  font: 21px 'Times New Roman'; 
-  color: #000000; 
-  -webkit-text-stroke: #000000;
-  text-align: center;
-}
-p.p2 {
-  margin: 0.0px 0.0px 3.0px 0.0px; 
-  font: 21px STIXGeneral; 
-  color: #000000; 
-  -webkit-text-stroke: #000000;
-  text-align: left;
-}
+
+
+
+
+
 span.s1 {
   font-family: 'Times New Roman'; 
   font-weight: normal; 

@@ -3,12 +3,12 @@
 <!-- INTEGRITY Framework | https://github.com/scottdwr -->
 <!-- Bustl.®︎™︎ is a trademark of Simpl System, llc.-->
 <!---->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html lang="en" dir="auto">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover, standalone" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
 	  
 <!-- ios support -->
     <meta property="og:title" content="Bustl.Cutz" />
@@ -200,8 +200,7 @@
       @import url("./css/styles.css");
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <script src="./papercuts/repo.js" type="module"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>  
     <script type="text/javascript">
       const Q = new URL (window.location.href);
       const S = decodeURIComponent(Q.searchParams.get("s"));
@@ -213,11 +212,10 @@
         <ion-tab tab="bustl">
           <ion-header>
             <ion-toolbar>
-              <ion-title>
+              <ion-title id="banner">
                 <span class="bustl">bustl</span><span class="s2">. C&#x2060;&#x1D1C;&#x1D1B;z</span>
               </ion-title>
             </ion-toolbar>
-            <!-- <ion-searchbar disabled></ion-searchbar> -->
           </ion-header>
           <ion-content class="ion-padding">
             <ion-list id="bustlList" mode="ios" indent=true>
@@ -284,6 +282,6 @@
     </ion-app>
     <script src="./js/app.js"></script>
     <script type="module" src="./papercuts/papercuts.js"></script>
-    <script async src="./js/banner.js"></script>
+    <script async src="./js/banner.js"></script> 
   </body>
 </html>
