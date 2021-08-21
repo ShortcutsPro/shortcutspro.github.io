@@ -53,7 +53,7 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
-  refreshSources();
+  await refreshSources();
 }
 
 function createSourceListItem(repo) {
@@ -284,13 +284,13 @@ async function installUi(pkg) {
     alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
     
     let repo = pkg.repo || false;
-    alert(repo);
+    if (!repo) {
       let db = JSON.parse(localStorage.getItem("bustl")) || {};
       let packages = db.packages || [];
       packages.push(pkg);
       db.packages = packages;
       localStorage.setItem("bustl", JSON.stringify(db));
-
+    };
   }
 }
 
