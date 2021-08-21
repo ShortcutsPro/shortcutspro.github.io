@@ -195,123 +195,95 @@
       rel="apple-touch-startup-image" 
       href="./images/splash/apple-touch-startup-image-1136x640.png" 
       media="(prefers-color-scheme: dark) and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-
-<!--     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" /> -->
-      
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <style type="text/css">
       @import url("./css/styles.css");
     </style>
-    
-<!--     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script> -->
-<!--     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script> -->
-<!--     <script src="./papercuts/repo.js" type="module"></script> -->
-    <script src="./js/materialize.min.js"></script>
-    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <script src="./papercuts/repo.js" type="module"></script>
     <script type="text/javascript">
-      const Q =new URL (window.location.href);
-      const S =decodeURIComponent(Q.searchParams.get("s"));
-      
-      if (!S) {
-
-        
-      }
-      localStorage.setItem("s", S);
+      const Q = new URL (window.location.href);
+      const S = decodeURIComponent(Q.searchParams.get("s"));
     </script>
   </head>
-  <body type="text/html" onload="refreshSources">
-                  
-<!-- top navigation bar-->
-    <nav class="z-depth-0" 
-      style="background: black;">
-      <div class="nav-wrapper container">
-        <a class="left" 
-          href="https://bustl.io">
-          bustl.
-          <span class="bold">
-            •io
-          </span>
-        </a>
-        <span class="center bustl">
-          BUSTL.
-        </span>
-        <span class="right grey-text text-lighten-2">
-          <i class="material-icons sidenav-trigger" 
-            data-target="side-menu">
-            menu
-          </i>
-        </span>
-      </div>
-    </nav>
-
-
-<!-- side menu slide out -->
-    <ul id="side-menu" 
-      class="sidenav side-menu">
-      <li>
-        <a class="subheader bustl">
-          <span class="s1">&#x1D63D;&#x1D66A;&#x1D668;&#x1D669;&#x1D661;.</span>
-          <span class="s2">C&#x2060;&#x1D1C;&#x1D1B;z</span>
-        </a>
-      </li>
-      <li>
-        <a href="index.html" 
-          class="waves-effect">
-          <i class="material-icons">
-            menu_open
-          </i>
-            Bustl. Cutz
-        </a>
-      </li>
-      <li>
-        <div class="divider"></div>
-      </li>
-      <li>
-        <a href="./pages/about.html" 
-          class="waves-effect">
-          <i class="material-icons">
-            info
-          </i>
-          About
-        </a>
-      </li>
-      <li>
-        <a href="./pages/contact.html" 
-          class="waves-effect">
-          <i class="material-icons">
-            email
-          </i>
-          Contact
-        </a>
-      </li>
-    </ul>
-
-    
-<!-- iFrame  -->
-      <div class="iframe-container">
-        <iframe width="100%" height="100%" src ="./papercuts/index.html" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-<!-- Shortcuts Launcher -->
-<!--     <section class="section">
-      <div class="shortcuts info">
-
-      </div>
-      <div class="center">
-        <button id="button"  
-          class="btn-floating btn-small btn-large add-btn" 
-          type="button" 
-          style="background: #2073DE;">
-          <i class="material-icons">
-            add 
-          </i>
-        </button>
-      </div>
-    </section> -->
-   
-    
+  <body type="text/html">
+    <ion-app>
+      <ion-tabs>
+        <ion-tab tab="bustl">
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>
+                <span class="bustl">bustl</span><span class="s2">. C&#x2060;&#x1D1C;&#x1D1B;z</span>
+              </ion-title>
+            </ion-toolbar>
+            <!-- <ion-searchbar disabled></ion-searchbar> -->
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-list id="bustlList" mode="ios" indent=true>
+<!-- Bustl List -->
+            </ion-list>
+          </ion-content>
+        </ion-tab>
+        <ion-tab tab="home">
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>
+                <span class="bustl">bustl</span><span class="s2">. Cutz</span>
+              </ion-title>
+            </ion-toolbar>
+            <!-- <ion-searchbar disabled></ion-searchbar> -->
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-list id="packageList" mode="ios" indent=true>
+<!-- Package List -->
+            </ion-list>
+          </ion-content>
+        </ion-tab>
+        <ion-tab tab="sources">
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>
+                <span class="bustl">bustl</span><span class="s2">. Cutz</span>
+              </ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-list id="sourceList" mode="ios" indent=true>
+<!-- Source List   -->
+            </ion-list>
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+              <ion-fab-button id="addSource">
+                <ion-icon name="add">
+                </ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </ion-content>
+        </ion-tab>
+         <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="bustl">
+            <ion-label>
+              Home
+            </ion-label>
+            <ion-icon name="home"></ion-icon>
+          </ion-tab-button>
+          <ion-tab-button tab="home">
+            <ion-label>
+              Browse
+            </ion-label>
+            <ion-icon name="compass"></ion-icon>
+          </ion-tab-button>
+          <ion-tab-button tab="sources">
+            <ion-label>
+              Libraries
+            </ion-label>
+            <ion-icon name="library"></ion-icon>           
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-app>
     <script src="./js/app.js"></script>
-    <script src="./js/ui.js"></script>
-<!--     <script nomodule src="./js/db.js"></script> -->
-<!--     <script async src="./js/banner.js"></script> -->
+    <script type="module" src="./papercuts/papercuts.js"></script>
+    <script async src="./js/banner.js"></script>
   </body>
 </html>

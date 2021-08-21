@@ -1,6 +1,4 @@
 @charset "utf-8";
-@import url("materialize.min.css");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @font-face { 
   font-family: SpaceAge; 
   src: url("../fonts/space_age.ttf"); 
@@ -186,152 +184,47 @@ img {
 }
 
 
-/* layout styles */
-nav {
-  margin-top: -0.5ex;
-  background-color: black;
-  background-size: cover;
-  position: fixed;
-  top: -0.5ex;
-  left: 0;
-  text-align: center;
-  margin-bottom: 0ex;
-  max-width: 100%;
-  border-bottom: 1ex solid var(--secondary);
-}
-  
-nav a {
-  position: relative;
-  top: 0;
-  text-transform: lowercase;
-  color: gray;
-  text: lighten-1;
-  padding-top: env(safe-area-inset-top);
-}
-
 .bold {
   font-weight: bold;
 }
 
-.bustl {
-  padding-top: env(safe-area-inset-top);
-  margin-top: 0;
-  top: 0;
-  text-align: left;
-  font-family: SpaceAge;
-  font-weight: bold;
-  font-size: 2.1rem;
-  margin-left: 1ex;
-  color: #2073DE;
-}
 
-nav .sidenav-trigger{
-  margin-top: 0;
-  position: relative;
-  top: 0;
-  padding-top: env(safe-area-inset-top);
-}
 
-body {
-  top: 0;
-  padding-top: 0;
-}
 
-/* shortcut styles */
-.shortcuts{
-  margin-top: 15%
-  padding-top: 0;
-  margin-left: 3ex;
-  margin-right: 3ex;
-}
-.card-panel.shortcut{
-  border-radius: 8px;
-  padding: 0.5rem;
-  box-shadow: 0px 2px 5px rgba(90,90,90,0.1);
-  display: grid;
-  grid-template-columns: 2fr 6fr 1fr;
-  grid-template-areas: "image details delete";
-  position: relative;
-}
-.shortcut {
-  text-align: center;
-  align-content: center;
-}
-.shortcut img{
-  grid-area: image;
-  max-width: 60%;
-}
-.shortcut-details{
-  grid-area: details;
-  margin-top: 1ex;
-}
-.shortcut-delete{
-  grid-area: delete;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-}
-.shortcut-delete i{
-  font-size: 1.5rem;
-  color: gray;
-}
-.shortcut-name{
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: left;
-  color: black;
-}
-.shortcut-description{
-  font-size: 0.9rem;
-  text-align: center;
-  color: gray;
-}
-
-.info{
-  margin-top: 0;
-  padding-top: 60px;
-}
-
-/* form-styles */
-
-.add-btn {
-  background: #2073DE;
-}
 
 @media screen and (display-mode: standalone) {
 html { 
     min-height: calc(100% + env(safe-area-inset-top));
     padding-top: env(safe-area-inset-top);
-    background: black;
-    background-color: black;
   }
 }
 
-iframe-container {
-  overflow: hidden;
-  margin-top: 5ex;
-} 
+ion-title {
+  background-color: black;
+  color: #2073DE;
+}
 
-.iframe-container iframe {
-  border: 0;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 6ex;
-  width: 100%;
-  padding-bottom: 10ex;
+ion-item {
+  background-color: gray;
+}
+.bustl {
+/*  padding-top: env(safe-area-inset-top);*/
+  font-family: SpaceAge;
+  font-weight: bold;
+  font-size: 27px;
+  color: #2073DE;
 }
 
 p.p1 {
   margin: 0.0px 0.0px 3.0px 0.0px; 
-  font: 25px 'Times New Roman'; 
+  font: 21px 'Times New Roman'; 
   color: #000000; 
   -webkit-text-stroke: #000000;
   text-align: center;
 }
 p.p2 {
   margin: 0.0px 0.0px 3.0px 0.0px; 
-  font: 25px STIXGeneral; 
+  font: 21px STIXGeneral; 
   color: #000000; 
   -webkit-text-stroke: #000000;
   text-align: left;
@@ -340,7 +233,7 @@ span.s1 {
   font-family: 'Times New Roman'; 
   font-weight: normal; 
   font-style: normal; 
-  font-size: 25px; 
+  font-size: 21px; 
   font-kerning: none;
   text-align: left;
 }
@@ -348,27 +241,12 @@ span.s2 {
   font-family: 'STIXGeneral-Regular';   
   font-weight: normal; 
   font-style: normal; 
-  font-size: 25px; 
+  font-size: 21px; 
   font-kerning: none;
   text-align: center;
+  color: white;
 }
 
-span.s3 {
-  font-family: 'Times New Roman'; 
-  font-weight: normal; 
-  font-style: normal; 
-  font-size: 11px; 
-  font-kerning: none;
-  text-align: center;
-}
-span.s4 {
-  font-family: 'STIXGeneral-Regular';   
-  font-weight: normal; 
-  font-style: normal; 
-  font-size: 11px; 
-  font-kerning: none;
-  text-align: center;
-}
 
 /* debug.css | MIT License | zaydek.github.com/debug,.css *
   
