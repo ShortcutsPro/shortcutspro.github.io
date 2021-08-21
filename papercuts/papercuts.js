@@ -181,6 +181,7 @@ function loadBustlList() {
       let db = JSON.parse(bustl);
       let p = db.packages;
       p = p.filter(e => !e.repo);
+      
       p.forEach(e => {
         console.log(e.name);
         // let repo = e.repo || false;
