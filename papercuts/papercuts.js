@@ -54,11 +54,10 @@ async function addSource() {
   document.body.appendChild(alert);
   alert.present();
   await alert.onDidDismiss();
-  alert.remove();
-  await wait(2000).then( async () => {
+  alert.remove().then( async () => {
     await refreshSources();
   });
-  // location.reload(byPassCache);
+  location.reload(byPassCache);
 }
 
 function createSourceListItem(repo) {
