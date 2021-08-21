@@ -138,7 +138,7 @@ export async function init() {
   db.repos = [];
   db.packages = [];
   sources = JSON.parse(
-    localStorage.getItem("sources") || '["https://ShortcutsPro.github.io/library/","https://Cutz.Bustl.io/featured/"]'
+    localStorage.getItem("sources") || '["https://ShortcutsPro.github.io/library/"]'
   );
   await Promise.all(sources.map(e => load(e)));
 }
