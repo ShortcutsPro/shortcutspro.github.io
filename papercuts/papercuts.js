@@ -55,8 +55,8 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
-  wait(1000);
-  location.href = "../index.html";
+  await wait(2000).then(
+  location.href = "../index.html");
   // location.reload(byPassCache);
 }
 
