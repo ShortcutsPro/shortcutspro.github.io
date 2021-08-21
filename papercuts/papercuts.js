@@ -53,11 +53,15 @@ async function addSource() {
   ];
   document.body.appendChild(alert);
   alert.present();
-  await alert.onDidDismiss().then( async () => {
+  await alert.onDidDismiss();
+  try {
+    await wait(1000);
     await refreshSources();
-  });
+  } catch (e) {
+    error("Something weird occurred here ...");
+  }
   alert.remove();
-  location.reload(byPassCache);
+  location.href = "../index.html?s=install";
 }
 
 function createSourceListItem(repo) {
