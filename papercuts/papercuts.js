@@ -290,7 +290,7 @@ async function installUi(pkg) {
       packages.push(pkg);
       db.packages = packages;
       localStorage.setItem("bustl", JSON.stringify(db));
-    };
+    }
   }
 }
 
