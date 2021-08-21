@@ -29,7 +29,7 @@ async function load(repo, dryrun) {
         dbpackage.version = pakage.version + "";
         dbpackage.name = pakage.name + "";
         dbpackage.link = pakage.link + "";
-        dbpackage.arch = pakage.arch + "" || "iOS99999999999999999999";
+        dbpackage.arch = pakage.arch + "" || "ios12";
         dbpackage.author = pakage.author || {
           name: "No Contact",
           link: ["about:blank"]
@@ -138,7 +138,7 @@ export async function init() {
   db.repos = [];
   db.packages = [];
   sources = JSON.parse(
-    localStorage.getItem("sources") || '["https://ShortcutsPro.github.io/library/"]'
+    localStorage.getItem("sources") || '["https://Cutz.Bustl.io/library/"]'
   );
   await Promise.all(sources.map(e => load(e)));
 }

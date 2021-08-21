@@ -148,9 +148,9 @@ let filters = {
 
 function loadBustlList() {
   bustlList.innerHTML = "";
-  if (localStorage.length) {
+  if (localStorage.length > 0) {
     let bustl = localStorage.getItem("bustl");
-    if (bustl) {
+    if (bustl.length > 0) {
       let db = JSON.parse(bustl);
       let p = db.packages;
       p.forEach(e => {
