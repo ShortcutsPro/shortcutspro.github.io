@@ -3,13 +3,13 @@
   
   (async () => {
     let params = new URLSearchParams(location.search);
-    let callback = new URL (params.get("x-success"));
+    // let callback = new URL (params.get("x-success"));
     
     try {
       await client.init()
       await client.addSource(params.get("source"))
       } catch (e) {
     } 
-    location.href = callback.href;
+    // location.href = callback.href;
   })();
 </script>
