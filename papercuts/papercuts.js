@@ -156,6 +156,8 @@ function loadBustlList() {
       let p = db.packages;
       p.forEach(e => {
         console.log(e.name);
+        // let repo = e.repo || false;
+        // console.log(e.name, repp);
         bustlList.appendChild(createBustlListItem(e));
       });
     }
@@ -283,14 +285,11 @@ async function installUi(pkg) {
   if(!canceled) {
     alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
     
-    let repo = pkg.repo || false;
-    if (!repo) {
       let db = JSON.parse(localStorage.getItem("bustl")) || {};
       let packages = db.packages || [];
       packages.push(pkg);
       db.packages = packages;
       localStorage.setItem("bustl", JSON.stringify(db));
-    }
   }
 }
 
