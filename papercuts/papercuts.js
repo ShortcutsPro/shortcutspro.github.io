@@ -80,10 +80,10 @@ function createSourceListItem(repo) {
   ia.appendChild(iai);
   ii.appendChild(ia);
   let il = document.createElement("ion-label");
-  let ilh = document.createElement("h2");
+  let ilh = document.createElement("h1");
   ilh.textContent = repo.name;
   il.appendChild(ilh);
-  let ilp = document.createElement("p");
+  let ilp = document.createElement("h3");
   ilp.textContent = repo.description;
   il.appendChild(ilp);
   ii.appendChild(il);
