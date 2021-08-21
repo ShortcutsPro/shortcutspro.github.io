@@ -55,14 +55,9 @@ async function addSource() {
   document.body.appendChild(alert);
   alert.present();
   await alert.onDidDismiss();
-  try {
-    wait(1000);
-    await refreshSources();
-  } catch (e) {
-    error("Something weird occurred here ...");
-  }
   alert.remove();
-  location.href = "../index.html?s=install";
+  await wait(1000);
+  await client.init();
 }
 
 function createSourceListItem(repo) {
