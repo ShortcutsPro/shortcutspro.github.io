@@ -213,7 +213,8 @@
           <ion-header>
             <ion-toolbar>
               <ion-title id="banner">
-                <span class="bustl">bustl</span><span class="s2">. C&#x2060;&#x1D1C;&#x1D1B;z</span>
+                <span class="bustl">bustl</span>
+                <span class="s2">. C&#x2060;&#x1D1C;&#x1D1B;z</span>
               </ion-title>
             </ion-toolbar>
           </ion-header>
@@ -221,13 +222,20 @@
             <ion-list id="bustlList" mode="ios" indent=true>
 <!-- Bustl List -->
             </ion-list>
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+              <ion-fab-button id="help" size="small" mode="ios" color="primary">
+                <ion-icon name="help-outline">
+                </ion-icon>
+              </ion-fab-button>
+            </ion-fab>
           </ion-content>
         </ion-tab>
         <ion-tab tab="home">
           <ion-header>
             <ion-toolbar>
               <ion-title>
-                <span class="bustl">bustl</span><span class="s2">. Cutz</span>
+                <span class="bustl">bustl</span>
+                <span class="s2">. Cutz</span>
               </ion-title>
             </ion-toolbar>
             <!-- <ion-searchbar disabled></ion-searchbar> -->
@@ -236,13 +244,20 @@
             <ion-list id="packageList" mode="ios" indent=true>
 <!-- Package List -->
             </ion-list>
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+              <ion-fab-button id="refresh" size="small" mode="ios" color="primary">
+                <ion-icon name="refresh-outline">
+                </ion-icon>
+              </ion-fab-button>
+            </ion-fab>
           </ion-content>
         </ion-tab>
         <ion-tab tab="sources">
           <ion-header>
             <ion-toolbar>
               <ion-title>
-                <span class="bustl">bustl</span><span class="s2">. Cutz</span>
+                <span class="bustl">bustl</span>
+                <span class="s2">. Cutz</span>
               </ion-title>
             </ion-toolbar>
           </ion-header>
@@ -251,8 +266,8 @@
 <!-- Source List   -->
             </ion-list>
             <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-              <ion-fab-button id="addSource">
-                <ion-icon name="add">
+              <ion-fab-button id="addSource" size="small" mode="ios" color="primary">
+                <ion-icon name="add-outline">
                 </ion-icon>
               </ion-fab-button>
             </ion-fab>

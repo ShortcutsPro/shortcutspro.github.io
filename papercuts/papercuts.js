@@ -131,7 +131,7 @@ function createBustlListItem(pkg) {
   iio.textContent = "Remove";
   iio.addEventListener("click", () => {
     // client.removeSource(repo.url);
-    // refreshSources();
+    refreshSources();
   });
   iios.appendChild(iio);
   return iis;
@@ -161,6 +161,12 @@ function createPackageListItem(pkg) {
 
 document.querySelector("#addSource").addEventListener("click", () => {
   addSource();
+});
+document.querySelector("#refresh").addEventListener("click", () => {
+  refreshSources();
+});
+document.querySelector("#help").addEventListener("click", () => {
+  window.open("https://support.apple.com/guide/shortcuts/welcome/ios");
 });
 window.client = client;
 
