@@ -8,6 +8,8 @@ async function error(e) {
   await alert("Error", e)
 }
 
+const wait = ms => new Promise(c => setTimeout(c, ms));
+
 async function alert(h,m) {
   const alert = document.createElement("ion-alert");
   alert.header = h;
@@ -53,6 +55,7 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
+  wait(1000);
   await refreshSources();
 }
 
@@ -141,7 +144,6 @@ const sourceList = document.querySelector("#sourceList");
 const packageList = document.querySelector("#packageList");
 const bustlList = document.querySelector("#bustlList");
 
-const wait = ms => new Promise(c => setTimeout(c, ms));
 
 let filters = {
   onlyCompatible: true
