@@ -4,5 +4,5 @@ if('serviceWorker' in navigator){
     .catch(err => console.log('service worker not registered', err));
 }
 if (S == "install") {
-  location.href = "../index.html";
+  location.reload(byPassCache);
 }
