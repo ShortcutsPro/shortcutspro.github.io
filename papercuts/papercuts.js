@@ -55,8 +55,9 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
-  wait(1000).then(
-  refreshSources());
+  wait(1000);
+  location.href = "../index.html";
+  // location.reload(byPassCache);
 }
 
 function createSourceListItem(repo) {
