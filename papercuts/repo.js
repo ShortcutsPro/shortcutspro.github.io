@@ -50,17 +50,35 @@ async function load(repo, dryrun) {
             "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
         };
-        if (dbpackage.input.length < 1) {
-          dbpackage.callback =
-          "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY%201&input=text&text="+encodeURIComponent(dbpackage.name)+"&x-error="+encodeURI(dbpackage.link)
-        } else {
-          let dict = {
-            name: `${dbpackage.name}`,
-            input: `${dbpackage.input}`
-          }
-          let param = encodeURIComponent(JSON.stringify(dict));
-          dbpackage.callback =
-            "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY%201&input=text&text=" + param + "&x-error=" + encodeURI(dbpackage.link)
+        
+        if (dbpackage.integrity) {
+          
+          if (dbpackage.input.length < 1) {
+            dbpackage.callback =
+            "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text="+encodeURIComponent(dbpackage.name);
+          } else {
+            let dict = {
+              name: `${dbpackage.name}`,
+              input: `${dbpackage.input}`
+            };
+            let param = encodeURIComponent(JSON.stringify(dict));
+            dbpackage.callback =
+              "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=" + param;
+          };
+          
+          if (!dbpackage.integrity) {
+            
+            if (dbpackage.input.length < 1) {
+              dbpackage.callback =
+              "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name);
+            } else if (dbpackage.input == "clipboard") {
+              dbpackage.callback =
+              "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=clipboard";
+            } else {
+                dbpackage.callback =
+                "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+encodeURIComponent(dbpackage.input);
+            };
+          };
         };
         db.packages.push(dbpackage);
       }

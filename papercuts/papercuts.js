@@ -87,11 +87,32 @@ function createSourceListItem(repo) {
   return iis;
 }
 
+function createBustlListItem(pkg) {
+  let ii = document.createElement("ion-item");
+  ii.addEventListener("click", () => {
+    window.open(pkg.callback);
+  });
+  let ia = document.createElement("ion-avatar");
+  ia.slot = "start";
+  let iai = document.createElement("img");
+  iai.src = pkg.icon;
+  ia.appendChild(iai);
+  ii.appendChild(ia);
+  let il = document.createElement("ion-label");
+  let ilh = document.createElement("h1");
+  ilh.textContent = pkg.name;
+  il.appendChild(ilh);
+  // let ilp = document.createElement("h2");
+  // ilp.textContent = `${pkg.description}`;
+  // il.appendChild(ilp);
+  ii.appendChild(il);
+  return ii;
+}
+
 function createPackageListItem(pkg) {
   let ii = document.createElement("ion-item");
   ii.addEventListener("click", () => {
-      window.open(`${pkg.callback}`);
-      // window.close();
+     depict(pkg);
   });
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
@@ -117,6 +138,7 @@ window.client = client;
 
 const sourceList = document.querySelector("#sourceList");
 const packageList = document.querySelector("#packageList");
+const bustlList = document.querySelector("#bustlList");
 
 const wait = ms => new Promise(c => setTimeout(c, ms));
 
@@ -124,11 +146,27 @@ let filters = {
   onlyCompatible: true
 };
 
+function loadBustlList() {
+  bustlList.innerHTML = "";
+  if (localStorage.length) {
+    let bustl = localStorage.getItem("bustl");
+    if (bustl) {
+      let db = JSON.parse(bustl);
+      let p = db.packages;
+      p.forEach(e => {
+        console.log(e.name);
+        bustlList.appendChild(createBustlListItem(e));
+      });
+    }
+  }
+}
+
 function loadPackageList() {
   packageList.innerHTML = "";
   let p = client.getDb().packages;
   if (filters.onlyCompatible) p = p.filter(e => e.compatible);
   p.forEach(e => {
+    console.log(e.name);
     packageList.appendChild(createPackageListItem(e));
   });
 }
@@ -145,6 +183,7 @@ async function refreshSources() {
       client.getDb().repos.forEach(e => {
         sourceList.appendChild(createSourceListItem(e));
       });
+      loadBustlList();
       loadPackageList();
     })(),
     wait(1000)
@@ -243,19 +282,11 @@ async function installUi(pkg) {
   if(!canceled) {
     alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
     
-    let data =  {
-      id: `${pkg.id}`,
-      version: `${pkg.version}`,
-      auuid: `${pkg.auuid}`,
-      name: `${pkg.name}`,
-      description: `${pkg.description}`,
-      icon: `${pkg.icon}`,
-      integrity: `${pkg.integrity}`
-    };
-    let readable = JSON.stringify(data,null,'\t');
-    console.log(readable);
-    alert(readable);
-    localStorage.setItem(data.id, JSON.stringify(data));
+    let db = JSON.parse(localStorage.getItem("bustl")) || {};
+    let packages = db.packages || [];
+    packages.push(pkg);
+    db.packages = packages;
+    localStorage.setItem("bustl", JSON.stringify(db));
   }
 }
 
@@ -272,5 +303,5 @@ async function depict(pkg) {
   await modalElement.onDidDismiss();
   modalElement.remove();
 }
-
+// localStorage.clear();
 refreshSources();
