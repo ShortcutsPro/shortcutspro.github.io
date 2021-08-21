@@ -41,6 +41,7 @@ async function load(repo, dryrun) {
         dbpackage.depends = pakage.depends || [];
         dbpackage.category = pakage.category || [];
         dbpackage.depiction = pakage.depiction + "" || false;
+        dbpackage.repo = pakage.repo || false;
         dbpackage.callback = pakage.callback + "" || "";
         dbpackage.integrity = pakage.integrity || false;
         dbpackage.input = pakage.input + "" || "";

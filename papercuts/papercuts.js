@@ -121,10 +121,10 @@ function createPackageListItem(pkg) {
   ia.appendChild(iai);
   ii.appendChild(ia);
   let il = document.createElement("ion-label");
-  let ilh = document.createElement("h2");
+  let ilh = document.createElement("h1");
   ilh.textContent = pkg.name;
   il.appendChild(ilh);
-  let ilp = document.createElement("p");
+  let ilp = document.createElement("h3");
   ilp.textContent = `${pkg.description}`;
   il.appendChild(ilp);
   ii.appendChild(il);
@@ -281,12 +281,14 @@ async function installUi(pkg) {
   }
   if(!canceled) {
     alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
-    
-    let db = JSON.parse(localStorage.getItem("bustl")) || {};
-    let packages = db.packages || [];
-    packages.push(pkg);
-    db.packages = packages;
-    localStorage.setItem("bustl", JSON.stringify(db));
+    if (!pkg.repo) {
+      
+      let db = JSON.parse(localStorage.getItem("bustl")) || {};
+      let packages = db.packages || [];
+      packages.push(pkg);
+      db.packages = packages;
+      localStorage.setItem("bustl", JSON.stringify(db));
+    }
   }
 }
 
