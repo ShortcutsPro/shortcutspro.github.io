@@ -44,7 +44,6 @@ async function addSource() {
       handler: async e => {
         try {
           await client.addSource(e.url);
-          await wait(2000)
           await refreshSources();
         } catch (e) {
           error("The URL you entered wasn't a valid source");
@@ -56,18 +55,6 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
-  await Promise.all([
-    (async () => {
-      await client.init();
-      sourceList.innerHTML = "";
-      client.getDb().repos.forEach(e => {
-        sourceList.appendChild(createSourceListItem(e));
-      });
-      loadBustlList();
-      loadPackageList();
-    })(),
-    wait(1000)
-    ]);
 }
 
 function createSourceListItem(repo) {

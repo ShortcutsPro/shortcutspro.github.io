@@ -125,6 +125,7 @@ export async function addSource(url) {
     await load(url, true);
     sources.push(url);
     localStorage.setItem("sources", JSON.stringify(sources));
+    await init();
   } catch (e) {
     throw new Error("Invalid Source!");
   }
