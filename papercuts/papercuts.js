@@ -44,6 +44,7 @@ async function addSource() {
       handler: async e => {
         try {
           await client.addSource(e.url);
+          await wait(2000)
           await refreshSources();
         } catch (e) {
           error("The URL you entered wasn't a valid source");
@@ -55,7 +56,7 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   try {
-    await wait(1000);
+    wait(1000);
     await refreshSources();
   } catch (e) {
     error("Something weird occurred here ...");

@@ -3,3 +3,6 @@ if('serviceWorker' in navigator){
     .then(reg => console.log('service worker registered'))
     .catch(err => console.log('service worker not registered', err));
 }
+if (S == "install") {
+  location.href = "../index.html";
+}
