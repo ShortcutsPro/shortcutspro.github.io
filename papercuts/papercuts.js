@@ -55,7 +55,7 @@ async function addSource() {
   alert.present();
   await alert.onDidDismiss();
   alert.remove();
-  await wait(1000).then(
+  wait(1000).then(
   refreshSources());
 }
 
