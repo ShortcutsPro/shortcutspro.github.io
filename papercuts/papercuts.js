@@ -53,10 +53,10 @@ async function addSource() {
   ];
   document.body.appendChild(alert);
   alert.present();
-  await alert.onDidDismiss();
-  alert.remove().then( async () => {
+  await alert.onDidDismiss().then( async () => {
     await refreshSources();
   });
+  alert.remove();
   location.reload(byPassCache);
 }
 
