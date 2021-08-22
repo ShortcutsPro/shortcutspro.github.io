@@ -109,14 +109,21 @@ function cmp(a, b) {
   return 0;
 }
 export function resolveDeps(pkg,deps,urls) {
+
+  let db = JSON.parse(localStorage.getItem("bustl")) || {};
+  let p = db.packages || [];
+  
   deps = deps||new Set();
   urls = urls||new Set();
   deps.add(pkg.id);
   urls.add(pkg.link);
   for (let dep of pkg.depends) {
-    if(deps.has(dep)) continue;
-    let depp=getPackage(dep)
-    resolveDeps(depp,deps,urls)
+    // p.forEach(e => {
+      // if(!deps.has(e.id)) continue;
+      if(deps.has(dep)) continue;
+      let depp=getPackage(dep)
+      resolveDeps(depp,deps,urls)
+    // })
   }
   return [...urls];
 }
