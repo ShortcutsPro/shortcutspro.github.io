@@ -117,7 +117,7 @@ function createBustlListItem(pkg) {
   iio.color = "danger";
   iio.textContent = "Remove";
   iio.addEventListener("click", () => {
-    // client.removeSource(repo.url);
+    client.removePackage(pkg.id);
     refreshSources();
   });
   iios.appendChild(iio);
@@ -176,9 +176,9 @@ function loadBustlList() {
       p = p.filter(e => !e.repo);
       p = p.filter(e => e.integrity);
       p.forEach(e => {
-        console.log(e.name);
-        bustlList.appendChild(createBustlListItem(e));
-      });
+       // console.log(e.name)
+        bustlList.appendChild(createBustlListItem(e))
+      })
     }
   }
 }
@@ -188,7 +188,7 @@ function loadPackageList() {
   let p = client.getDb().packages;
   if (filters.onlyCompatible) p = p.filter(e => e.compatible);
   p.forEach(e => {
-    console.log(e.name);
+   // console.log(e.name);
     packageList.appendChild(createPackageListItem(e));
   });
 }
@@ -299,16 +299,16 @@ async function installUi(pkg) {
     if (!(await installStep(u, i * 1, toInstall.length))){
       canceled=true
       break
-    };
+    }
   }
   if(!canceled) {
-    alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`);
+    alert("Success!",`${pkg.name} and ${toInstall.length-1} dependenc${(toInstall.length-1==1)?"y was":"ies were"} installed successfully.`)
     
       let db = JSON.parse(localStorage.getItem("bustl")) || {};
       let packages = db.packages || [];
-      packages.push(pkg);
+      packages.push(pkg)
       db.packages = packages;
-      localStorage.setItem("bustl", JSON.stringify(db));
+      localStorage.setItem("bustl", JSON.stringify(db))
   }
 }
 
@@ -320,10 +320,10 @@ async function depict(pkg) {
   modalElement.componentProps = pkg;
 
   // present the modal
-  document.body.appendChild(modalElement);
-  modalElement.present();
-  await modalElement.onDidDismiss();
-  modalElement.remove();
+  document.body.appendChild(modalElement)
+  modalElement.present()
+  await modalElement.onDidDismiss()
+  modalElement.remove()
 }
 // localStorage.clear();
-refreshSources();
+refreshSources()

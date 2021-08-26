@@ -113,8 +113,8 @@ export function resolveDeps(pkg,deps,urls) {
   let db = JSON.parse(localStorage.getItem("bustl")) || {};
   let p = db.packages || [];
   
-  deps = deps||new Set();
-  urls = urls||new Set();
+  deps = deps || new Set();
+  urls = urls || new Set();
   deps.add(pkg.id)
   urls.add(pkg.link)
   for (let dep of pkg.depends) {
@@ -141,6 +141,15 @@ export function removeSource(url) {
   sources = sources.filter(e => e != url);
   localStorage.setItem("sources", JSON.stringify(sources))
 }
+
+export function removePackage(id) {
+  let db = JSON.parse(localStorage.getItem("bustl")) || {};
+  let p = db.packages || [];
+  packages = p.filter(e => e.id != id);
+  db.packages = packages;
+  localStorage.setItem("bustl", JSON.stringify(db))
+}
+
 export async function init() {
   db = {};
   sources = [];
