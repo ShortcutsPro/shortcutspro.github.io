@@ -112,20 +112,20 @@ export function resolveDeps(pkg,deps,urls) {
 
   let db = JSON.parse(localStorage.getItem("bustl")) || {};
   let p = db.packages || [];
-  
-  deps = deps || new Set();
-  urls = urls || new Set();
-  deps.add(pkg.id)
-  urls.add(pkg.link)
-  for (let dep of pkg.depends) {
-    // p.forEach(e => {
-      // if(!deps.has(e.id)) continue;
-      if(deps.has(dep)) continue
-      let depp=getPackage(dep)
-      resolveDeps(depp,deps,urls)
-    // })
-  }
-  return [...urls]
+  p.forEach(e => {
+    if (e.id != pkg.id) {
+      deps = deps || new Set();
+      urls = urls || new Set();
+      deps.add(pkg.id)
+      urls.add(pkg.link)
+      for (let dep of pkg.depends) {
+        if(deps.has(dep)) continue
+        let depp=getPackage(dep)
+        resolveDeps(depp,deps,urls)
+      }
+      return [...urls]
+    }
+  })
 }
 export async function addSource(url) {
   try {
