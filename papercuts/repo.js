@@ -112,21 +112,28 @@ export function resolveDeps(pkg,deps,urls) {
 
   let db = JSON.parse(localStorage.getItem("bustl")) || {};
   let p = db.packages || [];
+  let installed = false;
+  
   p.forEach(e => {
-    if (e.id != pkg.id) {
-      deps = deps || new Set();
-      urls = urls || new Set();
-      deps.add(pkg.id)
-      urls.add(pkg.link)
-      for (let dep of pkg.depends) {
-        if(deps.has(dep)) continue
-        let depp=getPackage(dep)
-        resolveDeps(depp,deps,urls)
-      }
-      return [...urls]
+    if (e.id == pkg.id) {
+      installed = true;
     }
   })
+  
+  if (!installed) {
+    deps = deps || new Set();
+    urls = urls || new Set();
+    deps.add(pkg.id)
+    urls.add(pkg.link)
+    for (let dep of pkg.depends) {
+      if(deps.has(dep)) continue
+      let depp=getPackage(dep)
+      resolveDeps(depp,deps,urls)
+    }
+    return [...urls]
+  }
 }
+
 export async function addSource(url) {
   try {
     await load(url, true)
@@ -137,6 +144,7 @@ export async function addSource(url) {
     throw new Error("Invalid Source!")
   }
 }
+
 export function removeSource(url) {
   sources = sources.filter(e => e != url);
   localStorage.setItem("sources", JSON.stringify(sources))
