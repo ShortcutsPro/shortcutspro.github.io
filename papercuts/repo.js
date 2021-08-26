@@ -126,13 +126,13 @@ export function resolveDeps(pkg,deps,urls) {
   if (!installed) {
     deps.add(pkg.id)
     urls.add(pkg.link)
+    for (let dep of pkg.depends) {
+      if(deps.has(dep)) continue
+      let depp=getPackage(dep)
+      resolveDeps(depp,deps,urls)
+    }
+    return [...urls]
   }
-  for (let dep of pkg.depends) {
-    if(deps.has(dep)) continue
-    let depp=getPackage(dep)
-    resolveDeps(depp,deps,urls)
-  }
-  return [...urls]
 }
 
 export async function addSource(url) {
