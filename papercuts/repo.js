@@ -118,7 +118,6 @@ export function resolveDeps(pkg,deps,urls) {
   urls = urls || new Set();
   
   p.forEach(e => {
-    alert(e.id)
     if (e.id == pkg.id) {
     installed = true;
     }
