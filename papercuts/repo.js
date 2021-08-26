@@ -50,7 +50,7 @@ async function load(repo, dryrun) {
           dbpackage.depiction =
             "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
-        };
+        }
         
         if (dbpackage.integrity) {
           
@@ -65,7 +65,7 @@ async function load(repo, dryrun) {
             let param = encodeURIComponent(JSON.stringify(dict));
             dbpackage.callback =
               "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=" + param;
-          };
+          }
           
           if (!dbpackage.integrity) {
             
@@ -78,21 +78,21 @@ async function load(repo, dryrun) {
             } else {
                 dbpackage.callback =
                 "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+encodeURIComponent(dbpackage.input);
-            };
-          };
-        };
-        db.packages.push(dbpackage);
+            }
+          }
+        }
+        db.packages.push(dbpackage)
       }
     }
   } else throw new Error("Invalid repo!")
-};
+}
 export function getDb() {
-  return db;
+  return db
 }
 export function getPackage(id) {
   return db.packages
     .filter(e => e.id == id && e.compatible)
-    .sort((a, b) => cmp(a.version, b.version))[0];
+    .sort((a, b) => cmp(a.version, b.version))[0]
 }
 // Embed-a-Engine 1.0
 function cmp(a, b) {
@@ -103,10 +103,10 @@ function cmp(a, b) {
     let nb = Number(pb[i]);
     if (isNaN(na)) na = 0;
     if (isNaN(nb)) nb = 0;
-    if (na > nb) return -1;
-    if (nb > na) return 1;
+    if (na > nb) return -1
+    if (nb > na) return 1
   }
-  return 0;
+  return 0
 }
 export function resolveDeps(pkg,deps,urls) {
 
@@ -115,31 +115,31 @@ export function resolveDeps(pkg,deps,urls) {
   
   deps = deps||new Set();
   urls = urls||new Set();
-  deps.add(pkg.id);
-  urls.add(pkg.link);
+  deps.add(pkg.id)
+  urls.add(pkg.link)
   for (let dep of pkg.depends) {
     // p.forEach(e => {
       // if(!deps.has(e.id)) continue;
-      if(deps.has(dep)) continue;
+      if(deps.has(dep)) continue
       let depp=getPackage(dep)
       resolveDeps(depp,deps,urls)
     // })
   }
-  return [...urls];
+  return [...urls]
 }
 export async function addSource(url) {
   try {
-    await load(url, true);
-    sources.push(url);
-    localStorage.setItem("sources", JSON.stringify(sources));
-    await init();
+    await load(url, true)
+    sources.push(url)
+    localStorage.setItem("sources", JSON.stringify(sources))
+    await init()
   } catch (e) {
-    throw new Error("Invalid Source!");
+    throw new Error("Invalid Source!")
   }
 }
 export function removeSource(url) {
   sources = sources.filter(e => e != url);
-  localStorage.setItem("sources", JSON.stringify(sources));
+  localStorage.setItem("sources", JSON.stringify(sources))
 }
 export async function init() {
   db = {};
@@ -149,5 +149,5 @@ export async function init() {
   sources = JSON.parse(
     localStorage.getItem("sources") || '["https://Cutz.Bustl.io/library/"]'
   );
-  await Promise.all(sources.map(e => load(e)));
+  await Promise.all(sources.map(e => load(e)))
 }
