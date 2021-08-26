@@ -113,12 +113,13 @@ export function resolveDeps(pkg,deps,urls) {
   let db = JSON.parse(localStorage.getItem("bustl")) || {};
   let p = db.packages || [];
   let installed = false;
-  let id = pkg.id || "";
+
   deps = deps || new Set();
   urls = urls || new Set();
   
   p.forEach(e => {
-    if (e.id == id) {
+    alert(e.id)
+    if (e.id == pkg.id) {
     installed = true;
     }
   })
