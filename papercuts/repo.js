@@ -145,7 +145,7 @@ export function removeSource(url) {
 export function removePackage(id) {
   let db = JSON.parse(localStorage.getItem("bustl")) || {};
   let p = db.packages || [];
-  packages = p.filter(e => e.id != id);
+  let packages = p.filter(e => e.id != id);
   db.packages = packages;
   localStorage.setItem("bustl", JSON.stringify(db))
 }

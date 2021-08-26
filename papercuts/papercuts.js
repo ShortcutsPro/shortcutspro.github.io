@@ -263,8 +263,8 @@ async function installStep(link, i, l) {
       cssClass: "link"
     }
   ];
-  document.body.appendChild(alert);
-  await alert.present();
+  document.body.appendChild(alert)
+  await alert.present()
   let a = document.createElement("a");
   let b = alert.querySelector(
     ".link"
@@ -278,21 +278,21 @@ async function installStep(link, i, l) {
     installed=true;
     alert.dismiss()
   }
-  b.replaceWith(a);
-  await alert.onDidDismiss();
-  alert.remove();
-  return !!installed;
+  b.replaceWith(a)
+  await alert.onDidDismiss()
+  alert.remove()
+  return !!installed
 }
 
 async function installUi(pkg) {
   const loading = document.createElement("ion-loading");
   loading.message = "Finding dependencies...";
-  document.body.appendChild(loading);
-  await loading.present();
+  document.body.appendChild(loading)
+  await loading.present()
   let toInstall = client.resolveDeps(pkg);
   await wait(500);
-  await loading.dismiss();
-  loading.remove();
+  await loading.dismiss()
+  loading.remove()
   let canceled;
   for (let i in toInstall) {
     let u = toInstall[i];
