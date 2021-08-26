@@ -117,19 +117,17 @@ export function resolveDeps(pkg,deps,urls) {
   urls = urls || new Set();
   
   p.forEach(e => {
-    if (e.id == pkg.id) {
-      installed = true;
-    }
+    if (e.id == pkg.id) installed = true;
   })
   
   if (!installed) {
     deps.add(pkg.id)
     urls.add(pkg.link)
-  }
-  for (let dep of pkg.depends) {
-    if(deps.has(dep)) continue
-    let depp=getPackage(dep)
-    resolveDeps(depp,deps,urls)
+    for (let dep of pkg.depends) {
+      if(deps.has(dep)) continue
+      let depp=getPackage(dep)
+      resolveDeps(depp,deps,urls)
+    }
   }
   return [...urls]
 }
