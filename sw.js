@@ -1,24 +1,15 @@
-const staticCacheName = 'site-static-v1';
-const dynamicCacheName = 'site-dynamic-v1';
+const staticCacheName = 'site-static-v3';
+const dynamicCacheName = 'site-dynamic-v3';
 const assets = [
   './index.html',
   './404.html',
-  './js/db.js',
   './js/app.js',
-  './js/ui.js',
-  './js/materialize.min.js',
   './css/styles.css',
-  './css/materialize.min.css',
+  './css/clean.css',
   './fonts/space_age.ttf',
-  'https://fonts.googleapis.com/icon?family=Material+Icons',
-  'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
   './pages/fallback.html',
-  './pages/about.html',
-  './pages/contact.html',
-  './pages/papercuts.html',
   './papercuts/bplist.js',
   './papercuts/fallback-depiction.html',
-  './papercuts/index.html',
   ',/papercuts/papercuts.js',
   './papercuts/repo.js',
   './papercuts/style.css'
