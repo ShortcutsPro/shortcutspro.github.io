@@ -71,10 +71,10 @@ function createSourceListItem(repo) {
   ia.appendChild(iai);
   ii.appendChild(ia);
   let il = document.createElement("ion-label");
-  let ilh = document.createElement("h1");
+  let ilh = document.createElement("h2");
   ilh.textContent = repo.name;
   il.appendChild(ilh);
-  let ilp = document.createElement("h3");
+  let ilp = document.createElement("ion-text");
   ilp.textContent = repo.description;
   il.appendChild(ilp);
   ii.appendChild(il);
@@ -111,7 +111,7 @@ function createBustlListItem(pkg) {
   ia.appendChild(iai);
   ii.appendChild(ia);
   let il = document.createElement("ion-label");
-  let ilh = document.createElement("h1");
+  let ilh = document.createElement("h2");
   ilh.textContent = pkg.name;
   il.appendChild(ilh);
   // let ilp = document.createElement("h2");
@@ -154,7 +154,7 @@ function createPackageListItem(pkg) {
   ii.appendChild(ia);
   let il = document.createElement("ion-label");
   il.class = "ion-text-wrap";
-  let ilh = document.createElement("h1");
+  let ilh = document.createElement("h2");
   ilh.textContent = pkg.name;
   il.appendChild(ilh);
   let ilt = document.createElement("ion-text");
