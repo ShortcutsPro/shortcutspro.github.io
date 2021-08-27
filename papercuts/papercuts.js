@@ -153,9 +153,9 @@ document.querySelector("#addSource").addEventListener("click", () => {
 document.querySelector("#refresh").addEventListener("click", () => {
   refreshSources();
 });
-document.querySelector("#help").addEventListener("click", () => {
-  window.open("https://support.apple.com/guide/shortcuts/welcome/ios");
-});
+// document.querySelector("#help").addEventListener("click", () => {
+//   window.open("https://support.apple.com/guide/shortcuts/welcome/ios");
+// });
 window.client = client;
 
 const sourceList = document.querySelector("#sourceList");
