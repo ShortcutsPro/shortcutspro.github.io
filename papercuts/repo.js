@@ -109,23 +109,21 @@ function cmp(a, b) {
   return 0
 }
 export function resolveDeps(pkg,deps,urls) {
-
-  let db = JSON.parse(localStorage.getItem("bustl")) || {};
-  let p = db.packages || [];
-  let installed = false;
-
   deps = deps || new Set();
   urls = urls || new Set();
-  
-  p.forEach(e => {
-    if (e.id == pkg.id) {
-    installed = true;
-    }
-  })
+  let db = JSON.parse(localStorage.getItem("bustl")) || {};
+  let packages = db.packages || [];
+  let installed = packages.some((e) => {
+    return e.id == pkg.id
+  });
   
   if (!installed) {
     deps.add(pkg.id)
     urls.add(pkg.link)
+    packages.push(pkg)
+    db.packages = packages;
+    localStorage.setItem("bustl", JSON.stringify(db))
+    
     for (let dep of pkg.depends) {
       if(deps.has(dep)) continue
       let depp=getPackage(dep)
