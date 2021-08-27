@@ -60,6 +60,9 @@ async function addSource() {
 function createSourceListItem(repo) {
   let iis = document.createElement("ion-item-sliding");
   let ii = document.createElement("ion-item");
+  ii.mode = "ios";
+  ii.inset = true;
+  ii.lines = "inset";
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
   let iai = document.createElement("img");
@@ -96,6 +99,10 @@ function createBustlListItem(pkg) {
   ii.addEventListener("click", () => {
     window.open(pkg.callback);
   });
+  ii.mode = "ios";
+  ii.inset = true;
+  ii.lines = "none";
+  ii.style = "--border-width: 3px; --border-radius: 15px; --inner-padding-start: 10px; --background:" + pkg.color +"; --color: white; margin: 7px;";
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
   let iai = document.createElement("img");
@@ -130,19 +137,29 @@ function createPackageListItem(pkg) {
   ii.addEventListener("click", () => {
      depict(pkg);
   });
+  ii.mode = "ios";
+  ii.inset = true;
+  ii.lines = "none";
+  if (pkg.repo) {
+    ii.style = "--border-width: 1px; --border-radius: 9px; --inner-padding-start: 20px; --inner-box-shadow: 0 0 5px;"
+  } else {
+    ii.style = "--border-width: 3px; --border-radius: 15px; --inner-padding-start: 10px; --background:" + pkg.color +"; --color: white; margin: 7px;";
+  }
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
-  let iai = document.createElement("img");
+  let iai = document.createElement("ion-img");
   iai.src = pkg.icon;
   ia.appendChild(iai);
   ii.appendChild(ia);
   let il = document.createElement("ion-label");
+  il.class = "ion-text-wrap";
   let ilh = document.createElement("h1");
   ilh.textContent = pkg.name;
   il.appendChild(ilh);
-  let ilp = document.createElement("h3");
-  ilp.textContent = `${pkg.description}`;
-  il.appendChild(ilp);
+  let ilt = document.createElement("ion-text");
+  ilt.class = "ion-text-wrap";
+  ilt.textContent = pkg.description;
+  il.appendChild(ilt)
   ii.appendChild(il);
   return ii;
 }
@@ -188,10 +205,10 @@ function loadPackageList() {
   packageList.innerHTML = "";
   let p = client.getDb().packages;
   if (filters.onlyCompatible) p = p.filter(e => e.compatible);
+  
   p.forEach(e => {
-   // console.log(e.name);
-    packageList.appendChild(createPackageListItem(e));
-  });
+      packageList.appendChild(createPackageListItem(e));
+  })
 }
 
 async function refreshSources() {

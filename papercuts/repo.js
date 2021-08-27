@@ -45,6 +45,7 @@ async function load(repo, dryrun) {
         dbpackage.callback = pakage.callback + "" || "";
         dbpackage.integrity = pakage.integrity || false;
         dbpackage.input = pakage.input + "" || "";
+        dbpackage.color = pakage.color + "" || "#000000";
 
         if (!dbpackage.depiction) {
           dbpackage.depiction =
