@@ -63,7 +63,7 @@ function createSourceListItem(repo) {
   ii.mode = "ios";
   ii.inset = true;
   ii.lines = "inset";
-  ii.style = "--border-width: 1px; --border-radius: 9px; --inner-padding-start: 20px; --inner-box-shadow: 0 0 5px;"
+  ii.style = "--border-width: 1px; --border-radius: 9px; --inner-padding-start: 20px; --inner-box-shadow: 0 0 5px; margin: 7px"
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
   let iai = document.createElement("img");
