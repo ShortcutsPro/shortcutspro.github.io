@@ -10,6 +10,7 @@
       await client.addSource(params.get("source"))
       } catch (e) {
     } 
+    await client.init()
     window.close();
   })();
 </script>
