@@ -82,8 +82,9 @@ function createSourceListItem(repo) {
   iio.color = "danger";
   iio.textContent = "Remove";
   iio.addEventListener("click", () => {
-    client.removeSource(repo.url);
-    refreshSources();
+    client.removeSource(repo.url)
+    client.removePackage(repo.id)
+    refreshSources()
   });
   iios.appendChild(iio);
   return iis;
