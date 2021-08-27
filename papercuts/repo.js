@@ -142,6 +142,7 @@ export async function addSource(url) {
   } catch (e) {
     throw new Error("Invalid Source!")
   }
+  await init()
 }
 
 export function removeSource(url) {
