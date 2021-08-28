@@ -1,0 +1,3 @@
+
+- name: Image Optimizer
+  uses: crush-pics/crush-pics-github-action@v1.0
