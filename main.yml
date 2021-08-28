@@ -10,3 +10,5 @@
   uses: axetroy/gh-pages-action@0.0.21
 - name: Mirroring Repository
   uses: pixta-dev/repository-mirroring-action@v1
+- name: GitHub Action for IFTTT
+  uses: screendriver/ifttt-action@v1.0.0
