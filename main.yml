@@ -14,3 +14,5 @@
   uses: screendriver/ifttt-action@v1.0.0
 - name: Setup Node.js environment
   uses: actions/setup-node@v2.4.0
+- name: Open Graph social cards
+  uses: Jasmin2895/open-graph-image@v1.2
