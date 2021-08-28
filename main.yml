@@ -2,3 +2,5 @@
   uses: crush-pics/crush-pics-github-action@v1.0
 - name: Payload Info
   uses: Dovyski/payload-info-action@v1
+- name: Setup Secure Shell (SSH)
+  uses: kopepasah/setup-secure-shell@0.1.0
