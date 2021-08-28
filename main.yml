@@ -8,3 +8,5 @@
   uses: OrRosenblatt/validate-json-action@0.1.0
 - name: gh-pages for Github Action
   uses: axetroy/gh-pages-action@0.0.21
+- name: Mirroring Repository
+  uses: pixta-dev/repository-mirroring-action@v1
