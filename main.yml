@@ -12,3 +12,5 @@
   uses: pixta-dev/repository-mirroring-action@v1
 - name: GitHub Action for IFTTT
   uses: screendriver/ifttt-action@v1.0.0
+- name: Setup Node.js environment
+  uses: actions/setup-node@v2.4.0
