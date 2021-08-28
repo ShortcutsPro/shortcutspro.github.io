@@ -4,3 +4,5 @@
   uses: Dovyski/payload-info-action@v1
 - name: Setup Secure Shell (SSH)
   uses: kopepasah/setup-secure-shell@0.1.0
+- name: Validate JSON
+  uses: OrRosenblatt/validate-json-action@0.1.0
