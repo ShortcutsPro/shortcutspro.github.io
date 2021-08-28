@@ -103,7 +103,7 @@ function createBustlListItem(pkg) {
   ii.mode = "ios";
   ii.inset = true;
   ii.lines = "none";
-  ii.style = "--border-width: 3px; --border-radius: 15px; --background:" + pkg.color +"; --color: white; margin: 7px;";
+  ii.style = "--border-width: 3px; --border-radius: 9px; --background:" + pkg.color +"; --color: white; margin: 7px;";
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
   let iai = document.createElement("img");
@@ -144,7 +144,7 @@ function createPackageListItem(pkg) {
   if (pkg.repo) {
     ii.style = "--border-width: 1px; --border-radius: 9px; --inner-padding-start: 20px; --inner-box-shadow: 0 0 5px;"
   } else {
-    ii.style = "--border-width: 3px; --border-radius: 15px; --background:" + pkg.color +"; --color: white; margin: 7px;";
+    ii.style = "--border-width: 3px; --border-radius: 9px; --background:" + pkg.color +"; --color: white; margin: 7px;";
   }
   let ia = document.createElement("ion-avatar");
   ia.slot = "start";
