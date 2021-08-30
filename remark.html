@@ -16,9 +16,10 @@
     </style>
     <script>
       const Q = new URL (window.location.href);
-      const S = Array(decodeURIComponent(Q.searchParams.get("slides")));
+      const S = decodeURIComponent(Q.searchParams.get("slides"));
  
-      S.forEach(e => {
+      S.forEach((e) => {
+        alert(e)
         document.getElementById("source").innerHTML += `
            background-image: url(${e})
            ---
