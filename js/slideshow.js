@@ -1,14 +1,16 @@
-function fillText () {
-  let param = JSON.parse(S);
-  let slides = param.slides || [];
-  let show = "";
-  for (let i = 0; i < slides.length; i++) {
-    // alert(slides[i])
-    let string = slides[i] + `
+function fillText (slideClass) {
+  const Q = new URL (window.location.href);
+  let S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
+  let slides = S.slides || [];
+  let string = `
+  ${slideClass}
+  
+  ${slides[0]}`;
+  for (let i = 1; i < slides.length; i++) {
+    string += `
     ---
-    `;
-    alert(string)
-    show += `${string}`;
+    ${slides[i]}`;
   }
-  return show
+  // alert(string)
+  return string
 }
