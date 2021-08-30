@@ -16,11 +16,11 @@
     </style>
     <script>
       const Q = new URL (window.location.href);
-      const S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
-      let slides =  S.slides || [];
-      slides.forEach(e => {
-        document.getElementById("source").innerHTML += ` 
-           background-image: url(e)
+      const S = Array(decodeURIComponent(Q.searchParams.get("slides")));
+ 
+      S.forEach(e => {
+        document.getElementById("source").innerHTML += `
+           background-image: url(${e})
            ---
           `})
         </script>
