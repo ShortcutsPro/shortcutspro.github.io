@@ -17,13 +17,13 @@
     <script>
       const Q = new URL (window.location.href);
       const S = decodeURIComponent(Q.searchParams.get("s"));
- alert(Q)
+      slides = S.slides || [];
       S.forEach((e) => {
         alert(e)
-        document.getElementById("source").innerHTML += `
-           background-image: url("${e}")
+        document.getElementById("source").innerHTML += 
+           background-image: url(${e})
            ---
-          `})
+          })
         </script>
   </head>
   <body>
