@@ -14,32 +14,25 @@
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
+    <script src="./js/slideshow.js"></script>
     <script>
+      const source = document.querySelector("#source");
       const Q = new URL (window.location.href);
       const S = decodeURIComponent(Q.searchParams.get("s"));
- alert(Q)
-      S.forEach((e) => {
-        alert(e)
-        document.getElementById("source").innerHTML += `
-           background-image: url(e)
-           ---
-          `})
-        </script>
+      source.innerHTML = fillText();
+      // alert(S)
+    </script>
   </head>
   <body>
-    <textarea id="source">
-      class: center, middle
-      ----
-      background-image: url(${e})
-      ----
-      background-image: url(${e})
-      ----
-      background-image: url(${e})
-      ----
-    </textarea>
+    <div id="source">
+
+
+
+    </div>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript"></script>
+
     <script type="text/javascript">
-      var slideshow = remark.create();
+      // var slideshow = remark.create();
     </script>
   </body>
 </html>
