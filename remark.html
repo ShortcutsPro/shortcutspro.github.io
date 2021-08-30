@@ -16,12 +16,12 @@
     </style>
     <script>
       const Q = new URL (window.location.href);
-      const S = decodeURIComponent(Q.searchParams.get("slides"));
- 
+      const S = decodeURIComponent(Q.searchParams.get("s"));
+ alert(Q)
       S.forEach((e) => {
         alert(e)
         document.getElementById("source").innerHTML += `
-           background-image: url(${e})
+           background-image: url("${e}")
            ---
           `})
         </script>
@@ -29,8 +29,13 @@
   <body>
     <textarea id="source">
       class: center, middle
-
-
+      ----
+      background-image: url(${e})
+      ----
+      background-image: url(${e})
+      ----
+      background-image: url(${e})
+      ----
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript"></script>
     <script type="text/javascript">
