@@ -14,6 +14,6 @@ ${slides[0]}`;
 
 ${slides[i]}`;
   }
-  // alert(string)
+  alert(string)
   return string
 }
