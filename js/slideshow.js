@@ -6,12 +6,13 @@ function fillText (slideClass) {
   ${slideClass}
   
   ${slides[0]}`;
+  
   for (let i = 1; i < slides.length; i++) {
     string += `
-    
     ---
     
-    ${slides[i]}`;
+    ${slides[i]}
+    `;
   }
   // alert(string)
   return string
