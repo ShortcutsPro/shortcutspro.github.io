@@ -42,7 +42,7 @@ ${slides[i]}
       }
       let txt = document.createElement("textarea");
       txt.id = "source";
-      txt.innerText = fillText("class: center, middle");
+      txt.innerHTML = fillText("class: center, middle");
       document.querySelector("body").appendChild(txt);
       var slideshow = remark.create();
     </script>
