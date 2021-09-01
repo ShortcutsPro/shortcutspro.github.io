@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <style type="text/css">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
       body { font-family: 'Droid Serif'; }
       h1, h2, h3 {
         font-family: 'Yanone Kaffeesatz';
@@ -16,16 +17,29 @@
     </style>
   </head>
   <body>
+    <textarea id="source">
 
+class: center, middle
 
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+# Title
+[![https://i.imgur.com/ZM1EbqK.jpg](https://i.imgur.com/ZM1EbqK.jpg)](https://i.imgur.com/ZM1EbqK.jpg)
 
-    <script src="./js/slideshow.js"></script>
+---
+
+# Agenda
+
+[![https://i.imgur.com/ZM1EbqK.jpg](https://i.imgur.com/ZM1EbqK.jpg)](https://i.imgur.com/ZM1EbqK.jpg)
+
+---
+
+# Introduction
+
+[![https://i.imgur.com/ZM1EbqK.jpg](https://i.imgur.com/ZM1EbqK.jpg)](https://i.imgur.com/ZM1EbqK.jpg)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
     <script>
-      let txt = document.createElement("textarea");
-      txt.id = "source";
-      txt.innerText = ("class: center, middle");
-      document.querySelector("body").appendChild(txt);
       var slideshow = remark.create();
     </script>
   </body>

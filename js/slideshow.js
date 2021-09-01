@@ -9,7 +9,7 @@ function fillText (slideClass) {
   for (let i = 1; i < slides.length; i++) {
     string += `
     
-    ****
+    ---
     
     ${slides[i]}`;
   }
