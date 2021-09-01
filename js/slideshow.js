@@ -5,14 +5,15 @@ function fillText (slideClass) {
   let string = `
 ${slideClass}
 
-${slides[0]}`;
+${slides[0]}
+`;
 
   for (let i = 1; i < slides.length; i++) {
-    string += 
-`
+    string += `
 ---
 
-${slides[i]}`;
+${slides[i]}
+`;
   }
   alert(string)
   return string
