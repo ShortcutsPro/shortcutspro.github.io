@@ -172,7 +172,7 @@ document.querySelector("#refresh").addEventListener("click", () => {
   refreshSources();
 });
 document.querySelector("#help").addEventListener("click", () => {
-  window.open("https://support.apple.com/guide/shortcuts/welcome/ios");
+  window.open("https://www.bustl.io/bookings-checkout/efficiency-discovery-call/book");
 });
 window.client = client;
 
