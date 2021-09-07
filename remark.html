@@ -44,7 +44,9 @@ ${slides[i]}
       txt.id = "source";
       txt.innerHTML = fillText("class: center, middle");
       document.querySelector("body").appendChild(txt);
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+        ratio: "16:9"
+      });
       // every 3 seconds (change to your desired interval), fire the helper function
       setInterval(function () {carousel(slideshow)}, 3000);
       function carousel(varObject) {
