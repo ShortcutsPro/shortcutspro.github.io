@@ -69,9 +69,11 @@
       <h1 class="name"></h1>
       <a class="button">Copy Profile</a>
     </div>
+    
     <div class="display">
       
     </div>
+    
 <!— BEGIN ERROR MESSAGE  —>
     <div id="error">
       <h1>
@@ -82,6 +84,7 @@
         <code class="error"></code>
       </div>
     </div>
+    
     <script>
       function copy() {
          navigator.clipboard.writeText(profile);
@@ -89,7 +92,7 @@
          window.open('shortcuts://shortcuts/3cce1e40e99b4c77b71c05e3f487fbe6');window.close();
       };
        
-      document.querySelectorAll(".name").forEach(n=>n.textContent="File Provider");
+      document.querySelectorAll(".name").forEach(n=>n.textContent="INTEGRITY");
       var query = window.location.search.substring(1);
       console.log(query);
   
@@ -98,19 +101,29 @@
         var dict = JSON.parse(param);
     
         if (dict) {
-          window.location="#notinstalled";
-          var profile = JSON.stringify(dict, null, 2); // spacing level = 2
-          document.querySelector('.display').innerHTML = "<div class='display'><pre>"+profile+"</pre></div>";
-          document.querySelector(".button").innerHTML = "<a class='button' onclick='copy();'>Copy Profile</a>";
+          window.location = "#notinstalled";
+          var profile = JSON.stringify(dict, null, '/t'); // spacing level = 2
+          document.querySelector('.display').innerHTML = `
+          <div class="display">
+            <pre> ${profile} </pre>
+          </div>
+          `;
+          document.querySelector(".button").innerHTML = `
+          <a class="button" onclick="copy();">Copy Profile</a>
+          `;
         } else {
-            window.location="#error";
-            document.querySelector(".error").innerHTML = "<div class='error'>Invalid \"profile\" parameter.</div>";
-          };
+            window.location = "#error";
+            document.querySelector(".error").innerHTML = `
+            <div class="error">Invalid "profile" parameter.</div>
+            `;
+          }
           
        } else {
-           window.location="#error";
-           document.querySelector(".error").innerHTML = "<div class='error'>No \"profile\" parameter found.</div>";
-       };
+           window.location = "#error";
+           document.querySelector(".error").innerHTML = `
+           <div class="error">No profile parameter found.</div>
+           `;
+       }
     </script>
   </body>
 </html>
