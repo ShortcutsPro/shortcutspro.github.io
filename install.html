@@ -102,7 +102,7 @@
     
         if (dict) {
           window.location = "#notinstalled";
-          var profile = JSON.stringify(dict, null, '/t'); // spacing level = 2
+          var profile = JSON.stringify(dict, null, 4); // spacing level = 4
           document.querySelector('.display').innerHTML = `
           <div class="display">
             <pre> ${profile} </pre>
