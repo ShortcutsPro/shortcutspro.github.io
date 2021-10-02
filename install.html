@@ -67,6 +67,7 @@
     <div id="notinstalled">
       <h2>This site requires a <a href="https://support.apple.com/en-au/guide/shortcuts/apdf22b0444c/2.2/ios/12.0">Shortcut</a> called</h2>
       <h1 class="name"></h1>
+      <h2>Conform the profile below is correct and then tap to copy.</h2>
       <a class="button">Copy Profile</a>
     </div>
     
@@ -88,8 +89,12 @@
     <script>
       function copy() {
          navigator.clipboard.writeText(profile);
-         alert("Your profie is on the clipboard. The shortcut will now install. Paste your profile into the provided text box.");
-         window.open('shortcuts://shortcuts/3cce1e40e99b4c77b71c05e3f487fbe6');window.close();
+         alert(`
+Your profie is on the clipboard. Shortcuts will now open. 
+Tap 'replace' if available, or 'install' 
+Then 'setuo' to paste your profile into the provided text box.
+         `);
+         window.open('shortcuts://shortcuts/e17e4750cbef4e319ad3ff6709d47bcc');window.close();
       };
        
       document.querySelectorAll(".name").forEach(n=>n.textContent="INTEGRITY");
