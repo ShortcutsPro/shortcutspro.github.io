@@ -227,7 +227,7 @@ async function refreshSources() {
       loadBustlList();
       loadPackageList();
     })(),
-    wait(1000)
+    await wait(1000)
   ]);
   await loading.dismiss();
   loading.remove();
