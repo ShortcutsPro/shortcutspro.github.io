@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="auto">
   <head>
-    <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <style type="text/css">
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-      body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    <meta name="viewport" content="viewport-fit=cover" />
+<!-- ios support -->
+    <meta property="og:title" content="SIMPL Showcase" />
+<!--     <meta property="og:video" content="./images/apple-rich-link-video-hd.mp4" /> -->
+    <meta property="og:image" id="share-image" content="" />
+    <meta property="og:description" content="Share images as custom  slideshow link" />
+    <meta property="og:url" content="https://Cutz.Bustl.io/remark.html" />
+    <title>SIMPL Showcase</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="SIMPL Showcase" />
+    <meta name="author" content="ShortcutsPro" />
+    <meta name="theme-color" content="black" />
+
+    <style>
+      * { background-color: black; font-size: 30px; }
+      body { font-family: sans-serif; color: white; font-weight: bold; background-color: black; }
+      h1, h2, h3 { font-family: sans-serif;  font-weight: normal; }
+      .remark-code, .remark-inline-code { font-family: sans-serif; }
     </style>
   </head>
   <body>
@@ -22,6 +29,9 @@
     <script>
       const Q = new URL (window.location.href);
       let R = decodeURIComponent(Q.searchParams.get("r"));
+      let I = decodeURIComponent(Q.searchParams.get("i"));
+      
+      document.getElementById('share-image').setAttribute(content, `${I}`)
       function fillText (slideClass) {
         let S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
         let slides = S.slides || [];
@@ -50,8 +60,8 @@ background-size: contain
       var slideshow = remark.create({
         ratio: `${R}`
       });
-      // every 3 seconds (change to your desired interval), fire the helper function
-      setInterval(function () {carousel(slideshow)}, 3000);
+      // every 2 seconds (change to your desired interval), fire the helper function
+      setInterval(function () {carousel(slideshow)}, 2000);
       function carousel(varObject) {
         var slideCount = varObject.getSlideCount()-1;
         var currentSlide = varObject.getCurrentSlideIndex();
