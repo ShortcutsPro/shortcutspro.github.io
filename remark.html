@@ -5,7 +5,7 @@
     <meta name="viewport" content="viewport-fit=cover" />
 <!-- ios support -->
     <meta property="og:title" content="SIMPL Showcase" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" id="share-image" content="" />
     <meta property="og:description" content="Share images as custom  slideshow link" />
     <meta property="og:url" content="https://Cutz.Bustl.io/remark.html" />
     <title>SIMPL Showcase</title>
@@ -41,10 +41,8 @@
     <script>
       const Q = new URL (window.location.href);
       let R = decodeURIComponent(Q.searchParams.get("r"));
-      let I = decodeURIComponent(Q.searchParams.get("i"));
-      if (I) {
-        document.getElementById('share-image').setAttribute(content, `${I}`)
-      }!
+      let P = decodeURIComponent(Q.searchParams.get("p")) || 'https://i.imgur.com/Oog5vzg.png';
+      document.getElementById('share-image').setAttribute('content', `${P}`)
       function fillText (slideClass) {
         let S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
         let slides = S.slides || [];
