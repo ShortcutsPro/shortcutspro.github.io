@@ -5,21 +5,33 @@
     <meta name="viewport" content="viewport-fit=cover" />
 <!-- ios support -->
     <meta property="og:title" content="SIMPL Showcase" />
-<!--     <meta property="og:video" content="./images/apple-rich-link-video-hd.mp4" /> -->
-    <meta property="og:image" id="share-image" content="" />
+    <meta property="og:image" content="" />
     <meta property="og:description" content="Share images as custom  slideshow link" />
     <meta property="og:url" content="https://Cutz.Bustl.io/remark.html" />
     <title>SIMPL Showcase</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="SIMPL Showcase" />
     <meta name="author" content="ShortcutsPro" />
-    <meta name="theme-color" content="black" />
+    <meta name="theme-color" content="#000000" />
 
     <style>
-      * { background-color: black; font-size: 30px; }
-      body { font-family: sans-serif; color: white; font-weight: bold; background-color: black; }
-      h1, h2, h3 { font-family: sans-serif;  font-weight: normal; }
-      .remark-code, .remark-inline-code { font-family: sans-serif; }
+      * { 
+        background-color: black; 
+        font-size: 30px;
+      }
+      body { 
+        font-family: sans-serif; 
+        color: white; 
+        font-weight: bold; 
+        background-color: black;
+      }
+      h1, h2, h3 {
+        font-family: sans-serif; 
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { 
+        font-family: sans-serif; 
+      }
     </style>
   </head>
   <body>
@@ -30,8 +42,9 @@
       const Q = new URL (window.location.href);
       let R = decodeURIComponent(Q.searchParams.get("r"));
       let I = decodeURIComponent(Q.searchParams.get("i"));
-      
-      document.getElementById('share-image').setAttribute(content, `${I}`)
+      if (I) {
+        document.getElementById('share-image').setAttribute(content, `${I}`)
+      }!
       function fillText (slideClass) {
         let S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
         let slides = S.slides || [];
