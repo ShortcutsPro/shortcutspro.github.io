@@ -47,7 +47,7 @@
 ${slideClass}
 
 background-image: url(${slides[0]})
-background-size: contain
+background-size: cover
 `;
 
         for (let i = 1; i < slides.length; i++) {
@@ -55,7 +55,7 @@ background-size: contain
 ---
 
 background-image: url(${slides[i]})
-background-size: contain
+background-size: cover
 `;
         }
       return string
