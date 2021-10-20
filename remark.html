@@ -15,9 +15,10 @@
     <meta name="theme-color" content="#000000" />
 
     <style>
-      * { 
+      *, *::before, *::after { 
+        border-style: box-border;
         background-color: black; 
-        font-size: 30px;
+        font-size: 0px;
       }
       body { 
         font-family: sans-serif; 
@@ -45,7 +46,7 @@
         let string = `
 ${slideClass}
 
-${slides[0]}
+background-image: url(${slides[0]})
 background-size: contain
 `;
 
@@ -53,7 +54,7 @@ background-size: contain
           string += `
 ---
 
-${slides[i]}
+background-image: url(${slides[i]})
 background-size: contain
 `;
         }
@@ -62,11 +63,13 @@ background-size: contain
 
       let txt = document.createElement("textarea");
       txt.id = "source";
-      txt.innerHTML = fillText("class: center, middle");
+      if (S) {
+        txt.innerHTML = fillText("class: center, middle");
+      }
       document.querySelector("body").appendChild(txt);
     </script>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-    <script>
+    <script defer>
       var slideshow = remark.create({
         ratio: `${R}`
       });
