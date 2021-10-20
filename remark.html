@@ -36,8 +36,6 @@
   </head>
   <body>
 
-
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>
       const Q = new URL (window.location.href);
       const R = decodeURIComponent(Q.searchParams.get("r"));
@@ -66,7 +64,9 @@ background-size: contain
       txt.id = "source";
       txt.innerHTML = fillText("class: center, middle");
       document.querySelector("body").appendChild(txt);
-
+    </script>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
       var slideshow = remark.create({
         ratio: `${R}`
       });
