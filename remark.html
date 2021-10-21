@@ -47,7 +47,7 @@
       const R = decodeURIComponent(Q.searchParams.get("r"));
       const S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
       function fillText (slideClass) {
-        let slides = S.slides || [];
+        let slides = S.slides || [] || "";
         let string = `
 ${slideClass}
 
