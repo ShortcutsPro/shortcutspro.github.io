@@ -12,13 +12,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="SIMPL Showcase" />
     <meta name="author" content="ShortcutsPro" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="skyblue" />
 
     <style>
-      *, *::before, *::after { 
-        border-style: box-border;
+/*      *, *::before, *::after { */
+      * {
+        border-size: box-border;
         background-color: black; 
         font-size: 0px;
+        margin: 0;
       }
       body { 
         font-family: sans-serif; 
@@ -29,6 +31,9 @@
       h1, h2, h3 {
         font-family: sans-serif; 
         font-weight: normal;
+      }
+      img {
+        size: 100%
       }
       .remark-code, .remark-inline-code { 
         font-family: sans-serif; 
@@ -63,9 +68,7 @@ background-size: cover
 
       let txt = document.createElement("textarea");
       txt.id = "source";
-      if (S) {
-        txt.innerHTML = fillText("class: center, middle");
-      }
+      txt.innerHTML = fillText("class: center, middle");
       document.querySelector("body").appendChild(txt);
     </script>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
