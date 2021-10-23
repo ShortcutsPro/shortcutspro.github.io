@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-size=1" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-size=1, fullscreen" />
 <!-- ios support -->
     <meta property="og:title" content="SIMPL Showcase" />
     <meta property="og:image" content="https://i.imgur.com/ocVxTJ9.jpg" />
@@ -12,36 +12,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="SIMPL Showcase" />
     <meta name="author" content="ShortcutsPro" />
-    <meta name="theme-color" content="skyblue" />
+    <meta name="theme-color" content="black" />
 
     <style>
 /*      *, *::before, *::after { */
       * {
         border-size: box-border;
-        background-color: black; 
+        background-color: black;
         font-size: 0px;
         margin: 0;
       }
-      body { 
-        font-family: sans-serif; 
-        color: white; 
-        font-weight: bold; 
-        background-color: black;
-      }
-      h1, h2, h3 {
-        font-family: sans-serif; 
-        font-weight: normal;
-      }
       img {
-        size: 100%
+        width: 100%;
+        background-color: black;
       }
       .remark-code, .remark-inline-code { 
         font-family: sans-serif; 
       }
     </style>
-  </head>
-  <body>
-
     <script>
       const Q = new URL (window.location.href);
       const R = decodeURIComponent(Q.searchParams.get("r"));
@@ -64,31 +52,37 @@ background-size: cover
 `;
         }
       return string
-      }
+    }
+    </script>
+  </head>
+  <body>
 
+    <script>
       let txt = document.createElement("textarea");
       txt.id = "source";
       txt.innerHTML = fillText("class: center, middle");
       document.querySelector("body").appendChild(txt);
     </script>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-    <script defer>
-      var slideshow = remark.create({
-        ratio: `${R}`
-      });
-
-      // every 2 seconds (change to your desired interval), fire the helper function
-      setInterval(function () {carousel(slideshow)}, 2000);
-      function carousel(varObject) {
-        var slideCount = varObject.getSlideCount()-1;
-        var currentSlide = varObject.getCurrentSlideIndex();
-        // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
-        if (currentSlide == slideCount) {
-          varObject.gotoFirstSlide();
-        } else {
-          varObject.gotoNextSlide();
+    <script>
+        var slideshow = remark.create({
+          ratio: `${R}`
+        });
+        document.webkitRequestFullScreen(); 
+        
+        // every 2 seconds (change to your desired interval), fire the helper function
+        setInterval(function () {carousel(slideshow)}, 2000);
+        
+        function carousel(varObject) {
+          var slideCount = varObject.getSlideCount()-1;
+          var currentSlide = varObject.getCurrentSlideIndex();
+          // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
+          if (currentSlide == slideCount) {
+            varObject.gotoFirstSlide();
+          } else {
+            varObject.gotoNextSlide();
+          }
         }
-      }
     </script>
   </body>
 </html>
