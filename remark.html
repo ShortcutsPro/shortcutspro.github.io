@@ -68,7 +68,7 @@ background-size: cover
         var slideshow = remark.create({
           ratio: `${R}`
         });
-        document.webkitRequestFullScreen(); 
+        slideshow.webkitRequestFullScreen(); 
         
         // every 2 seconds (change to your desired interval), fire the helper function
         setInterval(function () {carousel(slideshow)}, 2000);
