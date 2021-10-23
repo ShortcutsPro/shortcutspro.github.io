@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-size=1, fullscreen" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-size=1, minimal-ui" />
 <!-- ios support -->
     <meta property="og:title" content="SIMPL Showcase" />
     <meta property="og:image" content="https://i.imgur.com/ocVxTJ9.jpg" />
@@ -66,9 +66,11 @@ background-size: cover
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>
         const slideshow = remark.create({
-          ratio: `${R}`
+          ratio: `${R}`,
+          countIncrementalSlides: false,
+          includePresenterNotes: false
         });
-        // document.webkitRequestFullScreen(); 
+
         
         // every 2 seconds (change to your desired interval), fire the helper function
         function carousel(show) {
@@ -76,12 +78,14 @@ background-size: cover
           let currentSlide = show.getCurrentSlideIndex();
           // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
           if (currentSlide == slideCount) {
-            show.gotoFirstSlide();
+            show.gotoFirstSlide()
           } else {
-            show.gotoNextSlide();
+            show.gotoNextSlide()
           }
         }
-        setInterval(function () {carousel(slideshow)}, 2000);
+        setInterval(function () {
+          carousel(slideshow)
+        }, 2000);
     </script>
   </body>
 </html>
