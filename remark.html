@@ -63,7 +63,7 @@ background-size: cover
     }
     </script>
   </head>
-  <body>
+  <body onload="start()">
 
     <script>
       const txt = document.createElement("textarea");
@@ -75,12 +75,6 @@ background-size: cover
     </script>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>
-      const slideshow = remark.create({
-        ratio: `${R}`,
-        countIncrementalSlides: false,
-        includePresenterNotes: false
-      });
-      
       function carousel(slideshow) {
         let count = slideshow.getSlideCount()-1;
         let current = slideshow.getCurrentSlideIndex();
@@ -92,10 +86,18 @@ background-size: cover
         }
       }
       
+      function start() {
+        const slideshow = remark.create({
+          ratio: `${R}`,
+          countIncrementalSlides: false,
+          includePresenterNotes: false
+        });
+        setInterval(function () {
+          carousel(slideshow)
+        }, 2000);
+      }
       // every 2 seconds (change to your desired interval), fire the helper function
-      setInterval(function () {
-        carousel(slideshow)
-      }, 2000);
+      
     </script>
   </body>
 </html>
