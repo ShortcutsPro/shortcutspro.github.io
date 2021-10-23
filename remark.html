@@ -58,31 +58,30 @@ background-size: cover
   <body>
 
     <script>
-      let txt = document.createElement("textarea");
+      const txt = document.createElement("textarea");
       txt.id = "source";
       txt.innerHTML = fillText("class: center, middle");
       document.querySelector("body").appendChild(txt);
     </script>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>
-        var slideshow = remark.create({
+        const slideshow = remark.create({
           ratio: `${R}`
         });
-        slideshow.webkitRequestFullScreen(); 
+        // document.webkitRequestFullScreen(); 
         
         // every 2 seconds (change to your desired interval), fire the helper function
-        setInterval(function () {carousel(slideshow)}, 2000);
-        
-        function carousel(varObject) {
-          var slideCount = varObject.getSlideCount()-1;
-          var currentSlide = varObject.getCurrentSlideIndex();
+        function carousel(show) {
+          let slideCount = show.getSlideCount()-1;
+          let currentSlide = show.getCurrentSlideIndex();
           // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
           if (currentSlide == slideCount) {
-            varObject.gotoFirstSlide();
+            show.gotoFirstSlide();
           } else {
-            varObject.gotoNextSlide();
+            show.gotoNextSlide();
           }
         }
+        setInterval(function () {carousel(slideshow)}, 2000);
     </script>
   </body>
 </html>
