@@ -33,7 +33,11 @@
     <script>
       const Q = new URL (window.location.href);
       const R = decodeURIComponent(Q.searchParams.get("r"));
-      const S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
+      const s = decodeURIComponent(Q.searchParams.get("s"));
+      let S
+      if (s) {
+        S = JSON.parse(s);
+      }
       function fillText (slideClass) {
         let slides = S.slides || [] || "";
         let string = `
@@ -58,13 +62,15 @@ background-size: cover
   <body>
 
     <script>
-      const txt = document.createElement("textarea");
-      txt.id = "source";
-      txt.innerHTML = fillText("class: center, middle");
-      document.querySelector("body").appendChild(txt);
+      if (S) {
+        const txt = document.createElement("textarea");
+        txt.id = "source";
+        txt.innerHTML = fillText("class: center, middle");
+        document.querySelector("body").appendChild(txt);
+      }
     </script>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-    <script>
+    <script defer>
         const slideshow = remark.create({
           ratio: `${R}`,
           countIncrementalSlides: false,

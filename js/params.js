@@ -18,7 +18,7 @@ function query() {
       <!DOCTYPE html>
       <html><head>
       <meta charset = "UTF-8" />
-      <meta name = "viewport' content = 'width = device-width, viewport-fit = cover, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+      <meta name = "viewport' content = 'width = device-width, viewport-fit = cover, initial-scale = 1" />
       <meta name = "theme-color" content = "white" />
       <title>WebView</title>
       <style>@import url("./css/basic.css");</style>
