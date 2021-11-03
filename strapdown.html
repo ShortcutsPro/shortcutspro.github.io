@@ -4,14 +4,18 @@
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
   <xmp theme="" style="display: none;"></xmp>
   <script>
-    const QUERY = new URL (window.location.href);
-    const TEXT = decodeURIComponent(QUERY.searchParams.get("text"));
-    const THEME = decodeURIComponent(QUERY.searchParams.get("theme"));
     const XMP = document.querySelector("xmp");
-    XMP.theme = `"${THEME}"`;
-    XMP.innerHTML = `
-${TEXT}
-`;
+    const QUERY = new URL (window.location.href);
+    XMP.setAttribute('theme', decodeURIComponent(QUERY.searchParams.get("theme")));
+    let TEXT = JSON.parse(decodeURIComponent(QUERY.searchParams.get("text")));
+    let string = "";
+    for (let i = 0; i < TEXT.length; i++) { 
+      string += `
+${TEXT[i]}`;
+    }
+    XMP.innerHTML = string;
   </script>
   <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+  <body>
+  </body>
 </html>
