@@ -7,14 +7,8 @@
     const XMP = document.querySelector("xmp");
     const QUERY = new URL (window.location.href);
     XMP.setAttribute('theme', decodeURIComponent(QUERY.searchParams.get("theme")));
-    let TEXT = JSON.parse(decodeURIComponent(QUERY.searchParams.get("text")));
-    let string = "";
-    for (let i = 0; i < TEXT.length; i++) { 
-      string += `
-${TEXT[i]}
-`;
-    }
-    XMP.innerHTML = `${string}`;
+    let TEXT = decodeURIComponent(QUERY.searchParams.get("text")) || "";
+    XMP.innerHTML = `${TEXT}`;
   </script>
   <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
   <body>
