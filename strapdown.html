@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
-  <title></title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
+    <script>
+      const QUERY = new URL (window.location.href);
+      const TEXT = decodeURIComponent(QUERY.searchParams.get("text"));
+      const THEME = decodeURIComponent(QUERY.searchParams.get("theme"));
+      const XMP = document.createElement("xmp");
+      XMP.theme = `${THEME}`;
+      XMP.style = "display: none";
+      XMP.innerHTML = `
+${TEXT}
+`;
+      document.querySelector("body").appendChild(XMP);
+    </script>
+  </head>
+  <body>
 
-  <script>
-    const QUERY = new URL (window.location.href);
-    const TEXT = decodeURIComponent(QUERY.searchParams.get("text"));
-    const THEME = decodeURIComponent(QUERY.searchParams.get("theme"));
-    const XMP = document.createElement("xmp");
-    XMP.theme = `${THEME}`;
-    XMP.style = "display: none";
-    XMP.innerHTML = `${TEXT}`;
-    document.querySelector("html").appendChild(XMP);
-  <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+    <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+  </body>
 </html>
