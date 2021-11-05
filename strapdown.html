@@ -8,33 +8,28 @@
       const Q = new URL (window.location.href);
       let TITLE = decodeURIComponent(Q.searchParams.get("title")) || '';
       let THEME = decodeURIComponent(Q.searchParams.get("theme")) || '';
-      let XMP = decodeURIComponent(Q.searchParams.get("xmp")) || {};
+      let XMP = decodeURIComponent(Q.searchParams.get("body")) || {};
 
       if (TITLE == 'null') {
-        TITLE = '57.2°F and Mostly Cloudy';
+        TITLE = 'Bustl.Cutz Strapdown WebView';
       }
       if (THEME == 'null') {
-        THEME = 'Superhero';
+        THEME = 'United';
       }
       if (XMP != 'null') {
         XMP = JSON.parse(XMP)
       } else {
         XMP = {
         text :
-`# ![57.2°F and Mostly Cloudy](https://i.imgur.com/XqTWMT3.png) **Thibodaux, LA -- Fri, 29 Oct**
+`## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
 
-### _There Are Mostly Cloudy Skies in Thibodaux Tonight With a Visibility of **9.9 Miles**_.
-
-***
-
->* #### There is a northwesterly wind blowing at 6 miles per hour.
-* #### The temperature is 57°F.
-* #### The high today was 66°F.
+### _*Bustl.Cutz Strapdown WebView*_
 
 ***
 
-* #### Tomorrow's high will be 70°F and the low will be 48°F with mostly clear skies and a northwesterly wind at about 10 miles per hour.
-* #### The chance for precipitation on Saturday is 10%.
+>* #### Quickly theme basic markdown text with classic _Bootstrap_ theme
+* #### Mobile responsive from the **Get-Go**
+* #### Easy as pie — [ *click here* ](about:blank) to try it out 
 
 ***`}
       }
