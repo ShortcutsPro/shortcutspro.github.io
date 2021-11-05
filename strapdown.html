@@ -29,7 +29,7 @@
       if (Q.searchParams.get('title') != null) {
         TITLE = decodeURIComponent(Q.searchParams.get("title"));
         THEME = decodeURIComponent(Q.searchParams.get("theme"));
-        XMP = decodeURIComponent(Q.searchParams.get("xmp"));
+        XMP = JSON.parse(decodeURIComponent(Q.searchParams.get("xmp")));
       }
       console.log(TITLE)
       console.log(THEME)
