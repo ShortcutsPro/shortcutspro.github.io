@@ -1,24 +1,43 @@
 <! DOCTYPE html>
 <html>
+  <meta charset="utf-8" />
   <head>
     <title></title>
     <xmp theme="" style="display: none;"></xmp>
     <script>
-      const Q = new URL(window.location.href);
-      const TITLE = decodeURIComponent(Q.searchParams.get("title")) || 'Bustl. Markdown Viewer';
-      const THEME = decodeURIComponent(Q.searchParams.get("theme")) || 'Spacelab';
-      const XMP = decodeURIComponent(Q.searchParams.get("xmp")) || `
-### Headline
+      const Q = new URL (window.location.href);
+      let TITLE = '57.2°F and Mostly Cloudy';
+      let THEME = 'United';
+      let XMP = {
+        text :
+`# ![57.2°F and Mostly Cloudy](https://i.imgur.com/XqTWMT3.png) **Thibodaux, LA -- Fri, 29 Oct**
+
+### _There Are Mostly Cloudy Skies in Thibodaux Tonight With a Visibility of **9.9 Miles**_.
+
 ***
-* a bullet point
-* another bullet
-* _*Three* bullets!*_
-`;
+
+>* #### There is a northwesterly wind blowing at 6 miles per hour.
+* #### The temperature is 57°F.
+* #### The high today was 66°F.
+
+***
+
+* #### Tomorrow's high will be 70°F and the low will be 48°F with mostly clear skies and a northwesterly wind at about 10 miles per hour.
+* #### The chance for precipitation on Saturday is 10%.
+
+***`} 
+      if (Q.searchParams.get('title') != null) {
+        TITLE = decodeURIComponent(Q.searchParams.get("title"));
+        THEME = decodeURIComponent(Q.searchParams.get("theme"));
+        XMP = decodeURIComponent(Q.searchParams.get("xmp"));
+      }
+      console.log(TITLE)
+      console.log(THEME)
+      console.log(XMP)
       document.querySelector("title").innerHTML = TITLE;
-      document.querySelector("xmp").setAttribute('theme',THEME)
-      document.querySelector("xmp").innerHTML = XMP;
+      document.querySelector("xmp").setAttribute('theme', THEME)
+      document.querySelector("xmp").innerHTML = XMP.text;
     </script>
     <script defer src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
   </head>
-  <body></body>
 </html>
