@@ -5,13 +5,20 @@
     <xmp theme="" style="display: none;"></xmp>
     <script>
       const Q = new URL(window.location.href);
-      const TITLE = decodeURIComponent(Q.searchParams.get("title"));
-      const THEME = decodeURIComponent(Q.searchParams.get("theme"));
-      const XMP = decodeURIComponent(Q.searchParams.get("xmp"));
+      const TITLE = decodeURIComponent(Q.searchParams.get("title")) || 'Bustl. Markdown Viewer';
+      const THEME = decodeURIComponent(Q.searchParams.get("theme")) || 'Spacelab';
+      const XMP = decodeURIComponent(Q.searchParams.get("xmp")) || `
+### Headline
+***
+* a bullet point
+* another bullet
+* _*Three* bullets!*_
+`;
       document.querySelector("title").innerHTML = TITLE;
       document.querySelector("xmp").setAttribute('theme',THEME)
       document.querySelector("xmp").innerHTML = XMP;
     </script>
     <script defer src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
   </head>
+  <body></body>
 </html>
