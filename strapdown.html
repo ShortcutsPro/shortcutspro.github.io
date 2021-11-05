@@ -4,7 +4,7 @@
   <head>
     <title></title>
     <xmp theme="" style="display: none;"></xmp>
-    <script type="text/javascript">
+    <script>
       const Q = new URL (window.location.href);
       let TITLE = '57.2°F and Mostly Cloudy';
       let THEME = 'Superhero';
@@ -29,15 +29,15 @@
       if (Q.searchParams.get('title') != null) {
         TITLE = decodeURIComponent(Q.searchParams.get("title"));
         THEME = decodeURIComponent(Q.searchParams.get("theme"));
-        XMP = decodeURIComponent(Q.searchParams.get("xmp"));
+        XMP = JSON.parse(decodeURIComponent(Q.searchParams.get("xmp")));
       }
       console.log(TITLE)
       console.log(THEME)
       console.log(XMP.text)
       document.querySelector("title").innerHTML = TITLE;
       document.querySelector("xmp").setAttribute('theme', THEME)
-      document.querySelector("xmp").innerHTML = `${XMP.text}`;
+      document.querySelector("xmp").innerHTML = XMP.text;
     </script>
-    <script type="text/javascript" src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+    <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
   </head>
 </html>
