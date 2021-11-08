@@ -31,7 +31,17 @@
 * #### Mobile responsive from the **Get-Go**
 * #### Easy as pie — [ *click here* ](https://cutz.bustl.io/strapdown.html?title=${THEME}&theme=${THEME}) to try it out 
 
-***`}
+***
+
+| [ _Amelia_ ](https://Cutz.Bustl.io/strapdown.html?title=Amelia&theme=Amelia)           | [ _Markdeep_ ](https://Cutz.Bustl.io/strapdown.html?title=Markdeep&theme=Markdeep)        | [ _Spacelab_ ](https://Cutz.Bustl.io/strapdown.html?title=Spacelab&theme=Spacelab)     |
+|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| [ _**Cerulean**_ ](https://Cutz.Bustl.io/strapdown.html?title=Cerulean&theme=Cerulean) | [ _**United**_ ](https://Cutz.Bustl.io/strapdown.html?title=United&theme=United)          | [ _**Slate**_ ](https://Cutz.Bustl.io/strapdown.html?title=Slate&theme=Slate)          |
+| [ _**Cyborg**_ ](https://Cutz.Bustl.io/strapdown.html?title=Cyborg&theme=Cyborg)       | [ _**Superhero**_ ](https://Cutz.Bustl.io/strapdown.html?title=Superhero&theme=Superhero) | [ _**Simplex**_ ](https://Cutz.Bustl.io/strapdown.html?title=Simplex&theme=Simplex)    |
+| [ _**Journal**_ ](https://Cutz.Bustl.io/strapdown.html?title=Journal&theme=Journal)    | [ _**Spruce**_ ](https://Cutz.Bustl.io/strapdown.html?title=Spruce&theme=Spruce)          | [ _**Readable**_ ](https://Cutz.Bustl.io/strapdown.html?title=Readable&theme=Readable) |
+
+***
+
+`}
       }
       console.log(TITLE)
       console.log(THEME)
@@ -39,12 +49,15 @@
       document.querySelector("title").innerHTML = TITLE;
       document.querySelector("xmp").setAttribute('theme', THEME)
       document.querySelector("xmp").innerHTML = XMP.text;
-    </script>
-    <script src="https://strapdownjs.com/v/0.2/strapdown.js"></script>
 <!-- Markdeep: -->
-    <script>
-      if (!window.alreadyProcessedMarkdeep && (THEME == 'Markdeep'))
-        import ("https://casual-effects.com/markdeep/latest/markdeep.min.js?")
-    </script>    
+      let js = document.createElement('script')
+      if (THEME === 'Markdeep'){
+        js.setAttribute('src', 'https://casual-effects.com/markdeep/latest/markdeep.min.js?')
+      } else {
+        js.setAttribute('src', 'https://strapdownjs.com/v/0.2/strapdown.js')
+      }
+      js.setAttribute('id', 'script')
+      document.querySelector('head').appendChild(js)
+    </script>
   </head>
 </html>
