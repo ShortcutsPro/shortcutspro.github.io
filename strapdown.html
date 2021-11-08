@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+    <meta property="og:title" content="Bustl.Markdown" />
+    <meta property="og:image" content="./images/photo.jpeg" />
+    <meta property="og:description" content="Dynamic markdown text presentation  | bustl.•io" />
+    <meta property="og:url" content="https://Cutz.Bustl.io/strapdown.html?" />
+  <head>
+    <title></title>
+    <xmp theme="" style="display: none;"></xmp>
+    <script>
+      const Q = new URL (window.location.href);
+      let TITLE = decodeURIComponent(Q.searchParams.get("title")) || '';
+      let THEME = decodeURIComponent(Q.searchParams.get("theme")) || '';
+      let XMP = decodeURIComponent(Q.searchParams.get("body")) || {};
+
+      if (TITLE == 'null') {
+        TITLE = 'Bustl.Cutz Strapdown WebView';
+      }
+      if (THEME == 'null') {
+        THEME = 'United';
+      }
+      if (XMP != 'null') {
+        XMP = JSON.parse(XMP)
+      } else {
+        XMP = {
+        text :
+`## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
+
+### _*Bustl.Cutz Strapdown WebView*_
+
+***
+
+>* #### Quickly theme basic markdown text with classic _Bootstrap_ themes.
+* #### Mobile responsive from the **Get-Go**
+* #### Easy as pie — [ *click here* ](https://www.icloud.com/shortcuts/d93a60aa5abd4f7ca78de024140b09ae) to try it for with your own text ( **emails, sales letters, Christmas letters, etc, etc** ,) and tap each name below to see popular themes. 
+
+***
+
+| [ _Amelia_ ](https://Cutz.Bustl.io/strapdown.html?title=Amelia&theme=Amelia)           | [ _Markdeep_ ](https://Cutz.Bustl.io/strapdown.html?title=Markdeep&theme=Markdeep)        | [ _Spacelab_ ](https://Cutz.Bustl.io/strapdown.html?title=Spacelab&theme=Spacelab)     |
+|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| [ _**Cerulean**_ ](https://Cutz.Bustl.io/strapdown.html?title=Cerulean&theme=Cerulean) | [ _**United**_ ](https://Cutz.Bustl.io/strapdown.html?title=United&theme=United)          | [ _**Slate**_ ](https://Cutz.Bustl.io/strapdown.html?title=Slate&theme=Slate)          |
+| [ _**Cyborg**_ ](https://Cutz.Bustl.io/strapdown.html?title=Cyborg&theme=Cyborg)       | [ _**Superhero**_ ](https://Cutz.Bustl.io/strapdown.html?title=Superhero&theme=Superhero) | [ _**Simplex**_ ](https://Cutz.Bustl.io/strapdown.html?title=Simplex&theme=Simplex)    |
+| [ _**Journal**_ ](https://Cutz.Bustl.io/strapdown.html?title=Journal&theme=Journal)    | [ _**Spruce**_ ](https://Cutz.Bustl.io/strapdown.html?title=Spruce&theme=Spruce)          | [ _**Readable**_ ](https://Cutz.Bustl.io/strapdown.html?title=Readable&theme=Readable) |
+
+***
+
+`}
+      }
+      console.log(TITLE)
+      console.log(THEME)
+      console.log(XMP.text)
+      document.querySelector("title").innerHTML = TITLE;
+      document.querySelector("xmp").setAttribute('theme', THEME)
+      document.querySelector("xmp").innerHTML = XMP.text;
+<!-- Markdeep: -->
+      let js = document.createElement('script')
+      if (THEME === 'Markdeep'){
+        js.setAttribute('src', 'https://casual-effects.com/markdeep/latest/markdeep.min.js?')
+      } else {
+        js.setAttribute('src', 'https://strapdownjs.com/v/0.2/strapdown.js')
+      }
+      js.setAttribute('id', 'script')
+      document.querySelector('head').appendChild(js)
+    </script>
+  </head>
+</html>
