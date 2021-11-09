@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="utf-8" />
-    <meta property="og:title" content="Bustl.Markdown" />
-    <meta property="og:image" content="./images/photo.jpeg" />
-    <meta property="og:description" content="Dynamic markdown text presentation  | bustl.•io" />
-    <meta property="og:url" content="https://Cutz.Bustl.io/strapdown.html?" />
+  <meta http-equiv="Content-Type" 
+    content="text/html; charset=UTF-8"/>
   <head>
-    <title></title>
+    <meta name="apple-mobile-web-app-title" 
+      content="Bustl.•io" class="title" />
+    <title>
+      Bustl.•io
+    </title>
+    <meta content="𝘽𝙪𝙨𝙩𝙡.•io 🐝"
+      property="og:title" class="title" />
+    <meta property="og:image" id="ogImage" 
+      content="./images/photo.jpeg" />
+    <meta property="og:description" id="ogDesc" 
+      content="™️𝘽𝙪𝙨𝙩𝙡.•io 🐝" />
+    <meta property="og:url" 
+      content="https://Cutz.Bustl.io" />
+    <meta name="apple-mobile-web-app-capable" 
+      content="yes" />
+    <meta name="theme-color" id="themeColor" 
+      content="midnightblue" />
     <xmp theme="" style="display: none;"></xmp>
-    <script>
-      const Q = new URL (window.location.href);
-      let TITLE = decodeURIComponent(Q.searchParams.get("title")) || '';
-      let THEME = decodeURIComponent(Q.searchParams.get("theme")) || '';
-      let XMP = decodeURIComponent(Q.searchParams.get("body")) || {};
+    <script type="text/javascript">
+      var input
+      let TITLE = 'Bustl.•io';
+      let ogTitle = '𝘽𝙪𝙨𝙩𝙡.•io 🐝';
+      let THEME = 'Markdeep';
+      let themeColor = 'midnightblue';
+      let ogImage = './images/image.png';
+      let XMP = '404';
+      let ogDesc = '™️𝘽𝙪𝙨𝙩𝙡.•io 🐝';
+      let Q = new URL (window.location.href);
+      if (Q.search) {
+        input = decodeURIComponent(Q.search)
+        if (input.split('=')[1] != 'null') {
+          input = JSON.parse(input.split('=')[1])
+        }
+      }
+      if (input != undefined) {
+        TITLE = input.title || '';
+        THEME = input.theme || '';
+        themeColor = input.color || '';
+        ogImage = input.image || '';
+        XMP = input.text || '';
+        ogDesc = input.desc || '';
 
-      if (TITLE == 'null') {
-        TITLE = 'Bustl.Cutz Strapdown WebView';
-      }
-      if (THEME == 'null') {
-        THEME = 'United';
-      }
-      if (XMP != 'null') {
-        XMP = JSON.parse(XMP)
       } else {
-        XMP = {
-        text :
-`## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
+        TITLE += ' WebView';
+        THEME = 'United';
+        XMP = `## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
 
-### _*Bustl.Cutz Strapdown WebView*_
+#### _*${TITLE}*_ |  "${ogDesc}"
 
 ***
 
@@ -44,24 +67,18 @@
 | [ _**Journal**_ ](https://Cutz.Bustl.io/strapdown.html?title=Journal&theme=Journal)    | [ _**Spruce**_ ](https://Cutz.Bustl.io/strapdown.html?title=Spruce&theme=Spruce)          | [ _**Readable**_ ](https://Cutz.Bustl.io/strapdown.html?title=Readable&theme=Readable) |
 
 ***
-
-`}
-      }
-      console.log(TITLE)
-      console.log(THEME)
-      console.log(XMP.text)
-      document.querySelector("title").innerHTML = TITLE;
-      document.querySelector("xmp").setAttribute('theme', THEME)
-      document.querySelector("xmp").innerHTML = XMP.text;
-<!-- Markdeep: -->
-      let js = document.createElement('script')
-      if (THEME === '0'){
-        js.setAttribute('src', 'https://casual-effects.com/markdeep/latest/markdeep.min.js?')
-      } else {
-        js.setAttribute('src', 'https://strapdownjs.com/v/0.2/strapdown.js')
-      }
-      js.setAttribute('id', 'script')
-      document.querySelector('head').appendChild(js)
+`;    }
+      console.log('Title :'+ TITLE +'\n'+'Theme :'+ THEME+'\n'+'Text :'+'\n' +XMP)
+      document.querySelector('title').innerHTML = TITLE;
+      document.querySelector('.title').setAttribute('content', TITLE)
+      document.querySelector('xmp').setAttribute('theme', THEME)
+      document.querySelector('xmp').innerHTML = XMP;
+      document.getElementById('ogImage').setAttribute('Content', ogImage)
+      document.getElementById('ogDesc').setAttribute('Content', ogDesc)
+      document.getElementById('themeColor').setAttribute('content', themeColor)
+    </script>
+    <script type='text/javascript'
+      src='https://strapdownjs.com/v/0.2/strapdown.js'>
     </script>
   </head>
 </html>
