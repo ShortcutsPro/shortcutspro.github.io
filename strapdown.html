@@ -1,55 +1,60 @@
 <!DOCTYPE html>
-<html>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover, minimal-ui" />
+<html lang="en" dir="auto">
   <head>
-    <link rel="icon" href="./apple-touch-icon.png" type="image/png" sizes="512x512" id="icon" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" id="statusbar" content="midnightblue" />
-    <meta name="apple-mobile-web-app-title" content="Bustl.•io" class="title" />
-    <title>
-      Bustl.•io
-    </title>
-    <meta content="Bustl.•io" property="og:title" class="title" />
-    <meta property="og:image" id="image" content="./images/apple-rich-link-image.jpeg" />
-    <meta property="og:video" content="./images/apple-rich-link-video-hd.mp4" id="video" />
-    <meta property="og:description" id="desc" content="Bustl. WebViewer  | by ™️𝘽𝙪𝙨𝙩𝙡.•io" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- ios support -->
+    <meta property="og:title" class="title" content="" />
+    <meta property="og:video" id="video" content="" />
+    <meta property="og:image" id="image" content="" />
+    <meta property="og:description" id="desc" content="" />
     <meta property="og:url" content="https://Cutz.Bustl.io" />
+    <title class="title">
+  <!--    Bustl.•io  -->T
+    </title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" class="title" content="" />
+    <meta name="apple-mobile-web-app-status-bar-style" class="color" content="translucent" />
+    <meta name="twitter:card" content="summaryg_large_image" />
     <meta name="author" content="ShortcutsPro" />
-    <meta name="theme-color" id="color" content="" />
+    <meta name="theme-color" class="color" content="" />
+	  <!-- Site icon  -->
+    <link rel="icon" href="" id="icon" type="image/png" sizes="512x512" />
     <xmp theme="" style="display: none;">
 
-<!--       Markdown Content Text Area -->
+<!-- Markdown Content Text Area -->
+
     </xmp>
     <script type="text/javascript">
-      let title = 'Bustl.•io';
-      let theme = 'Cerulean';
-      let color = 'midnightblue';
-      let image = './images/apple-rich-link-image.jpeg';
-      let desc = ' | by ™️𝘽𝙪𝙨𝙩𝙡.•io';
-      let video = './images/apple-rich-link-video-hd.mp4';
-      let icon = './apple-touch-icon.png';
+      let title = 'Bustl.•';
+      let theme = 'bootstrap';
+      let color = '';
+      let image = './images/shortcut.png';
+      let desc = title + '⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
+      let video = '';
+      let icon = './images/shortcut.png';
       let xmp = '404';
       let Q = new URL (window.location.href);
       if (Q.search) {
         var i = decodeURIComponent(Q.search)
         if (i.split('=')[0] === 'v1') {
            i = JSON.parse(i.split('v1=')[1]);
-           title = ('Bustl.' + i.title) || ('Bustl.WebViewer');
+           title = ('Bustl.•'+i.title) || ('Bustl.•WebViewer');
            theme = i.theme || theme;
            color = i.color || color;
            image = i.image || image;
-           desc = (i.desc + ' | by ™️𝘽𝙪𝙨𝙩𝙡.•io') || (title +' | by ™️𝘽𝙪𝙨𝙩𝙡.•io');
+           desc = i.desc+desc || title+desc;
            icon = i.icon || icon;
            video = i.video || video;
-           xmp = i.xmp || '404';
+           xmp = i.xmp || 'v1';
         }
       }
       if (xmp === '404') {
         xmp = `## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
 
-#### _*${title}*_   ${desc}
+#### ${desc} 
+${theme}
 
 ***
 
@@ -71,8 +76,7 @@
       document.querySelector('.title').setAttribute('content', title)
       document.getElementById('image').setAttribute('content', image)
       document.getElementById('desc').setAttribute('content', desc)
-      document.getElementById('color').setAttribute('content', color)
-      document.getElementById('statusbar').setAttribute('content', color)
+      document.querySelector('.color').setAttribute('content', color)
       document.getElementById('icon').setAttribute('content', icon)
       document.getElementById('video').setAttribute('content', video)
       document.querySelector('xmp').setAttribute('theme', theme)
