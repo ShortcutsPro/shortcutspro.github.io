@@ -347,7 +347,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
         imageTag = document.getElementById('ogimage'),
         descTag = document.getElementById('ogdesc'),
         videoTag = document.getElementById('ogvideo'),
-        iconTag = document.getElementById('touchIcon'),
+        iconTag = document.getElementById('icon'),
         scriptTags = document.getElementsByTagName('script'),
         navTag = document.getElementsByClassName('navbar')[0],
         xmpTag = document.getElementsByTagName('xmp')[0];
@@ -416,10 +416,6 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   link.rel = 'stylesheet';
   document.head.appendChild(link);
 
-  function setStyle(theme) {
-    document.getElementById('theme').setAttribute('href', './css/'+theme+'.min.css')
-  }
-
   ogTitleTag.setAttribute('content', title)
   appTitleTag.setAttribute('content', title)
   imageTag.setAttribute('content', image)
@@ -428,7 +424,6 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   iconTag.setAttribute('href', icon)
   videoTag.setAttribute('content', video)
   setStyle(theme)
-  titleTag.innerHTML = title;
 
 //////////////////////////////////////////////////////////////////
 //
@@ -487,7 +482,12 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     var tableEl = tableEls[i];
     tableEl.className = 'table table-striped table-bordered';
   }
-
+  
+  function setStyle(style) {
+    document.getElementById('theme').setAttribute('href', './css/'+style+'.min.css')
+    alert('Style - '+style)
+  }
+  
   // All done - show body
   document.body.style.display = '';
 
