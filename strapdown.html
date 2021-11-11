@@ -5,56 +5,28 @@
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <!-- ios support -->
-    <meta property="og:title" class="title" content="" />
-    <meta property="og:video" id="video" content="" />
-    <meta property="og:image" id="image" content="" />
-    <meta property="og:description" id="desc" content="" />
+    <meta property="og:title" id="og:title" content="" />
+    <meta property="og:video" id="og:video" content="" />
+    <meta property="og:image" id="og:image" content="" />
+    <meta property="og:description" id="og:desc" content="" />
     <meta property="og:url" content="https://Cutz.Bustl.io" />
-    <title class="title">
-  <!--    Bustl.•io  -->
+    <title>
+      Bustl.•io
     </title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" class="title" content="" />
-    <meta name="apple-mobile-web-app-status-bar-style" class="color" content="translucent" />
+    <meta name="apple-mobile-web-app-title" id="appTitle" content="" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent" />
     <meta name="twitter:card" content="summaryg_large_image" />
     <meta name="author" content="ShortcutsPro" />
-    <meta name="theme-color" class="color" content="" />
+    <meta name="theme-color" id="color" content="" />
 	  <!-- Site icon  -->
-    <link rel="icon" href="" id="icon" type="image/png" sizes="512x512" />
-    <xmp theme="" style="display: none;">
+    <link rel="icon" href="" id="icon" />
+    <link rel="stylesheet" href="" id="theme" type="text/css" />
+    <xmp id="content">
+## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
 
-<!-- Markdown Content Text Area -->
-
-    </xmp>
-    <script type="text/javascript">
-      let title = 'Bustl.•';
-      let theme = 'bootstrap';
-      let color = '';
-      let image = './images/shortcut.png';
-      let desc = title + '⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
-      let video = '';
-      let icon = './images/shortcut.png';
-      let xmp = '404';
-      let Q = new URL (window.location.href);
-      if (Q.search) {
-        var i = decodeURIComponent(Q.search)
-        if (i.split('=')[0] === 'v1') {
-           i = JSON.parse(i.split('v1=')[1]);
-           title = ('Bustl.•'+i.title) || ('Bustl.•WebViewer');
-           theme = i.theme || theme;
-           color = i.color || color;
-           image = i.image || image;
-           desc = i.desc+desc || title+desc;
-           icon = i.icon || icon;
-           video = i.video || video;
-           xmp = i.text || 'v1';
-        }
-      }
-      if (xmp === '404') {
-        xmp = `## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
-
-#### ${desc} 
-${theme}
+#### Bustl.Quickmark⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io
+A dynamic Markdown viewer with themes.
 
 ***
 
@@ -64,26 +36,14 @@ ${theme}
 
 ***
 
-| [ _Amelia_ ](https://Cutz.Bustl.io/strapdown.html?title=Amelia&theme=Amelia)           | [ _Markdeep_ ](https://Cutz.Bustl.io/strapdown.html?title=Markdeep&theme=Markdeep)        | [ _Spacelab_ ](https://Cutz.Bustl.io/strapdown.html?title=Spacelab&theme=Spacelab)     |
-|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| [ _**Cerulean**_ ](https://Cutz.Bustl.io/strapdown.html?title=Cerulean&theme=Cerulean) | [ _**United**_ ](https://Cutz.Bustl.io/strapdown.html?title=United&theme=United)          | [ _**Slate**_ ](https://Cutz.Bustl.io/strapdown.html?title=Slate&theme=Slate)          |
-| [ _**Cyborg**_ ](https://Cutz.Bustl.io/strapdown.html?title=Cyborg&theme=Cyborg)       | [ _**Superhero**_ ](https://Cutz.Bustl.io/strapdown.html?title=Superhero&theme=Superhero) | [ _**Simplex**_ ](https://Cutz.Bustl.io/strapdown.html?title=Simplex&theme=Simplex)    |
-| [ _**Journal**_ ](https://Cutz.Bustl.io/strapdown.html?title=Journal&theme=Journal)    | [ _**Spruce**_ ](https://Cutz.Bustl.io/strapdown.html?title=Spruce&theme=Spruce)          | [ _**Readable**_ ](https://Cutz.Bustl.io/strapdown.html?title=Readable&theme=Readable) |
+| [ _Amelia_ ]().      | [ _Simplex_ ]().      |.[ _Spacelab_ ]()     |
+|:--------------------:|:---------------------:|:--------------------:|
+| [ _**Cerulean**_ ]() | [ _**United**_ ]()    | [ _**Slate**_ ]()    |
+| [ _**Cyborg**_ ]()   | [ _**Superhero**_ ]() | [ _**Markdeep**_ ]() |
+| [ _**Journal**_ ]()  | [ _**Spruce**_ ]()    | [ _**Readable**_ ]() |
 
 ***
-`;    }
-      document.querySelector('title').innerHTML = title;
-      document.querySelector('.title').setAttribute('content', title)
-      document.getElementById('image').setAttribute('content', image)
-      document.getElementById('desc').setAttribute('content', desc)
-      document.querySelector('.color').setAttribute('content', color)
-      document.getElementById('icon').setAttribute('content', icon)
-      document.getElementById('video').setAttribute('content', video)
-      document.querySelector('xmp').setAttribute('theme', theme)
-      document.querySelector('xmp').innerHTML = xmp;
-    </script>
-    <script type='text/javascript'
-      src='https://strapdownjs.com/v/0.2/strapdown.js'>
-    </script>
+    </xmp>
+    <script type='text/javascript' src='./js/quickmark.js'></script>
   </head>
 </html>
