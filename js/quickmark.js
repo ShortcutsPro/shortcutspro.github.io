@@ -316,9 +316,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
 //.           A dynamic Markdown viewer with themes.
 //
 //
-
 (function(window, document) {
-
        // Hide body until we're done fiddling with the DOM
        // document.body.style.display = 'none';
 
@@ -338,19 +336,6 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     icon : decodeURIComponent(Q.searchParams.get('icon')),
     xmp : decodeURIComponent(Q.searchParams.get('xmp'))
   };
-
-  const ogTitleTag = document.getElementById('ogtitle'),
-        appTitleTag = document.getElementById('appTitle'),
-        titleTag = document.getElementsByTagName('title')[0],
-        colorTag = document.getElementById('color'),
-        themeTag = document.getElementById('theme'),
-        imageTag = document.getElementById('ogimage'),
-        descTag = document.getElementById('ogdesc'),
-        videoTag = document.getElementById('ogvideo'),
-        iconTag = document.getElementById('icon'),
-        scriptTags = document.getElementsByTagName('script'),
-        navTag = document.getElementsByClassName('navbar')[0],
-        xmpTag = document.getElementsByTagName('xmp')[0];
   
   let title
   if (data.title != 'null') {
@@ -361,6 +346,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if (data.theme != 'null') {
     theme = data.theme
   } else theme = 'bootstrap';
+  theme = theme.toLowerCase();
   
   let color
   if (data.color != 'null') {
@@ -386,36 +372,32 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if (data.icon != 'null') {
     icon = data.icon;
   } else icon = './images/shortcut.png';
-
-  let xmp
-  if (data.xmp != 'null') {
-    xmp = data.xmp;
-  } else xmp =  xmpTag.innerText;
-
+  
 //////////////////////////////////////////////////////////////////
 //
 //.  
 //.               <head> stuff
 //
 //        // Stylesheets
-  theme = theme.toLowerCase();
-
-  let link = document.createElement('link');
-  link.href = './css/'+theme+'.min.css';
-  link.rel = 'stylesheet';
-  link.id = 'theme';
-  document.head.appendChild(link);
-
-  link = document.createElement('link');
-  link.href = './css/strapdown.css';
-  link.rel = 'stylesheet';
-  document.head.appendChild(link);
-
-  link = document.createElement('link');
-  link.href = './css/bootstrap-responsive.min.css';
-  link.rel = 'stylesheet';
-  document.head.appendChild(link);
-
+  // let link = document.createElement('link');
+  // link.href = './css/'+theme+'.min.css';
+  // link.rel = 'stylesheet';
+  // link.id = 'theme';
+  // document.head.appendChild(link);
+  
+  const ogTitleTag = document.getElementById('ogtitle'),
+        appTitleTag = document.getElementById('appTitle'),
+        titleTag = document.getElementsByTagName('title')[0],
+        colorTag = document.getElementById('color'),
+        themeTag = document.getElementById('theme'),
+        imageTag = document.getElementById('ogimage'),
+        descTag = document.getElementById('ogdesc'),
+        videoTag = document.getElementById('ogvideo'),
+        iconTag = document.getElementById('icon'),
+        scriptTags = document.getElementsByTagName('script'),
+        navTag = document.getElementsByClassName('navbar')[0],
+        xmpTag = document.getElementsByTagName('xmp')[0];
+  
   ogTitleTag.setAttribute('content', title)
   appTitleTag.setAttribute('content', title)
   imageTag.setAttribute('content', image)
@@ -423,14 +405,23 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   colorTag.setAttribute('content', color)
   iconTag.setAttribute('href', icon)
   videoTag.setAttribute('content', video)
+  
+  function setStyle(style) {
+    themeTag.setAttribute('href', './css/'+style.toLowerCase()+'.min.css')
+  } 
   setStyle(theme)
-
+  
 //////////////////////////////////////////////////////////////////
 //
 //.     <body> stuff
 //
 // 
 //
+  let xmp
+  if (data.xmp != 'null') {
+    xmp = data.xmp;
+  } else xmp =  xmpTag.innerText;
+  
   let newNode = document.createElement('div');
   newNode.className = 'container';
   newNode.id = 'content';
@@ -448,13 +439,14 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   </div>
 </div>
 </div>`;
+
   document.body.insertBefore(newNode, document.body.firstChild);
   titleTag.innerHTML = title;
   let headlineTag = document.getElementById('headline');
   if (headlineTag)
     headlineTag.innerHTML = title;
   }
-
+  
 ////////////////////////////////////////////////////////////////
 //
 //  Markdown!
@@ -462,7 +454,6 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
 //
 // 
 //
-
   // Generate Markdown
   var html = marked(xmp);
   document.getElementById('content').innerHTML = html;
@@ -481,11 +472,6 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   for (var i=0, ii=tableEls.length; i<ii; i++) {
     var tableEl = tableEls[i];
     tableEl.className = 'table table-striped table-bordered';
-  }
-  
-  function setStyle(style) {
-    document.getElementById('theme').setAttribute('href', './css/'+style+'.min.css')
-    alert('Style - '+style)
   }
   
   // All done - show body
