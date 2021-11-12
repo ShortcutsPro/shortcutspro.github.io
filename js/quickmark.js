@@ -346,7 +346,6 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if (data.theme != 'null') {
     theme = data.theme
   } else theme = 'bootstrap';
-  theme = theme.toLowerCase();
   
   let color
   if (data.color != 'null') {
