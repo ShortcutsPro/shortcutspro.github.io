@@ -28,6 +28,9 @@
         font-size: 1em;
         width: 100%;
       }
+      img.button {
+       width: 10ex;
+      }
     </style>
     <link rel="stylesheet" href="" id="theme" type="text/css" />   
     <link rel="stylesheet" href="./css/strapdown.css" type="text/css" />
@@ -35,38 +38,53 @@
 
 <!--    <link rel="stylesheet" href="./css/animatedRule.css" type="text/css" />     -->
     <xmp id="content">
-# Bustl.Quickmark⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io
-**[Bustl.Cutz](https://cutz.bustl.io) Seattle, WA -- 2021**
+## Bustl.Quickmark⠀|⠀[𝘽𝙪𝙨𝙩𝙡.•io](https://cutz.bustl.io/)
 
-### Send a **Quickmark** simpl text message as **Rich Link Previews**,_
+Bustl.Cutz Seattle, WA -- 2021
+
+### Send a [ **Quickmark** ](https://cutz.bustl.io/strapdown.html) _simpl text message_ as **Rich Link Previews**,
+  
 ***
 
->* #### Send to any #, _iPhone or Android_
-* #### Works with Siri
-* #### Simpl plain-text entry
-* ####Also reads Markdown 
-* #### Classic _Strapdown_ themes…to start
-* #### Designed, built, & tested on _**Mobile**_
+>* #### Send to any #, iPhone or Android  
+>* #### Works with Siri  
+>* #### Simpl plain-text entry  
+>* #### Also reads Markdown  
+>* #### Classic Strapdown themes&to start  
+>* #### Designed, built, & tested on Mobile  
+
+ ***
+
+#### Easy as pie! … [Click HERE ](about:blank) to download the Siri Shortcut.
+* Android app coming soon.
 ***
+<br />
+<center>
+### Try the buttons below to see each theme
 
-### _Easy as pie…_ [ **Click HERE** ](about:blank) to download the Siri Shortcut.
-*  Android app coming soon.
-***
-
-#### Try the buttons below to see each theme
-
-***
-
-| <a onclick="setStyle('amelia')">_Amelia_</a> | <a onclick="setStyle('simplex')">_Simplex_</a> | <a onclick="setStyle('spacelab')">_Spacelab_</a>   | <a onclick="setStyle('cerulean')">_Cerulean_</a> | <a onclick="setStyle('united')">_United_</a>    | <a onclick="setStyle('slate')">_Slate_</a>    |
-|:--------------------:|:---------------------:|:--------------------:|:--------------------:|:---------------------:|:--------------------:|
-| <a onclick="setStyle('cyborg')">_**Cyborg**_</a>   |<a onclick="setStyle('superhero')">_**Superhero**_</a> |<a onclick="setStyle('bootstrap')">_**Bootstrap**_</a> | <a onclick="setStyle('readable')">_**Readable;**_</a>  | <a onclick="setStyle('spruce')">_**Spruce**_</a>   |  <a onclick="setStyle('journal')">_**Journal**_</a>  |
-
+| <a onclick="setStyle('amelia')"><img class="button" src="./images/themes/amelia.png" /></a> | <a onclick="setStyle('simplex')"><img class="button" src="./images/themes/simplex.png" /></a> | <a onclick="setStyle('spacelab')"><img class="button" src="./images/themes/spacelab.png" /></a> | <a onclick="setStyle('cerulean')"><img class="button" src="./images/themes/cerulean.png" /></a> | <a onclick="setStyle('united')"><img class="button" src="./images/themes/united.png" /></a> | <a onclick="setStyle('slate')"><img class="button" src="./images/themes/slate.png" /></a> |
+</center>
+<center>
+| <a onclick="setStyle('cyborg')"><img class="button" src="./images/themes/cyborg.png" /></a> | <a onclick="setStyle('superhero')"><img class="button" src="./images/themes/superhero.png" /></a> | <a onclick="setStyle('bootstrap')"><img class="button" src="./images/themes/bootstrap.png" /></a> | <a onclick="setStyle('readable')"><img class="button" src="./images/themes/readable.png" /></a> | <a onclick="setStyle('spruce')"><img class="button" src="./images/themes/spruce.png" /></a> | <a onclick="setStyle('journal')"><img class="button" src="./images/themes/journal.png" /></a> |
+</center>
 ***
     </xmp>
     <script type='text/javascript' src='./js/quickmark.js'></script>
     <script>
       function setStyle(style) {
         document.getElementById('theme').setAttribute('href', './css/'+style.toLowerCase()+'.min.css')
+        let color = ''
+        switch (style) {
+          case 'amelia': 
+            color = 'orange'
+          break;
+          case 'slate': 
+            color = 'black'
+          break;
+          color = 'rebeccapurple'
+        }
+        alert(color)
+        document.getElementById('color').setAttribute('content', color)
       } 
     </script>
   </head>
