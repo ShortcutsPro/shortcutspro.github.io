@@ -317,6 +317,8 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
 //
 //
 (function(window, document) {
+  
+  document.body.style.display = 'none';
        // Hide body until we're done fiddling with the DOM
        // document.body.style.display = 'none';
 
@@ -339,12 +341,12 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   
   let title
   if (data.title != 'null') {
-    title = data.title;
+    title = data.title
   } else title =  'Bustl.Quickmark';
   
   let theme
   if (data.theme != 'null') {
-    theme = data.theme
+    theme = data.theme 
   } else theme = 'bootstrap';
   
   let color
@@ -432,12 +434,13 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if (!navTag && titleTag) {
     newNode.innerHTML = `
 <div class="navbar-inner">
-<div class="container">
-  <div id="headline" class="brand">
+  <div class="container">
+    <div id="headline" class="brand">
 <!--  Headline. -->
+    </div>
   </div>
 </div>
-</div>`;
+`;
 
   document.body.insertBefore(newNode, document.body.firstChild);
   titleTag.innerHTML = title;
