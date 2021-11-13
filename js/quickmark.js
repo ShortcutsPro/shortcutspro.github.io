@@ -480,7 +480,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   }
   
   if (data.preview == 'true') {
-    document.querySelector('#style').innerHTML = '*, *::before, *::after {max-width: 480px; width: 50%; box-sizing: border-box; margin: 0; font-size: 1em;}'
+    document.querySelector('#style').innerHTML = '*, *::before, *::after {max-width: 480px; width: 65%; box-sizing: border-box; margin: 0; font-size: 1em;}'
   }
   // All done - show body
   document.body.style.display = '';
