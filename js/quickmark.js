@@ -490,7 +490,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
       }
       #content {
         margin: 0 1ex 0 1ex;
-        padding: 0 0 0 1ex;
+        padding: 0 1ex 0 0;
       }`;
   }
   // All done - show body
