@@ -333,6 +333,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     theme : decodeURIComponent(Q.searchParams.get('theme')),
     color : decodeURIComponent(Q.searchParams.get('color')),
     image : decodeURIComponent(Q.searchParams.get('image')),
+    preview : decodeURIComponent(Q.searchParams.get('preview')),
     desc : decodeURIComponent(Q.searchParams.get('desc')),
     video : decodeURIComponent(Q.searchParams.get('video')),
     icon : decodeURIComponent(Q.searchParams.get('icon')),
