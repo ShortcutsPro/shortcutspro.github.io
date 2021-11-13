@@ -18,14 +18,9 @@
         TITLE = 'Bustl.Cutz Strapdown WebView';
       }
       if (THEME == 'null') {
-        THEME = 'United';
+        THEME = 'Markdeep';
       }
-      if (XMP != 'null') {
-        XMP = JSON.parse(XMP)
-      } else {
-        XMP = {
-        text :
-`## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
+      let textInsert = `## [Bustl.Cutz](https://cutz.bustl.io) **Seattle, WA -- 2021**
 
 ### _*Bustl.Cutz Strapdown WebView*_
 
@@ -44,24 +39,34 @@
 | [ _**Journal**_ ](https://Cutz.Bustl.io/strapdown.html?title=Journal&theme=Journal)    | [ _**Spruce**_ ](https://Cutz.Bustl.io/strapdown.html?title=Spruce&theme=Spruce)          | [ _**Readable**_ ](https://Cutz.Bustl.io/strapdown.html?title=Readable&theme=Readable) |
 
 ***
-
-`}
+`;
+      if (THEME == 'Markdeep') {
+        textInsert += "
+{"text":"<!-- Markdeep: --><style class=\"fallback\">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src=\"markdeep.min.js\" charset=\"utf-8\"></script><script src=\"https://morgan3d.github.io/markdeep/latest/markdeep.min.js\" charset=\"utf-8\"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility=\"visible\")</script>"}"
+        }
+      if (XMP == 'null') {
+        XMP = {
+        text : textInsert
+        }
       }
       console.log(TITLE)
       console.log(THEME)
       console.log(XMP.text)
       document.querySelector("title").innerHTML = TITLE;
       document.querySelector("xmp").setAttribute('theme', THEME)
-      document.querySelector("xmp").innerHTML = XMP.text;
+      if (THEME == 'Markdeep') {
+        document.head.innerText = XMP.text
+      } else {
+        document.querySelector("xmp").innerHTML = XMP.text;
+      }
 <!-- Markdeep: -->
       let js = document.createElement('script')
-      if (THEME === 'Markdeep'){
+      if (THEME != 'Markdeep'){
         js.setAttribute('src', 'https://casual-effects.com/markdeep/latest/markdeep.min.js?')
-      } else {
-        js.setAttribute('src', 'https://strapdownjs.com/v/0.2/strapdown.js')
       }
       js.setAttribute('id', 'script')
       document.querySelector('head').appendChild(js)
     </script>
   </head>
 </html>
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
