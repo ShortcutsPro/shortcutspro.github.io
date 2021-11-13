@@ -489,8 +489,10 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
         width: 100%;
       }
       #content {
-        margin: 0 1ex 0 1ex;
-        padding: 0 1ex 0 0;
+        margin-left: 1ex;
+        margin-right: 1em;
+        padding-left: 1ex;
+        padding-right: 1ex;
       }`;
   }
   // All done - show body
