@@ -24,15 +24,15 @@
     <style id="style">
       *, *::before, *::after {
         box-sizing: border-box;
-        margin: 0
+        margin: 0;
         font-size: 1em;
         width: 100%;
       }
       img.button {
         display: box;
         width: 20ex;
-        border: 1px solid grey;
-        border-radius: 4px;
+        border: 3px solid grey;
+        border-radius: 5px;
         margin: 0 10px 0 10px;
       }
     </style>
@@ -66,11 +66,11 @@
 <br />
 ### Try the buttons below to see each theme
 
-<a onclick="setStyle('amelia','#AD1D28')"><img class="button" src="./images/themes/amelia.png" /></a><a onclick="setStyle('simplex','#FEFEFE')"><img class="button" src="./images/themes/simplex.png" /></a><a onclick="setStyle('spacelab','#FFFFFF')"><img class="button" src="./images/themes/spacelab.png" /></a><a onclick="setStyle('cerulean','#4DB1EA')"><img class="button" src="./images/themes/cerulean.png" /></a>
+<a onclick="setStyle('amelia','#AD1D28')"><img id="amelia" class="button" src="./images/themes/amelia.png" /></a><a  onclick="setStyle('simplex','#FEFEFE')"><img id="simplex" class="button" src="./images/themes/simplex.png" /></a><a  onclick="setStyle('spacelab','#FFFFFF')"><img id="spacelab" class="button" src="./images/themes/spacelab.png" /></a><a  onclick="setStyle('cerulean','#4DB1EA')"><img id="cerulean" class="button" src="./images/themes/cerulean.png" /></a>
 
-<a onclick="setStyle('united','#D14313')"><img class="button" src="./images/themes/united.png" /></a><a onclick="setStyle('slate','#3A3F44')"><img class="button" src="./images/themes/slate.png" /></a><a onclick="setStyle('cyborg','#020202')"><img class="button" src="./images/themes/cyborg.png" /></a><a onclick="setStyle('superhero','#2A333C')"><img class="button" src="./images/themes/superhero.png" /></a>
+<a onclick="setStyle('united','#D14313')"><img id="united" class="button" src="./images/themes/united.png" /></a><a  onclick="setStyle('slate','#3A3F44')"><img id="slate" class="button" src="./images/themes/slate.png" /></a><a  onclick="setStyle('cyborg','#020202')"><img id="cyborg" class="button" src="./images/themes/cyborg.png" /></a><a  onclick="setStyle('superhero','#2A333C')"><img id="superhero" class="button" src="./images/themes/superhero.png" /></a>
 
-<a onclick="setStyle('bootstrap','#FEFEFE')"><img class="button" src="./images/themes/bootstrap.png" /></a><a onclick="setStyle('readable','#FAFDFA')"><img class="button" src="./images/themes/readable.png" /></a><a onclick="setStyle('spruce','#013435')"><img class="button" src="./images/themes/spruce.png" /></a><a onclick="setStyle('journal','#FFFFFF')"><img class="button" src="./images/themes/journal.png" /></a>
+<a onclick="setStyle('bootstrap','#FEFEFE')"><img id="bootstrap" class="button" src="./images/themes/bootstrap.png" /></a><a onclick="setStyle('readable','#FAFDFA')"><img id="readable" class="button" src="./images/themes/readable.png" /></a><a  onclick="setStyle('spruce','#013435')"><img id="spruce" class="button" src="./images/themes/spruce.png" /></a><a  onclick="setStyle('journal','#FFFFFF')"><img id="journal" class="button" src="./images/themes/journal.png" /></a>
 
     </xmp>
     <script type='text/javascript' src='./js/quickmark.js'></script>
@@ -79,8 +79,10 @@
         document.getElementById('theme').setAttribute('href', './css/'+style.toLowerCase()+'.min.css')
         let Q = new URL(window.location.href);
         Q.searchParams.set('theme',style)
+        
         document.getElementById('color').setAttribute('content', color)
         Q.searchParams.set('color',color)
+        
         location.href = Q.href
         navigator.clipboard.writeText(Q.href);
       } 

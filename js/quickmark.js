@@ -480,17 +480,17 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   }
   
   if (data.preview == 'true') {
-    document.querySelector('#style').innerHTML = `
+    document.getElementById('style').innerHTML = `
       *, *::before, *::after {
         box-sizing: border-box;
         margin: 0;
         font-size: 1em;
-        max-width: 640px;
-        width: 70%;
+        max-width: 480px;
+        width: 100%;
       }
-      body {
-        margin-left: 1ex;
-        margin-right: 1ex;
+      #content {
+        margin: 0 1ex 0 1ex;
+        padding: 0 1ex 0 1ex;
       }`;
   }
   // All done - show body
