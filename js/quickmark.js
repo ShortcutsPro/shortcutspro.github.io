@@ -479,8 +479,8 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     tableEl.className = 'table table-striped table-bordered';
   }
   
-  if (data.preview == 'true') {
-    document.querySelector('#style').innerHTML = '*, *::before, *::after {max-width: 480px; width: 60%; box-sizing: border-box; margin: 0; font-size: 1em;}'
+  if (data.preview != 'true') {
+    document.querySelector('#style').innerHTML = '*, *::before, *::after {max-width: 420px; width: 70%; box-sizing: border-box; margin: 0; font-size: 1.2em;}'
   }
   // All done - show body
   document.body.style.display = '';
