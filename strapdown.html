@@ -29,7 +29,8 @@
         width: 100%;
       }
       img.button {
-       width: 10ex;
+        display: box;
+        width: 20ex;
       }
     </style>
     <link rel="stylesheet" href="" id="theme" type="text/css" />   
@@ -40,7 +41,7 @@
     <xmp id="content">
 ## Bustl.Quickmark⠀|⠀[𝘽𝙪𝙨𝙩𝙡.•io](https://cutz.bustl.io/)
 
-Bustl.Cutz Seattle, WA -- 2021
+##### Simpl. Systems llc Seattle, WA -- 2021
 
 ### Send a [ **Quickmark** ](https://cutz.bustl.io/strapdown.html) _simpl text message_ as **Rich Link Previews**,
   
@@ -62,29 +63,26 @@ Bustl.Cutz Seattle, WA -- 2021
 <center>
 ### Try the buttons below to see each theme
 
-| <a onclick="setStyle('amelia')"><img class="button" src="./images/themes/amelia.png" /></a> | <a onclick="setStyle('simplex')"><img class="button" src="./images/themes/simplex.png" /></a> | <a onclick="setStyle('spacelab')"><img class="button" src="./images/themes/spacelab.png" /></a> | <a onclick="setStyle('cerulean')"><img class="button" src="./images/themes/cerulean.png" /></a> | <a onclick="setStyle('united')"><img class="button" src="./images/themes/united.png" /></a> | <a onclick="setStyle('slate')"><img class="button" src="./images/themes/slate.png" /></a> |
+<a onclick="setStyle('amelia','#AD1D28')"><img class="button" src="./images/themes/amelia.png" /></a><a onclick="setStyle('simplex','#FEFEFE')"><img class="button" src="./images/themes/simplex.png" /></a><a onclick="setStyle('spacelab','#FFFFFF')"><img class="button" src="./images/themes/spacelab.png" /></a><a onclick="setStyle('cerulean','#4DB1EA')"><img class="button" src="./images/themes/cerulean.png" /></a>
 </center>
 <center>
-| <a onclick="setStyle('cyborg')"><img class="button" src="./images/themes/cyborg.png" /></a> | <a onclick="setStyle('superhero')"><img class="button" src="./images/themes/superhero.png" /></a> | <a onclick="setStyle('bootstrap')"><img class="button" src="./images/themes/bootstrap.png" /></a> | <a onclick="setStyle('readable')"><img class="button" src="./images/themes/readable.png" /></a> | <a onclick="setStyle('spruce')"><img class="button" src="./images/themes/spruce.png" /></a> | <a onclick="setStyle('journal')"><img class="button" src="./images/themes/journal.png" /></a> |
+<a onclick="setStyle('united','#D14313')"><img class="button" src="./images/themes/united.png" /></a><a onclick="setStyle('slate','#3A3F44')"><img class="button" src="./images/themes/slate.png" /></a><a onclick="setStyle('cyborg','#020202')"><img class="button" src="./images/themes/cyborg.png" /></a><a onclick="setStyle('superhero','#2A333C')"><img class="button" src="./images/themes/superhero.png" /></a>
+</center>
+<center>
+<a onclick="setStyle('bootstrap','#FEFEFE')"><img class="button" src="./images/themes/bootstrap.png" /></a><a onclick="setStyle('readable','#FAFDFA')"><img class="button" src="./images/themes/readable.png" /></a><a onclick="setStyle('spruce','#013435')"><img class="button" src="./images/themes/spruce.png" /></a><a onclick="setStyle('journal','#FFFFFF')"><img class="button" src="./images/themes/journal.png" /></a>
 </center>
 ***
     </xmp>
     <script type='text/javascript' src='./js/quickmark.js'></script>
     <script>
-      function setStyle(style) {
+      function setStyle(style, color) {
         document.getElementById('theme').setAttribute('href', './css/'+style.toLowerCase()+'.min.css')
-        let color = ''
-        switch (style) {
-          case 'amelia': 
-            color = 'orange'
-          break;
-          case 'slate': 
-            color = 'black'
-          break;
-          color = 'rebeccapurple'
-        }
-        alert(color)
+        let Q = new URL(window.location.href);
+        Q.searchParams.set('theme',style)
         document.getElementById('color').setAttribute('content', color)
+        Q.searchParams.set('color',color)
+        location.href = Q.href
+        navigator.clipboard.writeText(Q.href);
       } 
     </script>
   </head>

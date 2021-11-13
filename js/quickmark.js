@@ -353,7 +353,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   let color
   if (data.color != 'null') {
     color =  data.color
-  } else color = 'midnightblue';
+  } else color = '#FEFEFE';
   
   let image
   if (data.image != 'null') {
@@ -362,7 +362,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   
   let desc
   if (data.desc != 'null') {
-    desc = data.desc +'⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
+    desc = data.desc + '⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
   } else desc =  title + '⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
   
   let video
@@ -480,7 +480,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   }
   
   if (data.preview == 'true') {
-    document.querySelector('#style').innerHTML = '*, *::before, *::after {max-width: 480px; width: 80%; box-sizing: border-box; margin: 0; font-size: 2em;}'
+    document.querySelector('#style').innerHTML = '*, *::before, *::after {max-width: 480px; width: 90%; box-sizing: border-box; margin: 0;}'
   }
   // All done - show body
   document.body.style.display = '';
