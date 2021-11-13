@@ -492,7 +492,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
         margin-left: 1ex;
         margin-right: 1em;
         padding-left: 1ex;
-        padding-right: 1ex;
+        padding-right: 1em;
       }`;
   }
   // All done - show body
