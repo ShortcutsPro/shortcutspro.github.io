@@ -351,7 +351,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   
   let color
   if (data.color != 'null') {
-    color = data.color;
+    color =  data.color
   } else color = 'midnightblue';
   
   let image
@@ -373,6 +373,8 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if (data.icon != 'null') {
     icon = data.icon;
   } else icon = './images/shortcut.png';
+  
+  
   
 //////////////////////////////////////////////////////////////////
 //
@@ -476,6 +478,9 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     tableEl.className = 'table table-striped table-bordered';
   }
   
+  if (data.preview == 'true') {
+    document.querySelector('#style').innerHTML = '*, *::before, *::after {max-width: 480px; width: 100%; box-sizing: border-box; margin: 0; font-size: 1em;}'
+  }
   // All done - show body
   document.body.style.display = '';
 
