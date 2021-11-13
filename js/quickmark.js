@@ -339,7 +339,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   
   let title
   if (data.title != 'null') {
-    title = 'Bustl.' + data.title;
+    title = data.title;
   } else title =  'Bustl.Quickmark';
   
   let theme
