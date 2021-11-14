@@ -342,8 +342,8 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   
   let title
   if (data.title != 'null') {
-    title = data.title
-  } else title =  'Bustl.Quickmark';
+    title = data.title + '⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
+  } else title = 'Bustl.Quickmark⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
   
   let theme
   if (data.theme != 'null') {
@@ -362,8 +362,8 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   
   let desc
   if (data.desc != 'null') {
-    desc = data.desc + '⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
-  } else desc =  title + '⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io';
+    desc = data.desc;
+  } else desc =  'Send a Quickmark simpl text message as Rich Link Previews.';
   
   let video
   if (data.video != 'null') {
