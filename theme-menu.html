@@ -46,8 +46,6 @@ h1 {font: bold 1.5em/2em Verdana, Geneva, sans-serif;}
 </a>
 </div></center></section><script>
 function setStyle(style,color) {
-  navigator.clipboard.writeText(`{\"style\":\"${style}\",\"color\":\"${color}\"}`);
-  window.open('shortcuts://')
-  // window.close()
-}
-</script></body></html>
+  let theme = {'style': style,'color': color} 
+  navigator.clipboard.writeText(JSON.stringify(theme))
+}</script></body></html>
