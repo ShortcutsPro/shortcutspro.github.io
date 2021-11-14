@@ -76,12 +76,45 @@
     <script type='text/javascript' src='./js/quickmark.js'></script>
     <script>
       function setStyle(style, color) {
-        document.getElementById('theme').setAttribute('href', './css/'+style.toLowerCase()+'.min.css')
         let Q = new URL(window.location.href);
-        Q.searchParams.set('theme',style)
+        let data = {
+            title : decodeURIComponent(Q.searchParams.get('title')),
+            image : decodeURIComponent(Q.searchParams.get('image')),
+            desc : decodeURIComponent(Q.searchParams.get('desc')),
+            video : decodeURIComponent(Q.searchParams.get('video')),
+            icon : decodeURIComponent(Q.searchParams.get('icon')),
+            xmp : decodeURIComponent(Q.searchParams.get('xmp'))
+        }
+        
+        if (data.title != 'null') {
+          Q.searchParams.set('title',encodeURIComponent(data.title))
+        }
+
+        if (data.image != 'null') {
+          Q.searchParams.set('image',encodeURIComponent(data.image))
+        }
+        
+        if (data.desc != 'null') {
+          Q.searchParams.set('desc',encodeURIComponent(data.desc))
+        }
+        
+        if (data.video != 'null') {
+          Q.searchParams.set('video',encodeURIComponent(data.video))
+        }
+
+        if (data.icon != 'null') {
+          Q.searchParams.set('icon',encodeURIComponent(data.icon))
+        }
+        
+        if (data.xmp != 'null') {
+          Q.searchParams.set('xmp',encodeURIComponent(data.xmp))
+        }
+        
+        document.getElementById('theme').setAttribute('href', './css/'+style.toLowerCase()+'.min.css')
+        Q.searchParams.set('theme',encodeURIComponent(style))
         
         document.getElementById('color').setAttribute('content', color)
-        Q.searchParams.set('color',color)
+        Q.searchParams.set('color',encodeURIComponent(color))
         
         location.href = Q.href
         navigator.clipboard.writeText(Q.href);
