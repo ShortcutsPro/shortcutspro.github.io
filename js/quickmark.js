@@ -402,10 +402,10 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
         navTag = document.getElementsByClassName('navbar')[0],
         xmpTag = document.getElementsByTagName('xmp')[0];
   
-  ogTitleTag.setAttribute('content', title)
+  ogTitleTag.setAttribute('content', desc)
   appTitleTag.setAttribute('content', title)
   imageTag.setAttribute('content', image)
-  descTag.setAttribute('content', desc)
+  descTag.setAttribute('content', title)
   colorTag.setAttribute('content', color)
   iconTag.setAttribute('href', icon)
   videoTag.setAttribute('content', video)
@@ -446,7 +446,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
 `;
 
   document.body.insertBefore(newNode, document.body.firstChild);
-  titleTag.innerHTML = title;
+  titleTag.innerHTML = desc;
   let headlineTag = document.getElementById('headline');
   if (headlineTag)
     headlineTag.innerHTML = title;
