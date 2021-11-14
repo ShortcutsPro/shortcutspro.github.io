@@ -6,7 +6,7 @@
 body {padding: 1em;margin: auto;}
 img.button {display: box; width: 30ex; border: 3px solid grey; border-radius: 5px; margin: 5px 15px 5px 15px;}
 h1 {font: bold 1.5em/2em Verdana, Geneva, sans-serif;}
-</style></head><body><section><center><div><p>
+</style></head><body><section id="menu"><center><div><p>
 <h1>Choose your theme</h1></p></div><br /><hr /><br /><div>
 <a onclick="setStyle('amelia','#AD1D28')">
   <img id="amelia" class="button" src="./images/themes/amelia.png" />
@@ -44,8 +44,15 @@ h1 {font: bold 1.5em/2em Verdana, Geneva, sans-serif;}
 <a  onclick="setStyle('journal','#FFFFFF')">
   <img id="journal" class="button" src="./images/themes/journal.png" />
 </a>
-</div></center></section><script>
+</div></center></section>
+<center><div id="copied">
+</div></center>
+<script>
+window,location = '#menu'
 function setStyle(style,color) {
   let theme = {'style': style,'color': color} 
   navigator.clipboard.writeText(JSON.stringify(theme))
+  document.querySelector('#menu').innerHTML = '';
+  window,location = '#copied'
+  document.querySelector('#copied').innerHTML = `<br /><br /><br /><br /><p><h1>Your theme, ${style.toUpperCase()} is on the clipboard.<br /> Hit 'Done' to return and continue</h1></p>`
 }</script></body></html>
