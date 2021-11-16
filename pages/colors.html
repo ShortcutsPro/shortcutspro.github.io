@@ -17,125 +17,50 @@
     <meta property="og:video" id="ogvideo" content="" />
     <meta property="og:image" id="ogimage" content="" />
     <meta property="og:description" id="ogdesc" content="a colorpicker for iOS Shhortcuts" />
-<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" type="text/css" /> -->
-<!--     <script src="/lib/w3color.js"></script>  -->
     <style>
       *, *::before, *::after {
         box-sizing: border-box;
         margin: 0;
-        width: 100%;
         font-weight: normal;
         font-style: normal;
       }
       html {
         font-family:Helvetica, Arial, Freesans, clean, sans-serif;
         font-size: 1em;
-        width: 100vw;
-        height: 100vh;
-        position: relative;
         margin: 0;
+        width: 100%;
+        font-weight: 50;
+        font-style: bold;
+      }
+      body {
+        margin: 0;
+        padding: 1ex;
       }
       
-      body {
-        margin: auto;
-        position: fixed;
-        top: 0;
-        left 0;
-        overflow: auto;
-      }
-      div.selectedcolor {
-        border: none;
-        width: 100%;
-        height:100%;
-        margin:auto;
+      #colorHex, #colorRGB, #colorHSL, #colorName {
+        font-family:Consolas, 'Courier New', Courier, monospace;
+        font-size:2em;
+        font-style: bold;
+        font-weight: 900;
       }
 
-      code {
-        font-family: Consolas, 'Courier New', Courier, monospace;
-        font-size: 1rem;
-        line-height: 1.4rem;
-        font-weight: bold;
-      }
-
-      @media screen and (max-width:480) {
-        body {}
-      }
-      @media screen and (min-width:481) {
-        body {
-          max-width: 600px;
-      }
+      @media screen and (max-width:480) {body {}}
+      @media screen and (min-width:481) {body {max-width: 600px;}
+      @media screen and (max-width:1080px) {body {width:100%;}}
     </style>
-    <script>
+<!--     <script src="/lib/w3color.js"></script>  -->
+    <script type="text/javascript">
       function getColorArr(x) {
         if (x == "names") {return ['AliceBlue','AntiqueWhite','Aqua','Aquamarine','Azure','Beige','Bisque','Black','BlanchedAlmond','Blue','BlueViolet','Brown','BurlyWood','CadetBlue','Chartreuse','Chocolate','Coral','CornflowerBlue','Cornsilk','Crimson','Cyan','DarkBlue','DarkCyan','DarkGoldenRod','DarkGray','DarkGrey','DarkGreen','DarkKhaki','DarkMagenta','DarkOliveGreen','DarkOrange','DarkOrchid','DarkRed','DarkSalmon','DarkSeaGreen','DarkSlateBlue','DarkSlateGray','DarkSlateGrey','DarkTurquoise','DarkViolet','DeepPink','DeepSkyBlue','DimGray','DimGrey','DodgerBlue','FireBrick','FloralWhite','ForestGreen','Fuchsia','Gainsboro','GhostWhite','Gold','GoldenRod','Gray','Grey','Green','GreenYellow','HoneyDew','HotPink','IndianRed','Indigo','Ivory','Khaki','Lavender','LavenderBlush','LawnGreen','LemonChiffon','LightBlue','LightCoral','LightCyan','LightGoldenRodYellow','LightGray','LightGrey','LightGreen','LightPink','LightSalmon','LightSeaGreen','LightSkyBlue','LightSlateGray','LightSlateGrey','LightSteelBlue','LightYellow','Lime','LimeGreen','Linen','Magenta','Maroon','MediumAquaMarine','MediumBlue','MediumOrchid','MediumPurple','MediumSeaGreen','MediumSlateBlue','MediumSpringGreen','MediumTurquoise','MediumVioletRed','MidnightBlue','MintCream','MistyRose','Moccasin','NavajoWhite','Navy','OldLace','Olive','OliveDrab','Orange','OrangeRed','Orchid','PaleGoldenRod','PaleGreen','PaleTurquoise','PaleVioletRed','PapayaWhip','PeachPuff','Peru','Pink','Plum','PowderBlue','Purple','RebeccaPurple','Red','RosyBrown','RoyalBlue','SaddleBrown','Salmon','SandyBrown','SeaGreen','SeaShell','Sienna','Silver','SkyBlue','SlateBlue','SlateGray','SlateGrey','Snow','SpringGreen','SteelBlue','Tan','Teal','Thistle','Tomato','Turquoise','Violet','Wheat','White','WhiteSmoke','Yellow','YellowGreen']; }
         if (x == "hexs") {return ['f0f8ff','faebd7','00ffff','7fffd4','f0ffff','f5f5dc','ffe4c4','000000','ffebcd','0000ff','8a2be2','a52a2a','deb887','5f9ea0','7fff00','d2691e','ff7f50','6495ed','fff8dc','dc143c','00ffff','00008b','008b8b','b8860b','a9a9a9','a9a9a9','006400','bdb76b','8b008b','556b2f','ff8c00','9932cc','8b0000','e9967a','8fbc8f','483d8b','2f4f4f','2f4f4f','00ced1','9400d3','ff1493','00bfff','696969','696969','1e90ff','b22222','fffaf0','228b22','ff00ff','dcdcdc','f8f8ff','ffd700','daa520','808080','808080','008000','adff2f','f0fff0','ff69b4','cd5c5c','4b0082','fffff0','f0e68c','e6e6fa','fff0f5','7cfc00','fffacd','add8e6','f08080','e0ffff','fafad2','d3d3d3','d3d3d3','90ee90','ffb6c1','ffa07a','20b2aa','87cefa','778899','778899','b0c4de','ffffe0','00ff00','32cd32','faf0e6','ff00ff','800000','66cdaa','0000cd','ba55d3','9370db','3cb371','7b68ee','00fa9a','48d1cc','c71585','191970','f5fffa','ffe4e1','ffe4b5','ffdead','000080','fdf5e6','808000','6b8e23','ffa500','ff4500','da70d6','eee8aa','98fb98','afeeee','db7093','ffefd5','ffdab9','cd853f','ffc0cb','dda0dd','b0e0e6','800080','663399','ff0000','bc8f8f','4169e1','8b4513','fa8072','f4a460','2e8b57','fff5ee','a0522d','c0c0c0','87ceeb','6a5acd','708090','708090','fffafa','00ff7f','4682b4','d2b48c','008080','d8bfd8','ff6347','40e0d0','ee82ee','f5deb3','ffffff','f5f5f5','ffff00','9acd32']; }
       }
-        
-</script>
-<style>
-#selectedcolor {
-    border:1px solid #e3e3e3;
-    width:80%;
-    height:300px;
-    margin:auto;
-}
-#divpreview {
-    border:1px solid #e3e3e3;
-    width:80px;
-    height:20px;
-    margin:auto;
-    visibility:hidden;
-}
-.colorTable, #colorhexDIV, #colorrgbDIV, #colorhslDIV, #colornamDIV {
-    font-family:Consolas, 'Courier New', Courier, monospace;
-}
-#colorhexDIV, #colorrgbDIV, #colorhslDIV, #colornamDIV {
-    font-size:22px;
-}
-#wronginputDIV {
-    text-align:left;
-    position:absolute;
-    margin:4px 10px;
-    color:#a94442;
-    display:none;
-}
-.has-error input{
-    border:1px solid red;
-}
-#entercolorDIV input,#entercolorDIV button{
-    height:28px;
-}
-#entercolorDIV input{
-    width:80%;
-    border:1px solid #d3d3d3;
-    border-right:none;
-}
 
-.ws-table-all td {
-    padding:4px;
-}
-.colorthird1 {
-  width:34%;
-}
-.colorthird2 {
-  width:33%;
-}
-.colorthird3 {
-  width:33%;
-}
-@media screen and (max-width:1080px) {
-  .colorthird1,.colorthird2,.colorthird3 {
-    width:100%;
-  }
-}
-</style>
-    <script type="text/javascript">
       oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump|text\/html)$/i;
-      
+
       oFReader.onload = function (oFREvent) {
         document.getElementById("uploadPreview").src = oFREvent.target.result;
       };
-      
+
       function loadImageFile() {
         if (document.getElementById("uploadImage").files.length === 0) { return; }
         var oFile = document.getElementById("uploadImage").files[0];
@@ -145,42 +70,48 @@
     </script>
   </head>
   <body onload="loadImageFile();">
-</head>
-  <body>
   <hr />
     <sectiom style="margin-top: 2em;">
       <div style="text-align:center;">
       <h2>QuickColor⠀|⠀<a src="https://cutz.bustl.io/">𝘽𝙪𝙨𝙩𝙡.•io</a></h2>
       <br />
       <h3>a colorpicker for iOS Shhortcuts</h3>
-        <div style="margin:auto;width:30%;" class="">
+        <div style="margin:auto; max-width:70%;" class="">
         <br />
           <div id="html5DIV" style="margin-top: 1em;">
             <input type="color" 
-               id="html5colorpicker" 
+               id="colorPicker" 
                onchange="copyColor()" 
                value="#ffffff" 
-               style="width:85%;" />
+               style="width:30%;" />
           </div>
           <br />
           <br />
-            <div style="text-align:center;">
-              <h3>Selected Color:</h3>
+            <div id='select' style="text-align:center;font-style:bold;">
+              <h3 id="hint">
+                  Tap the ellipse ↑ above ↑ 
+                <br />
+                  to open the color picker
+                <br />
+                <br />
+                  To select with the eyedropper
+                <br />
+                  Load an image ↓ below ↓ 
+              </h3>
               <div>
                 <br />
-                <br />
               </div>
-              <div id="colornamDIV" class="w3-margin-top"></div>      
-              <div><b><span id="colorhexDIV"></span></b></div>
-              <div id="colorrgbDIV"></div>
-              <div id="colorhslDIV"></div>    
+              <div id="colorName" class="margin-top:1ex"></div>      
+              <div><b><span id="colorHex"></span></b></div>
+              <div id="colorRGB"></div>
+              <div id="colorHSL"></div>    
             </div>
           </div>
           <div name="uploadImage" style="margin-top: 1em;margin-botton: 1em;">
 <!--      <legend><h1>Image Upload Form</h1></legend> -->
             <img id="uploadPreview" style="width: 320px; height:320px; object-fit: cover;" src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Csvg%20width%3D%22153%22%20height%3D%22153%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%3Cg%3E%0A%20%20%3Ctitle%3ENo%20image%3C/title%3E%0A%20%20%3Crect%20id%3D%22externRect%22%20height%3D%22150%22%20width%3D%22150%22%20y%3D%221.5%22%20x%3D%221.500024%22%20stroke-width%3D%223%22%20stroke%3D%22%23666666%22%20fill%3D%22%23e1e1e1%22/%3E%0A%20%20%3Ctext%20transform%3D%22matrix%286.66667%2C%200%2C%200%2C%206.66667%2C%20-960.5%2C%20-1099.33%29%22%20xml%3Aspace%3D%22preserve%22%20text-anchor%3D%22middle%22%20font-family%3D%22Fantasy%22%20font-size%3D%2214%22%20id%3D%22questionMark%22%20y%3D%22181.249569%22%20x%3D%22155.549819%22%20stroke-width%3D%220%22%20stroke%3D%22%23666666%22%20fill%3D%22%23000000%22%3E%3F%3C/text%3E%0A%20%3C/g%3E%0A%3C/svg%3E" alt="Image preview" />
             <div class="control" style="text-align:center;position:relative;margin-top:30px;">
-              <input id="uploadImage" type="file" name="myPhoto" onchange="loadImageFile();" style="max-width: 25vw; width: 75%;background:midnightblue;color:white;padding:1ex;margin:auto; font-size: 0.8em;" class="input is-medium"/>
+              <input id="uploadImage" type="file" name="myPhoto" onchange="loadImageFile();" style="max-width: 25vw; width: 75%; background:midnightblue; color:white; padding:1ex; margin:auto; font-size: 0.8em;" />
             </div>
           </div>
         </div>
@@ -188,13 +119,26 @@
     </section>
     <script>
       // clickColor(colorObj.toHexString());
+      let color = '';
+      const picker = document.getElementById("colorPicker");
+      const display = document.getElementById('colorHex');
+      const theme = document.getElementById('theme');
+      // const select = document.getElementById('select')
+      const hint = document.getElementById('hint')
       function copyColor() {
-        let color = document.getElementById("html5colorpicker").value;
-        document.getElementById('colorhexDIV').innerHTML = `${color}`
-        document.getElementById('theme').setAttribute('content', `${color}`)
-        console.log(color)
-        navigator.clipboard.writeText(`${color}`)
+        color = picker.value.toUpperCase();
+        sessionStorage.setItem('color', color)
+        theme.setAttribute('content', color)
+        display.innerHTML = color;
+        display.setAttribute('style', 'color:'+color+';font-style:bold;')
+        hint.innerHTML = 'Tap the ↓ color code ↓ to copy';
       }
+      select.addEventListener('click', () => {
+        color = sessionStorage.getItem('color');
+        navigator.clipboard.writeText(color)
+        hint.innerHTML = color+ ' is copied. <br /><br /> Close this window to continue.'
+        console.log(color)
+      })
     </script>
   </body>
 </html>
