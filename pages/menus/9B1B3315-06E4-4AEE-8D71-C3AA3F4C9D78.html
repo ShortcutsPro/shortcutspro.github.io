@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"/>
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" id="appTitle" content="Theme Menu⠀|⠀𝘽𝙪𝙨𝙩𝙡.•io" />
+<meta name="apple-mobile-web-app-status-bar-style" content="translucent" />
+<meta name="twitter:card" content="summaryg_large_image" />
+<meta name="author" content="ShortcutsPro" />
+<meta name="theme-color" id="color" content="" />
+<title>Theme Menu</title><style>
+*, *::before, *::after {box-sizing: border-box; margin: 0; font-size: 1em; width: 100%;}
+body {padding: 1em;margin: auto;}
+img.button {display: box; width: 30ex; border: 3px solid grey; border-radius: 5px; margin: 5px 15px 5px 15px;}
+#demo {display: box; width: 45ex; border: 5px solid grey; border-radius: 5px; margin: 5px 0 5px 0; max-height: 60vh;}
+h1 {font: bold 1.5em/2em Verdana, Geneva, sans-serif;}
+h2 {font: normal 1.3em/1.7em Verdana, Geneva, sans-serif;}
+</style></head><body><section id="menu"><center><div><p>
+<h1>Choose your theme</h1></p></div><br /><hr /><br /><div>
+<a onclick="setStyle('amelia','#AD1D28')">
+  <img id="amelia" class="button" src="./images/themes/amelia.png" />
+</a>
+<a  onclick="setStyle('simplex','#FEFEFE')">
+  <img id="simplex" class="button" src="./images/themes/simplex.png" />
+</a>
+<a  onclick="setStyle('spacelab','#FFFFFF')">
+  <img id="spacelab" class="button" src="./images/themes/spacelab.png" />
+</a>
+<a  onclick="setStyle('cerulean','#4DB1EA')">
+  <img id="cerulean" class="button" src="./images/themes/cerulean.png" />
+</a>
+<a onclick="setStyle('united','#D14313')">
+  <img id="united" class="button" src="./images/themes/united.png" />
+</a>
+<a  onclick="setStyle('slate','#3A3F44')">
+  <img id="slate" class="button" src="./images/themes/slate.png" />
+</a>
+<a  onclick="setStyle('cyborg','#020202')">
+  <img id="cyborg" class="button" src="./images/themes/cyborg.png" />
+</a>
+<a  onclick="setStyle('superhero','#2A333C')">
+  <img id="superhero" class="button" src="./images/themes/superhero.png" />
+</a>
+<a onclick="setStyle('bootstrap','#FEFEFE')">
+  <img id="bootstrap" class="button" src="./images/themes/bootstrap.png" />
+</a>
+<a onclick="setStyle('readable','#FAFDFA')">
+  <img id="readable" class="button" src="./images/themes/readable.png" />
+</a>
+<a  onclick="setStyle('spruce','#013435')">
+  <img id="spruce" class="button" src="./images/themes/spruce.png" />
+</a>
+<a  onclick="setStyle('journal','#FFFFFF')">
+  <img id="journal" class="button" src="./images/themes/journal.png" />
+    </a>
+  </div>
+  </center>
+  </section>
+  <section id="copied" style="display: none; height: 100%">
+    <center>
+      <br />
+      <span id="top"></span>
+      <br />
+      <br />
+      <br />
+      <br />
+        <p>
+          <h2><b>Your theme, "<span id="selected"></span>" is on the clipboard.</b></h2>
+        </p>
+        <br />
+            <p>
+              <h2> <strong> Tap'Done' to close this window and share  your Quickmark</strong></h2>
+            </p>
+                  <br />
+                  <br />
+          <div>
+            <img id="demo" src="" />
+             <br />
+            <br />
+              <p>
+                <h1>Tap [🔙] to select another theme,</h1>
+              </p>
+          </center>
+        </div>
+     </section>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    // console.log('DOM fully loaded and parsed');
+});
+let menu = document.querySelector('#menu')
+let copied = document.querySelector('#copied')
+let selected = document.querySelector('#selected')
+let demo = document.querySelector('#demo')
+copied.addEventListener('click', (event) => {
+  menu.setAttribute('style','display:visible;')
+  copied.setAttribute('style','display:none;')
+  window.location = '#menu'
+});
+function setStyle(style,color) {
+  let theme = {'style': style,'color': color} 
+  document.getElementById('color').setAttribute('content', color)
+  navigator.clipboard.writeText(JSON.stringify(theme))
+  menu.setAttribute('style','display:none;')
+  copied.setAttribute('style','display:visible;')
+  demo.setAttribute('src', './images/themes/'+style+'-d.png')
+  selected.innerHTML = `${style.toUpperCase()}`
+  window.location = '#top'
+}</script></body></html>
