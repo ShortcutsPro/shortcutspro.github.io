@@ -1,6 +1,6 @@
 {
-  "prefer_related_applications" : false,
-  "description" : "INTEGRITY Shortcuts System | bustl.•io",
+  "prefer_related_applications" : true,
+  "description" : "INTEGRITY Shortcuts System | Bustl.•io",
   "orientation" : "portrait",
   "categories" : [
     "business",
@@ -12,18 +12,19 @@
   "id" : "io.bustl.cutz",
   "protocol_handlers" : [
     {
-      "url" : "/?input=%s",
-      "protocol" : "web+cutz"
+      "url" : "./?s=pwa&input=%s",
+      "protocol" : "web+cutz",
+      "title" : "Bustl. Shortcuts"
     }
   ],
   "short_name" : "Cutz",
   "related_applications" : [
     {
-      "url" : "https://cutz.bustl.io",
+      "url" : "./",
       "id" : "io.bustl.cutz"
     }
   ],
-  "start_url" : "/?s=pwa",
+  "start_url" : "./?s=pwa",
   "theme_color" : "#000000",
   "name" : "Bustl.Cutz",
   "icons" : [

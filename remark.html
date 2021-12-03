@@ -1,103 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, minimal-ui" />
+    <meta charset = 'UTF-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover, display=standalone' />
 <!-- ios support -->
-    <meta property="og:title" content="SIMPL Showcase" />
-    <meta property="og:image" content="https://i.imgur.com/ocVxTJ9.jpg" />
-    <meta property="og:description" content="Share images as custom  slideshow link" />
-    <meta property="og:url" content="https://Cutz.Bustl.io/remark.html" />
-    <title>SIMPL Showcase</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="SIMPL Showcase" />
-    <meta name="author" content="ShortcutsPro" />
-    <meta name="theme-color" content="black" />
+    <meta name="apple-mobile-web-app-title" id="title" content="" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
+    <meta name="author" id="author" content="" />
+    <meta name="theme-color" id="theme" content="black" />
+      <title>
+      </title>
+    <meta property="og:title" id="title" content="" />
+    <meta property="og:video" id="video" content="" />
+    <meta property="og:image" id="photo" content="" />
+    <meta property="og:description" content="Share dynamic slideshows in SMS" />
+    <meta property="og:author" id="author" content="" />    
 
-    <style>
-/*      *, *::before, *::after { */
-      * {
-        border-size: box-border;
-        background-color: black;
-        font-size: 0px;
-        margin: 0;
-      }
-      body:-webkit-full-screen {
-        width: 100%; 
-        height: 100%;
-        background-color: black;
-      }
-      img {
-        width: 100%;
-        background-color: black;
-      }
-      .remark-code, .remark-inline-code { 
-        font-family: sans-serif; 
-      }
-    </style>
+    <link rel="apple-touch-icon" href="" id="icon" />
+    <link rel="icon" href="" id="icon" />
+
     <script>
-      const Q = new URL (window.location.href);
-      const R = decodeURIComponent(Q.searchParams.get("r"));
-      let S
-      if (R) {
-        S = JSON.parse(decodeURIComponent(Q.searchParams.get("s")));
+      let Q = new URL (window.location.href).searchParams
+      Q = {
+       'slides': Q.get('slides') || ['https://i.imgur.com/ZM1EbqK.jpg','https://i.imgur.com/U7IhfJp.jpg'],
+       'ratio': Q.get('ratio') || '16:9',
+       'interval': Q.get('interval') || '3000',
+       'title': Q.get('title') || 'Simpl.slideshow',
+       'icon': Q.get('icon') || './apple-touch-icon.png',
+       'photo': Q.get('photo') || 'https://i.imgur.com/ocVxTJ9.jpg',
+       'video': Q.get('video') || './images/apple-rich-link-video-hd.mp4',
+       'author': Q.get('author') || 'ShortcutsPro'
       }
-      function fillText (s) {
-        let slides = s.slides || [];
-        let string = `
-class: center, middle
 
-background-image: url(${slides[0]})
-background-size: cover
-`;
+      document.querySelector('title').innerHTML = Q.title
+      document.getElementById('title').setAttribute('content', Q.title)
+      document.getElementById('photo').setAttribute('content', Q.photo)
+      document.getElementById('video').setAttribute('content', Q.video)
+      document.getElementById('author').setAttribute('content', Q.author)
+      document.getElementById('icon').setAttribute('href', Q.icon)
 
-        for (let i = 1; i < slides.length; i++) {
+      let string = `class: center, middle
+
+background-image: url(${Q.slides[0]})
+background-size: cover`;
+        for (let i = 1; i < Q.slides.length; i++) {
           string += `
 ---
-
-background-image: url(${slides[i]})
-background-size: cover
-`;
+background-image: url(${Q.slides[i]})
+background-size: cover`;
         }
-        return string
-    }
+      const BODY = document.createElement('body')
+      const TXT = document.createElement('textarea')
+      TXT.id = 'source'
+      TXT.innerHTML = ''+ string
+      TXT.style = 'display: none;'
+      BODY.appendChild(TXT)
+      document.head.appendChild(BODY)
     </script>
+    <style>
+      *, *::before, *::after { border-size:box-border; background-color:black; font-size:0px; margin:0; }
+      body:-webkit-full-screen { width:100%; height:100%; background-color:black; }
+      img { width:100%; background-color:black; object-fit:cover; }
+    </style>
   </head>
-  <body onload="start()">
-
-    <script>
-      const txt = document.createElement("textarea");
-      txt.id = "source";
-      if (S) {
-        txt.innerHTML = fillText(S);
-      }
-      document.querySelector("body").appendChild(txt);
-    </script>
+  <body>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>
-      function carousel(slideshow) {
-        let count = slideshow.getSlideCount()-1;
-        let current = slideshow.getCurrentSlideIndex();
-          // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
-        if (current == count) {
-          slideshow.gotoFirstSlide()
-        } else {
-          slideshow.gotoNextSlide()
-        }
-      }
-      
-      function start() {
-        const slideshow = remark.create({
-          ratio: `${R}`,
-          countIncrementalSlides: false,
-          includePresenterNotes: false
-        });
-        setInterval(function () {
-          carousel(slideshow)
-        }, 2000);
-      }
-      // every 2 seconds (change to your desired interval), fire the helper function
-      
+      const Show = remark.create({ 'ratio': `${Q.ratio}`})
+      setInterval(function () {
+          if (Show.getSlideCount()-1 == Show.getCurrentSlideIndex()) {
+            Show.gotoFirstSlide()
+          } else Show.gotoNextSlide()     
+        }, Q.interval)
     </script>
   </body>
 </html>

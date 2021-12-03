@@ -1,5 +1,6 @@
-const staticCacheName = 'site-static-v3';
-const dynamicCacheName = 'site-dynamic-v3';
+const staticCacheName = 'site-static-v4';
+const dynamicCacheName = 'site-dynamic-v4';
+const cacheLimit = 100;
 const assets = [
   './index.html',
   './404.html',
@@ -29,19 +30,18 @@ const limitCacheSize = (name, size) => {
 // install event
 self.addEventListener('install', evt => {
   console.log('service worker installed');
-  alert('service worker installed');
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets');
       cache.addAll(assets);
     })
   );
+  navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts')
 });
 
 // activate event
 self.addEventListener('activate', evt => {
   console.log('service worker activated');
-  alert('service worker activated');
   evt.waitUntil(
     caches.keys().then(keys => {
       console.log(keys);
@@ -63,7 +63,7 @@ self.addEventListener('fetch', evt => {
         return caches.open(dynamicCacheName).then(cache => {
           cache.put(evt.request.url, fetchRes.clone());
           // check cached items size
-          limitCacheSize(dynamicCacheName, 50);
+          limitCacheSize(dynamicCacheName, cacheLimit);
           return fetchRes;
         })
       });
