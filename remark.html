@@ -23,7 +23,7 @@
     <script>
       let Q = new URL (window.location.href).searchParams
       Q = {
-       'slides': decodeURIComponent(Q.get('slides')) || ['https://i.imgur.com/ZM1EbqK.jpg','https://i.imgur.com/U7IhfJp.jpg'],
+       'slides': decodeURIComponent(Q.get('s')) || ['https://i.imgur.com/ZM1EbqK.jpg','https://i.imgur.com/U7IhfJp.jpg'],
        'ratio': decodeURIComponent(Q.get('ratio')) || '16:9',
        'interval': decodeURIComponent(Q.get('interval')) || '3000',
        'title': decodeURIComponent(Q.get('title')) || 'Simpl.slideshow',
@@ -39,15 +39,17 @@
       document.getElementById('video').setAttribute('content', Q.video)
       document.getElementById('author').setAttribute('content', Q.author)
       document.getElementById('icon').setAttribute('href', Q.icon)
-
+      
+      let slides = Q.slides
+      slides = slides.slides
       let string = `class: center, middle
 
-background-image: url(${Q.slides[0]})
+background-image: url(${slides[0]})
 background-size: cover`;
-        for (let i = 1; i < Q.slides.length; i++) {
+        for (let i = 1; i < slides.length; i++) {
           string += `
 ---
-background-image: url(${Q.slides[i]})
+background-image: url(${slides[i]})
 background-size: cover`;
         }
       const BODY = document.createElement('body')
