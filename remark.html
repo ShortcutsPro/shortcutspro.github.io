@@ -23,14 +23,14 @@
     <script>
       let Q = new URL (window.location.href).searchParams
       Q = {
-       'slides': Q.get('slides') || ['https://i.imgur.com/ZM1EbqK.jpg','https://i.imgur.com/U7IhfJp.jpg'],
-       'ratio': Q.get('ratio') || '16:9',
-       'interval': Q.get('interval') || '3000',
-       'title': Q.get('title') || 'Simpl.slideshow',
-       'icon': Q.get('icon') || './apple-touch-icon.png',
-       'photo': Q.get('photo') || 'https://i.imgur.com/ocVxTJ9.jpg',
-       'video': Q.get('video') || './images/apple-rich-link-video-hd.mp4',
-       'author': Q.get('author') || 'ShortcutsPro'
+       'slides': decodeURIComponent(Q.get('slides')) || ['https://i.imgur.com/ZM1EbqK.jpg','https://i.imgur.com/U7IhfJp.jpg'],
+       'ratio': decodeURIComponent(Q.get('ratio')) || '16:9',
+       'interval': decodeURIComponent(Q.get('interval')) || '3000',
+       'title': decodeURIComponent(Q.get('title')) || 'Simpl.slideshow',
+       'icon': decodeURIComponent(Q.get('icon')) || './apple-touch-icon.png',
+       'photo': decodeURIComponent(Q.get('photo')) || 'https://i.imgur.com/ocVxTJ9.jpg',
+       'video': decodeURIComponent(Q.get('video')) || './images/apple-rich-link-video-hd.mp4',
+       'author': decodeURIComponent(Q.get('author')) || 'ShortcutsPro'
       }
 
       document.querySelector('title').innerHTML = Q.title
