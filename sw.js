@@ -2,6 +2,7 @@
 // 
 //.         Service Worker
 //
+use strict;
 const staticCacheName = 'site-static-v1';
 const dynamicCacheName = 'site-dynamic-v1';
 const cacheLimit = 100;
@@ -32,9 +33,9 @@ const limitCacheSize = (name, size) => {
 }
 
 // install event
-self.addEventListener('install', (evt) => {
+self.addEventListener('install', (e) => {
   console.log('service worker installed');
-  evt.waitUntil(
+  e.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets');
       cache.addAll(assets);
@@ -49,9 +50,9 @@ self.addEventListener('install', (evt) => {
 // }
 
 // activate event
-self.addEventListener('activate', (evt) => {
+self.addEventListener('activate', (e) => {
   console.log('service worker activated');
-  evt.waitUntil(
+  e.waitUntil(
     caches.keys().then(keys => {
       console.log(keys);
       return Promise.all(keys
@@ -63,20 +64,20 @@ self.addEventListener('activate', (evt) => {
 });
 
 // fetch event
-self.addEventListener('fetch', (evt) => {
-  console.log('fetch event', evt)
-  evt.respondWith(
-    caches.match(evt.request).then(cacheRes => {
-      return cacheRes || fetch(evt.request).then(fetchRes => {
+self.addEventListener('fetch', (e) => {
+  console.log('fetch event', e)
+  e.respondWith(
+    caches.match(e.request).then(cacheRes (e) => {
+      return cacheRes || fetch(e.request).then(fetchRes => {
         return caches.open(dynamicCacheName).then(cache => {
-          cache.put(evt.request.url, fetchRes.clone());
+          cache.put(e.request.url, fetchRes.clone());
           // check cached items size
           limitCacheSize(dynamicCacheName, cacheLimit);
-          return fetchRes;
+          return fetchRes
         });
       });
-    }).catch(() => {
-      if(evt.request.url.indexOf('.html') > -1){
+    }).catch((e) => {
+      if(e.request.url.indexOf('.html') > -1){
         return caches.match('./pages/fallback.html');
       } 
     });
