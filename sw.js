@@ -21,22 +21,22 @@ const limitCacheSize = (name, size) => {
   caches.open(name).then(cache => {
     cache.keys().then(keys => {
       if(keys.length > size){
-        cache.delete(keys[0]).then(limitCacheSize(name, size));
+        cache.delete(keys[0]).then(limitCacheSize(name, size))
       }
-    });
-  });
+    })
+  })
 };
 
 // install event
 self.addEventListener('install', evt => {
-  console.log('service worker installed');
+  console.log('service worker installed')
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
-      console.log('caching shell assets');
-      cache.addAll(assets);
-    });
+      console.log('caching shell assets')
+      cache.addAll(assets)
+    })
   )
-});
+})
 
 
 if ('registerProtocolHandler' in navigator != 'null') {
