@@ -1,4 +1,7 @@
-use strict;
+//////////////////////////////////////////
+// 
+//.         Service Worker
+//
 const staticCacheName = 'site-static-v1';
 const dynamicCacheName = 'site-dynamic-v1';
 const cacheLimit = 100;
