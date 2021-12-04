@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v4';
-const dynamicCacheName = 'site-dynamic-v4';
+const staticCacheName = 'site-static-v5';
+const dynamicCacheName = 'site-dynamic-v5';
 const cacheLimit = 100;
 const assets = [
   './index.html',
@@ -36,8 +36,14 @@ self.addEventListener('install', evt => {
       cache.addAll(assets);
     })
   );
-  navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts')
-});
+  if ('registerProtocolHandler' in navigator != 'null') {
+    navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts')
+    .then(reg => 
+      console.log('sw ',reg))
+    .catch(err => 
+    console.log('error ',err))
+  }
+}
 
 // activate event
 self.addEventListener('activate', evt => {
@@ -56,7 +62,6 @@ self.addEventListener('activate', evt => {
 // fetch event
 self.addEventListener('fetch', evt => {
   console.log('fetch event', evt);
-  alert('fetch event', evt);
   evt.respondWith(
     caches.match(evt.request).then(cacheRes => {
       return cacheRes || fetch(evt.request).then(fetchRes => {
