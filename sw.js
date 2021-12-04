@@ -28,7 +28,7 @@ const limitCacheSize = (name, size) => {
 };
 
 // install event
-self.addEventListener('install', evt => {
+self.addEventListener('install', (evt) => {
   console.log('service worker installed');
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
@@ -45,7 +45,7 @@ if ('registerProtocolHandler' in navigator) {
 }
 
 // activate event
-self.addEventListener('activate', evt => {
+self.addEventListener('activate', (evt) => {
   console.log('service worker activated');
   evt.waitUntil(
     caches.keys().then(keys => {
@@ -59,7 +59,7 @@ self.addEventListener('activate', evt => {
 })
 
 // fetch event
-self.addEventListener('fetch', evt => {
+self.addEventListener('fetch', (evt) => {
   console.log('fetch event', evt);
   evt.respondWith(
     caches.match(evt.request).then(cacheRes => {
