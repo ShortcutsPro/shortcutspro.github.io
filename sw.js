@@ -2,7 +2,6 @@
 // 
 //.         Service Worker
 //
-use strict;
 const staticCacheName = 'site-static-v1';
 const dynamicCacheName = 'site-dynamic-v1';
 const cacheLimit = 100;
@@ -64,23 +63,23 @@ self.addEventListener('activate', (e) => {
 });
 
 // fetch event
-// self.addEventListener('fetch', (e) => {
-//   console.log('fetch event', e)
-//   e.respondWith(
-//     caches.match(e.request).then(cacheRes (e) => {
-//       return cacheRes || fetch(e.request).then(fetchRes => {
-//         return caches.open(dynamicCacheName).then(cache => {
-//           cache.put(e.request.url, fetchRes.clone());
-//           // check cached items size
-//           limitCacheSize(dynamicCacheName, cacheLimit);
-//           return fetchRes
-//         });
-//       });
-//     }).catch((e) => {
-//       if(e.request.url.indexOf('.html') > -1){
-//         return caches.match('./pages/fallback.html');
-//       } 
-//     });
-//   );
-// });
+self.addEventListener('fetch', (e) => {
+  console.log('fetch event', e)
+  e.respondWith(
+    caches.match(e.request).then(cacheRes (e) => {
+      return cacheRes || fetch(e.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(e.request.url, fetchRes.clone());
+          // check cached items size
+          limitCacheSize(dynamicCacheName, cacheLimit);
+          return fetchRes
+        });
+      });
+    }).catch((e) => {
+      if(e.request.url.indexOf('.html') > -1){
+        return caches.match('./pages/fallback.html');
+      } 
+    });
+  );
+});
 console.log('sw.js');
