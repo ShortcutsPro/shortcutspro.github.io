@@ -146,17 +146,19 @@ export async function addSource(url) {
   await init()
 }
 
-export function removeSource(url) {
+export async function removeSource(url) {
   sources = sources.filter(e => e != url);
   localStorage.setItem("sources", JSON.stringify(sources))
+  await init()
 }
 
-export function removePackage(id) {
+export async function removePackage(id) {
   let db = JSON.parse(localStorage.getItem("bustl")) || {};
   let p = db.packages || [];
   let packages = p.filter(e => e.id != id);
   db.packages = packages;
   localStorage.setItem("bustl", JSON.stringify(db))
+  await init()
 }
 
 export async function init() {
