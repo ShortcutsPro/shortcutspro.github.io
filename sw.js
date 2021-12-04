@@ -23,8 +23,8 @@ const limitCacheSize = (name, size) => {
       if(keys.length > size){
         cache.delete(keys[0]).then(limitCacheSize(name, size))
       }
-    });
-  });
+    })
+  })
 }
 
 // install event
@@ -34,7 +34,7 @@ self.addEventListener('install', (evt) => {
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets')
       cache.addAll(assets)
-    });
+    })
   )
 });
 
@@ -54,9 +54,9 @@ self.addEventListener('activate', (evt) => {
         .filter(key => key !== staticCacheName && key !== dynamicCacheName)
         .map(key => caches.delete(key))
       )
-    });
+    })
   )
-});
+})
 
 // fetch event
 self.addEventListener('fetch', (evt) => {
@@ -69,13 +69,13 @@ self.addEventListener('fetch', (evt) => {
           // check cached items size
           limitCacheSize(dynamicCacheName, cacheLimit)
           return fetchRes
-        });
-      });
+        })
+      })
     }).catch(() => {
       if(evt.request.url.indexOf('.html') > -1){
         return caches.match('./pages/fallback.html')
       } 
-    });
+    })
   )
-});
+})
 console.log('sw.js')
