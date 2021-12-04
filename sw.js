@@ -39,7 +39,7 @@ self.addEventListener('install', evt => {
 })
 
 
-if ('registerProtocolHandler' in navigator != 'null') {
+if ('registerProtocolHandler' in navigator != 'undefined') {
     navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts')
       console.log('web+cutz registered')
 }
