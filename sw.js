@@ -3,8 +3,8 @@ const dynamicCacheName = 'site-dynamic-v5';
 const cacheLimit = 100;
 const assets = [
   './index.html',
+  './main.js',
   './404.html',
-  './js/app.js',
   './css/styles.css',
   './css/clean.css',
   './fonts/space_age.ttf',
@@ -34,14 +34,14 @@ self.addEventListener('install', evt => {
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets');
       cache.addAll(assets);
-    })
-  )}
-);
+    });
+  )
+});
 
 
 if ('registerProtocolHandler' in navigator != 'null') {
-    navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts'
-      console.log('sw ',reg)
+    navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts')
+      console.log('web+cutz registered)
 }
 
 // activate event
