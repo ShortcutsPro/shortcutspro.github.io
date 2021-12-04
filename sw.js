@@ -58,24 +58,24 @@ self.addEventListener('activate', (evt) => {
   )
 })
 
-// fetch event
-// self.addEventListener('fetch', (evt) => {
-//   console.log('fetch event', evt)
-//   evt.respondWith(
-//     caches.match(evt.request).then(cacheRes => {
-//       return cacheRes || fetch(evt.request).then(fetchRes => {
-//         return caches.open(dynamicCacheName).then(cache => {
-//           cache.put(evt.request.url, fetchRes.clone())
-//           // check cached items size
-//           limitCacheSize(dynamicCacheName, cacheLimit)
-//           return fetchRes
-//         })
-//       })
-//     }).catch(() => {
-//       if(evt.request.url.indexOf('.html') > -1){
-//         return caches.match('./pages/fallback.html')
-//       } 
-//     })
-//   )
-// })
+fetch event
+self.addEventListener('fetch', (evt) => {
+  console.log('fetch event', evt)
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone())
+          // check cached items size
+          limitCacheSize(dynamicCacheName, cacheLimit)
+          return fetchRes
+        })
+      })
+    }).catch(() => {
+      if(evt.request.url.indexOf('.html') > -1){
+        return caches.match('./pages/fallback.html')
+      } 
+    })
+  )
+})
 console.log('sw.js')
