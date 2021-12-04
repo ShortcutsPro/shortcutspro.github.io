@@ -23,8 +23,8 @@ const limitCacheSize = (name, size) => {
       if(keys.length > size){
         cache.delete(keys[0]).then(limitCacheSize(name, size));
       }
-    });
-  });
+    })
+  })
 };
 
 // install event
@@ -32,11 +32,11 @@ self.addEventListener('install', evt => {
   console.log('service worker installed');
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
-      console.log('caching shell assets');
-      cache.addAll(assets);
-    });
+      console.log('caching shell assets')
+      cache.addAll(assets)
+    })
   )
-});
+})
 
 
 if ('registerProtocolHandler' in navigator != 'null') {
@@ -53,10 +53,10 @@ self.addEventListener('activate', evt => {
       return Promise.all(keys
         .filter(key => key !== staticCacheName && key !== dynamicCacheName)
         .map(key => caches.delete(key))
-      );
+      )
     })
-  );
-});
+  )
+})
 
 // fetch event
 self.addEventListener('fetch', evt => {
