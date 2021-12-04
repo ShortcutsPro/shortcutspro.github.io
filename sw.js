@@ -35,14 +35,13 @@ self.addEventListener('install', evt => {
       console.log('caching shell assets');
       cache.addAll(assets);
     })
-  );
-  if ('registerProtocolHandler' in navigator != 'null') {
-    navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts')
-    .then(reg => 
-      console.log('sw ',reg))
-    .catch(err => 
-    console.log('error ',err))
-  }
+  )}
+);
+
+
+if ('registerProtocolHandler' in navigator != 'null') {
+    navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts'
+      console.log('sw ',reg)
 }
 
 // activate event
