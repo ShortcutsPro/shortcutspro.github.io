@@ -42,7 +42,7 @@ async function load(repo, dryrun) {
         dbpackage.category = pakage.category || [];
         dbpackage.depiction = pakage.depiction + "" || false;
         dbpackage.repo = pakage.repo || false;
-        dbpackage.callback = pakage.callback + "" || "";
+        dbpackage.callback = pakage.callback + "" || false;
         dbpackage.integrity = pakage.integrity || false;
         dbpackage.input = pakage.input + "" || "";
         dbpackage.color = pakage.color + "" || "#000000";
@@ -53,7 +53,7 @@ async function load(repo, dryrun) {
             encodeURIComponent(JSON.stringify(dbpackage));
         }
 
-        if (dbpackage.callback == "") {
+        if (dbpackage.callback) {
 
           let dict = {
                 'name': `${dbpackage.name}`,
@@ -66,9 +66,9 @@ async function load(repo, dryrun) {
           } //           if (dbpackage.integrity)
   
           if (!dbpackage.integrity) {
-            if (dbpackage.input == "") {
+            if (dbpackage.input === "") {
             dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)
-            } else if (dbpackage.input == "clipboard") {
+            } else if (dbpackage.input === "clipboard") {
             dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=clipboard'
             } else {
             dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=text&text='+encodeURIComponent(dict.input);
