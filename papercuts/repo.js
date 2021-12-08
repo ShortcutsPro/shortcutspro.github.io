@@ -42,7 +42,7 @@ async function load(repo, dryrun) {
         dbpackage.category = pakage.category || [];
         dbpackage.depiction = pakage.depiction + "" || false;
         dbpackage.repo = pakage.repo || false;
-        dbpackage.callback = pakage.callback + "" || false;
+        dbpackage.callback = pakage.callback + "" || "";
         dbpackage.integrity = pakage.integrity || false;
         dbpackage.input = pakage.input + "" || "";
         dbpackage.color = pakage.color + "" || "#000000";
@@ -53,7 +53,7 @@ async function load(repo, dryrun) {
             encodeURIComponent(JSON.stringify(dbpackage));
         }
 
-        if (!dbpackage.callback) {
+        if (dbpackage.callback == '') {
 
           let dict = {
                 'name': `${dbpackage.name}`,
