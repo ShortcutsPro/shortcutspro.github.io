@@ -42,7 +42,7 @@ async function load(repo, dryrun) {
         dbpackage.category = pakage.category || [];
         dbpackage.depiction = pakage.depiction + "" || false;
         dbpackage.repo = pakage.repo || false;
-        dbpackage.callback = pakage.callback + "" || "";
+        // dbpackage.callback = pakage.callback + "" || "";
         dbpackage.integrity = pakage.integrity || false;
         dbpackage.input = pakage.input + "" || "";
         dbpackage.color = pakage.color + "" || "#000000";
@@ -56,7 +56,7 @@ async function load(repo, dryrun) {
         
         if (dbpackage.integrity) {
           
-          if (dbpackage.input.length < 1) {
+          if (dbpackage.input.length < 0) {
             dbpackage.callback =
             "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text="+encodeURIComponent(dbpackage.name);
           } else {
@@ -71,16 +71,15 @@ async function load(repo, dryrun) {
         }
 
         if (!dbpackage.integrity) {
+
           if (dbpackage.input.length < 1) {
               dbpackage.callback =
               "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name);
-            } else if (dbpackage.input == "clipboard") {
+          } else if (dbpackage.input == "clipboard") {
               dbpackage.callback =
               "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=clipboard";
-            } else {
-                dbpackage.callback =
+          } else dbpackage.callback =
                 "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+encodeURIComponent(dbpackage.input);
-          }
         }
         db.packages.push(dbpackage)
       }
