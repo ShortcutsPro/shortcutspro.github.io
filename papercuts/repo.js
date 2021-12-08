@@ -53,7 +53,7 @@ async function load(repo, dryrun) {
             encodeURIComponent(JSON.stringify(dbpackage));
         }
 
-//        if (dbpackage.callback == "") {
+        if (dbpackage.callback == "") {
 
           let dict = {
                 'name': `${dbpackage.name}`,
@@ -75,7 +75,7 @@ async function load(repo, dryrun) {
             } 
           } //           if (!dbpackage.integrity)
 
-//        } //         if (!dbpackage.callback)
+        } //         if (!dbpackage.callback)
         db.packages.push(dbpackage)
       }
     }
