@@ -56,7 +56,7 @@ async function load(repo, dryrun) {
         
         if (dbpackage.integrity) {
           
-          if (dbpackage.input.length < 0) {
+          if (dbpackage.input.length < 1) {
             dbpackage.callback =
             "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text="+encodeURIComponent(dbpackage.name);
           } else {
