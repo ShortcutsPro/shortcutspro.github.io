@@ -52,8 +52,7 @@ async function load(repo, dryrun) {
             "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
         }
-        
-        
+
         if (dbpackage.integrity) {
           let dict = {
               'name': dbpackage.name,
@@ -63,13 +62,12 @@ async function load(repo, dryrun) {
         }
 
         if (!dbpackage.integrity) {
-
           if (dbpackage.input == "") {
               dbpackage.callback =
-              `shortcuts://x-callback-url/run-shortcut?name=${dbpackage.name}`;
+              `shortcuts://x-callback-url/run-shortcut?name=${encodeURIComponent(dbpackage.name)}`;
           } else if (dbpackage.input == "clipboard") {
-              dbpackage.callback = `shortcuts://x-callback-url/run-shortcut?name=${dbpackage.name}&input=clipboard`;
-          } else dbpackage.callback = `shortcuts://x-callback-url/run-shortcut?name=${dbpackage.name}&input=text&text=${encodeURIComponent(dbpackage.input)}`;
+              dbpackage.callback = `shortcuts://x-callback-url/run-shortcut?name=${encodeURIComponent(dbpackage.name)}&input=clipboard`;
+          } else dbpackage.callback = `shortcuts://x-callback-url/run-shortcut?name=${encodeURIComponent(dbpackage.name)}&input=text&text=${encodeURIComponent(dbpackage.input)}`;
         }
         db.packages.push(dbpackage)
       }
