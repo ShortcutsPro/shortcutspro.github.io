@@ -53,31 +53,29 @@ async function load(repo, dryrun) {
             encodeURIComponent(JSON.stringify(dbpackage));
         }
 
-        if (dbpackage.callback.length < 1) {
+//        if (dbpackage.callback == "") {
 
-          let callback = 'shortcuts://x-callback-url/run-shortcut?name=';
           let dict = {
                 'name': `${dbpackage.name}`,
                 'input': `${dbpackage.input}`
           };
-          let payload = encodeURIComponent(JSON.stringify(dict));
-
+          let payload = JSON.stringify(dict)
+          
           if (dbpackage.integrity) {
-            callback += `INTEGRITY&input=text&text=${payload}`;
+            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text='+payload;
           } //           if (dbpackage.integrity)
   
           if (!dbpackage.integrity) {
             if (dbpackage.input == "") {
-              callback += encodeURIComponent(dict.name)
+            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)
             } else if (dbpackage.input == "clipboard") {
-              callback += encodeURIComponent(dict.name) + '&input=clipboard`;
+            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=clipboard'
             } else {
-              callback += encodeURIComponent(dict.name) + '&input=text&text=' + encodeURIComponent(dict.input);
+            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=text&text='+encodeURIComponent(dict.input);
             } 
-          }//           if (!dbpackage.integrity)
-          dbpackage.callback = `${callback}`;
+          } //           if (!dbpackage.integrity)
 
-        } //         if (!dbpackage.callback)
+//        } //         if (!dbpackage.callback)
         db.packages.push(dbpackage)
       }
     }
