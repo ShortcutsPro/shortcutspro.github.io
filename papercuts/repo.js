@@ -64,7 +64,7 @@ async function load(repo, dryrun) {
               name: `${dbpackage.name}`,
               input: `${dbpackage.input}`
             };
-            let param = encodeURIComponent(JSON.stringify(dict));
+            let param = JSON.stringify(dict);
             dbpackage.callback =
               "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=" + param;
           }
