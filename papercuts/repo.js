@@ -29,7 +29,7 @@ async function load(repo, dryrun) {
         dbpackage.version = pakage.version + "";
         dbpackage.name = pakage.name + "";
         dbpackage.link = pakage.link + "";
-        dbpackage.arch = pakage.arch + "" || "ios12";
+        dbpackage.arch = pakage.arch + "" || "ios15";
         dbpackage.author = pakage.author || {
           name: "No Contact",
           link: ["about:blank"]
@@ -52,37 +52,32 @@ async function load(repo, dryrun) {
             "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
             encodeURIComponent(JSON.stringify(dbpackage));
         }
-        
-        
-        if (dbpackage.integrity) {
-          
-          if (dbpackage.input.length < 1) {
-            dbpackage.callback =
-            "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text="+encodeURIComponent(dbpackage.name);
-          } else {
-            let dict = {
-              name: `${dbpackage.name}`,
-              input: `${dbpackage.input}`
-            };
-            let param = JSON.stringify(dict);
-            dbpackage.callback =
-              "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=" + param;
-          }
-          
+
+        if (dbpackage.callback.length < 1) {
+
+          let callback = 'shortcuts://x-callback-url/run-shortcut?name=';
+          let dict = {
+                'name': `${dbpackage.name}`,
+                'input': `${dbpackage.input}`
+          };
+          let payload = encodeURIComponent(JSON.stringify(dict));
+
+          if (dbpackage.integrity) {
+            callback += `INTEGRITY&input=text&text=${payload}`;
+          } //           if (dbpackage.integrity)
+  
           if (!dbpackage.integrity) {
-            
-            if (dbpackage.input.length < 1) {
-              dbpackage.callback =
-              "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name);
+            if (dbpackage.input == "") {
+              callback += encodeURIComponent(dict.name)
             } else if (dbpackage.input == "clipboard") {
-              dbpackage.callback =
-              "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=clipboard";
+              callback += encodeURIComponent(dict.name) + '&input=clipboard`;
             } else {
-                dbpackage.callback =
-                "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+encodeURIComponent(dbpackage.input);
-            }
-          }
-        }
+              callback += encodeURIComponent(dict.name) + '&input=text&text=' + encodeURIComponent(dict.input);
+            } 
+          }//           if (!dbpackage.integrity)
+          dbpackage.callback = `${callback}`;
+
+        } //         if (!dbpackage.callback)
         db.packages.push(dbpackage)
       }
     }
@@ -165,10 +160,10 @@ export async function removePackage(id) {
 export async function init() {
   db = {};
   sources = [];
+  sources.push('https://Cutz.Bustl.io/library/')
+  sources.push('https://Cutz.Bustl.io/featured/')
   db.repos = [];
   db.packages = [];
-  sources = JSON.parse(
-    localStorage.getItem("sources") || '["https://Cutz.Bustl.io/library/"]'
-  );
+  sources = JSON.parse(localStorage.getItem("sources")) || sources;
   await Promise.all(sources.map(e => load(e)))
 }
