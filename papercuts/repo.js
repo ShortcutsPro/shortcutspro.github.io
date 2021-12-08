@@ -73,9 +73,9 @@ async function load(repo, dryrun) {
             } else {
             dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=text&text='+encodeURIComponent(dict.input);
             } 
-          } //           if (!dbpackage.integrity)
+//          } //           if (!dbpackage.integrity)
 
-//        } //         if (!dbpackage.callback)
+        } //         if (!dbpackage.callback)
         db.packages.push(dbpackage)
       }
     }
