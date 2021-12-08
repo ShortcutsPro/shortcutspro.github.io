@@ -68,10 +68,10 @@ async function load(repo, dryrun) {
             dbpackage.callback =
               "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=" + param;
           }
-          
-          if (!dbpackage.integrity) {
-            
-            if (dbpackage.input.length < 1) {
+        }
+
+        if (!dbpackage.integrity) {
+          if (dbpackage.input.length < 1) {
               dbpackage.callback =
               "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name);
             } else if (dbpackage.input == "clipboard") {
@@ -80,7 +80,6 @@ async function load(repo, dryrun) {
             } else {
                 dbpackage.callback =
                 "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+encodeURIComponent(dbpackage.input);
-            }
           }
         }
         db.packages.push(dbpackage)
