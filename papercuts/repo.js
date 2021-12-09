@@ -54,24 +54,43 @@ async function load(repo, dryrun) {
         }
 
         if (dbpackage.callback == "") {
-
+          console.log('inside callback block')
           let dict = {
                 'name': `${dbpackage.name}`,
                 'input': `${dbpackage.input}`
           };
           let payload = JSON.stringify(dict)
           
+          console.log(payload)
+          
           if (dbpackage.integrity) {
+            console.log('inside integrity block')
+            
             dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text='+encodeURIComponent(payload);
+            
+            console.log(dbpackage.callback)
           } //           if (dbpackage.integrity)
   
           if (!dbpackage.integrity) {
+            console.log('inside not integrity')
+            
             if (dbpackage.input === "") {
-            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)
+              
+              console.log('inside no input')
+              dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)
+              console.log(dbpackage.callback)
+              
             } else if (dbpackage.input === "clipboard") {
-            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=clipboard'
+              
+              console.log('inside input = clipboard')
+              dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=clipboard'
+              console.log(dbpackage.callback)
+              
             } else {
-            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=text&text='+encodeURIComponent(dict.input);
+              
+              console.log('inside else')
+              dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=text&text='+encodeURIComponent(dict.input);
+              console.log(dbpackage.callback)
             } 
           } //           if (!dbpackage.integrity)
 
