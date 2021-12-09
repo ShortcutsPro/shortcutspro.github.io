@@ -59,14 +59,14 @@ async function load(repo, dryrun) {
                 'name': `${dbpackage.name}`,
                 'input': `${dbpackage.input}`
           };
-          let payload = JSON.stringify(dict)
+          let payload = encodeURIComponent(JSON.stringify(dict))
           
           console.log(payload)
           
           if (dbpackage.integrity) {
             console.log('inside integrity block')
             
-            dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text='+encodeURIComponent(payload);
+            dpackage.callback = `shortcuts:\/\/x-callback-url\/run-shortcut?name=INTEGRITY&input=text&text=${payload}`;
             
             console.log(dbpackage.callback)
           } //           if (dbpackage.integrity)
@@ -77,7 +77,7 @@ async function load(repo, dryrun) {
             if (dbpackage.input === "") {
               
               console.log('inside no input')
-              dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)
+              dpackage.callback = 'shortcuts:\/\/x-callback-url\/run-shortcut?name='+encodeURIComponent(dict.name)
               console.log(dbpackage.callback)
               
             } else if (dbpackage.input === "clipboard") {
