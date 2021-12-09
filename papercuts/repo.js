@@ -66,7 +66,7 @@ async function load(repo, dryrun) {
           if (dbpackage.integrity) {
             console.log('inside integrity block')
             
-            dpackage.callback = `shortcuts:\/\/x-callback-url\/run-shortcut?name=INTEGRITY&input=text&text=${payload}`;
+            dbpackage.callback = `shortcuts:\/\/x-callback-url\/run-shortcut?name=INTEGRITY&input=text&text=${payload}`;
             
             console.log(dbpackage.callback)
           } //           if (dbpackage.integrity)
@@ -77,19 +77,19 @@ async function load(repo, dryrun) {
             if (dbpackage.input === "") {
               
               console.log('inside no input')
-              dpackage.callback = 'shortcuts:\/\/x-callback-url\/run-shortcut?name='+encodeURIComponent(dict.name)
+              dbpackage.callback = 'shortcuts:\/\/x-callback-url\/run-shortcut?name='+encodeURIComponent(dict.name)
               console.log(dbpackage.callback)
               
             } else if (dbpackage.input === "clipboard") {
               
               console.log('inside input = clipboard')
-              dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=clipboard'
+              dbpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=clipboard'
               console.log(dbpackage.callback)
               
             } else {
               
               console.log('inside else')
-              dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=text&text='+encodeURIComponent(dict.input);
+              dbpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dict.name)+'&input=text&text='+encodeURIComponent(dict.input);
               console.log(dbpackage.callback)
             } 
           } //           if (!dbpackage.integrity)
