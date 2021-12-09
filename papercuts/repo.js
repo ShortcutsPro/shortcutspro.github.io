@@ -53,8 +53,8 @@ async function load(repo, dryrun) {
             encodeURIComponent(JSON.stringify(dbpackage));
         }
 
-        if (dbpackage.callback == "") {
-          console.log('inside callback block')
+        // if (dbpackage.callback == "") {
+        //   console.log('inside callback block')
           
           if (dbpackage.integrity) {
             console.log('inside integrity block')
@@ -98,7 +98,7 @@ async function load(repo, dryrun) {
             } 
           } //           if (!dbpackage.integrity)
 
-        } //         if (!dbpackage.callback)
+//        } //         if (!dbpackage.callback)
         db.packages.push(dbpackage)
       }
     }
