@@ -54,25 +54,25 @@ async function load(repo, dryrun) {
         }
 
         if (dbpackage.callback == "") {
-          alert('inside callback block')
+          console.log('inside callback block')
           let dict = {
                 'name': `${dbpackage.name}`,
                 'input': `${dbpackage.input}`
           };
           let payload = JSON.stringify(dict)
           
-          alert(payload)
+          console.log(payload)
           
           if (dbpackage.integrity) {
             console.log('inside integrity block')
             
             dpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text='+encodeURIComponent(payload);
             
-            alert(dbpackage.callback)
+            console.log(dbpackage.callback)
           } //           if (dbpackage.integrity)
   
           if (!dbpackage.integrity) {
-            alert('inside not integrity')
+            console.log('inside not integrity')
             
             if (dbpackage.input === "") {
               
