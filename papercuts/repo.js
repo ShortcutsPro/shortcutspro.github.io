@@ -25,11 +25,11 @@ async function load(repo, dryrun) {
         let dbpackage = {};
         dbpackage.id = pakage.id + "";
         dbpackage.auuid = pakage.auuid + "";
-        dbpackage.icon = pakage.icon + "" || "https://Cutz.Bustl.io/images/shortcut.png";
+        dbpackage.icon = pakage.icon || "https://Cutz.Bustl.io/images/shortcut.png";
         dbpackage.version = pakage.version + "";
         dbpackage.name = pakage.name + "";
         dbpackage.link = pakage.link + "";
-        dbpackage.arch = pakage.arch + "" || "ios15";
+        dbpackage.arch = pakage.arch || "ios15";
         dbpackage.author = pakage.author || {
           name: "No Contact",
           link: ["about:blank"]
@@ -37,15 +37,15 @@ async function load(repo, dryrun) {
         dbpackage.compatible =
           dbpackage.arch == "universal" || +dbpackage.arch.slice(3)<=+arch.slice(3);
         dbpackage.maintainer = pakage.maintainer || dbpackage.author;
-        dbpackage.description = pakage.description + "" || "";
+        dbpackage.description = pakage.description || "";
         dbpackage.depends = pakage.depends || [];
         dbpackage.category = pakage.category || [];
-        dbpackage.depiction = pakage.depiction + "" || false;
+        dbpackage.depiction = pakage.depiction || false;
         dbpackage.repo = pakage.repo || false;
         dbpackage.callback = pakage.callback || "";
         dbpackage.integrity = pakage.integrity || false;
-        dbpackage.input = pakage.input + "" || "";
-        dbpackage.color = pakage.color + "" || "#000000";
+        dbpackage.input = pakage.input || "";
+        dbpackage.color = pakage.color || "#000000";
 
         if (!dbpackage.depiction) {
           dbpackage.depiction =
