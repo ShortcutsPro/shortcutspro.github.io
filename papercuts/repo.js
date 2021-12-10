@@ -50,41 +50,38 @@ async function load(repo, dryrun) {
         if (!dbpackage.depiction) {
           dbpackage.depiction =
             "https://Cutz.Bustl.io/papercuts/fallback-depiction.html#" +
-            encodeURIComponent(JSON.stringify(dbpackage));
-        }
-          
+             
         if (dbpackage.integrity) {
-          console.log('inside integrity block')
           
-          let payload = {
-            'name' : dbpackage.name
+          if (dbpackage.input.length < 1) {
+            dbpackage.callback =
+            "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text="+encodeURIComponent(dbpackage.name);
+          } else {
+            let dict = {
+              name: `${dbpackage.name}`,
+              input: `${dbpackage.input}`
+            };
+            let param = encodeURIComponent(JSON.stringify(dict));
+            dbpackage.callback =
+              "shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=" + param;
           }
-          if (dbpackage.input.length > 0) {
-            payload.input = dbpackage.input
+          
+          if (!dbpackage.integrity) {
+            
+            if (dbpackage.input.length < 1) {
+              dbpackage.callback =
+              "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name);
+            } else if (dbpackage.input == "clipboard") {
+              dbpackage.callback =
+              "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=clipboard";
+            } else {
+                dbpackage.callback =
+                "shortcuts://x-callback-url/run-shortcut?name="+encodeURIComponent(dbpackage.name)+"&input=text&text="+encodeURIComponent(dbpackage.input);
+            }
           }
-          payload = encodeURIComponent(JSON.stringify(payload))
-          
-          console.log('payload = ', payload)
-          
-          dbpackage.callback = `shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=${payload}`;
-          
-          console.log('callback = ', dbpackage.callback)
-        } //           if (dbpackage.integrity)
-
-        if (!dbpackage.integrity) {
-          console.log('inside not integrity')
-          
-          if (dbpackage.input === "") {
-            
-            console.log('inside no input')
-            dbpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dbpackage.name)
-            
-            console.log('callback = ', dbpackage.callback)
-            
-          } else if (dbpackage.input === "clipboard") {
-            
-            console.log('inside input = clipboard')
-            dbpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dbpackage.name)+'&input=clipboard'
+        }
+>>>>>>>+Updated upstrea
+name)+'&input=clipboard'
             console.log('callback = ', dbpackage.callback)
             
           } else {
