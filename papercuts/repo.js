@@ -182,4 +182,4 @@ export async function init() {
   db.packages = [];
   sources = JSON.parse(localStorage.getItem("sources")) || sources;
   await Promise.all(sources.map(e => load(e)))
-  }
+}
