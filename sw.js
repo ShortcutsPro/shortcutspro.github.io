@@ -8,6 +8,7 @@ const cacheSize = 100;
 const assets = [
   './index.html',
   './404.html',
+  './app.js',
   './css/styles.css',
   './css/clean.css',
   './fonts/space_age.ttf',
