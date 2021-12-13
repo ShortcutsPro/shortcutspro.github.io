@@ -4,7 +4,7 @@
 //
 const staticCacheName = 'site-static-v5';
 const dynamicCacheName = 'site-dynamic-v5';
-const cacheSize = 100;
+const cacheSize = '100';
 const assets = [
   './index.html',
   './404.html',
