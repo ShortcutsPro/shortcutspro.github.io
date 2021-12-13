@@ -2,13 +2,12 @@
 // 
 //.         Service Worker
 //
-const staticCacheName = 'site-static-v1';
-const dynamicCacheName = 'site-dynamic-v1';
-const cacheLimit = 100;
+const staticCacheName = 'site-static-v5';
+const dynamicCacheName = 'site-dynamic-v5';
 const assets = [
   './index.html',
-  './main.js',
   './404.html',
+  './app.js',
   './css/styles.css',
   './css/clean.css',
   './fonts/space_age.ttf',
@@ -29,56 +28,54 @@ const limitCacheSize = (name, size) => {
       }
     });
   });
-}
+};
 
 // install event
-self.addEventListener('install', e => {
+self.addEventListener('install', evt => {
   console.log('service worker installed');
-  e.waitUntil(
+  alert('service worker installed');
+  evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets');
       cache.addAll(assets);
-    });
-  )
+    })
+  );
 });
 
-
-// if ('registerProtocolHandler' in navigator) {
-//     navigator.registerProtocolHandler('web+cutz', './?s=pwa&input=%s', 'Bustl. Shortcuts')
-//       console.log('web+cutz registered')
-// }
-
 // activate event
-self.addEventListener('activate', e => {
+self.addEventListener('activate', evt => {
   console.log('service worker activated');
-  e.waitUntil(
+  alert('service worker activated');
+  evt.waitUntil(
     caches.keys().then(keys => {
       console.log(keys);
       return Promise.all(keys
         .filter(key => key !== staticCacheName && key !== dynamicCacheName)
-        .map(key => caches.delete(key));
+        .map(key => caches.delete(key))
       );
-    });
+    })
   );
 });
-
 
 // fetch event
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((resp) => {
-      return resp || fetch(event.request).then((response) => {
-        return caches.open(dynamicCacheName).then((cache) => {
-          cache.put(event.request, response.clone());
-          return response;
-        });
+self.addEventListener('fetch', evt => {
+  console.log('fetch event', evt);
+  alert('fetch event', evt);
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone());
+          // check cached items size
+          limitCacheSize(dynamicCacheName, 50);
+          return fetchRes;
+        })
       });
-    }).catch((e) => {
-      if(e.request.url.indexOf('.html') > -1){
+    }).catch(() => {
+      if(evt.request.url.indexOf('.html') > -1){
         return caches.match('./pages/fallback.html');
       } 
-    });
+    })
   );
 });
-
 console.log('sw.js');
