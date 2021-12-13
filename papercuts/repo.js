@@ -54,8 +54,6 @@ async function load(repo, dryrun) {
         }
           
         if (dbpackage.integrity) {
-          console.log('inside integrity block')
-          
           let payload = {
             'name' : dbpackage.name
           }
@@ -63,37 +61,20 @@ async function load(repo, dryrun) {
             payload.input = dbpackage.input
           }
           payload = encodeURIComponent(JSON.stringify(payload))
-          
-          console.log('payload = ', payload)
-          
           dbpackage.callback = `shortcuts://x-callback-url/run-shortcut?name=INTEGRITY&input=text&text=${payload}`;
-          
-          console.log('callback = ', dbpackage.callback)
         } //           if (dbpackage.integrity)
 
         if (!dbpackage.integrity) {
-          console.log('inside not integrity')
-          
           if (dbpackage.input === "") {
-            
-            console.log('inside no input')
             dbpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dbpackage.name)
-            
-            console.log('callback = ', dbpackage.callback)
-            
           } else if (dbpackage.input === "clipboard") {
-            
             console.log('inside input = clipboard')
             dbpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dbpackage.name)+'&input=clipboard'
-            console.log('callback = ', dbpackage.callback)
-            
           } else {
-            
-            console.log('inside else')
             dbpackage.callback = 'shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(dbpackage.name)+'&input=text&text='+encodeURIComponent(dbpackage.input);
-            console.log('callback = ', dbpackage.callback)
           } 
         } //           if (!dbpackage.integrity)
+        console.log('callback = ', dbpackage.callback)
         db.packages.push(dbpackage)
       }
     }
